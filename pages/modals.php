@@ -55,6 +55,7 @@
 
                             <input type="hidden" class="form-control" id="FRI_purpose" value="<?php echo 'Incoming' ?>" disabled hidden>
                             <input type="hidden" class="form-control" id="FRI_month" value="<?php echo date('F') ?>" disabled hidden>
+                            <input type="hidden" class="form-control" id="FRI_year" value="<?php echo date('Y') ?>" disabled hidden>
                             <input type="hidden" class="form-control" id="FRI_encoded" placeholder="Encoded By" value="<?php echo $acc_name; ?>" disabled hidden>
                         </div>
                         <!-- <div class="form-group col-md-4">
@@ -154,6 +155,9 @@
                             <input type="hidden" class="form-control" id="FRO_purpose" value="<?php echo 'Outgoing' ?>" disabled hidden>
 
                             <input type="hidden" class="form-control" id="FRO_month" value="<?php echo date('F') ?>" disabled hidden>
+
+                            <input type="hidden" class="form-control" id="FRO_year" value="<?php echo date('Y') ?>" disabled hidden>
+
                             <input type="hidden" class="form-control" id="FRO_encoded" placeholder="Encoded By" value="<?php echo $acc_name; ?>" disabled hidden>
                         </div>
                         <!-- <div class="form-group col-md-4">
@@ -242,6 +246,9 @@
                             <input type="hidden" class="form-control" id="U_purpose" disabled hidden>
 
                             <input type="hidden" class="form-control" id="U_month" value="<?php echo date('F') ?>" disabled hidden>
+
+                            <input type="hidden" class="form-control" id="U_year" value="<?php echo date('Y') ?>" disabled hidden>
+
                             <input type="hidden" class="form-control" id="U_encoded" placeholder="Encoded By" value="<?php echo $acc_name; ?>" disabled hidden>
                         </div>
 

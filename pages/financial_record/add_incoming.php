@@ -14,9 +14,10 @@ $FRI_ORSend = htmlspecialchars($_POST['FRI_ORSend']);
 $FRI_amountSend = htmlspecialchars($_POST['FRI_amountSend']);
 $FRI_monthSend = htmlspecialchars($_POST['FRI_monthSend']);
 $FRI_encodedSend = htmlspecialchars($_POST['FRI_encodedSend']);
+$FRI_yearSend = htmlspecialchars($_POST['FRI_yearSend']);
 
 
-if (isset($FRI_nameSend) && isset($FRI_dateSend) && isset($FRI_purposeSend) && isset($FRI_ORSend) && isset($FRI_amountSend) && isset($FRI_monthSend) && isset($FRI_encodedSend)) {
+if (isset($FRI_nameSend) && isset($FRI_dateSend) && isset($FRI_purposeSend) && isset($FRI_ORSend) && isset($FRI_amountSend) && isset($FRI_monthSend) && isset($FRI_encodedSend) ) {
 
     $ES_FRI_nameSend = mysqli_real_escape_string($conn, $FRI_nameSend);
     $ES_FRI_dateSend = mysqli_real_escape_string($conn, $FRI_dateSend);
@@ -26,8 +27,9 @@ if (isset($FRI_nameSend) && isset($FRI_dateSend) && isset($FRI_purposeSend) && i
     $ES_FRI_amountSend = mysqli_real_escape_string($conn, $FRI_amountSend);
     $ES_FRI_monthSend = mysqli_real_escape_string($conn, $FRI_monthSend);
     $ES_FRI_encodedSend = mysqli_real_escape_string($conn, $FRI_encodedSend);
-
-    $sql = "INSERT into financial_record (cname,date_set,purpose,or_number,amount,month_date,encoded_by) values ('$ES_FRI_nameSend', '$ES_FRI_dateSend', '$ES_FRI_purposeSend','$ES_FRI_ORSend', '$ES_FRI_amountSend', '$ES_FRI_monthSend','$ES_FRI_encodedSend')";
+    $ES_FRI_yearSend = mysqli_real_escape_string($conn, $FRI_yearSend);
+    
+    $sql = "INSERT into financial_record (cname,date_set,purpose,or_number,amount,month_date,year_date,encoded_by) values ('$ES_FRI_nameSend', '$ES_FRI_dateSend', '$ES_FRI_purposeSend','$ES_FRI_ORSend', '$ES_FRI_amountSend', '$ES_FRI_monthSend', '$ES_FRI_yearSend','$ES_FRI_encodedSend')";
 
     $result = mysqli_query($conn, $sql);
 

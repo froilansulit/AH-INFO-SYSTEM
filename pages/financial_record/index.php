@@ -191,8 +191,10 @@ $result = mysqli_query($conn, $sql); // query to get the data
         var FRI_amount = $('.FRI_amount').val();
         var FRI_month = $('#FRI_month').val();
         var FRI_encoded = $('#FRI_encoded').val();
+        var FRI_year = $('#FRI_year').val();
+        
 
-
+        
 
 
         $("#lblFRI_name").html("");
@@ -222,7 +224,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
               FRI_ORSend: FRI_OR,
               FRI_amountSend: FRI_amount,
               FRI_monthSend: FRI_month,
-              FRI_encodedSend: FRI_encoded
+              FRI_encodedSend: FRI_encoded,
+              FRI_yearSend : FRI_year
             },
             
             success: function(data) {
@@ -251,6 +254,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
         var FRO_amount = $('.FRO_amount').val();
         var FRO_month = $('#FRO_month').val();
         var FRO_encoded = $('#FRO_encoded').val();
+        var FRO_year = $('#FRO_year').val();
 
 
 
@@ -283,6 +287,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
               FRO_ORSend: FRO_OR,
               FRO_amountSend: FRO_amount,
               FRO_monthSend: FRO_month,
+              FRO_yearSend : FRO_year,
               FRO_encodedSend: FRO_encoded
             },
 
@@ -368,6 +373,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
         var U_OR = $('#U_OR').val();
         var U_amount = $('.U_amount').val();
         var U_month = $('#U_month').val();
+        var U_year = $('#U_year').val();
         var U_encoded = $('#U_encoded').val();
         var hiddenData = $('#hiddenData').val();
 
@@ -399,6 +405,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             U_OR: U_OR,
             U_amount: U_amount,
             U_month: U_month,
+            U_year : U_year,
             U_encoded: U_encoded,
             hiddenData: hiddenData
 

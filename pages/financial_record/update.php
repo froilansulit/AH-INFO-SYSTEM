@@ -31,8 +31,9 @@ if(isset($_POST['hiddenData'])) {
     $U_amount = mysqli_real_escape_string($conn, $_POST['U_amount']);
     $U_month = mysqli_real_escape_string($conn, $_POST['U_month']);
     $U_encoded = mysqli_real_escape_string($conn, $_POST['U_encoded']);
+    $U_year = mysqli_real_escape_string($conn, $_POST['U_year']);
     
-    $sql = "update financial_record set cname='$U_name',date_set='$U_date', purpose='$U_purpose', or_number='$U_OR' ,amount='$U_amount', month_date='$U_month', encoded_by='$U_encoded' where id='$unique_ID'";
+    $sql = "update financial_record set cname='$U_name',date_set='$U_date', purpose='$U_purpose', or_number='$U_OR' ,amount='$U_amount', month_date='$U_month', year_date='$U_year',encoded_by='$U_encoded' where id='$unique_ID'";
 
     $result = mysqli_query($conn, $sql);
 
