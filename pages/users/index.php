@@ -245,13 +245,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <?php include '../modals.php'; ?>
 
   <script>
-    // $(document).ready(function () {
-    //   setTimeout(function () {
-    //     $("#add-Incoming").modal("show");
-    //     // alert("Hellio");
-    //   },2000);
-    // });
-
     function DeleteRecord(deleteID) {
       Swal.fire({
         title: 'Are you sure?',
