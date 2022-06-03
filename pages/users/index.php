@@ -6,6 +6,12 @@ include '../head.php';
 include '../session.php';
 include '../connect.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['addUser'])) {
+
+  }
+}
+
 if ($user_type == "user") {
   header('location: ../dashboard/');
 }
@@ -21,12 +27,12 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <!-- start of add rent modal -->
 
 
-  <div class="modal fade" id="AddRentBoat">
+  <div class="modal fade" id="AddUserDetails">
     <!-- <div class="modal-dialog modal-lg"> -->
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Add Rent</h4>
+          <h4 class="modal-title">Add User</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -56,7 +62,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
                 </div>
               </div>
-              <button type="submit" name="save_date" class="btn btn-primary btn-rounded">Save</button>
+              <button type="submit" name="addUser" class="btn btn-primary btn-rounded">Save</button>
 
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
             </div>
@@ -141,7 +147,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddRentBoat">
+                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddUserDetails">
                     <i class="ti-plus btn-icon-prepend"></i>Add New User
                   </button>
                   <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
