@@ -55,12 +55,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   <label for="dob">Date of Return</label>
                   <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
                 </div>
-
-
               </div>
-
-
-
               <button type="submit" name="save_date" class="btn btn-primary btn-rounded">Save</button>
 
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
@@ -177,8 +172,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
                     <?php
                       unset($_SESSION['status']);
                     }
-
-
                     ?>
 
                     <table id="example1" class="table table-hover" style="width:100%">
@@ -189,7 +182,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <th>Username</th>
                           <th>Password</th>
                           <th>Operation</th>
-
                         </tr>
                       </thead>
                       <tbody class="text-center">
@@ -197,9 +189,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <?php
                           $number = 1;
                           while ($row = mysqli_fetch_assoc($result)) {
-
                             $id = $row['id'];
-
                           ?>
 
                             <td><b><?php echo $number; ?></b></td>
@@ -237,7 +227,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
               </div>
             </div>
           </div>
-
         </div>
         <?php include '../footer.php'; ?>
        
@@ -251,9 +240,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  
-
-
 
   <?php include '../scripts.php'; ?>
   <?php include '../modals.php'; ?>
