@@ -47,7 +47,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
-                <input type="text" name="username" id="Uname" class="form-control" autocomplete="off">
+                <input type="text" style="text-transform: lowercase;" name="username" id="Uname" class="form-control" autocomplete="off">
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Password:</label>  
@@ -92,12 +92,12 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
   <!-- start of view modal  -->
 
-  <div class="modal fade" id="ViewRent">
+  <div class="modal fade" id="VViewUser">
 
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">View Rent Record</h4>
+          <h4 class="modal-title">View User</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -113,19 +113,19 @@ $result = mysqli_query($conn, $sql); // query to get the data
               </div>
 
               <div class="form-group col-md-12">
-                <label for="U_OR">Date of Rent:</label>
-                <h4 class="font-weight-bold" id="view_DOR1"></h4>
+                <label for="U_OR">Username:</label>
+                <h4 class="font-weight-bold" id="view_uname"></h4>
               </div>
 
               <div class="form-group col-md-12">
-                <label for="U_OR">Date of Return:</label>
-                <h4 class="font-weight-bold" id="view_DOR2"></h4>
+                <label for="U_OR">Password:</label>
+                <h4 class="font-weight-bold" id="view_pass"></h4>
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
 
-              <input type="hidden" id="hiddenViewData">
+              <input type="hidden" id="hiddenUserData">
 
             </div>
             <!-- <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button> -->
@@ -223,13 +223,13 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
                                 <input type="hidden" name="rentID" value="<?php echo $id; ?>">
                             </form>
-
+                           
                             </a>
                             <a href="#" data-toggle="tooltip" title="Remove">
                               <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteUser(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                             </a>
                             <a href="#" data-toggle="tooltip" title="View">
-                              <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewRent" onclick="ViewUser(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                              <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#VViewUser" onclick="ViewUser(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                             </a>
                             </td>
 

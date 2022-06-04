@@ -10,8 +10,13 @@ $user_type = $_SESSION['user_type'];
 
 
 if (!isset($_SESSION['username'])) {
+    session_destroy();
     header('location: ../login/');
 	
+}
+if (!isset($_SESSION['user_type'])) {
+    session_destroy();
+    header('location: ../login/'); 
 }
 
 

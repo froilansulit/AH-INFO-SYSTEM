@@ -20,6 +20,7 @@ if (isset($_POST["lgnLogin"])) {
   else if(empty($password)) {
     $password_error = "Password is Required ! <br>";
   }
+  
 
   else {
     $query = "select * from users WHERE username='$username' AND password='$password'";
@@ -100,7 +101,8 @@ if (isset($_POST["lgnLogin"])) {
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" name="lgnLogin" type="submit">SIGN IN</button>
                   
                   <?php if(isset($_SESSION['type'])) { echo $_SESSION['type']; }  ?>
-                
+                  <br>
+                  <p>Note: <span style="color: red;font-weight: bold;">Please check your credentials carefully !</span></p> 
                 </div>
                 <!-- <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">

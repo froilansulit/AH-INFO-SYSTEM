@@ -55,6 +55,7 @@ $(document).ready(function() {
       var Upass2 = $('#Upass2').val();
 
 
+      
       $("#lblA_name").html("");
       $("#lblUsername").html("");
       $("#lblpwd").html("");
@@ -79,17 +80,14 @@ $(document).ready(function() {
         $("#lblpwd").html("");
         $("#lblpwd2").html("");
 
-        var A_name = $('#A_name').val();
-        var Uname = $('#Uname').val();
-        var Upass = $('#Upass').val();
-        var Upass2 = $('#Upass2').val();
-
+        var NewUname = Uname.toLowerCase();
+        
         $.ajax({
-            url: "process.php",
+            url: "addUser.php",
             type: 'post',
             data: {
                 A_name : A_name,
-                Uname  : Uname,
+                Uname  : NewUname,
                 Upass  : Upass
                 
             },
@@ -139,6 +137,25 @@ $(document).ready(function() {
         });
       }
     })
+  }
+
+  function ViewUser(viewID) {
+
+    // alert(viewID);
+
+    $('#hiddenUserData').val(viewID);
+
+    $.post("view_data.php", {
+      viewID: viewID
+    }, function(data, status) {
+      var userID = JSON.parse(data);
+
+
+      $('#view_Name').html(userID.name);
+      $('#view_uname').html(userID.username);
+      $('#view_pass').html(userID.password);
+      
+    }); 
   }
 
 
