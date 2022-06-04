@@ -50,6 +50,55 @@ $(document).on('click', '#showPassUser', function() {
 
 // ! scripting for users page end here !
 
+// Upass
+$(document).ready(function() {
+    $(document).on('click', '#addUser', function() {
+      // alert("Hello");
+      var A_name = $('#A_name').val();
+      var Uname = $('#Uname').val();
+      var Upass = $('#Upass').val();
+      var Upass2 = $('#Upass2').val();
+
+
+      $("#lblA_name").html("");
+      $("#lblUsername").html("");
+      $("#lblpwd").html("");
+      $("#lblpwd2").html("");
+
+      if (A_name == "") {
+        $("#lblA_name").html("* Please fill out this field ");
+      }  if (Uname == "") {
+        $("#lblUsername").html("* Please fill out this field ");
+      }  if (Upass == "") {
+        $("#lblpwd").html("* Please fill out this field ");
+      } 
+       if(Upass2 == "") {
+        $("#lblpwd2").html("* Please fill out this field ");
+      }
+      else if(Upass != Upass2) {
+        $("#lblpwd2").html("* Confirm Password is not match ");
+      }
+      else {
+        $("#lblA_name").html("");
+        $("#lblUsername").html("");
+        $("#lblpwd").html("");
+
+        // $.ajax({
+        //   type: 'post',
+        //   url: 'function.php',
+        //   data: $('#addUserForm').serialize(),
+        //   success: function(response) {
+        //     alert(response);
+        //   },
+        //   error: function() {
+        //     alert('Error');
+        //   }
+        // });
+
+      }
+    });
+  });
+
 // * scripting in financial records start here !
 
 // script for number only
