@@ -61,7 +61,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
               <div class="form-check ml-3 mb-4">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="showPass" id="showPass" value="">
+                  <input type="checkbox" class="form-check-input" name="showPassUser" id="showPassUser" value="">
                   Show Password
                 </label>
               </div>
@@ -258,6 +258,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
   <?php include '../scripts.php'; ?>
   <?php include '../modals.php'; ?>
+  <script src="../app.js"></script>
 
   <script>
     // Upass
@@ -273,7 +274,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
         $("#lblpwd").html("");
 
         if (A_name == "") {
-          // alert("this field is required");
           $("#lblA_name").html("* Please fill out this field ");
         } else if (Uname == "") {
           $("#lblUsername").html("* Please fill out this field ");
@@ -284,17 +284,17 @@ $result = mysqli_query($conn, $sql); // query to get the data
           $("#lblUsername").html("");
           $("#lblpwd").html("");
 
-          $.ajax({
-            type: 'post',
-            url: 'function.php',
-            data: $('#addUserForm').serialize(),
-            success: function(response) {
-              alert(response);
-            },
-            error: function() {
-              alert('Error');
-            }
-          });
+          // $.ajax({
+          //   type: 'post',
+          //   url: 'function.php',
+          //   data: $('#addUserForm').serialize(),
+          //   success: function(response) {
+          //     alert(response);
+          //   },
+          //   error: function() {
+          //     alert('Error');
+          //   }
+          // });
 
         }
       });
@@ -302,23 +302,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
     
     
-    $(document).on('click', '#showPass', function() {
-      // alert("Hello");
-      var Upass = $('#Upass');
-
-      alert("Hello");
-      
-      // Upass.type();
-      // alert(typeof Upass);
-      // if (ShowPassPwd === falsUp) {
-      //   Upass.setAttribute("type","text");
-      //   ShowPassPwd = true;
-      // }
-      // else if(ShowPassPwd === true) {
-      //   Upass.setAttribute("type","password");
-      //   ShowPassPwd = true;
-      // }
-    });
+    
 
     
 

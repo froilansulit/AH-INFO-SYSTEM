@@ -89,7 +89,7 @@ if (isset($_POST["lgnLogin"])) {
 
                 <div class="form-check">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="showPass" id="showPass" value="">
+                  <input type="checkbox" class="form-check-input" name="showPasslgn" id="showPasslgn" value="">
                   Show Password
                 </label>
               </div>
