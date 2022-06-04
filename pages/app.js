@@ -3,6 +3,8 @@
 
 var getPwdView = false;
 
+// script for showing the password in login
+
 $(document).on('click', '#showPasslgn', function() {
 
     var password = $('#password');
@@ -18,6 +20,8 @@ $(document).on('click', '#showPasslgn', function() {
     }
     
 });
+
+// script for showing the password in adding new user
 
 $(document).on('click', '#showPassUser', function() {
 
@@ -38,6 +42,9 @@ $(document).on('click', '#showPassUser', function() {
     
 });
 
+// scripting in financial records start here !
+
+// script for number only
 $(document).ready(function() {
     $("#txtNumeric").keydown(function(e) {
       if ((e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
@@ -52,6 +59,9 @@ $(document).ready(function() {
     });
   });
 
+
+// script for number only
+
   $(document).ready(function() {
     $("#txtNumeric2").keydown(function(e) {
       if ((e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
@@ -65,6 +75,8 @@ $(document).ready(function() {
       }
     });
   });
+
+  // for add new incoming record
 
   $(document).ready(function() {
     $(document).on('click', '#addIncoming', function() {
@@ -124,6 +136,8 @@ $(document).ready(function() {
       }
     })
   });
+
+  // for add new outgoing record
 
   $(document).ready(function() {
     $(document).on('click', '#addOutgoing', function() {
@@ -185,3 +199,140 @@ $(document).ready(function() {
       }
     })
   });
+
+  // for deleting record 
+
+  function DeleteRecord(deleteID) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "delete.php",
+          type: 'post',
+          data: {
+            deleteSend: deleteID
+          },
+          success: function(data, status) {
+            Swal.fire(
+              'Deleted!',
+              'Record has been deleted.',
+              'success'
+            )
+            location.reload();
+          }
+        });
+      }
+    })
+  }
+
+  function GetData(updateID) {
+    // alert(updateID);
+
+
+    $('#hiddenData').val(updateID);
+
+    $.post("update.php", {
+      updateID: updateID
+    }, function(data, status) {
+      var userID = JSON.parse(data);
+
+      $('#U_name').val(userID.cname);
+      // $('#U_date').val(userID.date_set);
+      $('#U_purpose').val(userID.purpose);
+      $('#U_OR').val(userID.or_number);
+      $('.U_amount').val(userID.amount);
+      // $('#U_month').val(userID.month_date);
+      // $('#U_encoded').val(userID.encoded_by);
+
+    });
+
+  }
+
+  $(document).ready(function() {
+    $(document).on('click', '#Up_Financial', function() {
+      // alert("hello");
+      var U_name = $('#U_name').val();
+      var U_date = $('#U_date').val();
+      var U_purpose = $('#U_purpose').val();
+      var U_OR = $('#U_OR').val();
+      var U_amount = $('.U_amount').val();
+      var U_month = $('#U_month').val();
+      var U_year = $('#U_year').val();
+      var U_encoded = $('#U_encoded').val();
+      var hiddenData = $('#hiddenData').val();
+
+
+
+
+      $("#lblU_name").html("");
+      $("#lblU_OR").html("");
+      $("#lblU_amount").html("");
+
+      if (U_name == "") {
+        $("#lblU_name").html("Enter Remarks");
+      } else if (U_OR == "") {
+        $("#lblU_OR").html("Enter OR Number");
+      } else if (U_amount == "") {
+        $("#lblU_amount").html("Enter Amount");
+      } else {
+        $("#lblU_name").html("");
+        $("#lblU_OR").html("");
+        $("#lblU_amount").html("");
+
+
+        $.post("update.php", {
+          //  var for Send:Var from declare
+
+          U_name: U_name,
+          U_date: U_date,
+          U_purpose: U_purpose,
+          U_OR: U_OR,
+          U_amount: U_amount,
+          U_month: U_month,
+          U_year : U_year,
+          U_encoded: U_encoded,
+          hiddenData: hiddenData
+
+
+        }, function(data, status) {
+          Swal.fire(
+              'Congratulations!',
+              'Updated Successfully!',
+              'success'
+            )
+            location.reload();
+        });
+      }
+    })
+  });
+
+  
+
+  function ViewData(viewID) {
+
+    // alert(viewID);
+
+    $('#hiddenViewData').val(viewID);
+
+    $.post("view_data.php", {
+      viewID: viewID
+    }, function(data, status) {
+      var userID = JSON.parse(data);
+      var vamount = $('#viewfr_Amount');
+
+      $('#viewfr_Name').html(userID.cname);
+      $('#viewfr_date').html(userID.date_set);
+      $('#viewfr_purpose').html(userID.purpose);
+      $('#viewfr_OR').html(userID.or_number);
+      $('#viewfr_Amount').val(userID.amount);
+      // $('#U_month').val(userID.month_date);
+      $('#viewfr_encoded').html(userID.encoded_by);
+    }); 
+  }
