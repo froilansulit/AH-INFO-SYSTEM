@@ -81,7 +81,7 @@ $(document).ready(function() {
         $("#lblpwd2").html("");
 
         var NewUname = Uname.toLowerCase();
-        
+
         $.ajax({
             url: "addUser.php",
             type: 'post',
@@ -94,14 +94,17 @@ $(document).ready(function() {
             
             success: function(data) {
               //alert("Success");
-              // $('#add-Product').modal('hide');
+              $('#AddUserDetails').modal('hide');
               // location.reload();
+
               Swal.fire(
                 'Congratulations!',
                 'Successfully Added!',
                 'success'
               )
-              location.reload();
+              setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
             }
           });
 
@@ -132,7 +135,9 @@ $(document).ready(function() {
               'User has been deleted.',
               'success'
             )
-            location.reload();
+            setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
           }
         });
       }
@@ -157,6 +162,122 @@ $(document).ready(function() {
       
     }); 
   }
+
+  function GetUser(viewID) {
+
+    // alert(viewID);
+
+    $('#hiddenUserData').val(viewID);
+
+    $.post("view_data.php", {
+      viewID: viewID
+    }, function(data, status) {
+      var userID = JSON.parse(data);
+
+      
+     
+      $('#UpName').val(userID.name);
+      $('#UpUser').val(userID.username);
+      $('#UPass1').val(userID.password);
+      $('#UPass2').val(userID.password);
+
+      
+    }); 
+  }
+
+  $(document).on('click', '#UPshowPassUser', function() {
+
+    var password = $('#UPass1');
+    var password2 = $('#UPass2');
+
+    if (getPwdView === false) {
+
+        password.attr("type", "text");
+        password2.attr("type", "text");
+        getPwdView = true;
+    }
+    else if(getPwdView === true) {
+        password.attr("type", "password");
+        password2.attr("type", "password");
+        getPwdView = false;
+    }
+    
+});
+
+$(document).ready(function() {
+    $(document).on('click', '#UpdateUserData', function() {
+        var UpName = $('#UpName').val();
+        var UpUser = $('#UpUser').val();
+        var UPass1 = $('#UPass1').val();
+        var UPass2 = $('#UPass2').val();
+        var hiddenUserData = $('#hiddenUserData').val();
+
+  
+        
+        $("#lblUpdateName").html("");
+        $("#lblxUser").html("");
+        $("#lblUpwd").html("");
+        $("#lblUpwd2").html("");
+  
+        if (UpName == "") {
+          $("#lblUpdateName").html("* Please fill out this field ");
+        }  if (UpUser == "") {
+          $("#lblxUser").html("* Please fill out this field ");
+        }  if (UPass1 == "") {
+          $("#lblUpwd").html("* Please fill out this field ");
+        } 
+         if(UPass2 == "") {
+          $("#lblUpwd2").html("* Please fill out this field ");
+        }
+        else if(UPass1 != UPass2) {
+            $("#lblUpwd2").html("* Confirm Password is not match ");
+          }
+
+        else if (UpName == "") {
+            $("#lblUpdateName").html("* Please fill out this field ");
+          } else if (UpUser == "") {
+            $("#lblxUser").html("* Please fill out this field ");
+          } else if (UPass1 == "") {
+            $("#lblUpwd").html("* Please fill out this field ");
+          } 
+          else if(UPass2 == "") {
+            $("#lblUpwd2").html("* Please fill out this field ");
+          }
+        
+        
+        else {
+          $("#lblUpdateName").html("");
+          $("#lblxUser").html("");
+          $("#lblUpwd").html("");
+          $("#lblUpwd2").html("");
+  
+          var NewUname = UpUser.toLowerCase();
+
+    
+
+        $.post("update.php", {
+          //  var for Send:Var from declare
+
+          UpName: UpName,
+          NewUname: NewUname,
+          UPass1: UPass1,
+          hiddenUserData: hiddenUserData
+
+
+        }, function(data, status) {
+        $('#UpdateUsers').modal('hide');
+          Swal.fire(
+              'Congratulations!',
+              'Updated Successfully!',
+              'success'
+            )
+            setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
+        });
+      }
+    })
+  });
 
 
 
@@ -255,14 +376,16 @@ $(document).ready(function() {
           
           success: function(data) {
             //alert("Success");
-            // $('#add-Product').modal('hide');
+            $('#add-Incoming').modal('hide');
             // location.reload();
             Swal.fire(
               'Congratulations!',
               'Successfully Added!',
               'success'
             )
-            location.reload();
+            setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
           }
         });
       }
@@ -327,14 +450,16 @@ $(document).ready(function() {
 
           success: function(data) {
             //alert("Success");
-            // $('#add-Product').modal('hide');
+            $('#add-Outgoing').modal('hide');
             // location.reload();
             Swal.fire(
               'Congratulations!',
               'Successfully Added!',
               'success'
             )
-            location.reload();
+            setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
           }
         });
       }
@@ -366,7 +491,9 @@ $(document).ready(function() {
               'Record has been deleted.',
               'success'
             )
-            location.reload();
+            setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
           }
         });
       }
@@ -408,6 +535,7 @@ $(document).ready(function() {
       var U_year = $('#U_year').val();
       var U_encoded = $('#U_encoded').val();
       var hiddenData = $('#hiddenData').val();
+      
 
 
 
@@ -443,12 +571,15 @@ $(document).ready(function() {
 
 
         }, function(data, status) {
+        $('#UpdateFinancial').modal('hide');
           Swal.fire(
               'Congratulations!',
               'Updated Successfully!',
               'success'
             )
-            location.reload();
+            setTimeout ( () => {
+                window.location.reload (true);
+            }, 2000);
         });
       }
     })
@@ -522,7 +653,12 @@ $(document).ready(function() {
                   'Record has been deleted.',
                   'success'
                 )
-                location.reload();
+                // setTimeout ( () => {
+                // location.href = '../users';
+                // }, 2000);
+                setTimeout ( () => {
+                    window.location.reload (true);
+                }, 2000);
               }
             });
           }

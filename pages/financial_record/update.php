@@ -5,7 +5,7 @@ include '../connect.php';
 
 if (isset($_POST['updateID'])) {
     $user_id = mysqli_real_escape_string($conn, $_POST['updateID']);
-
+    
     $sql = "select * from financial_record where id=$user_id";
     $result = mysqli_query($conn, $sql);
     $response = array();
