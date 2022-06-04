@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <!-- start of add rent modal -->
 
 
-  <div class="modal fade" id="AddUserDetails">
+  <div class="modal fade " id="AddUserDetails">
     <!-- <div class="modal-dialog modal-lg"> -->
     <div class="modal-dialog">
       <div class="modal-content">
@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body ">
           <!-- <form id="addUserForm"> -->
           <div class="card-body">
             <div class="row">
@@ -50,13 +50,16 @@ $result = mysqli_query($conn, $sql); // query to get the data
                 <input type="text" name="username" id="Uname" class="form-control">
               </div>
               <div class="form-group col-md-12">
-                <label for="dob">Password:</label> <label for="" id="lblpwd" class="text-danger"></label>
+                <label for="dob">Password:</label>  
+                <label for="" id="lblpwd" class="text-danger"></label>
+
                 <input type="password" name="pwd" id="Upass" class="form-control">
               </div>
 
               <div class="form-group col-md-12">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" class="form-control">
+                
               </div>
 
               <div class="form-check ml-3 mb-4">
@@ -268,18 +271,28 @@ $result = mysqli_query($conn, $sql); // query to get the data
         var A_name = $('#A_name').val();
         var Uname = $('#Uname').val();
         var Upass = $('#Upass').val();
+        var Upass2 = $('#Upass2').val();
+
 
         $("#lblA_name").html("");
         $("#lblUsername").html("");
         $("#lblpwd").html("");
+        $("#lblpwd2").html("");
 
         if (A_name == "") {
           $("#lblA_name").html("* Please fill out this field ");
-        } else if (Uname == "") {
+        }  if (Uname == "") {
           $("#lblUsername").html("* Please fill out this field ");
-        } else if (Upass == "") {
+        }  if (Upass == "") {
           $("#lblpwd").html("* Please fill out this field ");
-        } else {
+        } 
+         if(Upass2 == "") {
+          $("#lblpwd2").html("* Please fill out this field ");
+        }
+        else if(Upass != Upass2) {
+          $("#lblpwd2").html("* Confirm Password is not match ");
+        }
+        else {
           $("#lblA_name").html("");
           $("#lblUsername").html("");
           $("#lblpwd").html("");

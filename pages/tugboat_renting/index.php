@@ -115,11 +115,11 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   } ?>
                 </div>
 
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                   <label for="dob">Date of Rent</label>
                   <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
                 </div>
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                   <label for="dob">Date of Return</label>
                   <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
                 </div>
