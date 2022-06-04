@@ -44,7 +44,13 @@ $(document).on('click', '#showPassUser', function() {
     
 });
 
-// scripting in financial records start here !
+// * scripting for users page start here !
+
+
+
+// ! scripting for users page end here !
+
+// * scripting in financial records start here !
 
 // script for number only
 $(document).ready(function() {
@@ -338,3 +344,80 @@ $(document).ready(function() {
       $('#viewfr_encoded').html(userID.encoded_by);
     }); 
   }
+
+// ! scripting in financial records end here !
+
+// * scripting in tugboat renting start here !
+
+// $(document).ready(function () {
+    //   setTimeout(function () {
+    //     location.href = '../tugboat_renting/';
+
+    //   },2000);
+    // });
+
+    // setTimeout (() => {
+    //       location.href = '../tugboat_renting/';
+    //     }, 3000);
+
+
+
+    // $(document).on('click','#updateDetails', function() {
+
+    // })
+
+    function DeleteRecord(deleteID) {
+        Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $.ajax({
+              url: "process.php",
+              type: 'post',
+              data: {
+                deleteSend: deleteID
+              },
+              success: function(data, status) {
+                Swal.fire(
+                  'Deleted!',
+                  'Record has been deleted.',
+                  'success'
+                )
+                location.reload();
+              }
+            });
+          }
+        })
+      }
+  
+  
+      function ViewData(viewID) {
+  
+  
+        // alert(viewID);
+  
+        $('#hiddenViewData').val(viewID);
+  
+        $.post("process.php", {
+          viewID: viewID
+        }, function(data, status) {
+          var userID = JSON.parse(data);
+  
+  
+          $('#view_Name').html(userID.name);
+          $('#view_DOR1').html(userID.dateofRent);
+          $('#view_DOR2').html(userID.dateofReturn);
+  
+        });
+        $('#ViewRent').modal('show');
+      }
+
+// ! scripting in tugboat renting end here !
+
+

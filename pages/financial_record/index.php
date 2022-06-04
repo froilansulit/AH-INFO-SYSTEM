@@ -153,13 +153,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
 
-  <script>
-
-
-    
-    
-    
-  </script>
+ 
 </body>
 
 </html>
