@@ -119,10 +119,11 @@ if (isset($_POST["lgnLogin"])) {
   </div>
 
   <!-- this is for the js plugin and scripts -->
-  <?php include '../scripts.php' 
+  <?php
+   include '../scripts.php'; 
   ?>
-
- 
+  <script src="../app.js"></script>
+  
   
 </body>
 

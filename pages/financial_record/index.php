@@ -192,10 +192,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
         var FRI_month = $('#FRI_month').val();
         var FRI_encoded = $('#FRI_encoded').val();
         var FRI_year = $('#FRI_year').val();
-        
-
-        
-
+               
 
         $("#lblFRI_name").html("");
         $("#lblFRI_OR").html("");

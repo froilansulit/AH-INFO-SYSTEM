@@ -17,7 +17,7 @@
   <script src="../../vendors/chart.js/Chart.min.js"></script>
   <!-- End plugin js for this page-->
 
-  <script src="../../js/app.js"></script>
+  <!-- <script src="../../js/app.js"></script> -->
   <!-- <script src="../../js/jquery.min.ajx.js"></script> -->
   <script src="../../js/sweetalert2.all.min.js"></script>
 

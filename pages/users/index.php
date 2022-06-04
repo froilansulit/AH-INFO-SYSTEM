@@ -6,11 +6,7 @@ include '../head.php';
 include '../session.php';
 include '../connect.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST['addUser'])) {
 
-  }
-}
 
 if ($user_type == "user") {
   header('location: ../dashboard/');
@@ -38,36 +34,49 @@ $result = mysqli_query($conn, $sql); // query to get the data
           </button>
         </div>
         <div class="modal-body">
-          <!-- <form method="post"> -->
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+          <!-- <form id="addUserForm"> -->
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label for="name">Name:</label> <label for="" id="lblA_name" class="text-danger"></label>
+                <input type="text" name="name" id="A_name" class="form-control" autocomplete="off">
 
-            <div class="card-body">
-              <div class="row">
-
-                <div class="form-group col-md-12">
-                  <label for="name">Name:</label>
-                  <input type="text" name="name" class="form-control" autocomplete="off" required>
-
-                  <?php if (isset($name_error) && !empty($name_error)) {
-                    echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
-                  } ?>
-                </div>
-
-                <div class="form-group col-md-12">
-                  <label for="dob">Date of Rent</label>
-                  <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
-                </div>
-                <div class="form-group col-md-12">
-                  <label for="dob">Date of Return</label>
-                  <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
-                </div>
+                <?php if (isset($name_error) && !empty($name_error)) {
+                  echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
+                } ?>
               </div>
-              <button type="submit" name="addUser" class="btn btn-primary btn-rounded">Save</button>
+              <div class="form-group col-md-12">
+                <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
+                <input type="text" name="username" id="Uname" class="form-control">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="dob">Password:</label> <label for="" id="lblpwd" class="text-danger"></label>
+                <input type="password" name="pwd" id="Upass" class="form-control">
+              </div>
 
-              <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+              <div class="form-group col-md-12">
+                <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
+                <input type="password" name="pwd2" id="Upass2" class="form-control">
+              </div>
+
+              <div class="form-check ml-3 mb-4">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="showPass" id="showPass" value="">
+                  Show Password
+                </label>
+              </div>
+
+
+
             </div>
-            <!-- /.card-body -->
-          </form>
+            <!-- <button type="submit" name="addUser" id="AddVal" class="btn btn-primary btn-rounded">Save</button> -->
+
+            <button type="submit" id="addUser" class="btn btn-primary btn-rounded">Save</button>
+
+            <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+          </div>
+          <!-- /.card-body -->
+
           <!-- </form> -->
         </div>
       </div>
@@ -199,7 +208,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           ?>
 
                             <td><b><?php echo $number; ?></b></td>
-                            <td><?php echo htmlspecialchars($row['name']);?></td>
+                            <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo $row['username']; ?></td>
                             <td><?php echo $row['password']; ?></td>
 
@@ -235,7 +244,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
           </div>
         </div>
         <?php include '../footer.php'; ?>
-       
+
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
 
@@ -251,54 +260,199 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <?php include '../modals.php'; ?>
 
   <script>
-    function DeleteRecord(deleteID) {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
+    // Upass
+    $(document).ready(function() {
+      $(document).on('click', '#addUser', function() {
+        // alert("Hello");
+        var A_name = $('#A_name').val();
+        var Uname = $('#Uname').val();
+        var Upass = $('#Upass').val();
+
+        $("#lblA_name").html("");
+        $("#lblUsername").html("");
+        $("#lblpwd").html("");
+
+        if (A_name == "") {
+          // alert("this field is required");
+          $("#lblA_name").html("* Please fill out this field ");
+        } else if (Uname == "") {
+          $("#lblUsername").html("* Please fill out this field ");
+        } else if (Upass == "") {
+          $("#lblpwd").html("* Please fill out this field ");
+        } else {
+          $("#lblA_name").html("");
+          $("#lblUsername").html("");
+          $("#lblpwd").html("");
+
           $.ajax({
-            url: "process.php",
             type: 'post',
-            data: {
-              deleteSend: deleteID
+            url: 'function.php',
+            data: $('#addUserForm').serialize(),
+            success: function(response) {
+              alert(response);
             },
-            success: function(data, status) {
-              Swal.fire(
-                'Deleted!',
-                'Record has been deleted.',
-                'success'
-              )           
-              location.reload();      
-           }
+            error: function() {
+              alert('Error');
+            }
           });
+
         }
-      })
-    }
-
-    function ViewData(viewID) {
-
-      // alert(viewID);
-
-      $('#hiddenViewData').val(viewID);
-
-      $.post("process.php", {
-        viewID: viewID
-      }, function(data, status) {
-        var userID = JSON.parse(data);
-
-
-        $('#view_Name').html(userID.name);
-        $('#view_DOR1').html(userID.dateofRent);
-        $('#view_DOR2').html(userID.dateofReturn);
-
       });
-    }
+    });
+
+    
+    
+    $(document).on('click', '#showPass', function() {
+      // alert("Hello");
+      var Upass = $('#Upass');
+
+      alert("Hello");
+      
+      // Upass.type();
+      // alert(typeof Upass);
+      // if (ShowPassPwd === falsUp) {
+      //   Upass.setAttribute("type","text");
+      //   ShowPassPwd = true;
+      // }
+      // else if(ShowPassPwd === true) {
+      //   Upass.setAttribute("type","password");
+      //   ShowPassPwd = true;
+      // }
+    });
+
+    
+
+
+
+    // $(document).on('click', '#AddVal', function() {
+    //     // alert("Clicked");
+    //     var A_name = $('#A_name').val();
+    //     var Uname = $('#Uname').val();
+    //     var Upass = $('#Upass').val();
+
+
+    //     if (A_name == "") {
+    //       // alert("this field is required");
+    //       $("#lblA_name").html("* Please fill out this field ");
+    //     } else if (Uname == "") {
+    //       $("#lblUsername").html("* Please fill out this field ");
+    //     } else if (Upass == "") {
+    //       $("#lblpwd").html("* Please fill out this field ");
+    //     }
+    //       else {
+    //       $("#lblA_name").html("");
+    //       $("#lblUsername").html("");
+    //       $("#lblpwd").html("");
+
+    //       }
+
+    //     // var FRI_name = $('#FRI_name').val();
+    //     // var FRI_date = $('#FRI_date').val();
+    //     // var FRI_purpose = $('#FRI_purpose').val();
+    //     // var FRI_OR = $('#FRI_OR').val();
+    //     // var FRI_amount = $('.FRI_amount').val();
+    //     // var FRI_month = $('#FRI_month').val();
+    //     // var FRI_encoded = $('#FRI_encoded').val();
+    //     // var FRI_year = $('#FRI_year').val();
+
+
+
+
+
+    //     // $("#lblFRI_name").html("");
+    //     // $("#lblFRI_OR").html("");
+    //     // $("#lblFRI_amount").html("");
+
+    //     // if (FRI_name == "") {
+    //     //   $("#lblFRI_name").html("Enter Remarks");
+    //     // } else if (FRI_OR == "") {
+    //     //   $("#lblFRI_OR").html("Enter OR Number");
+    //     // } else if (FRI_amount == "") {
+    //     //   $("#lblFRI_amount").html("Enter Amount");
+    //     // } else {
+    //     //   $("#lblFRI_name").html("");
+    //     //   $("#lblFRI_OR").html("");
+    //     //   $("#lblFRI_amount").html("");
+
+
+
+    //     //   $.ajax({
+    //     //     url: "add_incoming.php",
+    //     //     type: 'post',
+    //     //     data: {
+    //     //       FRI_nameSend: FRI_name,
+    //     //       FRI_dateSend: FRI_date,
+    //     //       FRI_purposeSend: FRI_purpose,
+    //     //       FRI_ORSend: FRI_OR,
+    //     //       FRI_amountSend: FRI_amount,
+    //     //       FRI_monthSend: FRI_month,
+    //     //       FRI_encodedSend: FRI_encoded,
+    //     //       FRI_yearSend : FRI_year
+    //     //     },
+
+    //     //     success: function(data) {
+    //     //       //alert("Success");
+    //     //       // $('#add-Product').modal('hide');
+    //     //       // location.reload();
+    //     //       Swal.fire(
+    //     //         'Congratulations!',
+    //     //         'Successfully Added!',
+    //     //         'success'
+    //     //       )
+    //     //       location.reload();
+    //     //     }
+    //     //   });
+    //     // }
+    //   });
+
+    // function DeleteRecord(deleteID) {
+    //   Swal.fire({
+    //     title: 'Are you sure?',
+    //     text: "You won't be able to revert this!",
+    //     icon: 'warning',
+    //     showCancelButton: true,
+    //     confirmButtonColor: '#3085d6',
+    //     cancelButtonColor: '#d33',
+    //     confirmButtonText: 'Yes, delete it!'
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+    //       $.ajax({
+    //         url: "process.php",
+    //         type: 'post',
+    //         data: {
+    //           deleteSend: deleteID
+    //         },
+    //         success: function(data, status) {
+    //           Swal.fire(
+    //             'Deleted!',
+    //             'Record has been deleted.',
+    //             'success'
+    //           )           
+    //           location.reload();      
+    //        }
+    //       });
+    //     }
+    //   })
+    // }
+
+    // function ViewData(viewID) {
+
+    //   // alert(viewID);
+
+    //   $('#hiddenViewData').val(viewID);
+
+    //   $.post("process.php", {
+    //     viewID: viewID
+    //   }, function(data, status) {
+    //     var userID = JSON.parse(data);
+
+
+    //     $('#view_Name').html(userID.name);
+    //     $('#view_DOR1').html(userID.dateofRent);
+    //     $('#view_DOR2').html(userID.dateofReturn);
+
+    //   });
+    // }
   </script>
 </body>
 
