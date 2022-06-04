@@ -46,11 +46,6 @@ $(document).on('click', '#showPassUser', function() {
 
 // * scripting for users page start here !
 
-
-
-// ! scripting for users page end here !
-
-// Upass
 $(document).ready(function() {
     $(document).on('click', '#addUser', function() {
       // alert("Hello");
@@ -82,22 +77,43 @@ $(document).ready(function() {
         $("#lblA_name").html("");
         $("#lblUsername").html("");
         $("#lblpwd").html("");
+        $("#lblpwd2").html("");
 
-        // $.ajax({
-        //   type: 'post',
-        //   url: 'function.php',
-        //   data: $('#addUserForm').serialize(),
-        //   success: function(response) {
-        //     alert(response);
-        //   },
-        //   error: function() {
-        //     alert('Error');
-        //   }
-        // });
+        var A_name = $('#A_name').val();
+        var Uname = $('#Uname').val();
+        var Upass = $('#Upass').val();
+        var Upass2 = $('#Upass2').val();
+
+        $.ajax({
+            url: "process.php",
+            type: 'post',
+            data: {
+                A_name : A_name,
+                Uname  : Uname,
+                Upass  : Upass,
+                Upass2 : Upass2
+            },
+            
+            success: function(data) {
+              //alert("Success");
+              // $('#add-Product').modal('hide');
+              // location.reload();
+              Swal.fire(
+                'Congratulations!',
+                'Successfully Added!',
+                'success'
+              )
+              location.reload();
+            }
+          });
 
       }
     });
   });
+
+// ! scripting for users page end here !
+
+
 
 // * scripting in financial records start here !
 
@@ -151,12 +167,22 @@ $(document).ready(function() {
       $("#lblFRI_OR").html("");
       $("#lblFRI_amount").html("");
 
+        // display error no input
       if (FRI_name == "") {
-        $("#lblFRI_name").html("Enter Remarks");
+        $("#lblFRI_name").html("* Please fill out this field ");
+      } if (FRI_OR == "") {
+        $("#lblFRI_OR").html("* Please fill out this field ");
+      } if (FRI_amount == "") {
+        $("#lblFRI_amount").html("* Please fill out this field ");
+      } 
+
+      // validation for befroe submit
+      else if (FRI_name == "") {
+        $("#lblFRI_name").html("* Please fill out this field ");
       } else if (FRI_OR == "") {
-        $("#lblFRI_OR").html("Enter OR Number");
+        $("#lblFRI_OR").html("* Please fill out this field ");
       } else if (FRI_amount == "") {
-        $("#lblFRI_amount").html("Enter Amount");
+        $("#lblFRI_amount").html("* Please fill out this field ");
       } else {
         $("#lblFRI_name").html("");
         $("#lblFRI_OR").html("");
@@ -214,11 +240,20 @@ $(document).ready(function() {
       $("#lblFRO_amount").html("");
 
       if (FRO_name == "") {
-        $("#lblFRO_name").html("Enter Remarks");
+        $("#lblFRO_name").html("* Please fill out this field ");
+      } if (FRO_OR == "") {
+        $("#lblFRO_OR").html("* Please fill out this field ");
+      }  if (FRO_amount == "") {
+        $("#lblFRO_amount").html("* Please fill out this field ");
+      } 
+
+      
+      else if (FRO_name == "") {
+        $("#lblFRO_name").html("* Please fill out this field ");
       } else if (FRO_OR == "") {
-        $("#lblFRO_OR").html("Enter OR Number");
+        $("#lblFRO_OR").html("* Please fill out this field ");
       } else if (FRO_amount == "") {
-        $("#lblFRO_amount").html("Enter Amount");
+        $("#lblFRO_amount").html("* Please fill out this field ");
       } else {
         $("#lblFRO_name").html("");
         $("#lblFRO_OR").html("");
@@ -415,7 +450,7 @@ $(document).ready(function() {
 
     // })
 
-    function DeleteRecord(deleteID) {
+    function DeleteRent(deleteID) {
         Swal.fire({
           title: 'Are you sure?',
           text: "You won't be able to revert this!",
@@ -446,7 +481,7 @@ $(document).ready(function() {
       }
   
   
-      function ViewData(viewID) {
+      function ViewRent(viewID) {
   
   
         // alert(viewID);
