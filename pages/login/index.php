@@ -87,6 +87,13 @@ if (isset($_POST["lgnLogin"])) {
                   <?php if(isset($password_error) && !empty($password_error)) { echo "<p class='alert alert-danger text-center'>". $password_error ."</p>";} ?>
                 </div>
 
+                <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="showPass" id="showPass" value="">
+                  Show Password
+                </label>
+              </div>
+
                 <div class="mt-3">
                   <!-- <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../product/product.php" id="SignInVerify">SIGN IN</a> -->
 
@@ -122,8 +129,9 @@ if (isset($_POST["lgnLogin"])) {
   <?php
    include '../scripts.php'; 
   ?>
+
   <script src="../app.js"></script>
-  
+
   
 </body>
 
