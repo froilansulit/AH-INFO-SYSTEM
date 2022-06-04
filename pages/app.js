@@ -90,8 +90,8 @@ $(document).ready(function() {
             data: {
                 A_name : A_name,
                 Uname  : Uname,
-                Upass  : Upass,
-                Upass2 : Upass2
+                Upass  : Upass
+                
             },
             
             success: function(data) {
@@ -110,6 +110,38 @@ $(document).ready(function() {
       }
     });
   });
+
+  function DeleteUser(deleteID) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        $.ajax({
+          url: "delete.php",
+          type: 'post',
+          data: {
+            deleteSend: deleteID
+          },
+          success: function(data, status) {
+            Swal.fire(
+              'Deleted!',
+              'User has been deleted.',
+              'success'
+            )
+            location.reload();
+          }
+        });
+      }
+    })
+  }
+
+
 
 // ! scripting for users page end here !
 

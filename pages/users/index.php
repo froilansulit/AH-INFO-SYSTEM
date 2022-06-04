@@ -25,7 +25,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
   <div class="modal fade " id="AddUserDetails">
     <!-- <div class="modal-dialog modal-lg"> -->
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Add User</h4>
@@ -37,7 +37,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
           <!-- <form id="addUserForm"> -->
           <div class="card-body">
             <div class="row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="name">Name:</label> <label for="" id="lblA_name" class="text-danger"></label>
                 <input type="text" name="name" id="A_name" class="form-control" autocomplete="off">
 
@@ -45,18 +45,18 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
                 } ?>
               </div>
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
-                <input type="text" name="username" id="Uname" class="form-control">
+                <input type="text" name="username" id="Uname" class="form-control" autocomplete="off">
               </div>
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="dob">Password:</label>  
                 <label for="" id="lblpwd" class="text-danger"></label>
 
                 <input type="password" name="pwd" id="Upass" class="form-control">
               </div>
 
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" class="form-control">
                 
@@ -173,7 +173,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Tugboat Renting</p>
+                  <p class="card-title text-md-center text-xl-left">List of Users</p>
 
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <?php
@@ -226,10 +226,10 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
                             </a>
                             <a href="#" data-toggle="tooltip" title="Remove">
-                              <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                              <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteUser(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                             </a>
                             <a href="#" data-toggle="tooltip" title="View">
-                              <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewRent" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                              <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewRent" onclick="ViewUser(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                             </a>
                             </td>
 
