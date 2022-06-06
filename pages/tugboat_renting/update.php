@@ -82,8 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-
-
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
