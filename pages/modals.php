@@ -451,42 +451,6 @@
     </div>
     <!-- /.modal edit-Product -->
 
-    
-    <div class="modal fade" id="edit-Unit">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Edit Unit</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form role="form">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <label for="Name">Name</label>
-                                    <input type="text" class="form-control" id="Name" placeholder="Name">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label for="Description">Description</label>
-                                    <textarea type="text" class="form-control" id="Description" placeholder="Description"></textarea>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-rounded">Save</button>
-                            <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
-                        </div>
-                        <!-- /.card-body -->
-
-                    </form>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal edit-Unit -->
     <div class="modal fade" id="add-Category">
         <div class="modal-dialog">
             <div class="modal-content">
