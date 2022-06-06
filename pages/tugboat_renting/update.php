@@ -6,8 +6,6 @@ include '../head.php';
 include '../session.php';
 include '../connect.php';
 
-
-
 // input type date support date format
 
 $Format = 'Y-m-d';
@@ -24,14 +22,12 @@ $FD = 0;
 $FM = 0;
 $FY = 1;
 
-
 $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
 $CDT = date($Format);
 $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
 $UpdateID = $_GET['unixcode'];  // for security of the link
 $rentID = $_POST['rentID']; // for security of the link
-
 
 if (empty($rentID)) {
   header('location: ../tugboat_renting/');
@@ -43,7 +39,6 @@ $update_row = mysqli_fetch_assoc($update_result);
 $name_row = $update_row['name'];
 $DOR1_row = $update_row['dateofRent'];
 $DOR2_row = $update_row['dateofReturn'];
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['update_rent'])) {
@@ -73,7 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -102,31 +96,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Update Data</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-
                     <form method="post">
-
                       <div class="form-group mb-3">
                         <label for="name">Name:</label>
                         <input type="text" name="Uname" class="form-control" autocomplete="off" value="<?php echo $name_row; ?>" required>
-
                         <?php if (isset($name_error) && !empty($name_error)) {
                           echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
                         } ?>
-
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Rent</label>
                         <input type="date" name="UdateofRent" class="form-control" value="<?php echo $DOR1_row ?>" required>
-
                       </div>
-
                       <div class="form-group mb-3">
                         <label for="dob">Date of Return</label>
                         <input type="date" name="UdateofReturn" class="form-control" value="<?php echo $DOR2_row ?>" required>
-
                       </div>
-
-
                       <div class="form-group mb-3">
                         <button type="submit" name="update_rent" class="btn btn-primary">Save Data</button>
                       </div>
