@@ -63,15 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
       if ($result) {
         $_SESSION['status'] = "Updated Successfully!";
-        //header('location: ../users/');
-        // echo "<script>alert('hello');</script>";
-      //   echo "
-      //   <script>  
-      //   setTimeout ( () => {
-      //     window.location.reload (true);
-      // }, 2000);
-      //   ";
-        // location.href = '../tugboat_renting/index.php';
+        
 
       } else {
         die(mysqli_error($conn));
