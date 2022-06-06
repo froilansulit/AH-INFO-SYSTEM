@@ -116,13 +116,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Rent</label>
-                        <input type="date" name="UdateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR1_row ?>" required>
+                        <input type="date" name="UdateofRent" class="form-control" value="<?php echo $DOR1_row ?>" required>
 
                       </div>
 
                       <div class="form-group mb-3">
                         <label for="dob">Date of Return</label>
-                        <input type="date" name="UdateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR2_row ?>" required>
+                        <input type="date" name="UdateofReturn" class="form-control" value="<?php echo $DOR2_row ?>" required>
 
                       </div>
 
