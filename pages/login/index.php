@@ -6,14 +6,15 @@ if (isset($_SESSION['username'])) {
   header('location: ../dashboard/');
 }
 
+// for login function 
 if (isset($_POST["lgnLogin"])) {
   $username = mysqli_real_escape_string($conn, $_POST["username"]);
   $password = mysqli_real_escape_string($conn, $_POST["password"]);
-  // $acc_name = $_POST["acc_name"];
+  
 
   if (empty($username)) {
     $username_error = "Username is Required ! <br>";
-    // echo "<script>alert('username is required');</script>";
+    
   } else if (empty($password)) {
     $password_error = "Password is Required ! <br>";
   } else {
@@ -60,7 +61,6 @@ if (isset($_POST["lgnLogin"])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
