@@ -115,9 +115,7 @@ if (isset($_POST["lgnLogin"])) {
                   </div>
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div> -->
-                  <!-- <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href="#" class="text-primary">Contact Administrator</a>
-                </div> -->
+                  
                 </form>
               </div>
           </div>
@@ -125,18 +123,13 @@ if (isset($_POST["lgnLogin"])) {
       </div>
       <!-- content-wrapper ends -->
     </div>
-
     <!-- page-body-wrapper ends -->
   </div>
-
   <!-- this is for the js plugin and scripts -->
   <?php
   include '../scripts.php';
   ?>
-
   <script src="../app.js"></script>
-
-
 </body>
 
 </html>
