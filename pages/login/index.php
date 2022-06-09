@@ -99,17 +99,14 @@ if (isset($_POST["lgnLogin"])) {
                   </div>
 
                   <div class="mt-3">
-                    <!-- <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../product/product.php" id="SignInVerify">SIGN IN</a> -->
-
                     <button class="btn btn-block btn-primary rounded-pill btn-lg font-weight-medium auth-form-btn" name="lgnLogin" type="submit">SIGN IN</button>
-
                     <?php if (isset($_SESSION['type'])) {
                       echo $_SESSION['type'];
                     }  ?>
                     <br>
                     <p>Note: <span style="color: red;font-weight: bold;">Please check your credentials carefully !</span></p>
                   </div>
-                  <!-- <div class="my-2 d-flex justify-content-between align-items-center">
+                  
                   <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
