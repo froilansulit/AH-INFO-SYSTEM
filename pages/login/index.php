@@ -6,7 +6,6 @@ if (isset($_SESSION['username'])) {
   header('location: ../dashboard/');
 }
 
-
 if (isset($_POST["lgnLogin"])) {
   $username = mysqli_real_escape_string($conn, $_POST["username"]);
   $password = mysqli_real_escape_string($conn, $_POST["password"]);
@@ -49,9 +48,6 @@ if (isset($_POST["lgnLogin"])) {
 
       //header('location: ../financial_record/');
 
-      // header('location: ../product/product.php');
-
-
       // echo "<script>alert('Welcome to my gg');</script>";
     } else {
       // invalid
@@ -60,7 +56,6 @@ if (isset($_POST["lgnLogin"])) {
     }
   }
 }
-
 ?>
 
 <!DOCTYPE html>
