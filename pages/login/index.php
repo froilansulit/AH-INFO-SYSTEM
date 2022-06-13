@@ -10,16 +10,13 @@ if (isset($_SESSION['username'])) {
 if (isset($_POST["lgnLogin"])) {
   $username = mysqli_real_escape_string($conn, $_POST["username"]);
   $password = mysqli_real_escape_string($conn, $_POST["password"]);
-  
 
   if (empty($username)) {
     $username_error = "Username is Required ! <br>";
-    
   } else if (empty($password)) {
     $password_error = "Password is Required ! <br>";
   } else {
     $query = "select * from users WHERE username='$username' AND password='$password'";
-
     $query_run = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($query_run) > 0) {
@@ -44,7 +41,6 @@ if (isset($_POST["lgnLogin"])) {
       
     //   </script>
     // ";
-
       // header('location: ../dashboard/');
 
       //header('location: ../financial_record/');
@@ -58,7 +54,6 @@ if (isset($_POST["lgnLogin"])) {
   }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <body>
@@ -90,14 +85,12 @@ if (isset($_POST["lgnLogin"])) {
                       echo "<p class='alert alert-danger text-center'>" . $password_error . "</p>";
                     } ?>
                   </div>
-
                   <div class="form-check">
                     <label class="form-check-label">
                       <input type="checkbox" class="form-check-input" name="showPasslgn" id="showPasslgn" value="">
                       Show Password
                     </label>
                   </div>
-
                   <div class="mt-3">
                     <button class="btn btn-block btn-primary rounded-pill btn-lg font-weight-medium auth-form-btn" name="lgnLogin" type="submit">SIGN IN</button>
                     <?php if (isset($_SESSION['type'])) {
@@ -106,15 +99,6 @@ if (isset($_POST["lgnLogin"])) {
                     <br>
                     <p>Note: <span style="color: red;font-weight: bold;">Please check your credentials carefully !</span></p>
                   </div>
-                  
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div> -->
                   
                 </form>
               </div>
