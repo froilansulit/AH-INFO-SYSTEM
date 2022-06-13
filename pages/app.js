@@ -42,12 +42,14 @@ function checkValidation() {
   var Uname = $("#Uname").val();
   var Upass = $("#Upass").val();
   var Upass2 = $("#Upass2").val();
+  var answer_sq = $("#answer_sq").val();
 
   $("#lblA_name").html("");
   $("#lblUsername").html("");
   $("#lblpwd").html("");
   $("#lblpwd2").html("");
   $("#check-username").html("");
+  
 
   $.ajax({
     url: "check_availability.php",
@@ -72,6 +74,11 @@ function checkValidation() {
     $("#addUser").prop("disabled", true);
     $("#lblpwd").html("* Please fill out this field ");
   }
+  if (Upass2 == "") {
+    $("#addUser").prop("disabled", true);
+    $("#lblpwd2").html("* Please fill out this field ");
+  }
+
   if (Upass2 == "") {
     $("#addUser").prop("disabled", true);
     $("#lblpwd2").html("* Please fill out this field ");
@@ -150,9 +157,44 @@ $(document).ready(function () {
     }
     if (Upass2 == "") {
       $("#lblpwd2").html("* Please fill out this field ");
-    } else if (Upass != Upass2) {
+    } 
+    
+    // second validation
+
+    else if (A_name == "") {
+      $("#addUser").prop("disabled", true);
+      $("#lblA_name").html("* Please fill out this field ");
+    }
+    else if (Uname == "") {
+      $("#addUser").prop("disabled", true);
+      $("#lblUsername").html("* Please fill out this field ");
+    }
+    else if (Upass == "") {
+      $("#addUser").prop("disabled", true);
+      $("#lblpwd").html("* Please fill out this field ");
+    }
+    else if (Upass2 == "") {
+      $("#addUser").prop("disabled", true);
+      $("#lblpwd2").html("* Please fill out this field ");
+    }
+    else if (Upass.length < 6) {
+      $("#addUser").prop("disabled", true);
+      $("#lblpwd").html("* must be at least 6 characters");
+    }
+    else if (Upass2.length < 6) {
+      $("#addUser").prop("disabled", true);
+      $("#lblpwd2").html("* must be at least 6 characters");
+    }
+    else if (Uname.length < 6) {
+      $("#addUser").prop("disabled", true);
+      $("#lblUsername").html("* must be at least 6 characters");
+    }
+     else if (Upass != Upass2) {
+      $("#addUser").prop("disabled", true);
       $("#lblpwd2").html("* Confirm Password is not match ");
-    } else {
+    } 
+    
+    else {
       $("#lblA_name").html("");
       $("#lblUsername").html("");
       $("#lblpwd").html("");
