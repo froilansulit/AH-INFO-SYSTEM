@@ -37,16 +37,7 @@ $(document).on("click", "#showPassUser", function () {
 // * scripting for users page start here !
 
 function checkValidation() {
-  jQuery.ajax({
-    url: "check_availability.php",
-    data: "firstName=" + $("#firstName").val(),
-    type: "POST",
-    success: function (data) {
-      $("#check-username").html(data);
-    },
-    error: function () {},
-  });
-
+  
   var A_name = $("#A_name").val();
   var Uname = $("#Uname").val();
   var Upass = $("#Upass").val();
@@ -56,6 +47,18 @@ function checkValidation() {
   $("#lblUsername").html("");
   $("#lblpwd").html("");
   $("#lblpwd2").html("");
+  $("#check-username").html("");
+
+  $.ajax({
+    url: "check_availability.php",
+    data: "username=" + $("#Uname").val(),
+    type: "POST",
+    success: function (data) {
+      $("#check-username").html(data);
+    },
+    error: function () {},
+  });
+  
 
   if (A_name == "") {
     $("#addUser").prop("disabled", true);
@@ -72,11 +75,54 @@ function checkValidation() {
   if (Upass2 == "") {
     $("#addUser").prop("disabled", true);
     $("#lblpwd2").html("* Please fill out this field ");
-  } else if (Upass != Upass2) {
+  }
+
+  
+
+  
+  // second validation
+
+  else if (A_name == "") {
+    $("#addUser").prop("disabled", true);
+    $("#lblA_name").html("* Please fill out this field ");
+  }
+  else if (Uname == "") {
+    $("#addUser").prop("disabled", true);
+    $("#lblUsername").html("* Please fill out this field ");
+  }
+  else if (Upass == "") {
+    $("#addUser").prop("disabled", true);
+    $("#lblpwd").html("* Please fill out this field ");
+  }
+  else if (Upass2 == "") {
+    $("#addUser").prop("disabled", true);
+    $("#lblpwd2").html("* Please fill out this field ");
+  }
+  else if (Upass.length < 6) {
+    $("#addUser").prop("disabled", true);
+    $("#lblpwd").html("* must be at least 6 characters");
+  }
+  else if (Upass2.length < 6) {
+    $("#addUser").prop("disabled", true);
+    $("#lblpwd2").html("* must be at least 6 characters");
+  }
+  else if (Uname.length < 6) {
+    $("#addUser").prop("disabled", true);
+    $("#lblUsername").html("* must be at least 6 characters");
+  }
+   else if (Upass != Upass2) {
     $("#addUser").prop("disabled", true);
     $("#lblpwd2").html("* Confirm Password is not match ");
-  } else {
-    $("#addUser").prop("disabled", false);
+  } 
+  
+  else {
+  $("#lblA_name").html("");
+  $("#lblUsername").html("");
+  $("#lblpwd").html("");
+  $("#lblpwd2").html("");
+  $("#check-username").html("");
+  
+  $("#addUser").prop("disabled", false);
   }
 }
 
