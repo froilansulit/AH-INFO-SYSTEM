@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+  /* Change dissabled Button color  */
+  #addUser:disabled{
+      background-color: black;
+      opacity:0.2;   
+  }
+</style>
 <?php
 include '../head.php';
 include '../session.php';
@@ -39,24 +45,26 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Name:</label> <label for="" id="lblA_name" class="text-danger"></label>
-                <input type="text" name="name" id="A_name" class="form-control" autocomplete="off">
+                <input type="text" name="name" id="A_name" onInput="checkValidation()" class="form-control" autocomplete="off">
 
+                
                 
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
-                <input type="text" style="text-transform: lowercase;" name="username" id="Uname" class="form-control" autocomplete="off">
+                <span id="check-username"></span>
+                <input type="text" style="text-transform: lowercase;" name="username" onInput="checkValidation()" id="Uname" class="form-control" autocomplete="off">
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Password:</label>  
                 <label for="" id="lblpwd" class="text-danger"></label>
 
-                <input type="password" name="pwd" id="Upass" class="form-control">
+                <input type="password" name="pwd" id="Upass" onInput="checkValidation()" class="form-control">
               </div>
 
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
-                <input type="password" name="pwd2" id="Upass2" class="form-control">
+                <input type="password" name="pwd2" id="Upass2" onInput="checkValidation()" class="form-control">
                 
               </div>
 
@@ -66,15 +74,16 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   Show Password
                 </label>
               </div>
-
-
-
             </div>
             <!-- <button type="submit" name="addUser" id="AddVal" class="btn btn-primary btn-rounded">Save</button> -->
+            <div class="modal-footer">
 
-            <button type="submit" id="addUser" class="btn btn-primary btn-rounded">Save</button>
+            <button type="submit" id="addUser" class="btn btn-primary btn-rounded" disabled>Save</button>
 
             <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+
+            </div>
+            
           </div>
           <!-- /.card-body -->
 
