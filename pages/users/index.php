@@ -297,7 +297,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           ?>
 
                             <td><b><?php echo $number; ?></b></td>
-                            <td style="text-transform: capitalize;"><?php echo htmlspecialchars($row['name']); ?></td>
+                            <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo '********'; ?></td>
                             <!-- <td><?php echo $row['username']; ?></td> -->
                             <td><?php echo '********'; ?></td>
