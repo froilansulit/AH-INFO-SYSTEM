@@ -55,14 +55,14 @@ $result = mysqli_query($conn, $sql); // query to get the data
                 <span id="check-username"></span>
                 <input type="text" style="text-transform: lowercase;" name="username" onInput="checkValidation()" id="Uname" class="form-control" autocomplete="off">
               </div>
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-6">
                 <label for="dob">Password:</label>  
                 <label for="" id="lblpwd" class="text-danger"></label>
 
                 <input type="password" name="pwd" id="Upass" onInput="checkValidation()" class="form-control">
               </div>
 
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" onInput="checkValidation()" class="form-control">
                 
@@ -70,11 +70,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
               
 
-              <div class="form-group col-md-2">
-                <label for="">What is: </label>  
-                <label for="" id="security_question" class="text-dark font-weight-bold"><span id="num1">5</span> + <span id="num2">1</span></label>
-                <input type="text" name="answer_sq" id="answer_sq" onInput="checkValidation()" class="form-control" required>
-              </div>
+              
 
               <div class="form-check ml-3 mb-4">
                 <label class="form-check-label">
