@@ -12,7 +12,7 @@ $Format = 'Y-m-d';
 
 // this for past setting 
 
-$PD = 0;
+$PD = 14;
 $PM = 0;
 $PY = 0;
 
@@ -106,11 +106,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Rent</label>
-                        <input type="date" name="UdateofRent" class="form-control" value="<?php echo $DOR1_row ?>" required>
+                        <input type="date" name="UdateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>"class="form-control" value="<?php echo $DOR1_row ?>" required>
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Return</label>
-                        <input type="date" name="UdateofReturn" class="form-control" value="<?php echo $DOR2_row ?>" required>
+                        <input type="date" name="UdateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR2_row ?>" required>
                       </div>
                       <div class="form-group mb-3">
                         <button type="submit" name="update_rent" class="btn btn-primary">Save Data</button>
