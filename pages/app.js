@@ -36,7 +36,7 @@ $(document).on("click", "#showPassUser", function () {
 
 // * scripting for users page start here !
 
-function checkValidation() {
+function checkValidationUsers() {
   var A_name = $("#A_name").val();
   var Uname = $("#Uname").val();
   var Upass = $("#Upass").val();
@@ -48,8 +48,6 @@ function checkValidation() {
   $("#lblpwd2").html("");
   $("#check-username").html("");
 
-
-
   $.ajax({
     url: "check_availability.php",
     data: "username=" + $("#Uname").val(),
@@ -59,7 +57,7 @@ function checkValidation() {
     },
     error: function () {},
   });
-  
+
   // if (A_name != "") {
   //   $("#addUser").prop("disabled", true);
   //   $("#lblA_name").html(A_name);
@@ -122,8 +120,6 @@ function checkValidation() {
     $("#addUser").prop("disabled", false);
   }
 }
-
-
 
 $(document).ready(function () {
   $(document).on("click", "#addUser", function () {
@@ -385,6 +381,27 @@ $(document).ready(function () {
 
 // * scripting in financial records start here !
 
+function checkValidationFinancial() {
+  var FRI_amount = $(".FRI_amount").val();
+  var FRO_amount = $(".FRO_amount").val();
+    
+
+  
+  var currency1 = parseFloat(FRI_amount);
+  var currency2 = parseFloat(FRO_amount);
+
+  $("#lblFRI_currency").html("");
+  
+  if(FRI_amount != ""){
+    $("#lblFRI_currency").html("₱ " + currency1.toLocaleString());
+  }
+  if(FRI_amount != ""){
+    $("#lblFRI_currency2").html("₱ " + currency1.toLocaleString());
+  }
+
+}
+
+
 // script for number only
 $(document).ready(function () {
   $("#txtNumeric").keydown(function (e) {
@@ -507,6 +524,7 @@ $(document).ready(function () {
 
     $("#lblFRO_name").html("");
     $("#lblFRO_OR").html("");
+    
     $("#lblFRO_amount").html("");
 
     if (FRO_name == "") {
@@ -710,6 +728,8 @@ function ViewData(viewID) {
 // $(document).on('click','#updateDetails', function() {
 
 // })
+
+
 
 function DeleteRent(deleteID) {
   Swal.fire({

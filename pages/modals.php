@@ -37,9 +37,16 @@
                         <div class="form-group col-md-12">
                             <label>Amount:</label>
                             <label for="" id="lblFRI_amount" class="text-danger"></label>
-                            <input type="number" class="form-control FRI_amount" id="txtNumeric" placeholder="P 0.00" autocomplete="off">
-                            <!-- <input class="form-control FRI_amount" type="text" name="currency-field" id="currency-field" pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" value="" data-type="currency" placeholder="P 0.00" autocomplete="off"> -->
+                            <input type="number" class="form-control FRI_amount" id="txtNumeric" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
+
+                            <br>
+                            <label for="" class="text-dark font-weight-bold">Currency Format: </label>
+                            <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
+                            
+                            
+                            <!-- <input class="form-control lblFRI_currency" type="text" name="currency-field" id="currency-field" pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" data-type="currency" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()"> -->
                         </div>
+                        
 
 
 
@@ -143,7 +150,10 @@
                             <label for="" id="lblFRO_amount" class="text-danger"></label>
 
                             <input type="number" class="form-control FRO_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off">
-                            <!-- <input class="form-control FRI_amount" type="text" name="currency-field" id="currency-field" pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" value="" data-type="currency" placeholder="P 0.00" autocomplete="off"> -->
+                            
+                            <br>
+                            <label for="" class="text-dark font-weight-bold">Currency Format: </label>
+                            <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
                         </div>
 
 
