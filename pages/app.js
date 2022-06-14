@@ -45,11 +45,13 @@ function checkValidation() {
  
 
   $("#lblA_name").html("");
+  // $("#lblA_name").html(A_name);
   $("#lblUsername").html("");
   $("#lblpwd").html("");
   $("#lblpwd2").html("");
   $("#check-username").html("");
-  
+
+
 
   $.ajax({
     url: "check_availability.php",
@@ -60,6 +62,10 @@ function checkValidation() {
     },
     error: function () {},
   });
+  if (A_name != "") {
+    $("#addUser").prop("disabled", true);
+    $("#lblA_name").html("HELLO");
+  }
 
   if (A_name == "") {
     $("#addUser").prop("disabled", true);
@@ -104,7 +110,7 @@ function checkValidation() {
     $("#lblpwd2").html("* must be at least 6 characters");
   } else if (Uname.length < 4) {
     $("#addUser").prop("disabled", true);
-    $("#lblUsername").html("* must be at least 6 characters");
+    $("#lblUsername").html("* must be at least 4 characters");
   } else if (Upass != Upass2) {
     $("#addUser").prop("disabled", true);
     $("#lblpwd2").html("* Confirm Password is not match ");
@@ -151,7 +157,7 @@ $(document).ready(function () {
 
     if (Uname.length < 4) {
       $("#addUser").prop("disabled", true);
-      $("#lblUsername").html("* must be at least 6 characters");
+      $("#lblUsername").html("* must be at least 4 characters");
     }
 
     // second validation
