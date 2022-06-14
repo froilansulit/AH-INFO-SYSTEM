@@ -393,6 +393,7 @@ function checkValidationFinancial() {
 
   $("#lblFRI_currency").html("");
   $("#lblFRI_currency2").html("");
+  $("#lblFRI_currency3").html("");
   
   if(FRI_amount != ""){
     $("#lblFRI_currency").html("₱ " + currency1.toLocaleString());
@@ -703,8 +704,6 @@ function ViewData(viewID) {
       var userID = JSON.parse(data);
       // var vamount = $("#viewfr_Amount");
       var currency = parseFloat(userID.amount);
-
-     
 
       $("#viewfr_Name").html(userID.cname);
       $("#viewfr_date").html(userID.date_set);
