@@ -42,10 +42,7 @@ function checkValidation() {
   var Upass = $("#Upass").val();
   var Upass2 = $("#Upass2").val();
   
- 
-
   $("#lblA_name").html("");
-  // $("#lblA_name").html(A_name);
   $("#lblUsername").html("");
   $("#lblpwd").html("");
   $("#lblpwd2").html("");
@@ -62,10 +59,11 @@ function checkValidation() {
     },
     error: function () {},
   });
-  if (A_name != "") {
-    $("#addUser").prop("disabled", true);
-    $("#lblA_name").html("HELLO");
-  }
+  
+  // if (A_name != "") {
+  //   $("#addUser").prop("disabled", true);
+  //   $("#lblA_name").html(A_name);
+  // }
 
   if (A_name == "") {
     $("#addUser").prop("disabled", true);
