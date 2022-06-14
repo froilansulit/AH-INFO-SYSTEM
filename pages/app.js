@@ -391,12 +391,13 @@ function checkValidationFinancial() {
   var currency2 = parseFloat(FRO_amount);
 
   $("#lblFRI_currency").html("");
+  $("#lblFRI_currency2").html("");
   
   if(FRI_amount != ""){
     $("#lblFRI_currency").html("₱ " + currency1.toLocaleString());
   }
-  if(FRI_amount != ""){
-    $("#lblFRI_currency2").html("₱ " + currency1.toLocaleString());
+  if(FRO_amount != ""){
+    $("#lblFRI_currency2").html("₱ " + currency2.toLocaleString());
   }
 
 }

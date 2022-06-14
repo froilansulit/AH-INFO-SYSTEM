@@ -149,11 +149,11 @@
                             <label>Amount:</label>
                             <label for="" id="lblFRO_amount" class="text-danger"></label>
 
-                            <input type="number" class="form-control FRO_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off">
+                            <input type="number" class="form-control FRO_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
                             
                             <br>
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
-                            <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
+                            <label for="" id="lblFRI_currency2" class="text-muted font-weight-bold"></label>
                         </div>
 
 
