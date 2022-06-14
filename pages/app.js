@@ -102,7 +102,7 @@ function checkValidation() {
   } else if (Upass2.length < 6) {
     $("#addUser").prop("disabled", true);
     $("#lblpwd2").html("* must be at least 6 characters");
-  } else if (Uname.length < 6) {
+  } else if (Uname.length < 4) {
     $("#addUser").prop("disabled", true);
     $("#lblUsername").html("* must be at least 6 characters");
   } else if (Upass != Upass2) {
@@ -149,7 +149,7 @@ $(document).ready(function () {
       $("#lblpwd2").html("* Please fill out this field ");
     }
 
-    if (Uname.length < 6) {
+    if (Uname.length < 4) {
       $("#addUser").prop("disabled", true);
       $("#lblUsername").html("* must be at least 6 characters");
     }
