@@ -150,7 +150,7 @@
                             <label for="" id="lblFRO_amount" class="text-danger"></label>
 
                             <input type="number" class="form-control FRO_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
-                            
+                            onInput="checkValidationFinancial()"
                             <br>
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
                             <label for="" id="lblFRI_currency2" class="text-muted font-weight-bold"></label>
@@ -249,9 +249,13 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label>Amount:</label>
-                            <input type="number" class="form-control U_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off">
+                            <input type="number" class="form-control U_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
 
                             <label for="" id="lblU_amount" class="text-danger"></label>
+
+                            <br>
+                            <label for="" class="text-dark font-weight-bold">Currency Format: </label>
+                            <label for="" id="lblFRI_currency3" class="text-muted font-weight-bold"></label>
                         </div>
             
 
@@ -317,9 +321,10 @@
                         
                         <div class="form-group col-md-12">
                             <label>Amount:</label>
-                            <input class="form-control FRI_amount" type="text"  pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" data-type="currency" id="viewfr_Amount" readonly>
-        
-                            <label for="" class="text-danger">Note: Click the text box to view in currency format</label>
+                            <!-- <input class="form-control FRI_amount" type="text"  pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" data-type="currency" id="viewfr_Amount" readonly> -->
+                            
+                            <h4 class="font-weight-bold" id="viewfr_Amount"></h4>
+                            
                             
                         </div>
 

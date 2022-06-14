@@ -384,11 +384,12 @@ $(document).ready(function () {
 function checkValidationFinancial() {
   var FRI_amount = $(".FRI_amount").val();
   var FRO_amount = $(".FRO_amount").val();
-    
+  var U_amount = $(".U_amount").val();
 
-  
+    
   var currency1 = parseFloat(FRI_amount);
   var currency2 = parseFloat(FRO_amount);
+  var currency3 = parseFloat(U_amount);
 
   $("#lblFRI_currency").html("");
   $("#lblFRI_currency2").html("");
@@ -399,7 +400,9 @@ function checkValidationFinancial() {
   if(FRO_amount != ""){
     $("#lblFRI_currency2").html("₱ " + currency2.toLocaleString());
   }
-
+  if(U_amount != ""){
+    $("#lblFRI_currency3").html("₱ " + currency3.toLocaleString());
+  }
 }
 
 
@@ -698,13 +701,16 @@ function ViewData(viewID) {
     },
     function (data, status) {
       var userID = JSON.parse(data);
-      var vamount = $("#viewfr_Amount");
+      // var vamount = $("#viewfr_Amount");
+      var currency = parseFloat(userID.amount);
+
+     
 
       $("#viewfr_Name").html(userID.cname);
       $("#viewfr_date").html(userID.date_set);
       $("#viewfr_purpose").html(userID.purpose);
       $("#viewfr_OR").html(userID.or_number);
-      $("#viewfr_Amount").val(userID.amount);
+      $("#viewfr_Amount").html("P " + currency.toLocaleString());
       // $('#U_month').val(userID.month_date);
       $("#viewfr_encoded").html(userID.encoded_by);
     }
