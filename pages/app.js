@@ -234,7 +234,7 @@ function DeleteUser(deleteID) {
   });
 }
 
-// getting users data in modal
+// getting users data in to view in modal
 function ViewUser(viewID) {
   // alert(viewID);
 
@@ -247,7 +247,6 @@ function ViewUser(viewID) {
     },
     function (data, status) {
       var userID = JSON.parse(data);
-
       $("#view_Name").html(userID.name);
       $("#view_uname").html(userID.username);
       $("#view_pass").html(userID.password);
@@ -255,6 +254,7 @@ function ViewUser(viewID) {
   );
 }
 
+// get user for updating data
 function GetUser(viewID) {
   // alert(viewID);
 
@@ -276,6 +276,8 @@ function GetUser(viewID) {
   );
 }
 
+// for showing password textfields in users 
+
 $(document).on("click", "#UPshowPassUser", function () {
   var password = $("#UPass1");
   var password2 = $("#UPass2");
@@ -290,6 +292,8 @@ $(document).on("click", "#UPshowPassUser", function () {
     getPwdView = false;
   }
 });
+
+// for updating data of users
 
 $(document).ready(function () {
   $(document).on("click", "#UpdateUserData", function () {
