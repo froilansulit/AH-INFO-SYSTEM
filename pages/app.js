@@ -691,6 +691,8 @@ $(document).ready(function () {
   });
 });
 
+// for viewing data
+
 function ViewData(viewID) {
   // alert(viewID);
 
