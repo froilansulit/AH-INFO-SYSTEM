@@ -578,7 +578,7 @@ $(document).ready(function () {
   });
 });
 
-// for deleting record
+// for deleting financial record data
 
 function DeleteRecord(deleteID) {
   Swal.fire({
@@ -608,7 +608,7 @@ function DeleteRecord(deleteID) {
   });
 }
 
-// getting data from database
+// getting financial data from database
 
 function GetData(updateID) {
   // alert(updateID);
@@ -634,7 +634,7 @@ function GetData(updateID) {
   );
 }
 
-// for updating data 
+// for updating financial 
 
 $(document).ready(function () {
   $(document).on("click", "#Up_Financial", function () {
@@ -691,7 +691,7 @@ $(document).ready(function () {
   });
 });
 
-// for viewing data
+// for viewing financial
 
 function ViewData(viewID) {
   // alert(viewID);
@@ -738,7 +738,7 @@ function ViewData(viewID) {
 
 // })
 
-
+// for deleting rent
 
 function DeleteRent(deleteID) {
   Swal.fire({
@@ -770,6 +770,8 @@ function DeleteRent(deleteID) {
     }
   });
 }
+
+// for viewing rent
 
 function ViewRent(viewID) {
   // alert(viewID);
