@@ -178,7 +178,6 @@ $(document).ready(function () {
       $("#lblUsername").html("");
       $("#lblpwd").html("");
       $("#lblpwd2").html("");
-      
       $("#addUser").prop("disabled", false);
 
         var NewUname = Uname.toLowerCase();
@@ -191,9 +190,7 @@ $(document).ready(function () {
           Uname: NewUname,
           Upass: Upass,
         },
-
         success: function (data) {
-          
           $("#AddUserDetails").modal("hide");
           // location.reload();
 
@@ -203,11 +200,11 @@ $(document).ready(function () {
           }, 2000);
         },
       });
-
-      
     }
   });
 });
+
+//  deleting users from database
 
 function DeleteUser(deleteID) {
   Swal.fire({
@@ -237,6 +234,7 @@ function DeleteUser(deleteID) {
   });
 }
 
+// getting users data in modal
 function ViewUser(viewID) {
   // alert(viewID);
 
