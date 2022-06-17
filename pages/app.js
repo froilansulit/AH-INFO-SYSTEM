@@ -377,12 +377,13 @@ $(document).ready(function () {
 
 // * scripting in financial records start here !
 
+// for interactive showing currency inputs
+
 function checkValidationFinancial() {
   var FRI_amount = $(".FRI_amount").val();
   var FRO_amount = $(".FRO_amount").val();
   var U_amount = $(".U_amount").val();
 
-    
   var currency1 = parseFloat(FRI_amount);
   var currency2 = parseFloat(FRO_amount);
   var currency3 = parseFloat(U_amount);
@@ -403,7 +404,7 @@ function checkValidationFinancial() {
 }
 
 
-// script for number only
+//  for number only inputs
 $(document).ready(function () {
   $("#txtNumeric").keydown(function (e) {
     if (
@@ -422,7 +423,7 @@ $(document).ready(function () {
   });
 });
 
-// script for number only
+//  for number only inputs
 
 $(document).ready(function () {
   $("#txtNumeric2").keydown(function (e) {
@@ -633,7 +634,7 @@ function GetData(updateID) {
 
 $(document).ready(function () {
   $(document).on("click", "#Up_Financial", function () {
-    // alert("hello");
+    
     var U_name = $("#U_name").val();
     var U_date = $("#U_date").val();
     var U_purpose = $("#U_purpose").val();
