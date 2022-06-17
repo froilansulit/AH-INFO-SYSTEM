@@ -608,6 +608,8 @@ function DeleteRecord(deleteID) {
   });
 }
 
+// getting data from database
+
 function GetData(updateID) {
   // alert(updateID);
 
@@ -631,6 +633,8 @@ function GetData(updateID) {
     }
   );
 }
+
+// for updating data 
 
 $(document).ready(function () {
   $(document).on("click", "#Up_Financial", function () {
