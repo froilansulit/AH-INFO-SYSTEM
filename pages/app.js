@@ -121,19 +121,17 @@ function checkValidationUsers() {
 
 $(document).ready(function () {
   $(document).on("click", "#addUser", function () {
-    // alert("Hello");
+    
     var A_name = $("#A_name").val();
     var Uname = $("#Uname").val();
     var Upass = $("#Upass").val();
     var Upass2 = $("#Upass2").val();
     
-
     $("#lblA_name").html("");
     $("#lblUsername").html("");
     $("#lblpwd").html("");
     $("#lblpwd2").html("");
     
-
     if (A_name == "") {
       $("#lblA_name").html("* Please fill out this field ");
     }
@@ -183,8 +181,6 @@ $(document).ready(function () {
       
       $("#addUser").prop("disabled", false);
 
-      
-
         var NewUname = Uname.toLowerCase();
 
       $.ajax({
@@ -197,7 +193,7 @@ $(document).ready(function () {
         },
 
         success: function (data) {
-          //alert("Success");
+          
           $("#AddUserDetails").modal("hide");
           // location.reload();
 
