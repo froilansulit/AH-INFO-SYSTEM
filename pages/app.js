@@ -58,10 +58,6 @@ function checkValidationUsers() {
     error: function () {},
   });
 
-  // if (A_name != "") {
-  //   $("#addUser").prop("disabled", true);
-  //   $("#lblA_name").html(A_name);
-  // }
 
   if (A_name == "") {
     $("#addUser").prop("disabled", true);
@@ -120,6 +116,8 @@ function checkValidationUsers() {
     $("#addUser").prop("disabled", false);
   }
 }
+
+// this function is for adding new user to database
 
 $(document).ready(function () {
   $(document).on("click", "#addUser", function () {
