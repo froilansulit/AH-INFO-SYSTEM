@@ -77,12 +77,13 @@
               </li>';
               } ?>
               
-              <!-- <li class="nav-item">
-                  <a class="nav-link" href="../userlog/userlog.php">
-                      <i class="ti-user menu-icon"></i>
-                      <span class="menu-title">User Log</span>
+               <li class="nav-item">
+                  <a class="nav-link" href="../about/">
+                      <i class="ti-info menu-icon"></i>
+                      <span class="menu-title">About</span>
                   </a>
               </li>
+              <!--
               <li class="nav-item">
                   <a class="nav-link" href="../auditlog/auditlog.php">
                       <i class="ti-time menu-icon"></i>
