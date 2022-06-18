@@ -55,11 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
       $result = mysqli_query($conn, $sql);
-      
+
       if ($result) {
         $_SESSION['status'] = "Updated Successfully!";
-        
 
+        
       } else {
         die(mysqli_error($conn));
       }
@@ -68,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -106,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Rent</label>
-                        <input type="date" name="UdateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>"class="form-control" value="<?php echo $DOR1_row ?>" required>
+                        <input type="date" name="UdateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR1_row ?>" required>
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Return</label>
