@@ -127,7 +127,7 @@ if (isset($_POST["lgnLogin"])) {
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0" style="background-color:#bddcff;">
+      <div class="content-wrapper d-flex align-items-center auth px-0" style="background-image: url('../../images/main-bg.png');background-position: center;background-size: cover; background-attachment: fixed;">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <form method="post">
