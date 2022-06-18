@@ -33,11 +33,19 @@ $(document).on("click", "#showPassUser", function () {
     getPwdView = false;
   }
 });
+
+function lgnERROR(){
+  Swal.fire("Login Failed!", SSNAME, "error");
+  setTimeout(() => {
+    window.location.href = '../login/';
+  }, 2000);
+}
+
 function loadinglgn() {
   $('#lgnLogin').addClass('loading');
-  Swal.fire("Successfully Login!", $('#lgnLogin').html("<span class='icon'>&#8635;</span> Logging In...."), "success");
+  // Swal.fire("Successfully Login!", "<span class='icon'>&#8635;</span> Logging In....", "success");
   
-  // $('#lgnLogin').html("<span class='icon'>&#8635;</span> Logging In....");
+  $('#lgnLogin').html("<span class='icon'>&#8635;</span> Logging In....");
   // $("#lgnLogin").prop("disabled", true);
 
 }
