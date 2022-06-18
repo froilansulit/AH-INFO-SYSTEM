@@ -384,25 +384,109 @@ $(document).ready(function () {
 
 function checkValidationFinancial() {
   var FRI_amount = $(".FRI_amount").val();
-  var FRO_amount = $(".FRO_amount").val();
   var U_amount = $(".U_amount").val();
 
+  var FRI_name = $("#FRI_name").val();
+  var FRI_OR = $("#FRI_OR").val();
+
   var currency1 = parseFloat(FRI_amount);
-  var currency2 = parseFloat(FRO_amount);
   var currency3 = parseFloat(U_amount);
 
-  $("#lblFRI_currency").html("");
-  $("#lblFRI_currency2").html("");
+  $("#lblFRI_name").html("");
+  $("#lblFRI_OR").html("");
+  $("#lblFRI_amount").html("");
+
+  $("#lblFRI_currency").html(""); 
   $("#lblFRI_currency3").html("");
   
   if(FRI_amount != ""){
     $("#lblFRI_currency").html("₱ " + currency1.toLocaleString());
   }
+  if(U_amount != ""){
+    $("#lblFRI_currency3").html("₱ " + currency3.toLocaleString());
+  }
+
+  // display error no input
+  if (FRI_name == "") {
+    $("#lblFRI_name").html("* Please fill out this field ");
+    $("#addIncoming").prop("disabled", true);
+  }
+  if (FRI_OR == "") {
+    $("#lblFRI_OR").html("* Please fill out this field ");
+    $("#addIncoming").prop("disabled", true);
+  }
+  if (FRI_amount == "") {
+    $("#lblFRI_amount").html("* Please fill out this field ");
+    $("#addIncoming").prop("disabled", true);
+  }
+
+  // validation for befroe submit
+  
+  else if (FRI_name == "") {
+    $("#lblFRI_name").html("* Please fill out this field ");
+    $("#addIncoming").prop("disabled", true);
+  } else if (FRI_OR == "") {
+    $("#lblFRI_OR").html("* Please fill out this field ");
+    $("#addIncoming").prop("disabled", true);
+  } else if (FRI_amount == "") {
+    $("#lblFRI_amount").html("* Please fill out this field ");
+    $("#addIncoming").prop("disabled", true);
+  } else {
+    $("#lblFRI_name").html("");
+    $("#lblFRI_OR").html("");
+    $("#lblFRI_amount").html("");
+    $("#addIncoming").prop("disabled", false);
+  }
+}
+
+function checkValidationFinancial2() {
+  
+  var FRO_amount = $(".FRO_amount").val();
+  var FRO_name = $("#FRO_name").val();
+  var FRO_OR = $("#FRO_OR").val();
+  
+  var currency2 = parseFloat(FRO_amount);
+
+
+  $("#lblFRO_name").html("");
+  $("#lblFRO_OR").html("");  
+  $("#lblFRO_amount").html(""); 
+ 
+  $("#lblFRI_currency2").html("");
+  
+  
   if(FRO_amount != ""){
     $("#lblFRI_currency2").html("₱ " + currency2.toLocaleString());
   }
-  if(U_amount != ""){
-    $("#lblFRI_currency3").html("₱ " + currency3.toLocaleString());
+  
+
+  // display error no input
+  
+
+  if (FRO_name == "") {
+    $("#lblFRO_name").html("* Please fill out this field ");
+  }
+  if (FRO_OR == "") {
+    $("#lblFRO_OR").html("* Please fill out this field ");
+  }
+  if (FRO_amount == "") {
+    $("#lblFRO_amount").html("* Please fill out this field ");
+  } 
+
+  // validation for befroe submit
+  else if (FRO_name == "") {
+    $("#lblFRO_name").html("* Please fill out this field ");
+  } else if (FRO_OR == "") {
+    $("#lblFRO_OR").html("* Please fill out this field ");
+  } else if (FRO_amount == "") {
+    $("#lblFRO_amount").html("* Please fill out this field ");
+  }
+   else {
+    $("#lblFRO_name").html("");
+    $("#lblFRO_OR").html("");  
+    $("#lblFRO_amount").html(""); 
+    $("#addIncoming").prop("disabled", false);
+
   }
 }
 
@@ -526,6 +610,10 @@ $(document).ready(function () {
     var FRO_month = $("#FRO_month").val();
     var FRO_encoded = $("#FRO_encoded").val();
     var FRO_year = $("#FRO_year").val();
+
+    var FRO_name = $("#FRO_name").val();
+    var FRO_amount = $(".FRO_amount").val();
+    var FRO_OR = $("#FRO_OR").val();
 
     $("#lblFRO_name").html("");
     $("#lblFRO_OR").html("");

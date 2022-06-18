@@ -20,7 +20,7 @@
                         <div class="form-group col-md-12">
                             <label for="FRI_name">Remarks:</label> 
                             <label for="" id="lblFRI_name" class="text-danger"></label>
-                            <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off">
+                            <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial()">
                             
                         </div>
                         <!-- <div class="form-group col-md-4">
@@ -31,13 +31,15 @@
                         <div class="form-group col-md-12">
                             <label for="FRI_OR">OR Number:</label>
                             <label for="" id="lblFRI_OR" class="text-danger"></label>
-                            <input type="text" class="form-control" id="FRI_OR" placeholder="OR Number" autocomplete="off">
+                            <input type="text" class="form-control" id="FRI_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial()">
                            
                         </div>
                         <div class="form-group col-md-12">
                             <label>Amount:</label>
                             <label for="" id="lblFRI_amount" class="text-danger"></label>
                             <input type="number" class="form-control FRI_amount" id="txtNumeric" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
+                            
+                            
 
                             <br>
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
@@ -93,7 +95,7 @@
                     <!-- <button type="submit" class="btn btn-primary btn-rounded" name="submit">Save</button> -->
 
 
-                    <button type="button" class="btn btn-primary btn-rounded" id="addIncoming">Save</button>
+                    <button type="button" class="btn btn-primary btn-rounded" id="addIncoming" disabled>Save</button>
 
                     <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
                 </div>
@@ -132,7 +134,7 @@
                             <label for="FRO_name">Remarks:</label>
                             <label for="" id="lblFRO_name" class="text-danger"></label>
 
-                            <input type="text" class="form-control" id="FRO_name" placeholder="Remarks" autocomplete="off">
+                            <input type="text" class="form-control" id="FRO_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial2()">
                         </div>
                         <!-- <div class="form-group col-md-4">
                                 <label for="FRI_purpose">Purpose:</label>
@@ -143,13 +145,13 @@
                             <label for="FRO_OR">OR Number:</label>
                             <label for="" id="lblFRO_OR" class="text-danger"></label>
 
-                            <input type="text" class="form-control" id="FRO_OR" placeholder="OR Number" autocomplete="off">
+                            <input type="text" class="form-control" id="FRO_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial2()">
                         </div>
                         <div class="form-group col-md-12">
                             <label>Amount:</label>
                             <label for="" id="lblFRO_amount" class="text-danger"></label>
 
-                            <input type="number" class="form-control FRO_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
+                            <input type="number" class="form-control FRO_amount" id="txtNumeric2" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial2()">
                            
                             <br>
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
