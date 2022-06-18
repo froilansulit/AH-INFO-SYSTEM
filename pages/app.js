@@ -47,7 +47,7 @@ function checkValidationUsers() {
   $("#lblpwd").html("");
   $("#lblpwd2").html("");
   $("#check-username").html("");
-
+  
   $.ajax({
     url: "check_availability.php",
     data: "username=" + $("#Uname").val(),
@@ -70,17 +70,16 @@ function checkValidationUsers() {
   if (Upass == "") {
     $("#addUser").prop("disabled", true);
     $("#lblpwd").html("* Please fill out this field ");
+    $("#lblpassnote").html("Use atleast 6 characters");
+  
   }
   if (Upass2 == "") {
     $("#addUser").prop("disabled", true);
     $("#lblpwd2").html("* Please fill out this field ");
+    $("#lblpassnote2").html("Use atleast 6 characters");
   }
 
-  if (Upass2 == "") {
-    $("#addUser").prop("disabled", true);
-    $("#lblpwd2").html("* Please fill out this field ");
-  }
-
+  
   // second validation
   else if (A_name == "") {
     $("#addUser").prop("disabled", true);
@@ -112,6 +111,10 @@ function checkValidationUsers() {
     $("#lblpwd").html("");
     $("#lblpwd2").html("");
     $("#check-username").html("");
+    $("#lblpassnote").html("");
+    $("#lblpassnote2").html("");
+    
+    
 
     $("#addUser").prop("disabled", false);
   }

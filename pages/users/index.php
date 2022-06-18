@@ -46,25 +46,26 @@ $result = mysqli_query($conn, $sql); // query to get the data
               <div class="form-group col-md-6">
                 <label for="name">Name:</label> <label for="" id="lblA_name" class="text-danger"></label>
                 <input type="text" name="name" id="A_name" onInput="checkValidationUsers()" class="form-control" autocomplete="off">
-
-                
-                
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
                 <span id="check-username"></span>
                 <input type="text" style="text-transform: lowercase;" name="username" onInput="checkValidationUsers()" id="Uname" class="form-control" autocomplete="off">
+                
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Password:</label>  
                 <label for="" id="lblpwd" class="text-danger"></label>
 
                 <input type="password" name="pwd" id="Upass" onInput="checkValidationUsers()" class="form-control">
+
+                <label for="" id="lblpassnote" class="text-muted mt-2"></label>
               </div>
 
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" onInput="checkValidationUsers()" class="form-control">
+                <label for="" id="lblpassnote2" class="text-muted mt-2"></label>
                 
               </div>
 
@@ -211,7 +212,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
               
             <button type="button" class="btn btn-primary btn-rounded" id="UpdateUserData">Update</button>
 
-<button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
 
               <input type="hidden" id="hiddenUserData">
 
@@ -345,6 +346,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <?php include '../scripts.php'; ?>
   <?php include '../modals.php'; ?>
   <script src="../app.js"></script>
+
 
   
 </body>
