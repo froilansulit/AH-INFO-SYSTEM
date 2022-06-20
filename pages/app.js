@@ -35,11 +35,12 @@ $(document).on("click", "#showPassUser", function () {
 });
 
 function lgnERROR(){
-  Swal.fire("Login Failed!", SSNAME, "error");
-  setTimeout(() => {
-    window.location.href = '../login/';
-  }, 2000);
+  Swal.fire("Login Failed!", "Invalid Username/Password", "error");
+  
 }
+
+
+
 
 function loadinglgn() {
   $('#lgnLogin').addClass('loading');
