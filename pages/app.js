@@ -39,9 +39,6 @@ function lgnERROR(){
   
 }
 
-
-
-
 function loadinglgn() {
   $('#lgnLogin').addClass('loading');
   // Swal.fire("Successfully Login!", "<span class='icon'>&#8635;</span> Logging In....", "success");
@@ -50,55 +47,7 @@ function loadinglgn() {
   // $("#lgnLogin").prop("disabled", true);
 
 }
-// $(document).on("click", "#lgnLogin", function () {
-  
-  
-  
-  
-  
 
-//   // this.classList.add("loading");
-//   // this.innerHTML = "<span class='icon'>&#8635;</span> Logging In....";
-  
-// });
-// // $(document).on("click", "#lgnLogin", function () {
-  
-//   var username = $("#username").val();
-//   var password = $("#password").val();
-
-//   if (username == "") {
-//     $("#lgnUnameError").html("&times; Username is required ");
-//   }
-//   if (password == "") { 
-//     $("#lgnPassError").html("&times; Password is required ");
-//   }
-//   else if (username == "") {
-//     $("#lgnUnameError").html("&times; Username is required ");
-//   }
-//   else if (password == "") {
-//     $("#lgnPassError").html("&times; Password is required ");
-//   }
-  
-
-//     $.ajax({
-//       url: "login_access.php",
-//       type: "post",
-//       data: {
-//         username: username,
-//         password: password
-//       },
-//       success: function (data) {
-        
-//         alert('GOOOOOO !');
-        
-//       },
-//     });
-
-  
-
-  
-  
-// });
 
 // * scripting for users page start here !
 

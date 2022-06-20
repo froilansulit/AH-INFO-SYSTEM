@@ -38,14 +38,10 @@ if (isset($_POST["lgnLogin"])) {
         if ($username == $row['username']) {
           $_SESSION['acc_name'] = $row['name'];
           $_SESSION['user_type'] = $row['type'];
-        }
-
-        
+        } 
       }
-
-      echo "<script>
-       
-       loadinglgn();
+      echo "<script>  
+      loadinglgn();
       setTimeout(() => {
 
         window.location.href = '../dashboard/';
@@ -54,7 +50,6 @@ if (isset($_POST["lgnLogin"])) {
       </script>
     ";
       
-
       // header('location: ../dashboard/');
 
       //header('location: ../financial_record/');
@@ -63,12 +58,12 @@ if (isset($_POST["lgnLogin"])) {
 
     } else {
       // invalid
-      echo "<script>
-      
+      echo "<script>    
       lgnERROR();
-     
+      setTimeout(() => {
+        window.location.href = '../login/';
+      }, 2000);
       </script>";
-      
     }
   }
 }
@@ -219,13 +214,9 @@ if (isset($_POST["lgnLogin"])) {
         if ($username == $row['username']) {
           $_SESSION['acc_name'] = $row['name'];
           $_SESSION['user_type'] = $row['type'];
-        }
-
-        
+        } 
       }
-
-      echo "<script>
-      
+      echo "<script>  
       loadinglgn();
       setTimeout(() => {
 
@@ -235,7 +226,6 @@ if (isset($_POST["lgnLogin"])) {
       </script>
     ";
       
-
       // header('location: ../dashboard/');
 
       //header('location: ../financial_record/');
@@ -244,20 +234,15 @@ if (isset($_POST["lgnLogin"])) {
 
     } else {
       // invalid
-      echo "<script>
-      
+      echo "<script>    
       lgnERROR();
       setTimeout(() => {
-
         window.location.href = '../login/';
       }, 2000);
-     
       </script>";
-      
     }
   }
 }
-
   ?>
 </body>
 
