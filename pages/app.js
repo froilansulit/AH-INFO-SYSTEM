@@ -1,5 +1,4 @@
 // this script file is for custom js
-// alert("Hello");
 
 var getPwdView = false;
 
@@ -48,7 +47,6 @@ function loadinglgn() {
 
 }
 
-
 // * scripting for users page start here !
 
 function checkValidationUsers() {
@@ -93,7 +91,6 @@ function checkValidationUsers() {
     $("#lblpwd2").html("* Please fill out this field ");
     $("#lblpassnote2").html("Use atleast 6 characters");
   }
-
   
   // second validation
   else if (A_name == "") {
@@ -128,8 +125,6 @@ function checkValidationUsers() {
     $("#check-username").html("");
     $("#lblpassnote").html("");
     $("#lblpassnote2").html("");
-    
-    
 
     $("#addUser").prop("disabled", false);
   }
@@ -504,7 +499,6 @@ function checkValidationFinancial2() {
 
   }
 }
-
 
 //  for number only inputs
 $(document).ready(function () {
