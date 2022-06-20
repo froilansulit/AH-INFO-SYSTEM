@@ -1,9 +1,5 @@
 // this script file is for custom js
 
-function name(params) {
-  
-}
-
 var getPwdView = false;
 
 // script for showing the password in login

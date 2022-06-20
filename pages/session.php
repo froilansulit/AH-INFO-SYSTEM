@@ -12,6 +12,7 @@ if (!isset($_SESSION['user_type'])) {
     session_destroy();
     header('location: ../login/'); 
 }
+
 // if(isset($_POST['logout_btn'])) {
 
 //     session_destroy();
