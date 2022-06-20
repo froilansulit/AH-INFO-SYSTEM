@@ -49,6 +49,15 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#add-Outgoing">
                     <i class="ti-plus btn-icon-prepend"></i>Add Outgoing
                   </button>
+                  
+                  <select name="select">
+                    <?php
+                    for ($i = 2019; $i <= date('Y'); $i++) {
+                      echo "<option>$i</option>";
+                    }
+                    ?>
+                  </select>
+                  
                 </div>
                 <div>
 
@@ -74,7 +83,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <th>Amount</th>
                           <th>Encoded by</th>
                           <th>Operation</th>
-                          
+
                         </tr>
                       </thead>
                       <tbody class="text-center">
@@ -97,14 +106,14 @@ $result = mysqli_query($conn, $sql); // query to get the data
                                               } ?>"><?php echo $row['purpose']; ?></span></td>
                             <td><?php echo $row['or_number']; ?></td>
                             <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
-                            
+
                             <td><?php echo $row['encoded_by']; ?></td>
 
                             <td>
 
-                            <a href="#" data-toggle="tooltip" title="Edit">
-                              <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateFinancial" onclick="GetData(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                            </a>
+                              <a href="#" data-toggle="tooltip" title="Edit">
+                                <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateFinancial" onclick="GetData(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
+                              </a>
                               <a href="#" data-toggle="tooltip" title="Remove">
                                 <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                               </a>
@@ -112,7 +121,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                                 <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewFinancial" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                               </a>
                             </td>
-                            
+
 
                         </tr>
 
@@ -153,7 +162,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
 
- 
+
 </body>
 
 </html>

@@ -1,0 +1,15 @@
+<select name="select">
+                    <?php
+                    for ($i = 2001; $i <= date('Y'); $i++) {
+                      echo "<option>$i</option>";
+                    }
+                    ?>
+                  </select>
+                  <select name="month" id="month">
+                    <option value="">Select</option>
+                    <?php
+                    for ($i = 0; $i < 12;) {
+                      $date_str = date('M', strtotime("+ $i++ months"));
+                      echo "<option value=$i>" . $date_str . "</option>";
+                    } ?>
+                  </select>

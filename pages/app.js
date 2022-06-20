@@ -61,6 +61,7 @@ function checkValidationUsers() {
   $("#lblpwd2").html("");
   $("#check-username").html("");
   
+  
   $.ajax({
     url: "check_availability.php",
     data: "username=" + $("#Uname").val(),

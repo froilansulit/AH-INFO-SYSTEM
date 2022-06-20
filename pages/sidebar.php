@@ -83,6 +83,20 @@
                       <span class="menu-title">About</span>
                   </a>
               </li>
+
+
+
+              <li class="nav-item fixed-bottom col-md-2 pb-3 pr-4">
+              <a class="nav-link bg-muted btn btn-default text-dark mb-3" >
+                     
+                     <span class="menu-title text-capitalize"><?php echo $acc_name; ?></span><span class="badge badge-pill badge-dark text-capitalize"><?php echo $user_type; ?></span>
+                 </a>
+
+                  <a class="nav-link btn btn-danger text-dark bg-danger border border-none " href="../logout.php">
+                     
+                      <span class="menu-title">LOGOUT</span>
+                  </a>
+              </li>
               <!--
               <li class="nav-item">
                   <a class="nav-link" href="../auditlog/auditlog.php">
@@ -92,4 +106,6 @@
               </li> -->
           </ul>
       </nav>
+
+
       <!-- partial -->
