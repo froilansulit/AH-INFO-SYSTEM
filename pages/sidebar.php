@@ -86,15 +86,16 @@
 
 
 
-              <li class="nav-item fixed-bottom col-md-2 pb-3 pr-4">
-              <a class="nav-link bg-muted btn btn-default text-dark mb-3" >
+              <li class="nav-item fixed-bottom col-md-2 pb-3 pr-1">
+
+                <a class="nav-link bg-muted  text-dark mb-3" >
                      
-                     <span class="menu-title text-capitalize"><?php echo $acc_name; ?></span><span class="badge badge-pill badge-dark text-capitalize"><?php echo $user_type; ?></span>
+                     <span class="menu-title text-capitalize font-weight-bold"><?php echo $acc_name; ?></span><span class="badge badge-pill badge-dark text-capitalize float-right ml-1"><?php echo $user_type; ?></span>
                  </a>
 
-                  <a class="nav-link btn btn-danger text-dark bg-danger border border-none " href="../logout.php">
-                     
-                      <span class="menu-title">LOGOUT</span>
+                  <a class="nav-link btn btn-danger text-dark bg-danger rounded-pill border border-none " href="../logout.php">
+                      <i class="ti-power-off text-dark"></i>
+                      <span class="menu-title mx-auto">LOGOUT</span>
                   </a>
               </li>
               <!--
