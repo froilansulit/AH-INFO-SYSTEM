@@ -42,6 +42,22 @@ if (isset($_POST['save_faculty'])) {
             die(mysqli_error($conn));
         }
     }
-} else {
-    # code...
+}
+
+
+if (isset($_POST['update_faculty'])) {
+    $id = $_POST['edit_id'];
+    $name = $_POST['edit_name'];
+    $designation = $_POST['edit_faculty_designation'];
+    $description = $_POST['edit_faculty_description'];
+    $image = $_FILES["edit_faculty_image"]['name'];
+
+    $sql = "update faculty set name='$name',designation='$designation', descript='$description' , images='$image' where id='$id'";
+      $result = mysqli_query($conn, $sql);
+
+      if ($result) {
+        $_SESSION['status'] = "Updated Successfully!";
+      } else {
+        die(mysqli_error($conn));
+      }
 }

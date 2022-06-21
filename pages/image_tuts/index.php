@@ -6,9 +6,6 @@ include '../head.php';
 include '../session.php';
 include '../connect.php';
 
-
-
-
 ?>
 
 
@@ -188,15 +185,28 @@ include '../connect.php';
                           <td><?php echo $row['designation']; ?></td>
                           <td><?php echo $row['descript']; ?></td>
                           <td> <?php echo '<img src="upload/'.$row['images'].'" alt="image"> ' ?></td>
+                          <!-- <form action="" method="post"></form> -->
+                          <form action="faculty_edit.php" method="post">
                           <td>
-                            <a href="#" data-toggle="tooltip" title="Edit">
+                            <!-- <a href="#" data-toggle="tooltip" title="Edit">
                               <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                             </a>
 
                             <input type="hidden" name="rentID" value="<?php echo $id; ?>">
-                            </form>
+                            </form> -->
 
+                             
+
+                             <a href="#" data-toggle="tooltip" title="Edit">
+                              <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
+                              <button type="submit" name="edit_data_btn" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                             </a>
+
+                             </form>
+
+                            <!-- <button class="btn btn-primary">Submit</button> -->
+
+                            
                             <a href="#" data-toggle="tooltip" title="Remove">
                               <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                             </a>
