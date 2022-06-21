@@ -895,3 +895,31 @@ function ViewRent(viewID) {
 }
 
 // ! scripting in tugboat renting end here !
+
+function DeleteFaculty(deleteID) {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      $.ajax({
+        url: "code.php",
+        type: "post",
+        data: {
+          deleteSend: deleteID,
+        },
+        success: function (data, status) {
+          Swal.fire("Deleted!", "Faculty has been deleted.", "success");
+          setTimeout(() => {
+            window.location.reload(true);
+          }, 2000);
+        },
+      });
+    }
+  });
+}

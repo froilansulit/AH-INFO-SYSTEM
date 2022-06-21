@@ -208,7 +208,7 @@ include '../connect.php';
 
                             
                             <a href="#" data-toggle="tooltip" title="Remove">
-                              <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                              <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteFaculty(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                             </a>
                             <a href="#" data-toggle="tooltip" title="View">
                               <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewRent" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
@@ -251,6 +251,7 @@ include '../connect.php';
 
   <?php include '../scripts.php'; ?>
   <?php include '../modals.php'; ?>
+  <script src="../app.js"></script>
 
   <script>
 

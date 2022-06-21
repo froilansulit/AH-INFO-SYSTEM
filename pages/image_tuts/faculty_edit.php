@@ -74,7 +74,7 @@ include '../connect.php';
 
                                                 <div class="form-group col-md-12">
                                                     <label for="name">Upload Image:</label>
-                                                    <input type="file" name="edit_faculty_image" id="edit_faculty_image" class="form-control" value="<?php echo $update_image; ?>" required>
+                                                    <input type="file" name="faculty_image" id="faculty_image" class="form-control" value="<?php echo $update_image; ?>" >
                                                 </div>
                                             </div>
                                        
