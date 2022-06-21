@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name)) {
       $name_error = "Name is Required ! <br>";
     } else {
-
+      
       $escape_name = mysqli_real_escape_string($conn, $name);
 
       $sql = "insert into tugboat_record (name,dateofRent,dateofReturn) values ('$escape_name','$dateofRent','$dateofReturn')";

@@ -29,39 +29,36 @@ include '../connect.php';
           </button>
         </div>
         <div class="modal-body">
-          <!-- <form method="post"> -->
-          <form action="" method="post">
+          <form action="code.php" method="post" enctype="multipart/form-data">
             <div class="card-body">
               <div class="row">
                 <div class="form-group col-md-12">
                   <label>Name:</label>
-                  <input type="text" name="" class="form-control" autocomplete="off" required>  
+                  <input type="text" name="name" class="form-control" autocomplete="off" required>
                 </div>
-
                 <div class="form-group col-md-12">
                   <label>Designation:</label>
-                  <input type="text" name="" class="form-control" autocomplete="off" required>  
+                  <input type="text" name="faculty_designation" class="form-control" autocomplete="off" required>
                 </div>
                 <div class="form-group col-md-12">
-                  <label >Description:</label>
-                  <input type="text" name="" class="form-control" autocomplete="off" required>  
+                  <label>Description:</label>
+                  <input type="text" name="faculty_description" class="form-control" autocomplete="off" required>
                 </div>
 
                 <div class="form-group col-md-12">
                   <label for="name">Upload Image:</label>
-                  <input type="file" name="faculty_image" id="faculty_image" class="form-control" autocomplete="off" required>  
+                  <input type="file" name="faculty_image" id="faculty_image" class="form-control" required>
                 </div>
               </div>
 
               <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
-              <button type="submit" name="" class="btn btn-primary btn-rounded">Save</button>
+                <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+                <button type="submit" name="save_faculty" class="btn btn-primary btn-rounded">Save</button>
               </div>
-              
+
             </div>
             <!-- /.card-body -->
           </form>
-          <!-- </form> -->
         </div>
       </div>
       <!-- /.modal-content -->
@@ -156,6 +153,10 @@ include '../connect.php';
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Image Upload</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+
+                  
+
+                    
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
                         <tr>
@@ -169,19 +170,30 @@ include '../connect.php';
                         </tr>
                       </thead>
                       <tbody class="text-center">
-                        <tr>
-                        
-                            <td><b>1</b></td>
-                            <td>Froilan Sulit</td>
-                            <td>BSCS</td>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>IMAGE</td>
-                              <td>
-                                <a href="#" data-toggle="tooltip" title="Edit">
-                                  <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                                </a>
+                      <?php
 
-                                <input type="hidden" name="rentID" value="<?php echo $id; ?>">
+                      $sql = "select * from faculty"; // select all the data in DB
+
+                      $result = mysqli_query($conn, $sql); // query to get the data
+
+                      $number = 1;
+                      while ($row = mysqli_fetch_assoc($result)) {
+
+                      $id = $row['id'];
+                      
+                      ?>
+                        <tr>
+                          <td><b><?php echo $number; ?></b></td>
+                          <td><?php echo $row['name']; ?></td>
+                          <td><?php echo $row['designation']; ?></td>
+                          <td><?php echo $row['descript']; ?></td>
+                          <td> <?php echo '<img src="upload/'.$row['images'].'" alt="image"> ' ?></td>
+                          <td>
+                            <a href="#" data-toggle="tooltip" title="Edit">
+                              <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
+                            </a>
+
+                            <input type="hidden" name="rentID" value="<?php echo $id; ?>">
                             </form>
 
                             </a>
@@ -191,23 +203,27 @@ include '../connect.php';
                             <a href="#" data-toggle="tooltip" title="View">
                               <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewRent" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                             </a>
-                            </td>
+                          </td>
                         </tr>
+                        <?php
+                            $number++;
+                          }
+                      ?>
                       </tbody>
                     </table>
                   </div>
-                  
+
                 </div>
-                
+
               </div>
-              
+
             </div>
-            
+
           </div>
-         
+
         </div>
-       
-       
+
+
         <!-- content-wrapper ends -->
         <?php include '../footer.php'; ?>
         <!-- partial:partials/_footer.html -->
@@ -219,7 +235,7 @@ include '../connect.php';
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  
+
 
 
 
@@ -229,7 +245,7 @@ include '../connect.php';
   <script>
 
   </script>
-  
+
 </body>
 
 </html>
