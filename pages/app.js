@@ -43,7 +43,6 @@ function loadinglgn() {
   // Swal.fire("Successfully Login!", "<span class='icon'>&#8635;</span> Logging In....", "success");
   
   $('#lgnLogin').html("<span class='icon'>&#8635;</span> Logging In....");
-  // $("#lgnLogin").prop("disabled", true);
 
 }
 

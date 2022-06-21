@@ -18,49 +18,46 @@ include '../connect.php';
   <!-- start of add rent modal -->
 
 
-  <div class="modal fade" id="AddRentBoat">
+  <div class="modal fade" id="AddImageTuts">
     <!-- <div class="modal-dialog modal-lg"> -->
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Add Rent</h4>
+          <h4 class="modal-title">Add New</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <!-- <form method="post"> -->
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
+          <form action="" method="post">
             <div class="card-body">
               <div class="row">
-
                 <div class="form-group col-md-12">
-                  <label for="name">Name:</label>
-                  <input type="text" name="name" class="form-control" autocomplete="off" required>
-
-                  <?php if (isset($name_error) && !empty($name_error)) {
-                    echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
-                  } ?>
+                  <label>Name:</label>
+                  <input type="text" name="" class="form-control" autocomplete="off" required>  
                 </div>
 
                 <div class="form-group col-md-12">
-                  <label for="dob">Date of Rent</label>
-                  <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                  <label>Designation:</label>
+                  <input type="text" name="" class="form-control" autocomplete="off" required>  
                 </div>
                 <div class="form-group col-md-12">
-                  <label for="dob">Date of Return</label>
-                  <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                  <label >Description:</label>
+                  <input type="text" name="" class="form-control" autocomplete="off" required>  
                 </div>
 
-
+                <div class="form-group col-md-12">
+                  <label for="name">Upload Image:</label>
+                  <input type="file" name="faculty_image" id="faculty_image" class="form-control" autocomplete="off" required>  
+                </div>
               </div>
 
-
-
-              <button type="submit" name="save_date" class="btn btn-primary btn-rounded">Save</button>
-
+              <div class="modal-footer">
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+              <button type="submit" name="" class="btn btn-primary btn-rounded">Save</button>
+              </div>
+              
             </div>
             <!-- /.card-body -->
           </form>
@@ -143,8 +140,8 @@ include '../connect.php';
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddRentBoat">
-                    <i class="ti-plus btn-icon-prepend"></i>Upload Image
+                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddImageTuts">
+                    <i class="ti-plus btn-icon-prepend"></i>Add New
                   </button>
                   <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
                 </div>
@@ -155,7 +152,7 @@ include '../connect.php';
           </div>
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
+              <div class="card shadow">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Image Upload</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
@@ -174,10 +171,11 @@ include '../connect.php';
                       <tbody class="text-center">
                         <tr>
                         
-                            <td><b></b></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><b>1</b></td>
+                            <td>Froilan Sulit</td>
+                            <td>BSCS</td>
+                            <td>Lorem ipsum dolor sit amet.</td>
+                            <td>IMAGE</td>
                               <td>
                                 <a href="#" data-toggle="tooltip" title="Edit">
                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>

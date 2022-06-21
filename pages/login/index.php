@@ -218,6 +218,8 @@ if (isset($_POST["lgnLogin"])) {
       }
       echo "<script>  
       loadinglgn();
+       $('#lgnLogin').prop('disabled', true);
+
       setTimeout(() => {
 
         window.location.href = '../dashboard/';
