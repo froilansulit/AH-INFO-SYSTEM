@@ -8,6 +8,16 @@ if (isset($_POST['save_faculty'])) {
     $description = $_POST['faculty_description'];
     $image = $_FILES["faculty_image"]['name'];
 
+    $validate_img_extension =
+        $_FILES["faculty_image"]['type'] == "image/jpg" ||
+        $_FILES["faculty_image"]['type'] == "image/png" ||
+        $_FILES["faculty_image"]['type'] == "image/jpeg";
+
+    if ($validate_img_extension) {
+        # code...
+    
+
+
     if (file_exists("upload/" . $_FILES["faculty_image"]['name'])) {
 
         //$store =  $_FILES["faculty_image"]['name'];
@@ -42,6 +52,15 @@ if (isset($_POST['save_faculty'])) {
             die(mysqli_error($conn));
         }
     }
+    } 
+    else {
+        echo "
+        <script>
+        alert('Only PNG, JPG and JPEG Images are allowed !');
+        window.location.href = '../image_tuts/';
+        </script>
+        ";
+    }
 }
 
 
@@ -52,22 +71,46 @@ if (isset($_POST['update_faculty'])) {
     $description = $_POST['edit_faculty_description'];
     $image = $_FILES["faculty_image"]['name'];
 
-    $facul_query = "select * from faculty where id='$id'";
-    $facul_query_run = mysqli_query($conn, $facul_query);
+    $validate_img_extension =
+        $_FILES["faculty_image"]['type'] == "image/jpg" ||
+        $_FILES["faculty_image"]['type'] == "image/png" ||
+        $_FILES["faculty_image"]['type'] == "image/jpeg";
 
-    while ($row = mysqli_fetch_assoc($facul_query_run)) {
+    if ($validate_img_extension) {
+        # code...
+    
+    if (file_exists("upload/" . $_FILES["faculty_image"]['name'])) {
 
-        if ($image == NULL) {
-            // update with existing image
-            $image_data = $row['images'];
-        } else {
-            # update with new image and delete the old
-            if ($img_path = "upload/" . $row['images']) {
-                unlink($img_path);
-                $image_data = $_FILES["faculty_image"]['name'];
+        //$store =  $_FILES["faculty_image"]['name'];
+        // $name_error = "Name is Required ! <br>";
+        // $_SESSION['status'] = "Image already exist. '.$store.'";
+        // header('location: ../image_tuts/');
+
+        echo "
+            <script>
+           alert('Image already exist !');
+            window.location.href = '../image_tuts/';
+            </script>
+            ";
+    } else {
+
+        $facul_query = "select * from faculty where id='$id'";
+        $facul_query_run = mysqli_query($conn, $facul_query);
+    
+        while ($row = mysqli_fetch_assoc($facul_query_run)) {
+    
+            if ($image == NULL) {
+                // update with existing image
+                $image_data = $row['images'];
+            } else {
+                # update with new image and delete the old
+                if ($img_path = "upload/" . $row['images']) {
+                    unlink($img_path);
+                    $image_data = $_FILES["faculty_image"]['name'];
+                }
             }
         }
-    }
+    
 
     $sql = "update faculty set name='$name',designation='$designation', descript='$description' , images='$image_data' where id='$id'";
     $result = mysqli_query($conn, $sql);
@@ -106,6 +149,16 @@ if (isset($_POST['update_faculty'])) {
         die(mysqli_error($conn));
     }
 }
+} 
+else {
+    echo "
+    <script>
+    alert('Only PNG, JPG and JPEG Images are allowed !');
+    window.location.href = '../image_tuts/';
+    </script>
+    ";
+}
+}
 
 // for deleting
 
@@ -118,7 +171,7 @@ if (isset($_POST['deleteSend'])) {
     while ($row = mysqli_fetch_assoc($facul_query_run)) {
 
         echo $row['images'];
-        if ($img_path = "upload/" .$row['images']) {
+        if ($img_path = "upload/" . $row['images']) {
             $sql = "delete from faculty where id=$unique";
             $result = mysqli_query($conn, $sql);
 
