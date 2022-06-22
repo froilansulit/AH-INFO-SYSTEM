@@ -38,8 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dateofReturn = date('Y-m-d', strtotime($_POST['dateofReturn']));
 
     if (empty($name)) {
-      $name_error = "Name is Required ! <br>";
-    } else {
+      echo "<script>    
+      alert('Name is required !');
+      window.location.href = '../tugboat_renting/';
+      </script>";
+    } 
+    
+    else {
       
       $escape_name = mysqli_real_escape_string($conn, $name);
 
@@ -110,14 +115,10 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   <label for="name">Name:</label>
                   <input type="text" name="name" class="form-control" autocomplete="off" required>
 
-                  <?php if (isset($name_error) && !empty($name_error)) {
-                    echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
-                  } ?>
                 </div>
-
                 <div class="form-group col-md-6">
                   <label for="dob">Date of Rent</label>
-                  <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                  <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $CDT ?>" required>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="dob">Date of Return</label>

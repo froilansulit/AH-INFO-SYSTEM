@@ -1,8 +1,0 @@
-<?php 
-include '../connect.php';
-
-
-
-
-
-?>

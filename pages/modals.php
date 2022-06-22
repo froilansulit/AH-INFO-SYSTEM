@@ -259,7 +259,6 @@
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
                             <label for="" id="lblFRI_currency3" class="text-muted font-weight-bold"></label>
                         </div>
-            
 
                         <div class="form-group col-md-4">
 
@@ -273,9 +272,7 @@
 
                             <input type="hidden" class="form-control" id="U_encoded" placeholder="Encoded By" value="<?php echo $acc_name; ?>" disabled hidden>
                         </div>
-
                     </div>
-
                     <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button>
 
                     <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>

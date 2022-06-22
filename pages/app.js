@@ -36,8 +36,7 @@ $(document).on("click", "#showPassUser", function () {
 });
 
 function lgnERROR(){
-  Swal.fire("Login Failed!", "Invalid Username/Password", "error");
-  
+  Swal.fire("Login Failed!", "Invalid Username/Password", "error")
 }
 
 function loadinglgn() {

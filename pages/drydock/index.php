@@ -28,110 +28,184 @@ $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
 $CDT = date($Format);
 $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST['save_date'])) {
+  if (isset($_POST['save_drydock'])) {
 
-    $name = htmlspecialchars($_POST['name']);
-    //
-    $dateofRent = date('Y-m-d', strtotime($_POST['dateofRent']));
-    $dateofReturn = date('Y-m-d', strtotime($_POST['dateofReturn']));
+    
+    
+    // $image_id = uniqid();
+    $company_name = htmlspecialchars($_POST['company_name']);
+    $ship_name = htmlspecialchars($_POST['ship_name']);
+    $lot_number = htmlspecialchars($_POST['lot_number']);
+    $dryDDate = date('Y-m-d', strtotime($_POST['dryDDate']));
+    $Exp_Depar = date('Y-m-d', strtotime($_POST['Exp_Depar']));
+    $image = $_FILES["drydock_image"]['name'];
 
-    if (empty($name)) {
-      $name_error = "Name is Required ! <br>";
-    } else {
+    $validate_img_extension =
+        $_FILES["drydock_image"]['type'] == "image/jpg" ||
+        $_FILES["drydock_image"]['type'] == "image/png" ||
+        $_FILES["drydock_image"]['type'] == "image/jpeg";
+    
+    if($validate_img_extension){
+
+      if (empty($company_name)) {
       
-      $escape_name = mysqli_real_escape_string($conn, $name);
-
-      $sql = "insert into tugboat_record (name,dateofRent,dateofReturn) values ('$escape_name','$dateofRent','$dateofReturn')";
-      $result = mysqli_query($conn, $sql);
-
-      if ($result) {
-
-        $_SESSION['status'] = "Successfully Added!";
+        $_SESSION['error'] = "All fields are required !";
         echo "
-        <script>
-       
-        setTimeout (() => {
-          location.href = '../tugboat_renting/';
-        }, 3000);
-       
-        </script>
-        ";
-        // setTimeout ( () => {
-        //   location.href = '../tugboat_renting/';
-        // }, 3000);
-
-        // echo "
-        // <script>
-        // alert('Successfully Added!');
-        // location.href = '../tugboat_renting/';
-        // </script>
-        // ";
-      } else {
-        die(mysqli_error($conn));
+          <script>
+         
+          setTimeout (() => {
+            window.location.href = '../drydock/';
+          }, 3000);
+         
+          </script>
+          ";
+        
+      }
+      else if(file_exists("upload/" . $_FILES["drydock_image"]['name'])){
+        $_SESSION['error'] = "Image already exist !";
+        echo "
+          <script>
+          setTimeout (() => {
+            window.location.href = '../drydock/';
+          }, 3000);
+         
+          </script>
+          ";
+      }
+      else if(empty($ship_name)){
+        $_SESSION['error'] = "All fields are required !";
+        echo "
+          <script>
+         
+          setTimeout (() => {
+            window.location.href = '../drydock/';
+          }, 3000);
+         
+          </script>
+          ";
+      }
+      else if(empty($lot_number)){
+        $_SESSION['error'] = "All fields are required !";
+        echo "
+          <script>
+         
+          setTimeout (() => {
+            window.location.href = '../drydock/';
+          }, 3000);
+         
+          </script>
+          ";
+      } 
+      else {
+        
+        $escape_cname = mysqli_real_escape_string($conn, $company_name);
+        $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
+        $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
+ 
+        $sql = "insert into drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images) values ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image')";
+        $result = mysqli_query($conn, $sql);
+  
+        if ($result) {
+          move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
+          $_SESSION['status'] = "Successfully Added!";
+          echo "
+          <script>
+         
+          setTimeout (() => {
+            location.href = '../drydock/';
+          }, 3000);
+         
+          </script>
+          ";
+  
+          
+        } else {
+          die(mysqli_error($conn));
+        }
       }
     }
-  }
+    else {
+      $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
+        echo "
+          <script>
+         
+          setTimeout (() => {
+            window.location.href = '../drydock/';
+          }, 3000);
+         
+          </script>
+          ";
+    }
+    }
+    
+
+    
 }
 
 
-$sql = "select * from tugboat_record"; // select all the data in DB
+$sql = "select * from drydock_record"; // select all the data in DB
 
 $result = mysqli_query($conn, $sql); // query to get the data
 
 ?>
-
-
 
 <body>
 
   <!-- start of add rent modal -->
 
 
-  <div class="modal fade" id="AddRentBoat">
+  <div class="modal fade" id="AddDryDock">
     <!-- <div class="modal-dialog modal-lg"> -->
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Add Rent</h4>
+          <h4 class="modal-title">Add Dry Dock</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <!-- <form method="post"> -->
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
             <div class="card-body">
               <div class="row">
+                <div class="form-group col-md-12">
+                  <label for="name">Company Name:</label>
+                  <input type="text" name="company_name" class="form-control" autocomplete="off" required>
+                </div>
+
+                
+                <div class="form-group col-md-12">
+                  <label for="name">Ship Name:</label>
+                  <input type="text" name="ship_name" class="form-control" autocomplete="off" required>
+                </div>
 
                 <div class="form-group col-md-12">
-                  <label for="name">Name:</label>
-                  <input type="text" name="name" class="form-control" autocomplete="off" required>
-
-                  <?php if (isset($name_error) && !empty($name_error)) {
-                    echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
-                  } ?>
+                  <label for="name">Lot Number:</label>
+                  <input type="num" name="lot_number" class="form-control" autocomplete="off" required>
                 </div>
 
                 <div class="form-group col-md-6">
-                  <label for="dob">Date of Rent</label>
-                  <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="dob">Date of Return</label>
-                  <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                  <label for="dob">Drydock Date: </label>
+                  <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
                 </div>
 
+                <div class="form-group col-md-6">
+                  <label for="dob">Expected Departure: </label>
+                  <input type="date" name="Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                </div>
+                
+                <div class="form-group col-md-12">
+                  <label for="name">Upload Image:</label>
+                  <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
+                  <input type="file" name="drydock_image" id="drydock_image" class="form-control" required>
+                </div>
 
               </div>
 
+              <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
+              <button type="submit" name="save_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
 
-
-              <button type="submit" name="save_date" class="btn btn-primary btn-rounded">Save</button>
-
-              <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
             </div>
             <!-- /.card-body -->
           </form>
@@ -213,8 +287,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddRentBoat">
-                    <i class="ti-plus btn-icon-prepend"></i>Rent Boat
+                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddDryDock">
+                    <i class="ti-plus btn-icon-prepend"></i>Add Dry Dock
                   </button>
                   <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
                 </div>
@@ -227,7 +301,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Tugboat Renting</p>
+                  <p class="card-title text-md-center text-xl-left">Dry Dock</p>
 
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <?php
@@ -248,13 +322,34 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
                     ?>
 
+                    <?php
+                    if (isset($_SESSION['error'])) {
+                    ?>
+                      <div class="alert alert-danger border border-muted alert-dismissible fade show" role="alert">
+                        <!-- <strong>Holy guacamole!</strong> -->
+                        <?php echo $_SESSION['error']; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                    <?php
+                      unset($_SESSION['error']);
+                    }
+
+
+                    ?>
+
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
                         <tr>
                           <th>ID</th>
-                          <th>Name</th>
-                          <th>Date of Rent</th>
-                          <th>Date of Return</th>
+                          <th>Company Name</th>
+                          <th>Ship Name</th>
+                          <th>Ship Name</th>
+                          <th>Drydock Date</th>
+                          <th>Expected Departure</th>
+                          <th>Image</th>
                           <th>Operation</th>
 
                         </tr>
@@ -270,9 +365,13 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           ?>
 
                             <td><b><?php echo $number; ?></b></td>
-                            <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['dateofRent']; ?></td>
-                            <td><?php echo $row['dateofReturn']; ?></td>
+                            <td><?php echo $row['Company_Name']; ?></td>
+                            <td><?php echo $row['Ship_Name']; ?></td>
+                            <td><?php echo $row['Lot_Num']; ?></td>
+                            <td><?php echo $row['Drydock_date']; ?></td>
+                            <td><?php echo $row['Exp_Departure']; ?></td>
+                            <td> <?php echo '<img src="upload/'.$row['images'].'" alt="image"> ' ?></td>
+                           
 
                             <form action="update.php?unixcode=<?php echo $id; ?>" method="post">
                             <td>

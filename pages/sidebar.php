@@ -64,7 +64,7 @@
               <li class="nav-item">
                   <a class="nav-link" href="../drydock">
                       <i class="ti-bookmark-alt menu-icon"></i>
-                      <span class="menu-title">Dry dock</span>
+                      <span class="menu-title">Dry Dock</span>
                   </a>
               </li>
                 
