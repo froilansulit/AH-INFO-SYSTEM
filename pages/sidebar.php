@@ -61,12 +61,12 @@
                       <span class="menu-title">Invoice</span>
                   </a>
               </li> -->
-              <!-- <li class="nav-item">
-                  <a class="nav-link" href="../sales/sales.php">
-                      <i class="ti-bar-chart-alt menu-icon"></i>
-                      <span class="menu-title">Sales</span>
+              <li class="nav-item">
+                  <a class="nav-link" href="../drydock">
+                      <i class="ti-bookmark-alt menu-icon"></i>
+                      <span class="menu-title">Dry dock</span>
                   </a>
-              </li> -->
+              </li>
                 
               <?php if ($user_type == "admin") {
                   echo '<li class="nav-item">

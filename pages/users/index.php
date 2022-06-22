@@ -2,9 +2,9 @@
 <html lang="en">
 <style>
   /* Change dissabled Button color  */
-  #addUser:disabled{
-      background-color: black;
-      opacity:0.2;   
+  #addUser:disabled {
+    background-color: black;
+    opacity: 0.2;
   }
 </style>
 <?php
@@ -51,49 +51,57 @@ $result = mysqli_query($conn, $sql); // query to get the data
                 <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
                 <span id="check-username"></span>
                 <input type="text" style="text-transform: lowercase;" name="username" onInput="checkValidationUsers()" id="Uname" class="form-control" autocomplete="off">
-                
+
               </div>
               <div class="form-group col-md-6">
-                <label for="dob">Password:</label>  
+                <label for="dob">Password:</label>
                 <label for="" id="lblpwd" class="text-danger"></label>
 
                 <input type="password" name="pwd" id="Upass" onInput="checkValidationUsers()" class="form-control">
 
                 <label for="" id="lblpassnote" class="text-muted mt-2"></label>
               </div>
+              
 
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" onInput="checkValidationUsers()" class="form-control">
                 <label for="" id="lblpassnote2" class="text-muted mt-2"></label>
-                
+
               </div>
 
-              
-
-              
-
+<!-- 
               <div class="form-check ml-3 mb-4">
                 <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="showPassUser" id="showPassUser" value="">
+                  <input type="checkbox" class="form-check-input" name="showPassUser" id="showPassUser">
                   Show Password
                 </label>
+              </div> -->
+
+              <div class="form-group mb-3 col-md-6">
+                <div class="form-group-prepend">
+                  <div class="form-group-text">
+                    <input type="checkbox" name="showPassUser" id="showPassUser">
+                    <span class="text-dark ml-3">Show Password</span>
+                  </div>
+                </div>
+                
               </div>
             </div>
 
-            
+
             <!-- <button type="submit" name="addUser" id="AddVal" class="btn btn-primary btn-rounded">Save</button> -->
             <div class="modal-footer">
 
-            
-              
 
-            <button type="submit" id="addUser" class="btn btn-primary btn-rounded" disabled>Save</button>
 
-            <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+
+              <button type="submit" id="addUser" class="btn btn-primary btn-rounded" disabled>Save</button>
+
+              <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
 
             </div>
-            
+
           </div>
           <!-- /.card-body -->
 
@@ -161,9 +169,9 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
   <!-- end of view modal  -->
 
-<div class="modal fade" id="UpdateUsers">
+  <div class="modal fade" id="UpdateUsers">
 
-<div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Update User</h4>
@@ -176,18 +184,18 @@ $result = mysqli_query($conn, $sql); // query to get the data
           <div class="card-body">
             <div class="row">
 
-            <div class="form-group col-md-6">
+              <div class="form-group col-md-6">
                 <label for="name">Name:</label> <label for="" id="lblUpdateName" class="text-danger"></label>
                 <input type="text" name="name" id="UpName" class="form-control" autocomplete="off">
 
-                
+
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Username:</label> <label for="" id="lblxUser" class="text-danger"></label>
                 <input type="text" style="text-transform: lowercase;" name="username" id="UpUser" class="form-control" autocomplete="off">
               </div>
               <div class="form-group col-md-6">
-                <label for="dob">Password:</label>  
+                <label for="dob">Password:</label>
                 <label for="" id="lblUpwd" class="text-danger"></label>
 
                 <input type="password" name="pwd" id="UPass1" class="form-control">
@@ -196,23 +204,32 @@ $result = mysqli_query($conn, $sql); // query to get the data
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblUpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="UPass2" class="form-control">
-                
+
               </div>
 
-              <div class="form-check ml-3 mb-4">
+              <!-- <div class="form-check ml-3 mb-4">
                 <label class="form-check-label">
                   <input type="checkbox" class="form-check-input" name="UPshowPassUser" id="UPshowPassUser" value="">
                   Show Password
                 </label>
-              </div>
+              </div> -->
 
+              <div class="form-group mb-3 col-md-6">
+                <div class="form-group-prepend">
+                  <div class="form-group-text">
+                    <input type="checkbox" name="UPshowPassUser" id="UPshowPassUser">
+                    <span class="text-dark ml-3">Show Password</span>
+                  </div>
+                </div>
+                
+              </div>
 
             </div>
             <div class="modal-footer">
-              
-            <button type="button" class="btn btn-primary btn-rounded" id="UpdateUserData">Update</button>
 
-            <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary btn-rounded" id="UpdateUserData">Update</button>
+
+              <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
 
               <input type="hidden" id="hiddenUserData">
 
@@ -228,8 +245,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
       </div>
       <!-- /.modal-content -->
     </div>
-    
-</div>
+
+  </div>
 
 
   <div class="container-scroller">
@@ -304,17 +321,17 @@ $result = mysqli_query($conn, $sql); // query to get the data
                             <td><?php echo '********'; ?></td>
                             <!-- <td><?php echo $row['password']; ?></td> -->
 
-                            
-                              <td>
+
+                            <td>
                               <a href="#" data-toggle="tooltip" title="Edit">
-                              <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateUsers" onclick="GetUser(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                            </a>
-                            <a href="#" data-toggle="tooltip" title="Remove">
-                              <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteUser(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
-                            </a>
-                            <a href="#" data-toggle="tooltip" title="View">
-                              <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#VViewUser" onclick="ViewUser(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
-                            </a>
+                                <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateUsers" onclick="GetUser(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
+                              </a>
+                              <a href="#" data-toggle="tooltip" title="Remove">
+                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteUser(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                              </a>
+                              <a href="#" data-toggle="tooltip" title="View">
+                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#VViewUser" onclick="ViewUser(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                              </a>
                             </td>
 
                         </tr>
@@ -348,7 +365,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <script src="../app.js"></script>
 
 
-  
+
 </body>
 
 </html>
