@@ -400,7 +400,7 @@
 
                 <div class="form-group col-md-6">
                   <label for="dob">Drydock Date: </label>
-                  <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                  <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $CDT ?>" required>
                 </div>
 
                 <div class="form-group col-md-6">

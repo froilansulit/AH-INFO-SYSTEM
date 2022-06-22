@@ -323,7 +323,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
                               
                               <a href="#" data-toggle="tooltip" title="Remove">
-                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRent(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteDryDock(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                               </a>
                               <a href="#" data-toggle="tooltip" title="View">
                                 <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewRent(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
