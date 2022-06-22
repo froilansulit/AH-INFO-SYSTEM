@@ -58,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       if ($result) {
         $_SESSION['status'] = "Updated Successfully!";
-
         
       } else {
         die(mysqli_error($conn));
