@@ -26,46 +26,30 @@ $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
 $CDT = date($Format);
 $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
-$UpdateID = $_GET['unixcode'];  // for security of the link
-$rentID = $_POST['rentID']; // for security of the link
+if (isset($_POST['data_btn'])) {
 
-if (empty($rentID)) {
-  header('location: ../tugboat_renting/');
-}
-$sql_update = "select * from tugboat_record where id=$UpdateID"; // select all the data in DB
-
-$update_result = mysqli_query($conn, $sql_update); // query to get the data
-$update_row = mysqli_fetch_assoc($update_result);
-$name_row = $update_row['name'];
-$DOR1_row = $update_row['dateofRent'];
-$DOR2_row = $update_row['dateofReturn'];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST['update_rent'])) {
-
-    $Uname = htmlspecialchars($_POST['Uname']);
-    $UdateofRent = date('Y-m-d', strtotime($_POST['UdateofRent']));
-    $UdateofReturn = date('Y-m-d', strtotime($_POST['UdateofReturn']));
-
-    if (empty($Uname)) {
-      $name_error = "Name is Required ! <br>";
-    } else {
-
-      $escape_Uname = mysqli_real_escape_string($conn, $Uname);
-
-      $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
-      $result = mysqli_query($conn, $sql);
-
-      if ($result) {
-        $_SESSION['status'] = "Updated Successfully!";
-
-        
-      } else {
-        die(mysqli_error($conn));
-      }
-    }
+  $drydock_ID = $_POST['update_id'];
+  
+  $sql_update = "select * from drydock_record where id=$drydock_ID"; // select all the data in DB
+  
+  $update_result = mysqli_query($conn, $sql_update); // query to get the data
+  $update_row = mysqli_fetch_assoc($update_result);
+  
+  $Get_Cname = $update_row['Company_Name'];
+  $Get_ShipName = $update_row['Ship_Name'];
+  $Get_LotNum = $update_row['Lot_Num'];
+  
+  $Get_DryDate = $update_row['Drydock_date'];
+  $Get_ExpDate = $update_row['Exp_Departure'];
+  $Get_Image = $update_row['images'];
+  
   }
+
+if (empty($drydock_ID)) {
+
+  header('location: ../drydock/');
 }
+
 
 ?>
 
@@ -83,39 +67,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <a href="../tugboat_renting/" class="btn btn-danger btn-icon-text btn-rounded btn-md"><i class="ti-angle-double-left btn-icon-prepend"></i>Cancel</a>
-                </div>
+                
                 <div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 grid-margin stretch-card mx-auto">
+          
+            <div class="col-md-12 grid-margin stretch-card mx-auto">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Update Data</p>
+
+                  
+                
+                  <p class="card-title text-md-center text-xl-left">Update Dry Dock</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <form method="post">
-                      
-                    </form>
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="name">Company Name:</label>
+                        <input type="text" name="company_name" class="form-control" autocomplete="off" value="<?php echo $Get_Cname ?>" required>
+                      </div>
+
+
+                      <div class="form-group col-md-6">
+                        <label for="name">Ship Name:</label>
+                        <input type="text" name="ship_name" class="form-control" autocomplete="off" value="<?php echo $Get_ShipName ?>" required>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="name">Lot Number:</label>
+                        <input type="num" name="lot_number" class="form-control" autocomplete="off" value="<?php echo $Get_LotNum ?>" required>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="dob">Drydock Date: </label>
+                        <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control"  value="<?php echo $Get_DryDate ?>" required>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="dob">Expected Departure: </label>
+                        <input type="date" name="Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control"  value="<?php echo $Get_ExpDate ?>" required>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        <label for="name">Upload Image:</label>
+                        <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
+                        <input type="file" name="drydock_image" id="drydock_image" class="form-control"  value="<?php echo $Get_Image ?>" required>
+                      </div>
+
                   </div>
+
+                  <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
+                  <button type="submit" name="save_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
+
                 </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-        <?php include '../footer.php'; ?>
-        <?php include '../modals.php'; ?>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
+    <?php include '../footer.php'; ?>
+    <?php include '../modals.php'; ?>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+
+    <!-- partial -->
+  </div>
+  <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
 
