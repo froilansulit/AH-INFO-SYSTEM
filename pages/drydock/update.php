@@ -98,28 +98,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   <p class="card-title text-md-center text-xl-left">Update Data</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <form method="post">
-                      <div class="form-group mb-3">
-                        <label for="name">Name:</label>
-                        <input type="text" name="Uname" class="form-control" autocomplete="off" value="<?php echo $name_row; ?>" required>
-                        <?php if (isset($name_error) && !empty($name_error)) {
-                          echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
-                        } ?>
-                      </div>
-                      <div class="form-group mb-3">
-                        <label for="dob">Date of Rent</label>
-                        <input type="date" name="UdateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR1_row ?>" required>
-                      </div>
-                      <div class="form-group mb-3">
-                        <label for="dob">Date of Return</label>
-                        <input type="date" name="UdateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR2_row ?>" required>
-                      </div>
-                      <div class="form-group mb-3">
-                        <button type="submit" name="update_rent" class="btn btn-primary">Save Data</button>
-                      </div>
+                      
                     </form>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

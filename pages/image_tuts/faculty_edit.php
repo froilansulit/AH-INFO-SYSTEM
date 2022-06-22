@@ -6,8 +6,6 @@ include '../head.php';
 include '../session.php';
 include '../connect.php';
 
-
-
 ?>
 
 <body>

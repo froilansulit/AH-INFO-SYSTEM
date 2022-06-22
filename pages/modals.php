@@ -365,6 +365,73 @@
 
 <!-- view finacial record end here -->
 
+
+<!-- add new drydock start here -->
+
+<div class="modal fade" id="AddDryDock">
+    <!-- <div class="modal-dialog modal-lg"> -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Dry Dock</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+            <div class="card-body">
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label for="name">Company Name:</label>
+                  <input type="text" name="company_name" class="form-control" autocomplete="off" required>
+                </div>
+
+                
+                <div class="form-group col-md-12">
+                  <label for="name">Ship Name:</label>
+                  <input type="text" name="ship_name" class="form-control" autocomplete="off" required>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <label for="name">Lot Number:</label>
+                  <input type="num" name="lot_number" class="form-control" autocomplete="off" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="dob">Drydock Date: </label>
+                  <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="dob">Expected Departure: </label>
+                  <input type="date" name="Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                </div>
+                
+                <div class="form-group col-md-12">
+                  <label for="name">Upload Image:</label>
+                  <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
+                  <input type="file" name="drydock_image" id="drydock_image" class="form-control" required>
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
+              <button type="submit" name="save_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
+
+            </div>
+            <!-- /.card-body -->
+          </form>
+          <!-- </form> -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  
+<!-- add new drydock end here -->
+
     <!-- /.modal add-Product -->
     <div class="modal fade" id="edit-Product">
         <div class="modal-dialog modal-lg">

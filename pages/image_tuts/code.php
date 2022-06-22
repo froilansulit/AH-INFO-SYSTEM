@@ -15,9 +15,7 @@ if (isset($_POST['save_faculty'])) {
 
     if ($validate_img_extension) {
         # code...
-    
-
-
+        
     if (file_exists("upload/" . $_FILES["faculty_image"]['name'])) {
 
         //$store =  $_FILES["faculty_image"]['name'];

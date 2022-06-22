@@ -151,74 +151,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
 ?>
 
 <body>
-
   <!-- start of add rent modal -->
-
-
-  <div class="modal fade" id="AddDryDock">
-    <!-- <div class="modal-dialog modal-lg"> -->
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Add Dry Dock</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-            <div class="card-body">
-              <div class="row">
-                <div class="form-group col-md-12">
-                  <label for="name">Company Name:</label>
-                  <input type="text" name="company_name" class="form-control" autocomplete="off" required>
-                </div>
-
-                
-                <div class="form-group col-md-12">
-                  <label for="name">Ship Name:</label>
-                  <input type="text" name="ship_name" class="form-control" autocomplete="off" required>
-                </div>
-
-                <div class="form-group col-md-12">
-                  <label for="name">Lot Number:</label>
-                  <input type="num" name="lot_number" class="form-control" autocomplete="off" required>
-                </div>
-
-                <div class="form-group col-md-6">
-                  <label for="dob">Drydock Date: </label>
-                  <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
-                </div>
-
-                <div class="form-group col-md-6">
-                  <label for="dob">Expected Departure: </label>
-                  <input type="date" name="Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
-                </div>
-                
-                <div class="form-group col-md-12">
-                  <label for="name">Upload Image:</label>
-                  <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
-                  <input type="file" name="drydock_image" id="drydock_image" class="form-control" required>
-                </div>
-
-              </div>
-
-              <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
-              <button type="submit" name="save_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
-
-            </div>
-            <!-- /.card-body -->
-          </form>
-          <!-- </form> -->
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
-
   <!-- end of rent modal  -->
-
   <!-- start of view modal  -->
 
   <div class="modal fade" id="ViewRent">
@@ -232,20 +166,16 @@ $result = mysqli_query($conn, $sql); // query to get the data
           </button>
         </div>
         <div class="modal-body">
-
           <div class="card-body">
             <div class="row">
-
               <div class="form-group col-md-12">
                 <label for="U_name">Name:</label>
                 <h4 class="font-weight-bold" id="view_Name"></h4>
               </div>
-
               <div class="form-group col-md-12">
                 <label for="U_OR">Date of Rent:</label>
                 <h4 class="font-weight-bold" id="view_DOR1"></h4>
               </div>
-
               <div class="form-group col-md-12">
                 <label for="U_OR">Date of Return:</label>
                 <h4 class="font-weight-bold" id="view_DOR2"></h4>
@@ -253,9 +183,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
-
               <input type="hidden" id="hiddenViewData">
-
             </div>
             <!-- <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button> -->
 
@@ -373,17 +301,17 @@ $result = mysqli_query($conn, $sql); // query to get the data
                             <td> <?php echo '<img src="upload/'.$row['images'].'" alt="image"> ' ?></td>
                            
 
-                            <form action="update.php?unixcode=<?php echo $id; ?>" method="post">
+                            <form action="update.php" method="post">
                             <td>
-                              <a href="#" data-toggle="tooltip" title="Edit">
-                                  <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                                </a>
-                              <!-- <a href="#" data-toggle="tooltip" title="Edit">
-                                <button onclick="Getdata(<?php echo $id; ?>)" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                              </a> -->
-                              <input type="hidden" name="rentID" value="<?php echo $id; ?>">
-                              </form>
+
+                            <a href="#" data-toggle="tooltip" title="Edit">
+                              <input type="hidden" name="update_id" value="<?php echo $id; ?>">
+                              <button type="submit" name="edit_data_btn" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                               </a>
+
+                              </form>
+
+                              
                               <a href="#" data-toggle="tooltip" title="Remove">
                                 <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRent(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                               </a>
