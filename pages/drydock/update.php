@@ -78,48 +78,47 @@ if (empty($drydock_ID)) {
               <div class="card">
                 <div class="card-body">
 
-                  
-                
                   <p class="card-title text-md-center text-xl-left">Update Dry Dock</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <form method="post">
+                  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                     <div class="row">
+                    <input type="hidden" name="update_id" value="<?php echo $drydock_ID; ?>">
                       <div class="form-group col-md-6">
                         <label for="name">Company Name:</label>
-                        <input type="text" name="company_name" class="form-control" autocomplete="off" value="<?php echo $Get_Cname ?>" required>
+                        <input type="text" name="update_company_name" class="form-control" autocomplete="off" value="<?php echo $Get_Cname ?>" required>
                       </div>
-
 
                       <div class="form-group col-md-6">
                         <label for="name">Ship Name:</label>
-                        <input type="text" name="ship_name" class="form-control" autocomplete="off" value="<?php echo $Get_ShipName ?>" required>
+                        <input type="text" name="update_ship_name" class="form-control" autocomplete="off" value="<?php echo $Get_ShipName ?>" required>
                       </div>
 
                       <div class="form-group col-md-6">
                         <label for="name">Lot Number:</label>
-                        <input type="num" name="lot_number" class="form-control" autocomplete="off" value="<?php echo $Get_LotNum ?>" required>
+                        <input type="num" name="update_lot_number" class="form-control" autocomplete="off" value="<?php echo $Get_LotNum ?>" required>
                       </div>
 
                       <div class="form-group col-md-6">
                         <label for="dob">Drydock Date: </label>
-                        <input type="date" name="dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control"  value="<?php echo $Get_DryDate ?>" required>
+                        <input type="date" name="update_dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control"  value="<?php echo $Get_DryDate ?>" required>
                       </div>
 
                       <div class="form-group col-md-6">
                         <label for="dob">Expected Departure: </label>
-                        <input type="date" name="Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control"  value="<?php echo $Get_ExpDate ?>" required>
+                        <input type="date" name="update_Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control"  value="<?php echo $Get_ExpDate ?>" required>
                       </div>
 
                       <div class="form-group col-md-6">
                         <label for="name">Upload Image:</label>
                         <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
-                        <input type="file" name="drydock_image" id="drydock_image" class="form-control"  value="<?php echo $Get_Image ?>" required>
+                        <input type="file" name="update_drydock_image" id="update_drydock_image" class="form-control"  value="<?php echo $Get_Image ?>" required>
                       </div>
 
                   </div>
 
-                  <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
-                  <button type="submit" name="save_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
+                  <a href="../drydock/" class="btn btn-default btn-rounded float-right">Cancel</a>
+                  
+                  <button type="submit" name="update_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
 
                 </div>
                 </form>
