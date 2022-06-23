@@ -521,6 +521,69 @@
     <!-- /.modal-dialog -->
 </div>
 
+<div class="modal fade" id="Add_OR_Image">
+    <!-- <div class="modal-dialog modal-lg"> -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add OR Image</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+            <div class="card-body">
+              <div class="row">
+
+                <div class="form-group col-md-12">
+                  <label for="name">Upload Image:</label>
+                  <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
+                  <input type="file" name="or_image" id="or_image" class="form-control" accept="image/png, image/jpg, image/jpeg" onchange="validateFileType2()" >
+                </div>
+
+                <div class="form-group col-md-12">
+                  <label for="name">OR Number:</label>
+                  
+                  <label for="" id="OR_status" class="text-danger"></label>
+                  <input type="text" name="OR_number_verify" id="OR_number" class="form-control" placeholder="Enter OR Number" autocomplete="off" onInput="validateOR_Upload()" required>
+                </div>
+
+              </div>
+
+              <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
+              <button type="submit" name="Add_OR_image" id="Add_OR_image" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
+
+            </div>
+            <!-- /.card-body -->
+          </form>
+          <!-- </form> -->
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+
+  <div class="modal fade" id="OR_image_modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title ">View DryDock Image</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto my-3" id="OR_image_preview">
+          
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
     <!-- /.modal add-Product -->
     <div class="modal fade" id="edit-Product">
         <div class="modal-dialog modal-lg">

@@ -39,6 +39,8 @@ function lgnERROR(){
   Swal.fire("Login Failed!", "Invalid Username/Password", "error")
 }
 
+
+
 function loadinglgn() {
   $('#lgnLogin').addClass('loading');
   // Swal.fire("Successfully Login!", "<span class='icon'>&#8635;</span> Logging In....", "success");
@@ -48,7 +50,20 @@ function loadinglgn() {
 }
 
 // * scripting for users page start here !
+function validateOR_Upload() {
 
+$.ajax({
+
+  url: "check_OR.php",
+  data: "OR_number_verify=" + $("#OR_number").val(),
+  type: "POST",
+  success: function (data) {
+    $("#OR_status").html(data);
+  },
+  error: function () {},
+});
+
+}
 function checkValidationUsers() {
   var A_name = $("#A_name").val();
   var Uname = $("#Uname").val();
@@ -729,6 +744,7 @@ function GetData(updateID) {
       $("#U_purpose").val(userID.purpose);
       $("#U_OR").val(userID.or_number);
       $(".U_amount").val(userID.amount);
+
       // $('#U_month').val(userID.month_date);
       // $('#U_encoded').val(userID.encoded_by);
     }
@@ -985,6 +1001,19 @@ function validateFileType(){
   }   
 }
 
+function validateFileType2(){
+  var or_image = document.getElementById("or_image").value;
+  var idxDot = or_image.lastIndexOf(".") + 1;
+  var extFile = or_image.substr(idxDot, drydock_image.length).toLowerCase();
+  if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+      //TO DO
+  }else{
+      alert("Only jpg/jpeg and png files are allowed!");
+      location.href = '../financial_record/';
+      
+  }   
+}
+
 function ViewDrydock(viewID) {
   // alert(viewID);
 
@@ -1006,4 +1035,47 @@ function ViewDrydock(viewID) {
     }
   );
   $("#ViewDryDockDetails").modal("show");
+}
+
+$(document).ready(function () {
+  // 
+$(document).on("click", "#viewOR_image", function () {
+var userID = $(this).data('id');
+// alert(userID);
+  $.ajax({
+    url: 'check_OR.php',
+    type: 'post',
+    data: {userID : userID},
+    success: function(response){
+      $('#OR_image_preview').html(response);
+      $('#OR_image_modal').modal('show');
+    }
+
+  });
+
+});
+})
+
+function GetORNUMBER(updateID) {
+  // alert(updateID);
+  $("#OR_msg").html("<span style='color:green' id='OR_msg'> * <b>OR NUMBER verified successfully.</b></span>");
+  // $("#hiddenData").val(updateID);
+
+  $.post(
+    "update.php",
+    {
+      updateID: updateID,
+    },
+    function (data, status) {
+      var userID = JSON.parse(data);
+
+      
+      $("#OR_number").val(userID.or_number);
+      $("#OR_msg").html("<span style='color:green' id='OR_msg'> * <b>OR NUMBER verified successfully.</b></span>");
+      $('#Add_OR_image').prop('disabled',false);
+      
+      // $('#U_month').val(userID.month_date);
+      // $('#U_encoded').val(userID.encoded_by);
+    }
+  );
 }
