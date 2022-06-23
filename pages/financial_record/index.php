@@ -141,16 +141,18 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#add-Incoming">
+                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Incoming">
                     <i class="ti-plus btn-icon-prepend"></i>Add Incoming
                   </button>
-                  <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#add-Outgoing">
+                  <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Outgoing">
                     <i class="ti-plus btn-icon-prepend"></i>Add Outgoing
                   </button>
 
-                  <button type="button" class="btn btn-dark btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#Add_OR_Image">
+                  <button type="button" class="btn btn-dark btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#Add_OR_Image">
                     <i class="ti-camera btn-icon-prepend"></i>Update OR Image
                   </button>
+
+                  
 
                   <!-- <select name="select">
                     <?php
@@ -174,7 +176,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Financial Record</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-
+                    
                     <?php
                     if (isset($_SESSION['status'])) {
                     ?>
