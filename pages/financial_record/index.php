@@ -104,9 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 }
+$month = date('F');
+$year = date('Y');
 
-
-$sql = "select * from financial_record"; // select all the data in DB
+$sql = "select * from financial_record where month_date='$month' AND year_date='$year'"; // select all the data in DB
 
 $result = mysqli_query($conn, $sql); // query to get the data
 
@@ -174,7 +175,18 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Financial Record</p>
+                  <p class="card-title text-md-center text-xl-left">Financial Record <span class="text-danger">(This Month)</span></p>
+                  <div class="dropdown">
+                  <a class="btn btn-primary btn-sm float-right dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                    Display
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    
+                    <a class="dropdown-item" href="year_details.php">This Year</a>
+                    <a class="dropdown-item" href="all_details.php">All</a>
+                  </div>
+                </div>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     
                     <?php
