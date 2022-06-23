@@ -183,6 +183,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item" href="../financial_record/">Home</a>
                     <a class="dropdown-item" href="year_details.php">This Year</a>
+                    <a class="dropdown-item" href="custom_details.php">Custom</a>
                     <!-- <a class="dropdown-item" href="#">All</a> -->
                   </div>
                 </div>

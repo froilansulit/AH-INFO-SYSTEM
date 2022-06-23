@@ -105,11 +105,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-$year = date('Y');
+if (isset($_POST['year_submit'])) {
 
-$sql = "select * from financial_record where year_date='$year'"; // select all the data in DB
+  $year = $_POST['year_select'];
 
-$result = mysqli_query($conn, $sql); // query to get the data
+  $sql = "select * from financial_record where year_date='$year'"; // select all the data in DB
+
+  $result = mysqli_query($conn, $sql); // query to get the data
+
+  // $custom_result = mysqli_query($conn, $sql); // query to get the data
+  // $custom_row = mysqli_fetch_assoc($custom_result);
+
+  // $remarks = $custom_row['cname'];
+  // $dateSet = $custom_row['date_set'];
+  // $purpose = $custom_row['purpose'];
+}
+
+if(isset($_POST['MY_submit'])){
+
+  
+  $year = $_POST['year_select'];
+  $month = $_POST['month_set'];
+  
+
+  echo "<script>alert($month); </script>";
+
+
+  // $sql = "select * from financial_record where year_date='$year' AND month_date='$month'"; // select all the data in DB
+
+  // $result = mysqli_query($conn, $sql); // query to get the data
+}
+
+
 
 // while($row=mysqli_fetch_assoc($result)) {
 //   if ($id == $row['id']) {
@@ -142,7 +169,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Incoming">
+                  <!-- <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Incoming">
                     <i class="ti-plus btn-icon-prepend"></i>Add Incoming
                   </button>
                   <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Outgoing">
@@ -151,17 +178,52 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
                   <button type="button" class="btn btn-dark btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#Add_OR_Image">
                     <i class="ti-camera btn-icon-prepend"></i>Update OR Image
-                  </button>
+                  </button> -->
 
-                  
+                  <div class="form-group" id="view_year_only">
+                    <form method="post" class="form-inline">
+                      <select name="year_select" class="custom-select">
+                        <?php
+                        for ($i = 2021; $i <= date('Y'); $i++) {
+                          echo "<option>$i</option>";
+                        }
+                        ?>
+                      </select>
+                      <button class="btn btn-primary ml-3" type="submit" name="year_submit">Submit</button>
+                    </form>
+                  </div>
 
-                  <!-- <select name="select">
-                    <?php
-                    for ($i = 2019; $i <= date('Y'); $i++) {
-                      echo "<option>$i</option>";
-                    }
-                    ?>
-                  </select> -->
+                  <div class="form-group" id="view_MY_only">
+                    <form method="post" class="form-inline">
+                      <select name="year_select" class="custom-select">
+                        <?php
+                        for ($i = 2021; $i <= date('Y'); $i++) {
+                          echo "<option>$i</option>";
+                        }
+                        ?>
+                      </select>
+
+                      <select placeholder="MM" name="month_set" class="custom-select">
+                      <option name="" value="" style="display:none;">MM</option>
+                      <option name="January" value="January">January</option>
+                      <option name="February" value="February">February</option>
+                      <option name="March" value="March">March</option>
+                      <option name="April" value="April">April</option>
+                      <option name="May" value="May">May</option>
+                      <option name="June" value="June">June</option>
+                      <option name="July" value="July">July</option>
+                      <option name="August" value="August">August</option>
+                      <option name="September" value="September">September</option>
+                      <option name="October" value="October">October</option>
+                      <option name="November" value="November">November</option>
+                      <option name="December" value="December">December</option>
+                    </select>
+
+
+
+                      <button class="btn btn-dark ml-3" type="submit" name="MY_submit">Submit</button>
+                    </form>
+                  </div>
 
                 </div>
                 <div>
@@ -175,20 +237,27 @@ $result = mysqli_query($conn, $sql); // query to get the data
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Financial Record <span class="text-danger">(This Year)</span></p>
-                  <div class="dropdown">
-                  <a class="btn btn-primary btn-sm float-right dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-                    Display
-                  </a>
+                  <p class="card-title text-md-center text-xl-left">Financial Record <span class="text-danger">(Custom)</span></p>
+                  <button class="btn btn-primary mb-3" name="custom_year_submit" id="custom_year_submit">Year Only</button>
+                  <button class="btn btn-dark mb-3" name="custom_MY_submit" id="custom_MY_submit">Month and Year</button>
+                  <a href="../financial_record/custom_details.php" class="btn btn-primary mb-3"><i class="ti-reload btn-icon-prepend"></i> Refresh</a>
 
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="../financial_record/">Home</a>
-                    <a class="dropdown-item" href="all_details.php">All</a>
-                    <!-- <a class="dropdown-item" href="#">All</a> -->
+
+
+
+                  <div class="dropdown">
+                    <a class="btn btn-primary btn-sm float-right dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                      Display
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="../financial_record/">Home</a>
+                      <a class="dropdown-item" href="all_details.php">All</a>
+                      <!-- <a class="dropdown-item" href="#">All</a> -->
+                    </div>
                   </div>
-                </div>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    
+
                     <?php
                     if (isset($_SESSION['status'])) {
                     ?>
@@ -245,71 +314,76 @@ $result = mysqli_query($conn, $sql); // query to get the data
                       <tbody class="text-center">
                         <tr>
                           <?php
-                          $number = 1;
-                          while ($row = mysqli_fetch_assoc($result)) {
 
-                            $id = $row['id'];
+                          if (isset($_POST['year_submit'])) {
+
+
+                            $number = 1;
+                            while ($row = mysqli_fetch_assoc($result)) {
+
+                              $id = $row['id'];
                           ?>
 
-                            <td><b><?php echo $number; ?></b></td>
-                            <td><?php echo $row['cname']; ?></td>
-                            <td><?php echo $row['date_set']; ?></td>
+                              <td><b><?php echo $number; ?></b></td>
+                              <td><?php echo $row['cname']; ?></td>
+                              <td><?php echo $row['date_set']; ?></td>
 
-                            <td><span class=" <?php if ($row['purpose'] == "Outgoing") {
-                                                echo 'badge badge-pill badge-danger';
-                                              } else {
-                                                echo 'badge badge-pill badge-primary';
-                                              } ?>"><?php echo $row['purpose']; ?></span></td>
-                            <td><?php echo $row['or_number']; ?></td>
-                           
-                            <td>
-                              <?php if ($row['images'] == "NP") {
+                              <td><span class=" <?php if ($row['purpose'] == "Outgoing") {
+                                                  echo 'badge badge-pill badge-danger';
+                                                } else {
+                                                  echo 'badge badge-pill badge-primary';
+                                                } ?>"><?php echo $row['purpose']; ?></span></td>
+                              <td><?php echo $row['or_number']; ?></td>
+
+                              <td>
+                                <?php if ($row['images'] == "NP") {
                                 ?>
                                   <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-sm" data-toggle="modal" data-target="#Add_OR_Image" onclick="GetORNUMBER(<?php echo $id; ?>)">
-                                Add Image
-                              </button>
+                                    Add Image
+                                  </button>
 
-                              
+
                                 <?php
-                                
-                              } 
-                              else {
+
+                                } else {
                                 ?>
-                                  
-                                   <button id="viewOR_image" class="btn btn-sm btn-rounded btn-dark" data-id="<?php echo $id ?>">View</button>
+
+                                  <button id="viewOR_image" class="btn btn-sm btn-rounded btn-dark" data-id="<?php echo $id ?>">View</button>
                                 <?php
-                                
-                              }
-                              ?>
-                               
-                              
-                            </td>
 
-                            <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
+                                }
+                                ?>
 
-                            <td><?php echo $row['encoded_by']; ?></td>
 
-                            <td>
+                              </td>
 
-                              <a href="#" data-toggle="tooltip" title="Edit">
-                                <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateFinancial" onclick="GetData(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                              </a>
-                              <a href="#" data-toggle="tooltip" title="Remove">
-                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
-                              </a>
-                              <a href="#" data-toggle="tooltip" title="View">
-                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewFinancial" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
-                              </a>
-                            </td>
+                              <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
+
+                              <td><?php echo $row['encoded_by']; ?></td>
+
+                              <td>
+
+                                <a href="#" data-toggle="tooltip" title="Edit">
+                                  <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateFinancial" onclick="GetData(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
+                                </a>
+                                <a href="#" data-toggle="tooltip" title="Remove">
+                                  <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                                </a>
+                                <a href="#" data-toggle="tooltip" title="View">
+                                  <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewFinancial" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                                </a>
+                              </td>
 
 
                         </tr>
 
-                      <?php
-                            $number++;
+                    <?php
+                              $number++;
+                            }
                           }
 
-                      ?>
+
+                    ?>
 
 
                       </tbody>
@@ -341,6 +415,23 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
   <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
+
+  <script>
+    $('#view_year_only').hide();
+    $('#view_MY_only').hide();
+    $(document).ready(function() {
+      $(document).on("click", "#custom_year_submit", function() {
+        $('#view_year_only').show();
+        $('#view_MY_only').hide();
+      });
+
+      $(document).on("click", "#custom_MY_submit", function() {
+        $('#view_MY_only').show();
+        $('#view_year_only').hide()
+      });
+
+    });
+  </script>
 
 
 </body>

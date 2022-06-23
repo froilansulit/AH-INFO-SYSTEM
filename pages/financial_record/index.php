@@ -185,6 +185,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                     
                     <a class="dropdown-item" href="year_details.php">This Year</a>
                     <a class="dropdown-item" href="all_details.php">All</a>
+                    <a class="dropdown-item" href="custom_details.php">Custom</a>
                   </div>
                 </div>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">

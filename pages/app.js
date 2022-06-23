@@ -970,7 +970,7 @@ function DeleteDryDock(deleteID) {
 }
 
 $(document).ready(function () {
-  // 
+ 
 $(document).on("click", "#view_drydock_image", function () {
 var userID = $(this).data('id');
 // alert(userID);
