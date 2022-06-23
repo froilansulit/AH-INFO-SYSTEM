@@ -2,7 +2,8 @@
 include '../connect.php';
 
 if(!empty($_POST["username"])) {
-  $query = "SELECT * FROM users WHERE username='" . $_POST["username"] . "'";
+  $username =  $_POST["username"];
+  $query = "SELECT * FROM users WHERE username='" . $username . "'";
   $result = mysqli_query($conn,$query);
   $count = mysqli_num_rows($result);
   if($count > 0) {

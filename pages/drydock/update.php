@@ -45,7 +45,6 @@ if (isset($_POST['data_btn'])) {
 }
 
 if (empty($drydock_ID)) {
-  $_SESSION['error'] = "Unauthorized Access !";
   header('location: ../drydock/');
 }
 

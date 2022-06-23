@@ -429,8 +429,30 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
-  
+
 <!-- add new drydock end here -->
+
+<!-- drydock image preview modal start here  -->
+
+<div class="modal fade" id="drydock_image_modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title ">View DryDock Image</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-auto my-3" id="drydock_image_preview">
+          
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+<!-- drydock image preview modal end here  -->
 
     <!-- /.modal add-Product -->
     <div class="modal fade" id="edit-Product">

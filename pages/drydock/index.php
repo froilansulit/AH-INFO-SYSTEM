@@ -165,49 +165,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <!-- end of rent modal  -->
   <!-- start of view modal  -->
 
-  <div class="modal fade" id="ViewRent">
-
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">View Rent Record</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="card-body">
-            <div class="row">
-              <div class="form-group col-md-12">
-                <label for="U_name">Name:</label>
-                <h4 class="font-weight-bold" id="view_Name"></h4>
-              </div>
-              <div class="form-group col-md-12">
-                <label for="U_OR">Date of Rent:</label>
-                <h4 class="font-weight-bold" id="view_DOR1"></h4>
-              </div>
-              <div class="form-group col-md-12">
-                <label for="U_OR">Date of Return:</label>
-                <h4 class="font-weight-bold" id="view_DOR2"></h4>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
-              <input type="hidden" id="hiddenViewData">
-            </div>
-            <!-- <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button> -->
-
-            <!-- <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button> -->
-          </div>
-          <!-- /.card-body -->
-
-          <!-- </form> -->
-        </div>
-      </div>
-      <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-  </div>
+  
 
   <!-- end of view modal  -->
 
@@ -308,7 +266,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
                             <td><?php echo $row['Lot_Num']; ?></td>
                             <td><?php echo $row['Drydock_date']; ?></td>
                             <td><?php echo $row['Exp_Departure']; ?></td>
-                            <td> <?php echo '<img src="upload/'.$row['images'].'" alt="image"> ' ?></td>
+                            <!-- <td> <?php echo '<img src="upload/'.$row['images'].'" alt="image"> ' ?></td> -->
+                            <td> <button id="view_drydock_image" class="btn btn-sm btn-dark" data-id="<?php echo $id; ?>">View</button></td>
                            
 
                             <form action="update.php" method="post">
@@ -318,7 +277,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
                               <input type="hidden" name="update_id" value="<?php echo $id ?>">
                               <button type="submit" name="data_btn" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                               </a>
-
+                               
+                              
                               </form>
 
                               
@@ -363,6 +323,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
   <?php include '../scripts.php'; ?>
   <?php include '../modals.php'; ?>
   <script src="../app.js"></script>
+
+  
   
 </body>
 

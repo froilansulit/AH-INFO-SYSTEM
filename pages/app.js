@@ -952,3 +952,23 @@ function DeleteDryDock(deleteID) {
     }
   });
 }
+
+$(document).ready(function () {
+      // 
+    $(document).on("click", "#view_drydock_image", function () {
+    var userID = $(this).data('id');
+    // alert(userID);
+      $.ajax({
+        url: 'process.php',
+        type: 'post',
+        data: {userID : userID},
+        success: function(response){
+          $('#drydock_image_preview').html(response);
+          $('#drydock_image_modal').modal('show');
+        }
+
+      });
+
+  });
+})
+

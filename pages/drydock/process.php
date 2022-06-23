@@ -1,29 +1,22 @@
 <?php 
 include '../connect.php';
 
-// for deleting
+if (isset($_POST['userID'])) {
+    $id = $_POST['userID'];
+    // echo $id;
 
-if (isset($_POST['deleteSend'])) {
-  $unique = mysqli_real_escape_string($conn, $_POST['deleteSend']);
+    
+    $sql = "select * from drydock_record where id='$id'"; // select all the data in DB
 
-  $dry_query = "select * from drydock_record where id='$unique'";
-  $dry_query_run = mysqli_query($conn, $dry_query);
+    $result = mysqli_query($conn, $sql); // query to get the data
 
-  while ($row = mysqli_fetch_assoc($dry_query_run)) {
+    while ($row = mysqli_fetch_assoc($result)) {
 
-      // echo $row['images'];
-      if ($img_path = "upload/" . $row['images']) {
-          $sql = "delete from drydock_record where id=$unique";
-          $result = mysqli_query($conn, $sql);
+      ?>
+      <img src="upload/<?php echo $row['images']; ?>" class="img-fluid" alt="">
+      <?php
+    }
 
-          if ($result) {
-              unlink($img_path);
-              # keep it blank ajax will do the success message
-          } else {
-              die(mysqli_error($conn));
-          }
-      }
-  }
 }
 
 ?>
