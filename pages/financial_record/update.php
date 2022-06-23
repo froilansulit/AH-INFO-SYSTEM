@@ -46,7 +46,16 @@ if (isset($_POST['hiddenData'])) {
         $U_encoded = mysqli_real_escape_string($conn, $ES_U_encoded);
         $U_year = mysqli_real_escape_string($conn, $ES_U_year);
 
-        $sql = "update financial_record set cname='$U_name',date_set='$U_date', purpose='$U_purpose', or_number='$U_OR' ,amount='$U_amount', month_date='$U_month', year_date='$U_year',encoded_by='$U_encoded' where id='$unique_ID'";
+        $sql_update = "select * from financial_record where id=$unique_ID"; // select all the data in DB
+
+        $update_result = mysqli_query($conn, $sql_update); // query to get the data
+        $update_row = mysqli_fetch_assoc($update_result);
+
+        $U_image = $update_row['images'];
+
+
+
+        $sql = "update financial_record set cname='$U_name',date_set='$U_date', purpose='$U_purpose', or_number='$U_OR', images='$U_image' ,amount='$U_amount', month_date='$U_month', year_date='$U_year',encoded_by='$U_encoded' where id='$unique_ID'";
 
         $result = mysqli_query($conn, $sql);
 

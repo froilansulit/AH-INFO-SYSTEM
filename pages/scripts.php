@@ -35,6 +35,10 @@
         "scrollX": true,
         "order": [[ 0, "desc" ]]
       });
+      $("#AllFinancialDetails").DataTable({
+        "scrollX": true,
+        "order": [[ 0, "desc" ]]
+      });
       $("#example4").DataTable();
       $("#example3").DataTable({
         "scrollX": true,

@@ -954,21 +954,56 @@ function DeleteDryDock(deleteID) {
 }
 
 $(document).ready(function () {
-      // 
-    $(document).on("click", "#view_drydock_image", function () {
-    var userID = $(this).data('id');
-    // alert(userID);
-      $.ajax({
-        url: 'process.php',
-        type: 'post',
-        data: {userID : userID},
-        success: function(response){
-          $('#drydock_image_preview').html(response);
-          $('#drydock_image_modal').modal('show');
-        }
-
-      });
+  // 
+$(document).on("click", "#view_drydock_image", function () {
+var userID = $(this).data('id');
+// alert(userID);
+  $.ajax({
+    url: 'process.php',
+    type: 'post',
+    data: {userID : userID},
+    success: function(response){
+      $('#drydock_image_preview').html(response);
+      $('#drydock_image_modal').modal('show');
+    }
 
   });
+
+});
 })
 
+function validateFileType(){
+  var drydock_image = document.getElementById("drydock_image").value;
+  var idxDot = drydock_image.lastIndexOf(".") + 1;
+  var extFile = drydock_image.substr(idxDot, drydock_image.length).toLowerCase();
+  if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+      //TO DO
+  }else{
+      alert("Only jpg/jpeg and png files are allowed!");
+      location.href = '../drydock/';
+      
+  }   
+}
+
+function ViewDrydock(viewID) {
+  // alert(viewID);
+
+  $("#hiddenDryDockID").val(viewID);
+
+  $.post(
+    "process.php",
+    {
+      viewID: viewID,
+    },
+    function (data, status) {
+      var userID = JSON.parse(data);
+
+      $("#view_CompanyName").html(userID.Company_Name	);
+      $("#view_ShipName").html(userID.Ship_Name);
+      $("#view_LotNumber").html(userID.Lot_Num);
+      $("#view_DrydockDate").html(userID.Drydock_date);
+      $("#view_ExpectedDeparture").html(userID.Exp_Departure	);
+    }
+  );
+  $("#ViewDryDockDetails").modal("show");
+}

@@ -161,11 +161,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 ?>
 
 <body>
-  <!-- start of add rent modal -->
-  <!-- end of rent modal  -->
-  <!-- start of view modal  -->
 
-  
 
   <!-- end of view modal  -->
 
@@ -286,7 +282,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                                 <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteDryDock(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                               </a>
                               <a href="#" data-toggle="tooltip" title="View">
-                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewRent(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewDrydock(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                               </a>
                             </td>
 
@@ -294,6 +290,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                       <?php
                             $number++;
                           }
+                          
                       ?>
                       </tbody>
                     </table>

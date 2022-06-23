@@ -411,7 +411,7 @@
                 <div class="form-group col-md-12">
                   <label for="name">Upload Image:</label>
                   <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
-                  <input type="file" name="drydock_image" id="drydock_image" class="form-control" required>
+                  <input type="file" name="drydock_image" id="drydock_image" class="form-control" accept="image/png, image/jpg, image/jpeg" onchange="validateFileType()" required>
                 </div>
 
               </div>
@@ -453,6 +453,73 @@
   </div>
 
 <!-- drydock image preview modal end here  -->
+
+<!--  -->
+
+<div class="modal fade" id="ViewDryDockDetails">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">View Dry Dock Record</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="form-group col-md-12">
+                            <label for="U_name">Company Name:</label>
+                            <h4 class="font-weight-bold" id="view_CompanyName"></h4>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="U_OR">Ship Name:</label>
+                            <h4 class="font-weight-bold" id="view_ShipName"></h4>
+                        </div>
+   
+                        <div class="form-group col-md-12">
+                            <label>Lot Number:</label>
+                            <h4 class="font-weight-bold" id="view_LotNumber"></h4>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Drydock Date:</label>
+                            <h4 class="font-weight-bold" id="view_DrydockDate"></h4>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Expected Departure:</label>
+                            <h4 class="font-weight-bold" id="view_ExpectedDeparture"></h4>
+                        </div>
+
+                        <!-- <div class="form-group col-md-12">
+                            <label>Encoded by:</label>
+                            <h4 class="font-weight-bold text-muted" id="viewfr_encoded"></h4>
+                        </div> -->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
+
+                        <input type="hidden" id="hiddenDryDockID">
+                        
+                    </div>
+                    <!-- <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button> -->
+
+                    <!-- <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button> -->
+                </div>
+                <!-- /.card-body -->
+
+                <!-- </form> -->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
 
     <!-- /.modal add-Product -->
     <div class="modal fade" id="edit-Product">

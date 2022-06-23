@@ -29,7 +29,7 @@ if (isset($FRI_nameSend) && isset($FRI_dateSend) && isset($FRI_purposeSend) && i
     $ES_FRI_encodedSend = mysqli_real_escape_string($conn, $FRI_encodedSend);
     $ES_FRI_yearSend = mysqli_real_escape_string($conn, $FRI_yearSend);
     
-    $sql = "INSERT into financial_record (cname,date_set,purpose,or_number,amount,month_date,year_date,encoded_by) values ('$ES_FRI_nameSend', '$ES_FRI_dateSend', '$ES_FRI_purposeSend','$ES_FRI_ORSend', '$ES_FRI_amountSend', '$ES_FRI_monthSend', '$ES_FRI_yearSend','$ES_FRI_encodedSend')";
+    $sql = "INSERT into financial_record (cname,date_set,purpose,or_number,images,amount,month_date,year_date,encoded_by) values ('$ES_FRI_nameSend', '$ES_FRI_dateSend', '$ES_FRI_purposeSend','$ES_FRI_ORSend', 'NP', '$ES_FRI_amountSend', '$ES_FRI_monthSend', '$ES_FRI_yearSend','$ES_FRI_encodedSend')";
 
     $result = mysqli_query($conn, $sql);
 

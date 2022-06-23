@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
 
               $store =  $_FILES["drydock_image"]['name'];
-              $_SESSION['error'] = "Image already exist. '.$store.'";
+              $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
               header('location: ../drydock/');
               mysqli_close($conn);
               
@@ -156,7 +156,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
-
                 <div>
                 </div>
               </div>
@@ -221,20 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <?php include '../footer.php'; ?>
     <?php include '../modals.php'; ?>
-    <script>
-      function validateFileType(){
-        var drydock_image = document.getElementById("drydock_image").value;
-        var idxDot = drydock_image.lastIndexOf(".") + 1;
-        var extFile = drydock_image.substr(idxDot, drydock_image.length).toLowerCase();
-        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
-            //TO DO
-        }else{
-            alert("Only jpg/jpeg and png files are allowed!");
-            location.href = '../drydock/';
-            
-        }   
-    }
-    </script>
+    
     <!-- content-wrapper ends -->
     <!-- partial:partials/_footer.html -->
 
@@ -249,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
   <?php include '../scripts.php'; ?>
-
+  <script src="../app.js"></script>
 
 </body>
 
