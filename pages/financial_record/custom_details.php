@@ -121,19 +121,17 @@ if (isset($_POST['year_submit'])) {
   // $purpose = $custom_row['purpose'];
 }
 
-if(isset($_POST['MY_submit'])){
+if (isset($_POST['MY_submit'])) {
 
-  
+
   $year = $_POST['year_select'];
-  $month = $_POST['month_set'];
-  
-
-  echo "<script>alert($month); </script>";
+  //date('F', mktime(0, 0, 0, $i_month))
+  $month = $_POST['month'];
 
 
-  // $sql = "select * from financial_record where year_date='$year' AND month_date='$month'"; // select all the data in DB
+  $sql = "select * from financial_record where month_date='$month' AND year_date='$year'"; // select all the data in DB
 
-  // $result = mysqli_query($conn, $sql); // query to get the data
+  $result = mysqli_query($conn, $sql); // query to get the data
 }
 
 
@@ -180,7 +178,7 @@ if(isset($_POST['MY_submit'])){
                     <i class="ti-camera btn-icon-prepend"></i>Update OR Image
                   </button> -->
 
-                  <div class="form-group" id="view_year_only">
+                  <div class="form-group" id="view_year_only" style="display: none;">
                     <form method="post" class="form-inline">
                       <select name="year_select" class="custom-select">
                         <?php
@@ -193,7 +191,7 @@ if(isset($_POST['MY_submit'])){
                     </form>
                   </div>
 
-                  <div class="form-group" id="view_MY_only">
+                  <div class="form-group" id="view_MY_only" style="display: none;">
                     <form method="post" class="form-inline">
                       <select name="year_select" class="custom-select">
                         <?php
@@ -203,21 +201,22 @@ if(isset($_POST['MY_submit'])){
                         ?>
                       </select>
 
-                      <select placeholder="MM" name="month_set" class="custom-select">
-                      <option name="" value="" style="display:none;">MM</option>
-                      <option name="January" value="January">January</option>
-                      <option name="February" value="February">February</option>
-                      <option name="March" value="March">March</option>
-                      <option name="April" value="April">April</option>
-                      <option name="May" value="May">May</option>
-                      <option name="June" value="June">June</option>
-                      <option name="July" value="July">July</option>
-                      <option name="August" value="August">August</option>
-                      <option name="September" value="September">September</option>
-                      <option name="October" value="October">October</option>
-                      <option name="November" value="November">November</option>
-                      <option name="December" value="December">December</option>
-                    </select>
+                      <select placeholder="MM" name="month" class="custom-select ml-3">
+                        <option name="" value="" style="display:none;">MM</option>
+                        <option name="January" value="January">January</option>
+                        <option name="February" value="February">February</option>
+                        <option name="March" value="March">March</option>
+                        <option name="April" value="April">April</option>
+                        <option name="May" value="May">May</option>
+                        <option name="June" value="June">June</option>
+                        <option name="July" value="July">July</option>
+                        <option name="August" value="August">August</option>
+                        <option name="September" value="September">September</option>
+                        <option name="October" value="October">October</option>
+                        <option name="November" value="November">November</option>
+                        <option name="December" value="December">December</option>
+                      </select>
+
 
 
 
@@ -240,7 +239,7 @@ if(isset($_POST['MY_submit'])){
                   <p class="card-title text-md-center text-xl-left">Financial Record <span class="text-danger">(Custom)</span></p>
                   <button class="btn btn-primary mb-3" name="custom_year_submit" id="custom_year_submit">Year Only</button>
                   <button class="btn btn-dark mb-3" name="custom_MY_submit" id="custom_MY_submit">Month and Year</button>
-                  <a href="../financial_record/custom_details.php" class="btn btn-primary mb-3"><i class="ti-reload btn-icon-prepend"></i> Refresh</a>
+                  <a href="../financial_record/custom_details.php" class="btn btn-outline-danger mb-3"><i class="ti-reload btn-icon-prepend"></i> Refresh</a>
 
 
 
@@ -252,6 +251,7 @@ if(isset($_POST['MY_submit'])){
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <a class="dropdown-item" href="../financial_record/">Home</a>
+                      <a class="dropdown-item" href="year_details.php">This Year</a>
                       <a class="dropdown-item" href="all_details.php">All</a>
                       <!-- <a class="dropdown-item" href="#">All</a> -->
                     </div>
@@ -314,8 +314,34 @@ if(isset($_POST['MY_submit'])){
                       <tbody class="text-center">
                         <tr>
                           <?php
+                          if (isset($_POST['year_submit']) || isset($_POST['MY_submit'])) {
 
-                          if (isset($_POST['year_submit'])) {
+                          $count = mysqli_num_rows($result);
+                          if ($count > 0) {
+                            
+                          } else {
+                            $_SESSION['error'] = "No Data Found !";
+                            // $no_result = "No Data Found !";
+                          }
+                        }
+                          ?>
+                          <?php if (isset($_SESSION['error'])) { ?>
+                          <div class="alert alert-danger border border-muted alert-dismissible fade show" role="alert">
+                            <!-- <strong>Holy guacamole!</strong> -->
+                            <?php echo  $_SESSION['error']; ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <?php
+                          unset($_SESSION['error']);
+                          }
+                         
+                          ?>
+                          <?php
+
+                          if (isset($_POST['year_submit']) || isset($_POST['MY_submit'])) {
+
 
 
                             $number = 1;
@@ -416,22 +442,8 @@ if(isset($_POST['MY_submit'])){
   <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
 
-  <script>
-    $('#view_year_only').hide();
-    $('#view_MY_only').hide();
-    $(document).ready(function() {
-      $(document).on("click", "#custom_year_submit", function() {
-        $('#view_year_only').show();
-        $('#view_MY_only').hide();
-      });
-
-      $(document).on("click", "#custom_MY_submit", function() {
-        $('#view_MY_only').show();
-        $('#view_year_only').hide()
-      });
-
-    });
-  </script>
+  
+    
 
 
 </body>

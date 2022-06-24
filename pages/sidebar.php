@@ -19,39 +19,6 @@
                       <span class="menu-title">Financial Record</span>
                   </a>
               </li>
-
-              
-              <li class="nav-item">
-                  <a class="nav-link">
-                      <i class="ti-money menu-icon"></i>
-                      <span class="menu-title" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Financial Record <i class="ti-angle-double-right menu-icon"></i></span>
-                  </a>
-                  <!-- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Link with href
-                    </a> -->
-                    <div class="collapse" id="collapseExample">
-                    <div class="card card-body shadow" style="background-color:#bddcff;" >
-                        <div>
-                        <a class="nav-link" href="../Montly_Tally/">
-                            <i class="ti-bar-chart menu-icon"></i>
-
-                            <span class="menu-title">This Month</span>
-                        </a>
-                        <a class="nav-link" href="../Montly_Tally/">
-                            <i class="ti-bar-chart menu-icon"></i>
-
-                            <span class="menu-title">This Year</span>
-                        </a>
-                        <a class="nav-link" href="../Montly_Tally/">
-                            <i class="ti-bar-chart menu-icon"></i>
-
-                            <span class="menu-title">All</span>
-                        </a>
-                        </div>
-                    </div>
-                    </div>
-              </li>
-
               
               <!-- <li class="nav-item">
                   <a class="nav-link" href="../productset/productset.php">

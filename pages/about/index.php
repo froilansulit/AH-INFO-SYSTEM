@@ -39,7 +39,7 @@ include '../head.php'; ?>
                       <p>Shipyard in Navotas</p>
                       
                    </div>
-                   <div class="row">
+                <div class="row">
               
                 <div class="align-self-center mt-5">
                     <p class="lead mb-3">

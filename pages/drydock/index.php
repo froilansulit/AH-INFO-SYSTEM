@@ -238,7 +238,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <th>ID</th>
                           <th>Company Name</th>
                           <th>Ship Name</th>
-                          <th>Ship Name</th>
+                          <th>Lot Number</th>
                           <th>Drydock Date</th>
                           <th>Expected Departure</th>
                           <th>Image</th>

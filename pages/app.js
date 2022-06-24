@@ -1079,3 +1079,18 @@ function GetORNUMBER(updateID) {
     }
   );
 }
+
+$('#view_year_only').hide();
+    $('#view_MY_only').hide();
+    $(document).ready(function() {
+      $(document).on("click", "#custom_year_submit", function() {
+        $('#view_year_only').show();
+        $('#view_MY_only').hide();
+      });
+
+      $(document).on("click", "#custom_MY_submit", function() {
+        $('#view_MY_only').show();
+        $('#view_year_only').hide()
+      });
+
+    });
