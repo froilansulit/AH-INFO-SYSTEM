@@ -105,6 +105,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
+$inc_rec = 0;
+$out_rec = 0;
+$total = 0;
+
 if (isset($_POST['year_submit'])) {
 
   $year = $_POST['year_select'];
@@ -112,6 +116,29 @@ if (isset($_POST['year_submit'])) {
   $sql = "select * from financial_record where year_date='$year'"; // select all the data in DB
 
   $result = mysqli_query($conn, $sql); // query to get the data
+
+  // $year_now = date('Y');
+    $inc_rec = 0;
+    $out_rec = 0;
+
+
+    $finacial_sql = "select * from financial_record where purpose='Incoming' AND year_date='$year'"; // select all the data in DB
+
+    $financial_result = mysqli_query($conn, $finacial_sql); // query to get the data
+
+    while ($row = mysqli_fetch_assoc($financial_result)) {
+      $inc_rec += $row['amount'];
+    }
+
+    $financial_sql2 = "select * from financial_record where purpose='Outgoing' AND year_date='$year'"; // select all the data in DB
+
+    $result2 = mysqli_query($conn, $financial_sql2); // query to get the data
+
+    while ($row = mysqli_fetch_assoc($result2)) {
+      $out_rec += $row['amount'];
+    }
+
+    $total = $inc_rec - $out_rec;
 
   // $custom_result = mysqli_query($conn, $sql); // query to get the data
   // $custom_row = mysqli_fetch_assoc($custom_result);
@@ -132,6 +159,28 @@ if (isset($_POST['MY_submit'])) {
   $sql = "select * from financial_record where month_date='$month' AND year_date='$year'"; // select all the data in DB
 
   $result = mysqli_query($conn, $sql); // query to get the data
+
+    $inc_rec = 0;
+    $out_rec = 0;
+
+
+    $finacial_sql = "select * from financial_record where purpose='Incoming' AND month_date='$month' AND year_date='$year'"; // select all the data in DB
+
+    $financial_result = mysqli_query($conn, $finacial_sql); // query to get the data
+
+    while ($row = mysqli_fetch_assoc($financial_result)) {
+      $inc_rec += $row['amount'];
+    }
+
+    $financial_sql2 = "select * from financial_record where purpose='Outgoing' AND month_date='$month' AND year_date='$year'"; // select all the data in DB
+
+    $result2 = mysqli_query($conn, $financial_sql2); // query to get the data
+
+    while ($row = mysqli_fetch_assoc($result2)) {
+      $out_rec += $row['amount'];
+    }
+
+    $total = $inc_rec - $out_rec;
 }
 
 
@@ -164,21 +213,106 @@ if (isset($_POST['MY_submit'])) {
       <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
           <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <!-- <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Incoming">
-                    <i class="ti-plus btn-icon-prepend"></i>Add Incoming
-                  </button>
-                  <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Outgoing">
-                    <i class="ti-plus btn-icon-prepend"></i>Add Outgoing
-                  </button>
+            <?php 
+            
+            if(isset($_POST['year_submit'])) {
+              ?>
 
-                  <button type="button" class="btn btn-dark btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#Add_OR_Image">
-                    <i class="ti-camera btn-icon-prepend"></i>Update OR Image
-                  </button> -->
+<div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Total Financial</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($total); ?></h3>
+                    
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Total of Incoming</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($inc_rec); ?></h3>
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Total of Outgoing</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($out_rec); ?></h3>
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
+                </div>
+              </div>
+            </div>
+              
+              <?php
+            }
 
-                  <div class="form-group" id="view_year_only" style="display: none;">
+            ?>
+
+            <?php 
+            
+            if(isset($_POST['MY_submit'])) {
+              ?>
+
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Total Financial</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($total); ?></h3>
+                    
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>Month of <?php echo $month .' ' .$year;   ?></small></span></p>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Total of Incoming</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($inc_rec); ?></h3>
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>Month of <?php echo $month .' ' .$year;   ?></small></span></p>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title text-md-center text-xl-left">Total of Outgoing</p>
+                  <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($out_rec); ?></h3>
+                    <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
+                  </div>  
+                  <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>Month of <?php echo $month .' ' .$year;   ?></small></span></p>
+                </div>
+              </div>
+            </div>
+              
+              <?php
+            }
+
+            ?>
+
+            
+
+            <div class="col-md-12 grid-margin stretch-card">
+            <div class="form-group" id="view_year_only" style="display: none;">
                     <form method="post" class="form-inline">
                       <select name="year_select" class="custom-select">
                         <?php
@@ -217,21 +351,18 @@ if (isset($_POST['MY_submit'])) {
                         <option name="December" value="December">December</option>
                       </select>
 
-
-
-
                       <button class="btn btn-dark ml-3" type="submit" name="MY_submit">Submit</button>
                     </form>
                   </div>
-
-                </div>
-                <div>
-
-
-                </div>
-              </div>
             </div>
+          
+
+
+            <!-- row end -->
           </div>
+
+          
+
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
