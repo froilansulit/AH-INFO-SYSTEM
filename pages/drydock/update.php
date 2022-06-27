@@ -12,7 +12,7 @@ $Format = 'Y-m-d';
 
 // this for past setting 
 
-$PD = 14;
+$PD = 28;
 $PM = 0;
 $PY = 0;
 
