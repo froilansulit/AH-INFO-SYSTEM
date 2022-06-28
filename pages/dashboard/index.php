@@ -111,14 +111,12 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                   <p class="card-title text-md-center text-xl-left">Financial This Month</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($this_month_total); ?></h3>
-                    
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>  
                   <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
                 </div>
               </div>
             </div>
-            
               <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -134,7 +132,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
               <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                
                   <p class="card-title text-md-center text-xl-left">Financial This Year</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($this_year_total); ?></h3>
@@ -150,16 +147,12 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                   <p class="card-title text-md-center text-xl-left">About</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                    <div class="text-center my-5">
-                      
                       <span class="company_name alert-dark p-4  rounded-pill">A.H Araullo & Sons Rizal Slipways Inc.</span>
                       <p>Shipyard in Navotas</p>
-                      
                    </div>
                 <div class="row">
-              
                 <div class="align-self-center mt-5">
                     <p class="lead mb-3">
-
                     <i class="ti-location-pin icon"></i>
                       <span class="lead">940 M Naval St. San Jose Navotas City</span>
                     </p>
