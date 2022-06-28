@@ -83,7 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
                 <div>
-                  <a href="../tugboat_renting/" class="btn btn-danger btn-icon-text btn-rounded btn-md"><i class="ti-angle-double-left btn-icon-prepend"></i>Cancel</a>
                 </div>
                 <div>
                 </div>
@@ -112,13 +111,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label for="dob">Date of Return</label>
                         <input type="date" name="UdateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR2_row ?>" required>
                       </div>
-                      <div class="form-group mb-3">
+                      <div class="form-group mb-3 float-right">
                         <button type="submit" name="update_rent" class="btn btn-primary">Save Data</button>
+                        <a href="../tugboat_renting/" class="btn btn-danger btn-icon-text  btn-md">Cancel</a>
                       </div>
                     </form>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -127,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php include '../modals.php'; ?>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -135,12 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
-
-
   <?php include '../scripts.php'; ?>
-
-
 </body>
 
 </html>
