@@ -9,7 +9,6 @@ $year_now = date('Y');
 $inc_rec = 0;
 $out_rec = 0;
 
-
 $this_month_sql = "select * from financial_record where purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
 
 $this_month_result = mysqli_query($conn, $this_month_sql); // query to get the data
@@ -35,7 +34,6 @@ $year_now = date('Y');
 $L_inc_rec = 0;
 $L_out_rec = 0;
 
-
 $last_month_sql = "select * from financial_record where purpose='Incoming' AND month_date='$last_month' AND year_date='$year_now'"; // select all the data in DB
 
 $last_month_result = mysqli_query($conn, $last_month_sql); // query to get the data
@@ -54,12 +52,10 @@ while ($row = mysqli_fetch_assoc($last_month_result2)) {
 
 $last_month_total = $L_inc_rec - $L_out_rec;
 
-
 // this year total 
 
 $Y_inc_rec = 0;
 $Y_out_rec = 0;
-
 
 $this_year_sql = "select * from financial_record where purpose='Incoming' AND year_date='$year_now'"; // select all the data in DB
 
@@ -92,7 +88,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 .icon {
     font-size: 1.7rem;
 }
-
 </style>
 <body>
   <div class="container-scroller">

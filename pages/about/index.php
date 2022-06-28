@@ -79,7 +79,6 @@ include '../head.php'; ?>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
 <?php include '../scripts.php'; ?>
 </body>
 </html>
