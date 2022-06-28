@@ -166,7 +166,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                     </p>
                 </div>
                 </div>
-
                   </div>  
                 </div>
               </div>
@@ -174,7 +173,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body shadow">
-                  
                   <p class="card-title text-md-center text-xl-left">Map</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                       <img src="../../images/AH_Map.jpg" class="img-fluid" alt="" srcset="">
@@ -182,7 +180,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                 </div>
               </div>
             </div>
-              
           </div>
         </div>
           <?php include '../modals.php'; ?>
@@ -196,9 +193,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
 <?php include '../scripts.php'; ?>
 </body>
-
 </html>
 
