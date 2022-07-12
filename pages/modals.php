@@ -16,11 +16,6 @@
                             <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial()">
                             
                         </div>
-                        <!-- <div class="form-group col-md-4">
-                                <label for="FRI_purpose">Purpose:</label>
-                                <input type="text" class="form-control" id="FRI_purpose" placeholder="Purpose" value="<?php #echo 'Incoming' 
-                                                                                                                        ?>" disabled>
-                            </div> -->
                         <div class="form-group col-md-12">
                             <label for="FRI_OR">OR Number:</label>
                             <label for="" id="lblFRI_OR" class="text-danger"></label>
