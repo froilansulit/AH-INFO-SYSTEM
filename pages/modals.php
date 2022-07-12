@@ -31,11 +31,6 @@
                             
                             
                         </div>
-                        
-
-
-
-
 
                         <!-- <div class="form-group col-md-4">
                                 <label for="FRI_month">Month: </label>
