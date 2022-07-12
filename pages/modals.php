@@ -28,8 +28,6 @@
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
                             <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
                             
-                            
-
                         </div>
 
                         <!-- <div class="form-group col-md-4">
