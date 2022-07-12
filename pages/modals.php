@@ -24,9 +24,6 @@
                             <label>Amount:</label>
                             <label for="" id="lblFRI_amount" class="text-danger"></label>
                             <input type="number" class="form-control FRI_amount" id="txtNumeric" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
-                            
-                            
-
                             <br>
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
                             <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
