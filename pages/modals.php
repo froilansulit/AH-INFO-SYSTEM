@@ -29,7 +29,7 @@
                             <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
                             
                             
-                            <!-- <input class="form-control lblFRI_currency" type="text" name="currency-field" id="currency-field" pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" data-type="currency" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()"> -->
+                            
                         </div>
                         
 
