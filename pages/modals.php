@@ -28,9 +28,7 @@
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
                             <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
                         </div>
-                        <!-- <div class="form-group col-md-4">
-                                <label for="FRI_month">Month: </label>
-                                <input type="text" class="form-control" id="FRI_month" placeholder="month" value="<?php #echo date('F') 
+                        
                                                                                                                     ?>" disabled>
                             </div> -->
                         <div class="form-group col-md-4">
