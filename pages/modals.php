@@ -14,13 +14,11 @@
                             <label for="FRI_name">Remarks:</label> 
                             <label for="" id="lblFRI_name" class="text-danger"></label>
                             <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial()">
-                            
                         </div>
                         <div class="form-group col-md-12">
                             <label for="FRI_OR">OR Number:</label>
                             <label for="" id="lblFRI_OR" class="text-danger"></label>
                             <input type="text" class="form-control" id="FRI_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial()">
-                           
                         </div>
                         <div class="form-group col-md-12">
                             <label>Amount:</label>
