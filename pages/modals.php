@@ -172,7 +172,7 @@
 
 
                     <button type="button" class="btn btn-primary btn-rounded" id="addOutgoing">Save</button>
-
+                    
                     <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
                 </div>
                 <!-- /.card-body -->
