@@ -430,6 +430,8 @@ function checkValidationFinancial() {
     error: function () {},
   });
 
+  
+
   $("#lblFRI_name").html("");
   $("#lblFRI_OR").html("");
   $("#lblFRI_amount").html("");
@@ -491,13 +493,25 @@ function checkValidationFinancial2() {
   $("#lblFRO_amount").html(""); 
  
   $("#lblFRI_currency2").html("");
+
+
+
+  $.ajax({
+
+    url: "check_OR.php",
+    data: "FRO_OR=" + $("#FRO_OR").val(),
+    type: "POST",
+    success: function (data) {
+      $("#lblFRO_OR").html(data);
+    },
+    error: function () {},
+  });
   
   
   if(FRO_amount != ""){
     $("#lblFRI_currency2").html("₱ " + currency2.toLocaleString());
   }
   
-
   // display error no input
   
 
@@ -523,7 +537,7 @@ function checkValidationFinancial2() {
     $("#lblFRO_name").html("");
     $("#lblFRO_OR").html("");  
     $("#lblFRO_amount").html(""); 
-    $("#addIncoming").prop("disabled", false);
+    $("#addOutgoing").prop("disabled", false);
 
   }
 }

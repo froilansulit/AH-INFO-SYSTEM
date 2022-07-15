@@ -112,7 +112,7 @@
                             <label for="FRO_OR">OR Number:</label>
                             <label for="" id="lblFRO_OR" class="text-danger"></label>
 
-                            <input type="text" class="form-control" id="FRO_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial2()">
+                            <input type="text" class="form-control" name="FRO_OR" id="FRO_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial2()">
                         </div>
                         <div class="form-group col-md-12">
                             <label>Amount:</label>

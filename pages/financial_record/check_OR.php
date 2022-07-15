@@ -39,14 +39,13 @@ if(!empty($_POST["FRI_OR"])) {
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
     // echo "<script>$('#addIncoming').prop('disabled',true);</script>";
 
-    
     // echo "<script>$('#addUser').prop('disabled',false);</script>";
   }
 } 
 
-if(!empty($_POST["FRI_OR"])) {
+if(!empty($_POST["FRO_OR"])) {
     
-  $OR_ID =  $_POST["FRI_OR"];
+  $OR_ID =  $_POST["FRO_OR"];
   $query = "SELECT * FROM financial_record WHERE or_number='" . $OR_ID . "'";
   $result = mysqli_query($conn,$query);
   $count = mysqli_num_rows($result);
