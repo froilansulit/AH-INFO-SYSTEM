@@ -3,9 +3,10 @@
 include '../vendor/autoload.php';
 include '../connect.php';
 
-// $sql = "select * from financial_record where month_date='$month' AND year_date='$year'"; // select all the data in DB
+$month = date('F');
+$year = date('Y');
 
-$res=mysqli_query($conn,"select * from tugboat_record");
+$res=mysqli_query($conn,"select * from tugboat_record where month='$month' AND year='$year'");
 if(mysqli_num_rows($res)>0){
     $number = 1;
 	$html='<style>
@@ -35,11 +36,11 @@ if(mysqli_num_rows($res)>0){
         background-color: #04AA6D;
         color: white;
       }
-    </style><h1>Financial Record '.date('F').' '.date('Y').'</h1><table class="table">';
-		$html.='<tr><td>ID</td><td>Remarks</td><td>Date</td><td>Purpose</td><td>OR Number</td><td>Amount</td><td>Encoded by</td></tr>';
+    </style><h1>Tugboat Renting Records '.date('F').' '.date('Y').'</h1><table class="table">';
+		$html.='<tr><td>ID</td><td>Name</td><td>Date of Rent</td><td>Date of Return</td></tr>';
 		while($row=mysqli_fetch_assoc($res)){
             
-			$html.='<tr><td>'.$number.'</td><td>'.$row['cname'].'</td><td>'.$row['date_set'].'</td><td>'.$row['purpose'].'</td><td>'.$row['or_number'].'</td><td>'.'₱ '.number_format($row['amount']).'</td><td>'.$row['encoded_by'].'</td></tr>';
+			$html.='<tr><td>'.$number.'</td><td>'.$row['name'].'</td><td>'.$row['dateofRent'].'</td><td>'.$row['dateofReturn'].'</td></tr>';
             $number++;
 		}
 	$html.='</table>';
@@ -48,13 +49,13 @@ if(mysqli_num_rows($res)>0){
 }
 $mpdf=new \Mpdf\Mpdf();
 $mpdf->WriteHTML($html);
-$file= 'Financial_'.date('F').'_'.date('Y').'.pdf';
+$file= 'Tugboat_Renting_'.date('F').'_'.date('Y').'.pdf';
 $mpdf->output($file,'D');
 //D
 //I
 //F
 //S
 
-header('location: ../financial_record/');
+header('location: ../tugboat_renting/');
 
 ?>

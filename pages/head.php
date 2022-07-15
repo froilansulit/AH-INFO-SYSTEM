@@ -13,4 +13,5 @@
   <!-- endinject -->
   <!-- DataTables -->
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <script src="../chart.js"></script>
 </head>

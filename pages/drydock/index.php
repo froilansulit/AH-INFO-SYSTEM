@@ -102,8 +102,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $escape_cname = mysqli_real_escape_string($conn, $company_name);
         $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
         $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
+
+        
+        $month = date('F');
+        $year = date('Y');
  
-        $sql = "insert into drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images) values ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image')";
+        $sql = "insert into drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images,month,year) values ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image','$month','$year')";
         $result = mysqli_query($conn, $sql);
   
         if ($result) {
@@ -194,7 +198,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Dry Dock</p>
-
+                  <a href="pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print</a>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <?php
                     if (isset($_SESSION['status'])) {

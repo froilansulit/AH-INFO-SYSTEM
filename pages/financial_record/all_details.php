@@ -270,7 +270,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <th>Image</th>
                           <th>Amount</th>
                           <th>Encoded by</th>
-                          <th>Operation</th>
+                          
 
                         </tr>
                       </thead>
@@ -321,18 +321,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
                             <td><?php echo $row['encoded_by']; ?></td>
 
-                            <td>
-
-                              <a href="#" data-toggle="tooltip" title="Edit">
-                                <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateFinancial" onclick="GetData(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                              </a>
-                              <a href="#" data-toggle="tooltip" title="Remove">
-                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRecord(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
-                              </a>
-                              <a href="#" data-toggle="tooltip" title="View">
-                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewFinancial" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
-                              </a>
-                            </td>
+                            
 
 
                         </tr>

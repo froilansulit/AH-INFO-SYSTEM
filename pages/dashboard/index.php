@@ -1,8 +1,9 @@
-<?php 
+<?php
 
 include '../head.php';
 include '../session.php';
 include '../connect.php';
+
 
 $month_now = date('F');
 $year_now = date('Y');
@@ -79,16 +80,16 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 <!DOCTYPE html>
 <html lang="en">
 <style>
-
-.company_name{
+  .company_name {
     font-size: 1.5rem;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
 
-.icon {
+  .icon {
     font-size: 1.7rem;
-}
+  }
 </style>
+
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -98,45 +99,45 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
       <!-- partial:partials/_sidebar.html -->
       <?php include '../sidebar.php'; ?>
       <!-- partial -->
-      <div class="main-panel" >
+      <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
           <div class="row">
             <div class="col-md-12 grid-margin">
             </div>
           </div>
           <div class="row">
-              <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Financial This Month</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($this_month_total); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
                 </div>
               </div>
             </div>
-              <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Financial Last Month</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($last_month_total); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>Last Month</small></span></p>
                 </div>
               </div>
             </div>
-              <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Financial This Year</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($this_year_total); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
-                  </div>  
+                  </div>
                   <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Year</small></span></p>
                 </div>
               </div>
@@ -146,27 +147,27 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                 <div class="card-body shadow">
                   <p class="card-title text-md-center text-xl-left">About</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                   <div class="text-center my-5">
+                    <div class="text-center my-5">
                       <span class="company_name alert-dark p-4  rounded-pill">A.H Araullo & Sons Rizal Slipways Inc.</span>
                       <p>Shipyard in Navotas</p>
-                   </div>
-                <div class="row">
-                <div class="align-self-center mt-5">
-                    <p class="lead mb-3">
-                    <i class="ti-location-pin icon"></i>
-                      <span class="lead">940 M Naval St. San Jose Navotas City</span>
-                    </p>
-                    <p class="lead mb-3">
-                    <i class="ti-mobile icon"></i>
-                      <span class="lead">282 8940</span>
-                    </p>
-                    <p class="lead mb-3">
-                    <i class="ti-anchor icon"></i>
-                      <span class="lead">Services - Drydocking</span>
-                    </p>
-                </div>
-                </div>
-                  </div>  
+                    </div>
+                    <div class="row">
+                      <div class="align-self-center mt-5">
+                        <p class="lead mb-3">
+                          <i class="ti-location-pin icon"></i>
+                          <span class="lead">940 M Naval St. San Jose Navotas City</span>
+                        </p>
+                        <p class="lead mb-3">
+                          <i class="ti-mobile icon"></i>
+                          <span class="lead">282 8940</span>
+                        </p>
+                        <p class="lead mb-3">
+                          <i class="ti-anchor icon"></i>
+                          <span class="lead">Services - Drydocking</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,17 +176,72 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                 <div class="card-body shadow">
                   <p class="card-title text-md-center text-xl-left">Map</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                      <img src="../../images/AH_Map.jpg" class="img-fluid" alt="" srcset="">
-                  </div>  
+                    <img src="../../images/AH_Map.jpg" class="img-fluid" alt="" srcset="">
+                  </div>
                 </div>
               </div>
             </div>
+            <?php 
+
+            $month = date('F');
+            $year = date('Y');
+            
+            $sql = "select * from financial_record"; // select all the data in DB
+
+            $result = mysqli_query($conn, $sql); // query to get the data
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+              $id = $row['id'];
+              $monthSelect[] = $row['month_date'];
+            }
+
+            ?>
+            <div>
+              <canvas id="myChart"></canvas>
+            </div>
+
           </div>
         </div>
-          <?php include '../modals.php'; ?>
+        <?php include '../modals.php'; ?>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-          <?php include '../footer.php'; ?>
+        <?php include '../footer.php'; ?>
+        <script>
+          // const labels = [
+          //   'January',
+          //   'February',
+          //   'March',
+          //   'April',
+          //   'May',
+          //   'June',
+          // ];
+          const labels = <?php echo json_encode($monthSelect)?>;
+
+          const data = {
+            labels: labels,
+            datasets: [{
+              label: 'Year 2022',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+          };
+
+          const config = {
+            type: 'line',
+            data: data,
+            options: {}
+          };
+        </script>
+
+        <script>
+          const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+          );
+        </script>
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -193,7 +249,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-<?php include '../scripts.php'; ?>
+  <?php include '../scripts.php'; ?>
 </body>
-</html>
 
+</html>
