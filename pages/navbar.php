@@ -6,9 +6,6 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color:#414242;">
         <ul class="navbar-nav navbar-nav-right" >
-         <!-- <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="ti-view-list"></span>
-        </button>  -->
            <li class="nav-item nav-profile dropdown">
            <a href="../logout.php">
                 <button class="btn btn-danger font-weight-medium text-light ">Logout</button>
@@ -20,4 +17,3 @@
         </button>
       </div>
     </nav>
-    <!-- partial -->
