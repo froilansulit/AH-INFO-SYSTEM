@@ -70,7 +70,6 @@
                       <span class="menu-title">Dry Dock</span>
                   </a>
               </li>
-                
               <?php if ($user_type == "admin") {
                   echo '<li class="nav-item">
                   <a class="nav-link" href="../users/">
@@ -79,16 +78,12 @@
                   </a>
               </li>';
               } ?>
-              
                <li class="nav-item">
                   <a class="nav-link" href="../about/">
                       <i class="ti-info menu-icon"></i>
                       <span class="menu-title">About</span>
                   </a>
               </li>
-
-
-
               <li class="nav-item fixed-bottom col-md-2 pb-3 pr-1">
 
                 <a class="nav-link bg-muted  text-dark mb-3" >
