@@ -446,7 +446,7 @@ function checkValidationFinancial() {
     $("#addIncoming").prop("disabled", true);
   }
 
-  // validation for befroe submit
+  // validation for before submit
   
   else if (FRI_name == "") {
     $("#lblFRI_name").html("* Please fill out this field ");

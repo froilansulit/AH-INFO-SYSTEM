@@ -25,7 +25,7 @@ if(!empty($_POST["OR_number_verify"])) {
   }
 } 
 
-//   for drydock image preview
+//   for financial image preview
 
 if (isset($_POST['userID'])) {
   $id = $_POST['userID'];

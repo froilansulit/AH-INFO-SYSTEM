@@ -31,7 +31,6 @@
                         <div class="form-group col-md-4">
                             <!-- <label for="FRI_encoded">Encoded by:</label> -->
                             <input type="hidden" class="form-control" id="FRI_date" value="<?php echo date('F d, Y') ?>" disabled hidden>
-
                             <input type="hidden" class="form-control" id="FRI_purpose" value="<?php echo 'Incoming' ?>" disabled hidden>
                             <input type="hidden" class="form-control" id="FRI_month" value="<?php echo date('F') ?>" disabled hidden>
                             <input type="hidden" class="form-control" id="FRI_year" value="<?php echo date('Y') ?>" disabled hidden>
