@@ -145,26 +145,7 @@
                             <input type="hidden" class="form-control" id="FRO_encoded" placeholder="Encoded By" value="<?php echo $acc_name; ?>" disabled hidden>
                         </div>
                         
-                        <!-- <div class="form-group col-md-4">
-                                <label for="Discount Price">Discount Price</label>
-                                <input class="form-control" type="text" name="currency-field" id="currency-field" pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" value="" data-type="currency" placeholder="P 0.00">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="Sales Price">Sales Price</label>
-                                <input class="form-control" type="text" name="currency-field" id="currency-field" pattern="^\P\d{1,3}(,\d{3})*(\.\d+)?P" value="" data-type="currency" placeholder="P 0.00">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="Reorder Level">Reorder Level</label>
-                                <input type="text" class="form-control" id="Reorder Level" placeholder="Reorder Level">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="Stock Quantity">Stock Quantity</label>
-                                <input type="text" class="form-control" id="Stock Quantity" placeholder="Stock Quantity">
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label for="Expiry Date">Expiry Date</label>
-                                <input type="text" class="form-control" id="Expiry Date" placeholder="Expiry Date">
-                            </div> -->
+                        
                     </div>
                     <!-- <button type="submit" class="btn btn-primary btn-rounded" >Save</button> -->
 
