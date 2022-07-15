@@ -21,6 +21,7 @@ if(mysqli_num_rows($res)>0){
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
         width: 100%;
+        text-align: center;
       }
       
       table td, #customers th {
@@ -39,11 +40,11 @@ if(mysqli_num_rows($res)>0){
         background-color: #04AA6D;
         color: white;
       }
-    </style><h1>Financial Month of '.date('Y').'</h1><table class="table">';
-		$html.='<tr><td>ID</td><td>Remarks</td><td>Date</td><td>Purpose</td></tr>';
+    </style><h1>Financial Record '.date('F').' '.date('Y').'</h1><table class="table">';
+		$html.='<tr><td>ID</td><td>Remarks</td><td>Date</td><td>Purpose</td><td>OR Number</td><td>Amount</td><td>Encoded by</td></tr>';
 		while($row=mysqli_fetch_assoc($res)){
             
-			$html.='<tr><td>'.$number.'</td><td>'.$row['cname'].'</td><td>'.$row['date_set'].'</td><td>'.$row['purpose'].'</td></tr>';
+			$html.='<tr><td>'.$number.'</td><td>'.$row['cname'].'</td><td>'.$row['date_set'].'</td><td>'.$row['purpose'].'</td><td>'.$row['or_number'].'</td><td>'.'₱ '.number_format($row['amount']).'</td><td>'.$row['encoded_by'].'</td></tr>';
             $number++;
 		}
 	$html.='</table>';
@@ -58,5 +59,7 @@ $mpdf->output($file,'D');
 //I
 //F
 //S
+
+header('location: ../financial_record/');
 
 ?>

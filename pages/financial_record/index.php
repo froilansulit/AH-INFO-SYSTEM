@@ -153,6 +153,12 @@ $result = mysqli_query($conn, $sql); // query to get the data
                     <i class="ti-camera btn-icon-prepend"></i>Update OR Image
                   </button>
 
+                 
+                  
+                  <!-- <button type="button" class="btn btn-outline-dark btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#Add_OR_Image">
+                    
+                  </button> -->
+
                   
 
                   <!-- <select name="select">
@@ -176,6 +182,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Financial Record <span class="text-danger">(This Month)</span></p>
+                  <a href="pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print</a>
                   <div class="dropdown">
                   <a class="btn btn-primary btn-sm float-right dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
                     Display
