@@ -101,15 +101,5 @@
                       <span class="menu-title mx-auto">LOGOUT</span>
                   </a> -->
               </li>
-              <!--
-              <li class="nav-item">
-                  <a class="nav-link" href="../auditlog/auditlog.php">
-                      <i class="ti-time menu-icon"></i>
-                      <span class="menu-title">Audit Log</span>
-                  </a>
-              </li> -->
           </ul>
       </nav>
-
-
-      <!-- partial -->
