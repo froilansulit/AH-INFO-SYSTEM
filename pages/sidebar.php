@@ -57,13 +57,8 @@
                       <i class="ti-file menu-icon"></i>
                       <span class="menu-title">Item Raw Material</span>
                   </a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../invoice/invoice.php">
-                      <i class="ti-shopping-cart-full menu-icon"></i>
-                      <span class="menu-title">Invoice</span>
-                  </a>
-              </li> -->
+              </li>-->
+              
               <li class="nav-item">
                   <a class="nav-link" href="../drydock">
                       <i class="ti-bookmark-alt menu-icon"></i>
