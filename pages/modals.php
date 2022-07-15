@@ -17,8 +17,8 @@
                         </div>
                         <div class="form-group col-md-12">
                             <label for="FRI_OR">OR Number:</label>
-                            <label for="" id="lblFRI_OR" class="text-danger"></label>
-                            <input type="text" class="form-control" id="FRI_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial()">
+                            <label id="lblFRI_OR" class="text-danger"></label>
+                            <input type="text" class="form-control" id="FRI_OR" name="FRI_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial()">
                         </div>
                         <div class="form-group col-md-12">
                             <label>Amount:</label>

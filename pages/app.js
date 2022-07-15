@@ -63,6 +63,7 @@ $.ajax({
   error: function () {},
 });
 
+
 }
 function checkValidationUsers() {
   var A_name = $("#A_name").val();
@@ -417,6 +418,17 @@ function checkValidationFinancial() {
 
   var currency1 = parseFloat(FRI_amount);
   var currency3 = parseFloat(U_amount);
+
+  $.ajax({
+
+    url: "check_OR.php",
+    data: "FRI_OR=" + $("#FRI_OR").val(),
+    type: "POST",
+    success: function (data) {
+      $("#lblFRI_OR").html(data);
+    },
+    error: function () {},
+  });
 
   $("#lblFRI_name").html("");
   $("#lblFRI_OR").html("");
