@@ -20,13 +20,6 @@
                   </a>
               </li>
               
-              <!-- <li class="nav-item">
-                  <a class="nav-link" href="../productset/productset.php">
-                      <i class="ti-shopping-cart menu-icon"></i>
-                      <span class="menu-title">Product Sets</span>
-                  </a>
-              </li> -->
-              
               <li class="nav-item">
                   <a class="nav-link" href="../Montly_Tally/">
                       <i class="ti-bar-chart menu-icon"></i>
