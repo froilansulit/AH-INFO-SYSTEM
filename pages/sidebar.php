@@ -1,4 +1,3 @@
-      
       <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color:#bddcff;">
           <ul class="nav">
               <li class="nav-item">
