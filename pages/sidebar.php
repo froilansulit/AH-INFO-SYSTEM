@@ -46,12 +46,7 @@
                       <span class="menu-title">Units</span>
                   </a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../category/category.php">
-                      <i class="ti-layers-alt menu-icon"></i>
-                      <span class="menu-title">Categories</span>
-                  </a>
-              </li>
+             
               -->
               
               <li class="nav-item">
