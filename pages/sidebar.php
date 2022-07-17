@@ -7,19 +7,12 @@
                       <span class="menu-title">Dashboard</span>
                   </a>
               </li>
-              <!-- <li class="nav-item">
-                  <a class="nav-link" href="../company/company.php">
-                      <i class="ti-flag menu-icon"></i>
-                      <span class="menu-title">Company Setup</span>
-                  </a>
-              </li> -->
               <li class="nav-item">
                   <a class="nav-link" href="../financial_record/">
                       <i class="ti-money menu-icon"></i>
                       <span class="menu-title">Financial Record</span>
                   </a>
               </li>
-              
               <li class="nav-item">
                   <a class="nav-link" href="../Montly_Tally/">
                       <i class="ti-bar-chart menu-icon"></i>
