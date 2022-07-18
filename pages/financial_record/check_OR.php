@@ -37,7 +37,7 @@ if(!empty($_POST["FRI_OR"])) {
     // echo "<script>$('#addIncoming').hide();</script>";
   }else{
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
-    echo "<script>$('#addIncoming').prop('disabled',false);</script>";
+    // echo "<script>$('#addIncoming').prop('disabled',false);</script>";
 
     // echo "<script>$('#addUser').prop('disabled',false);</script>";
   }
@@ -52,7 +52,6 @@ if(!empty($_POST["FRO_OR"])) {
   if($count > 0) {
     echo "<span style='color:red' id='OR_msg'> * <b>OR NUMBER already exist.</b></span>";
     echo "<script>$('#addOutgoing').prop('disabled',true);</script>";
-    echo "<script>$('#addOutgoing').hide();</script>";
   }else{
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
     // echo "<script>$('#addIncoming').prop('disabled',true);</script>";

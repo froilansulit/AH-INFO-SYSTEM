@@ -420,7 +420,7 @@ function checkValidationFinancial() {
   var currency3 = parseFloat(U_amount);
 
   
-  // $("#addIncoming").hide();
+  $("#addIncoming").prop("disabled", true);
 
   $.ajax({
     url: "check_OR.php",
@@ -454,17 +454,14 @@ function checkValidationFinancial() {
   if (FRI_name == "") {
     $("#lblFRI_name").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-    // $("#addIncoming").hide();
   }
   if (FRI_OR == "") {
     $("#lblFRI_OR").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-    // $("#addIncoming").hide();
   }
   if (FRI_amount == "") {
     $("#lblFRI_amount").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-    // $("#addIncoming").hide();
   }
 
   // validation for before submit
@@ -472,21 +469,20 @@ function checkValidationFinancial() {
   else if (FRI_name == "") {
     $("#lblFRI_name").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-    // $("#addIncoming").hide();
   } else if (FRI_OR == "") {
     $("#lblFRI_OR").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-    // $("#addIncoming").hide();
   } else if (FRI_amount == "") {
     $("#lblFRI_amount").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-    // $("#addIncoming").hide();
+   
   } 
   else {
     $("#lblFRI_name").html("");
     $("#lblFRI_OR").html("");
     $("#lblFRI_amount").html("");
     $("#addIncoming").prop("disabled", false);
+
   }
 }
 
@@ -504,7 +500,6 @@ function checkValidationFinancial2() {
  
   $("#lblFRI_currency2").html("");
 
-  $("#addOutgoing").hide();
 
   $.ajax({
     url: "check_OR.php",
@@ -519,47 +514,41 @@ function checkValidationFinancial2() {
   
   if(FRO_amount != ""){
     $("#lblFRI_currency2").html("₱ " + currency2.toLocaleString());
-    $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
   }
   
   // display error no input
   if (FRO_name == "") {
     $("#lblFRO_name").html("* Please fill out this field ");
     $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
   }
   if (FRO_OR == "") {
     $("#lblFRO_OR").html("* Please fill out this field ");
     $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
+    
   }
   if (FRO_amount == "") {
     $("#lblFRO_amount").html("* Please fill out this field ");
     $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
+    
   } 
 
   // validation for befroe submit
   else if (FRO_name == "") {
     $("#lblFRO_name").html("* Please fill out this field ");
     $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
+    
   } else if (FRO_OR == "") {
     $("#lblFRO_OR").html("* Please fill out this field ");
     $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
   } else if (FRO_amount == "") {
     $("#lblFRO_amount").html("* Please fill out this field ");
     $("#addOutgoing").prop("disabled", true);
-    $("#addOutgoing").hide();
   }
    else {
     $("#lblFRO_name").html("");
     $("#lblFRO_OR").html("");  
     $("#lblFRO_amount").html(""); 
     $("#addOutgoing").prop("disabled", false);
-    $("#addOutgoing").show();
   }
 }
 

@@ -10,17 +10,7 @@
             <div class="modal-body">
                 <div class="card-body">
                     <div class="row">
-                        <div class="form-group col-md-12">
-                            <label for="FRI_name">Remarks:</label> 
-                            <label for="" id="lblFRI_name" class="text-danger"></label>
-                            <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial()">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="FRI_OR">OR Number:</label>
-                            <label id="lblFRI_OR" class="text-danger"></label>
-                            <input type="text" class="form-control" id="FRI_OR" name="FRI_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial()">
-                        </div>
-                        <div class="form-group col-md-12">
+                    <div class="form-group col-md-12">
                             <label>Amount:</label>
                             <label for="" id="lblFRI_amount" class="text-danger"></label>
                             <input type="number" class="form-control FRI_amount" id="txtNumeric" placeholder="P 0.00" autocomplete="off" onInput="checkValidationFinancial()">
@@ -28,6 +18,18 @@
                             <label for="" class="text-dark font-weight-bold">Currency Format: </label>
                             <label for="" id="lblFRI_currency" class="text-muted font-weight-bold"></label>
                         </div>
+                        <div class="form-group col-md-12">
+                            <label for="FRI_name">Remarks:</label> 
+                            <label for="" id="lblFRI_name" class="text-danger"></label>
+                            <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial()">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="FRI_OR">OR Number:</label>
+                            <label id="lblFRI_OR" class="text-danger"></label>
+                            <input type="text" class="form-control" id="FRI_OR" name="FRI_OR" placeholder="OR Number" autocomplete="off" onInput="checkValidationFinancial()">
+                        </div>
+                        
                         <div class="form-group col-md-4">
                             <!-- <label for="FRI_encoded">Encoded by:</label> -->
                             <input type="hidden" class="form-control" id="FRI_date" value="<?php echo date('F d, Y') ?>" disabled hidden>
@@ -152,7 +154,7 @@
                     <!-- <button type="submit" class="btn btn-primary btn-rounded" name="submit">Save</button> -->
 
 
-                    <button type="button" class="btn btn-primary btn-rounded" id="addOutgoing" disabled style="display: none;">Save</button>
+                    <button type="button" class="btn btn-primary btn-rounded" id="addOutgoing" disabled>Save</button>
                     
                     <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
                 </div>
