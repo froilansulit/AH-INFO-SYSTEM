@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" >
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" style="background-color:#414242;">
         <a class="navbar-brand brand-logo" href="../dashboard/">
-          <p style="color:#d4d4d4;font-size:1.2rem;"><b>Transaction Information<br> System</b></p>
+          <p style="color:#d4d4d4;font-size:1.2rem;"><i class="ti-money menu-icon"></i><b>Financial Transaction</b></p>
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color:#414242;">
