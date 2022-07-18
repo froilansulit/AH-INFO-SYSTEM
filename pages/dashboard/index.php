@@ -145,9 +145,9 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Financial This Month</h5>
+                    <h5 class="card-title">Transactions this Month</h5>
                     
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">The graph below is the tally of incoming and outgoing financial transactions for this month. </p>
                     <div><canvas id="myChart"></canvas></div>
                 </div>
             </div>
@@ -155,9 +155,9 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Total Financial this month & last month</h5>
+                    <h5 class="card-title">Transactions for the last month & this month</h5>
                     
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">The graph below is the tally of financial transactions for the last month and this month.</p>
                           <div>
                     <canvas id="myChart2"></canvas>
                   </div>

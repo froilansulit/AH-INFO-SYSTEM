@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2022 at 05:09 PM
+-- Generation Time: Jul 18, 2022 at 09:10 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -34,17 +34,19 @@ CREATE TABLE `drydock_record` (
   `Lot_Num` varchar(100) NOT NULL,
   `Drydock_date` date NOT NULL,
   `Exp_Departure` date NOT NULL,
-  `images` varchar(100) NOT NULL
+  `images` varchar(100) NOT NULL,
+  `month` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `drydock_record`
 --
 
-INSERT INTO `drydock_record` (`id`, `Company_Name`, `Ship_Name`, `Lot_Num`, `Drydock_date`, `Exp_Departure`, `images`) VALUES
-(1, 'Straw Hat Pirates', 'Going Merry', 'None', '2022-06-27', '2022-07-01', 'Going-Merry.jpg'),
-(2, ' Heart Pirates', 'Polar Tang (ポーラータング号)', 'None', '2022-06-27', '2022-07-04', 'polar-tang.jpg'),
-(3, 'Red Hair Pirates', 'Red Force', 'None', '2022-06-27', '2022-07-09', 'red hair P.png');
+INSERT INTO `drydock_record` (`id`, `Company_Name`, `Ship_Name`, `Lot_Num`, `Drydock_date`, `Exp_Departure`, `images`, `month`, `year`) VALUES
+(1, 'Straw Hat Pirates', 'Going Merry', 'None', '2022-06-27', '2022-07-01', 'Going-Merry.jpg', 'June', '2022'),
+(2, ' Heart Pirates', 'Polar Tang (ポーラータング号)', 'None', '2022-06-27', '2022-07-04', 'polar-tang.jpg', 'June', '2022'),
+(3, 'Red Hair Pirates', 'Red Force', 'None', '2022-06-13', '2022-07-09', 'red hair P.png', 'June', '2022');
 
 -- --------------------------------------------------------
 
@@ -70,9 +72,12 @@ CREATE TABLE `financial_record` (
 --
 
 INSERT INTO `financial_record` (`id`, `cname`, `date_set`, `purpose`, `or_number`, `images`, `amount`, `month_date`, `year_date`, `encoded_by`) VALUES
-(1, 'first', 'June 27, 2022', 'Incoming', '1231233', 'NP', '150', 'June', '2022', 'Froilan Sulit'),
-(2, 'testing2', 'June 27, 2022', 'Incoming', '123513', 'NP', '500', 'June', '2022', 'Froilan Sulit'),
-(3, 'test3', 'June 27, 2022', 'Incoming', '123512321', 'NP', '100', 'June', '2022', 'Froilan Sulit');
+(1, 'first', 'June 27, 2022', 'Incoming', '1231233', 'NP', '1500', 'June', '2022', 'Froilan Sulit'),
+(2, 'testing2', 'June 27, 2022', 'Incoming', '123513', 'NP', '750', 'June', '2022', 'Froilan Sulit'),
+(3, 'test3', 'June 27, 2022', 'Incoming', '123512321', 'NP', '500', 'June', '2022', 'Froilan Sulit'),
+(6, 'Testing', 'July 18, 2022', 'Incoming', '5564487', 'NP', '5500', 'July', '2022', 'Froilan Sulit'),
+(8, 'materials', 'July 18, 2022', 'Outgoing', '12312', 'NP', '5000', 'July', '2022', 'Froilan Sulit'),
+(16, 'shop ', 'July 18, 2022', 'Incoming', '568711333', 'NP', '15000', 'July', '2022', 'Froilan Sulit');
 
 -- --------------------------------------------------------
 
@@ -84,18 +89,20 @@ CREATE TABLE `tugboat_record` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `dateofRent` date NOT NULL,
-  `dateofReturn` date NOT NULL
+  `dateofReturn` date NOT NULL,
+  `month` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tugboat_record`
 --
 
-INSERT INTO `tugboat_record` (`id`, `name`, `dateofRent`, `dateofReturn`) VALUES
-(1, 'Vince Lenard Gregorio', '2022-06-20', '2022-06-27'),
-(2, 'Daniel Espiritu', '2022-06-04', '2022-06-18'),
-(3, 'Vishnu Padilla', '2022-05-20', '2022-05-31'),
-(4, 'Froilan Sulit', '2022-06-27', '2022-07-09');
+INSERT INTO `tugboat_record` (`id`, `name`, `dateofRent`, `dateofReturn`, `month`, `year`) VALUES
+(5, 'Geo Salangsang', '2022-07-15', '2022-07-23', 'July', '2021'),
+(6, 'Vince Lenard Gregorio', '2022-07-15', '2022-07-29', 'July', '2022'),
+(7, 'Alfred Magsalo', '2022-07-17', '2022-07-20', 'July', '2022'),
+(8, 'Ricardo Dalisay', '2022-07-18', '2022-07-22', 'July', '2022');
 
 -- --------------------------------------------------------
 
@@ -160,19 +167,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `drydock_record`
 --
 ALTER TABLE `drydock_record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `financial_record`
 --
 ALTER TABLE `financial_record`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tugboat_record`
 --
 ALTER TABLE `tugboat_record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
