@@ -145,17 +145,16 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Card Title</h5>
+                    <h5 class="card-title">Financial This Month</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div><canvas id="myChart"></canvas></div>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Total Financial</h5>
+                    <h5 class="card-title">Total Financial this month & last month</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <div>
                     <canvas id="myChart2"></canvas>
