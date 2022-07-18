@@ -6,6 +6,11 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color:#414242;">
         <ul class="navbar-nav navbar-nav-right" >
+          <li class="nav-item">
+          <a class="nav-link bg-muted  text-dark mb-3">
+                      <span class="menu-title text-capitalize font-weight-bold"><?php echo $acc_name; ?></span><span class="badge badge-pill badge- text-capitalize float-right ml-1"><?php echo $user_type; ?></span>
+                  </a>
+          </li>
            <li class="nav-item nav-profile dropdown">
            <a href="../logout.php">
                 <button class="btn btn-danger font-weight-medium text-light ">Logout</button>

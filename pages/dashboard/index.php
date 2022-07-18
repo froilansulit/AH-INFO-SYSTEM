@@ -146,6 +146,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Financial This Month</h5>
+                    
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     <div><canvas id="myChart"></canvas></div>
                 </div>
@@ -155,6 +156,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Total Financial this month & last month</h5>
+                    
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                           <div>
                     <canvas id="myChart2"></canvas>
@@ -218,7 +220,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     backgroundColor: [
       'rgb(255, 99, 132)',
       'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
     ],
     hoverOffset: 4
   }]
@@ -245,14 +246,13 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 
 const data2 = {
   labels: [
-    'Outgoing',
-    'Incoming'
+    'Last Month',
+    'This Month'
   ],
   datasets: [{
     label: 'My First Dataset',
-    data: [<?php echo $L_inc_rec; ?>, <?php echo $inc_rec; ?>],
+    data: [<?php echo $last_month_total; ?>, <?php echo $this_month_total; ?>],
     backgroundColor: [
-      'rgb(255, 99, 132)',
       'rgb(54, 162, 235)',
       'rgb(255, 205, 86)'
     ],

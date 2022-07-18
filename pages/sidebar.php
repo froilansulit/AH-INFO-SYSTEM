@@ -46,9 +46,9 @@
                   </a>
               </li>
               <li class="nav-item fixed-bottom col-md-2 pb-3 pr-1">
-                  <a class="nav-link bg-muted  text-dark mb-3">
+                  <!-- <a class="nav-link bg-muted  text-dark mb-3">
                       <span class="menu-title text-capitalize font-weight-bold"><?php echo $acc_name; ?></span><span class="badge badge-pill badge-dark text-capitalize float-right ml-1"><?php echo $user_type; ?></span>
-                  </a>
+                  </a> -->
                   <!-- <a class="nav-link btn btn-danger text-dark bg-danger rounded-pill border border-none " href="../logout.php">
                       <i class="ti-power-off text-dark"></i>
                       <span class="menu-title mx-auto">LOGOUT</span>
