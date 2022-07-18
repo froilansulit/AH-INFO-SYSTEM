@@ -143,49 +143,33 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body shadow">
-                  <p class="card-title text-md-center text-xl-left">About</p>
-                  <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <div class="text-center my-5">
-                      <span class="company_name alert-dark p-4  rounded-pill">A.H Araullo & Sons Rizal Slipways Inc.</span>
-                      <p>Shipyard in Navotas</p>
-                    </div>
-                    <div class="row">
-                      <div class="align-self-center mt-5">
-                        <p class="lead mb-3">
-                          <i class="ti-location-pin icon"></i>
-                          <span class="lead">940 M Naval St. San Jose Navotas City</span>
-                        </p>
-                        <p class="lead mb-3">
-                          <i class="ti-mobile icon"></i>
-                          <span class="lead">282 8940</span>
-                        </p>
-                        <p class="lead mb-3">
-                          <i class="ti-anchor icon"></i>
-                          <span class="lead">Services - Drydocking</span>
-                        </p>
-                      </div>
-                    </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card Title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <div>
+                    <canvas id="myChart"></canvas>
                   </div>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
-              </div>
+            </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body shadow">
-                  <p class="card-title text-md-center text-xl-left">Map</p>
-                  <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <img src="../../images/AH_Map.jpg" class="img-fluid" alt="" srcset="">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card Title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <div>
+                    <canvas id="myChart2"></canvas>
                   </div>
                 </div>
-              </div>
             </div>
-            <?php 
+            </div>
+            <?php
 
             $month = date('F');
             $year = date('Y');
-            
+
             $sql = "select * from financial_record"; // select all the data in DB
 
             $result = mysqli_query($conn, $sql); // query to get the data
@@ -197,9 +181,8 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             }
 
             ?>
-            <div>
-              <canvas id="myChart"></canvas>
-            </div>
+            
+
 
           </div>
         </div>
@@ -207,40 +190,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <?php include '../footer.php'; ?>
-        <script>
-          // const labels = [
-          //   'January',
-          //   'February',
-          //   'March',
-          //   'April',
-          //   'May',
-          //   'June',
-          // ];
-          const labels = <?php echo json_encode($monthSelect)?>;
-
-          const data = {
-            labels: labels,
-            datasets: [{
-              label: 'Year 2022',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: [0, 10, 5, 2, 20, 30, 45],
-            }]
-          };
-
-          const config = {
-            type: 'line',
-            data: data,
-            options: {}
-          };
-        </script>
-
-        <script>
-          const myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-          );
-        </script>
 
         <!-- partial -->
       </div>
@@ -250,6 +199,104 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
   </div>
   <!-- container-scroller -->
   <?php include '../scripts.php'; ?>
+
+  <script>
+  // const labels = [
+  //   'January',
+  //   'February',
+  //   'March',
+  //   'April',
+  //   'May',
+  //   'June',
+  // ];
+
+  const data = {
+  labels: [
+    'Outgoing',
+    'Incoming'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [<?php echo $out_rec; ?>, <?php echo $inc_rec; ?>],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+  const config = {
+  type: 'pie',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Pie Chart'
+      }
+    }
+  },
+};
+
+// 2
+
+const data2 = {
+  labels: [
+    'Outgoing',
+    'Incoming'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [<?php echo $L_inc_rec; ?>, <?php echo $inc_rec; ?>],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+  const config2 = {
+  type: 'pie',
+  data: data2,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Pie Chart'
+      }
+    }
+  },
+};
+
+// const config = {
+//   type: 'pie',
+//   data: data,
+// };
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  );
+</script>
+
 </body>
 
 </html>
