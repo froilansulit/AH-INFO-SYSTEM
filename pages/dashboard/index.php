@@ -200,14 +200,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
   <?php include '../scripts.php'; ?>
 
   <script>
-  // const labels = [
-  //   'January',
-  //   'February',
-  //   'March',
-  //   'April',
-  //   'May',
-  //   'June',
-  // ];
 
   const data = {
   labels: [
@@ -226,7 +218,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 };
 
   const config = {
-  type: 'pie',
+  type: 'doughnut',
   data: data,
   options: {
     responsive: true,
@@ -261,7 +253,7 @@ const data2 = {
 };
 
   const config2 = {
-  type: 'pie',
+  type: 'doughnut',
   data: data2,
   options: {
     responsive: true,
