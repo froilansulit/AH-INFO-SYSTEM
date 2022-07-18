@@ -419,8 +419,10 @@ function checkValidationFinancial() {
   var currency1 = parseFloat(FRI_amount);
   var currency3 = parseFloat(U_amount);
 
-  $.ajax({
+  
+  // $("#addIncoming").hide();
 
+  $.ajax({
     url: "check_OR.php",
     data: "FRI_OR=" + $("#FRI_OR").val(),
     type: "POST",
@@ -430,6 +432,7 @@ function checkValidationFinancial() {
     error: function () {},
   });
 
+
   
 
   $("#lblFRI_name").html("");
@@ -438,6 +441,7 @@ function checkValidationFinancial() {
 
   $("#lblFRI_currency").html(""); 
   $("#lblFRI_currency3").html("");
+  
   
   if(FRI_amount != ""){
     $("#lblFRI_currency").html("₱ " + currency1.toLocaleString());
@@ -450,14 +454,17 @@ function checkValidationFinancial() {
   if (FRI_name == "") {
     $("#lblFRI_name").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
+    // $("#addIncoming").hide();
   }
   if (FRI_OR == "") {
     $("#lblFRI_OR").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
+    // $("#addIncoming").hide();
   }
   if (FRI_amount == "") {
     $("#lblFRI_amount").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
+    // $("#addIncoming").hide();
   }
 
   // validation for before submit
@@ -465,13 +472,17 @@ function checkValidationFinancial() {
   else if (FRI_name == "") {
     $("#lblFRI_name").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
+    // $("#addIncoming").hide();
   } else if (FRI_OR == "") {
     $("#lblFRI_OR").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
+    // $("#addIncoming").hide();
   } else if (FRI_amount == "") {
     $("#lblFRI_amount").html("* Please fill out this field ");
     $("#addIncoming").prop("disabled", true);
-  } else {
+    // $("#addIncoming").hide();
+  } 
+  else {
     $("#lblFRI_name").html("");
     $("#lblFRI_OR").html("");
     $("#lblFRI_amount").html("");
@@ -487,17 +498,15 @@ function checkValidationFinancial2() {
   
   var currency2 = parseFloat(FRO_amount);
 
-
   $("#lblFRO_name").html("");
   $("#lblFRO_OR").html("");  
   $("#lblFRO_amount").html(""); 
  
   $("#lblFRI_currency2").html("");
 
-
+  $("#addOutgoing").hide();
 
   $.ajax({
-
     url: "check_OR.php",
     data: "FRO_OR=" + $("#FRO_OR").val(),
     type: "POST",
@@ -510,35 +519,47 @@ function checkValidationFinancial2() {
   
   if(FRO_amount != ""){
     $("#lblFRI_currency2").html("₱ " + currency2.toLocaleString());
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   }
   
   // display error no input
-  
-
   if (FRO_name == "") {
     $("#lblFRO_name").html("* Please fill out this field ");
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   }
   if (FRO_OR == "") {
     $("#lblFRO_OR").html("* Please fill out this field ");
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   }
   if (FRO_amount == "") {
     $("#lblFRO_amount").html("* Please fill out this field ");
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   } 
 
   // validation for befroe submit
   else if (FRO_name == "") {
     $("#lblFRO_name").html("* Please fill out this field ");
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   } else if (FRO_OR == "") {
     $("#lblFRO_OR").html("* Please fill out this field ");
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   } else if (FRO_amount == "") {
     $("#lblFRO_amount").html("* Please fill out this field ");
+    $("#addOutgoing").prop("disabled", true);
+    $("#addOutgoing").hide();
   }
    else {
     $("#lblFRO_name").html("");
     $("#lblFRO_OR").html("");  
     $("#lblFRO_amount").html(""); 
     $("#addOutgoing").prop("disabled", false);
-
+    $("#addOutgoing").show();
   }
 }
 
@@ -549,7 +570,10 @@ $(document).ready(function () {
       (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
       (e.keyCode >= 35 && e.keyCode <= 40) ||
       $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1
-    ) {
+    ) 
+
+    {
+      
       return;
     }
     if (
