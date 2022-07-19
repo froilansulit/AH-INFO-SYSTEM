@@ -25,7 +25,6 @@ if(!empty($_POST["FRI_OR"])) {
   if($count > 0) {
     echo "<span style='color:red' id='OR_msg'> * <b>OR NUMBER already exist.</b></span>";
     echo "<script>$('#addIncoming').prop('disabled',true);</script>";
-    // echo "<script>$('#addIncoming').hide();</script>";
   }else{
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
     // echo "<script>$('#addIncoming').prop('disabled',false);</script>";
