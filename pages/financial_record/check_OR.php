@@ -44,7 +44,6 @@ if(!empty($_POST["FRI_OR"])) {
 } 
 
 if(!empty($_POST["FRO_OR"])) {
-    
   $OR_ID =  $_POST["FRO_OR"];
   $query = "SELECT * FROM financial_record WHERE or_number='" . $OR_ID . "'";
   $result = mysqli_query($conn,$query);

@@ -560,9 +560,7 @@ $(document).ready(function () {
       (e.keyCode >= 35 && e.keyCode <= 40) ||
       $.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1
     ) 
-
     {
-      
       return;
     }
     if (
