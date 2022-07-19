@@ -2,12 +2,6 @@
 include '../connect.php';
 
 if(!empty($_POST["OR_number_verify"])) {
-    // $id = $_POST["OR_number_verify"];
-    // echo "
-    // <script>
-    // alert($id);
-    // </script>
-    // ";
     
   $OR_ID =  $_POST["OR_number_verify"];
   $query = "SELECT * FROM financial_record WHERE or_number='" . $OR_ID . "'";
