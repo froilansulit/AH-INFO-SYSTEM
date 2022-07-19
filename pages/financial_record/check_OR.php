@@ -13,9 +13,6 @@ if(!empty($_POST["OR_number_verify"])) {
   }else{
     echo "<span style='color:red' id='OR_msg'> * <b> OR NUMBER is not found. </b></span>";
     echo "<script>$('#Add_OR_image').prop('disabled',true);</script>";
-
-    
-    // echo "<script>$('#addUser').prop('disabled',false);</script>";
   }
 } 
 
