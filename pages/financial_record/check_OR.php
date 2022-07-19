@@ -40,7 +40,6 @@ if(!empty($_POST["FRO_OR"])) {
     echo "<script>$('#addOutgoing').prop('disabled',true);</script>";
   }else{
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
-    // echo "<script>$('#addUser').prop('disabled',false);</script>";
   }
 } 
 
