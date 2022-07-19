@@ -27,7 +27,6 @@ if(!empty($_POST["FRI_OR"])) {
     echo "<script>$('#addIncoming').prop('disabled',true);</script>";
   }else{
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
-    // echo "<script>$('#addIncoming').prop('disabled',false);</script>";
 
     // echo "<script>$('#addUser').prop('disabled',false);</script>";
   }
