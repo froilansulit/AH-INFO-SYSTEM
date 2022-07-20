@@ -14,8 +14,7 @@ if(!empty($_POST["OR_number_verify"])) {
     echo "<span style='color:red' id='OR_msg'> * <b> OR NUMBER is not found. </b></span>";
     echo "<script>$('#Add_OR_image').prop('disabled',true);</script>";
   }
-} 
-
+}
 if(!empty($_POST["FRI_OR"])) {
     
   $OR_ID =  $_POST["FRI_OR"];
@@ -29,7 +28,6 @@ if(!empty($_POST["FRI_OR"])) {
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
   }
 } 
-
 if(!empty($_POST["FRO_OR"])) {
   $OR_ID =  $_POST["FRO_OR"];
   $query = "SELECT * FROM financial_record WHERE or_number='" . $OR_ID . "'";
@@ -42,7 +40,6 @@ if(!empty($_POST["FRO_OR"])) {
     echo "<span style='color:green' id='OR_msg'> * <b> OR NUMBER verified successfully. </b></span>";
   }
 } 
-
 //   for financial image preview
 
 if (isset($_POST['userID'])) {
