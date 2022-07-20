@@ -31,7 +31,6 @@ $(document).on("click", "#showPassUser", function () {
     getPwdView = false;
   }
 });
-
 function lgnERROR(){
   Swal.fire("Login Failed!", "Invalid Username/Password", "error")
 }
@@ -42,7 +41,6 @@ function loadinglgn() {
 }
 // * scripting for users page start here !
 function validateOR_Upload() {
-
 $.ajax({
 
   url: "check_OR.php",
