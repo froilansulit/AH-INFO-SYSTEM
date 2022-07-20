@@ -50,7 +50,6 @@ if (isset($_POST["lgnLogin"])) {
       </script>
     ";
       
-      //header('location: ../financial_record/');
 
       // echo "<script>alert('Welcome to my gg');</script>";
 
