@@ -51,7 +51,6 @@ if (isset($_POST["lgnLogin"])) {
     ";
       
 
-      // echo "<script>alert('Welcome to my gg');</script>";
 
     } else {
       // invalid
