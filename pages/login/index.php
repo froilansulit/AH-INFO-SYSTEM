@@ -49,8 +49,6 @@ if (isset($_POST["lgnLogin"])) {
       
       </script>
     ";
-      
-
     } else {
       echo "<script>    
       lgnERROR();
