@@ -27,7 +27,6 @@ if (isset($_POST["lgnLogin"])) {
     $query_run = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($query_run) > 0) {
-      // valid
       $_SESSION['username'] = $username;
 
       $sql = "select * from users"; // select all the data in DB
@@ -46,7 +45,6 @@ if (isset($_POST["lgnLogin"])) {
 
         window.location.href = '../dashboard/';
       }, 4000);
-      
       </script>
     ";
     } else {
