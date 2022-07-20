@@ -52,12 +52,9 @@ if (isset($_POST['userID'])) {
   $result = mysqli_query($conn, $sql); // query to get the data
 
   while ($row = mysqli_fetch_assoc($result)) {
-
     ?>
     <img src="upload/<?php echo $row['images']; ?>" class="img-fluid" alt="">
     <?php
   }
 }
-
-
 ?>
