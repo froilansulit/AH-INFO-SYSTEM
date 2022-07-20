@@ -47,7 +47,6 @@ if(!empty($_POST["FRO_OR"])) {
 
 if (isset($_POST['userID'])) {
   $id = $_POST['userID'];
-  // echo $id;
   $sql = "select * from financial_record where id='$id'"; // select all the data in DB
 
   $result = mysqli_query($conn, $sql); // query to get the data
@@ -58,7 +57,6 @@ if (isset($_POST['userID'])) {
     <img src="upload/<?php echo $row['images']; ?>" class="img-fluid" alt="">
     <?php
   }
-
 }
 
 
