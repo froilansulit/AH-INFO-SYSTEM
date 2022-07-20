@@ -37,8 +37,6 @@ function lgnERROR(){
 }
 function loadinglgn() {
   $('#lgnLogin').addClass('loading');
-  // Swal.fire("Successfully Login!", "<span class='icon'>&#8635;</span> Logging In....", "success");
-  
   $('#lgnLogin').html("<span class='icon'>&#8635;</span> Logging In....");
 
 }
