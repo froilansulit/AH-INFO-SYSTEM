@@ -35,9 +35,6 @@ $(document).on("click", "#showPassUser", function () {
 function lgnERROR(){
   Swal.fire("Login Failed!", "Invalid Username/Password", "error")
 }
-
-
-
 function loadinglgn() {
   $('#lgnLogin').addClass('loading');
   // Swal.fire("Successfully Login!", "<span class='icon'>&#8635;</span> Logging In....", "success");
@@ -45,7 +42,6 @@ function loadinglgn() {
   $('#lgnLogin').html("<span class='icon'>&#8635;</span> Logging In....");
 
 }
-
 // * scripting for users page start here !
 function validateOR_Upload() {
 
