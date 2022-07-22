@@ -60,7 +60,7 @@ include '../head.php'; ?>
             </div>
           </div>
         </div>
-          <?php include '../modals.php'; ?>
+          <?php //require '../modals.php'; ?>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
           <?php include '../footer.php'; ?>
@@ -71,6 +71,6 @@ include '../head.php'; ?>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-<?php include '../scripts.php'; ?>
+<?php //include '../scripts.php'; ?>
 </body>
 </html>
