@@ -3,8 +3,6 @@
 include '../head.php';
 include '../session.php';
 include '../connect.php';
-
-
 $month_now = date('F');
 $year_now = date('Y');
 $inc_rec = 0;
