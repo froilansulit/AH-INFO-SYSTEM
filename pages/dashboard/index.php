@@ -27,7 +27,6 @@ while ($row = mysqli_fetch_assoc($this_month_result2)) {
 }
 
 $this_month_total = $inc_rec - $out_rec;
-
 // last month total 
 
 $last_month = date("F", strtotime("last month"));
