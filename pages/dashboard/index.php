@@ -89,7 +89,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     font-size: 1.7rem;
   }
 </style>
-
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -146,7 +145,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Transactions this Month</h5>
-                    
                     <p class="card-text">The graph below is the tally of incoming and outgoing financial transactions for this month. </p>
                     <div><canvas id="myChart"></canvas></div>
                 </div>
