@@ -73,9 +73,7 @@ $this_year_result2 = mysqli_query($conn, $this_year_sql2); // query to get the d
 while ($row = mysqli_fetch_assoc($this_year_result2)) {
   $Y_out_rec += $row['amount'];
 }
-
 $this_year_total = $Y_inc_rec - $Y_out_rec;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
