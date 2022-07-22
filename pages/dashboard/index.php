@@ -49,7 +49,6 @@ while ($row = mysqli_fetch_assoc($last_month_result2)) {
 }
 
 $last_month_total = $L_inc_rec - $L_out_rec;
-
 // this year total 
 
 $Y_inc_rec = 0;
