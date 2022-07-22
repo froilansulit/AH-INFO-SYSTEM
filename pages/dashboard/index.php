@@ -269,10 +269,6 @@ const data2 = {
   },
 };
 
-// const config = {
-//   type: 'pie',
-//   data: data,
-// };
 </script>
 
 <script>
