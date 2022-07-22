@@ -174,13 +174,10 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             $result = mysqli_query($conn, $sql); // query to get the data
 
             while ($row = mysqli_fetch_assoc($result)) {
-
               $id = $row['id'];
               $monthSelect[] = $row['month_date'];
             }
-
             ?>
-            
           </div>
         </div>
         <?php include '../modals.php'; ?>
