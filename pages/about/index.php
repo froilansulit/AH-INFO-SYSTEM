@@ -74,4 +74,3 @@ include '../head.php'; ?>
 <?php include '../scripts.php'; ?>
 </body>
 </html>
-
