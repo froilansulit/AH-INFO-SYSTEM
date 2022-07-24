@@ -56,7 +56,6 @@ include '../head.php'; ?>
             </div>
           </div>
         </div>
-          <?php //require '../modals.php'; ?>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
           <?php include '../footer.php'; ?>
