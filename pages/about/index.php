@@ -57,7 +57,6 @@ include '../head.php'; ?>
           </div>
         </div>
         <?php include '../footer.php'; ?>
-        <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
