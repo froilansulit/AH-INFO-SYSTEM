@@ -10,9 +10,7 @@ include '../head.php'; ?>
 <body>
   <div class="container-scroller">
     <?php include '../navbar.php'; ?>
-    <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
       <?php include '../sidebar.php'; ?>
       <!-- partial -->
       <div class="main-panel" >
