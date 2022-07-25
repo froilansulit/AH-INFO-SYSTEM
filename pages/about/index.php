@@ -60,6 +60,5 @@ include '../head.php'; ?>
       </div>
     </div>
   </div>
-<?php //include '../scripts.php'; ?>
 </body>
 </html>
