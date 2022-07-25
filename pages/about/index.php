@@ -36,7 +36,7 @@ include '../head.php'; ?>
                     </p>
                     <p class="lead mb-3">
                     <i class="ti-anchor icon"></i>
-                      <span class="lead">Services - Drydocking</span>
+                    <span class="lead">Services - Drydocking</span>
                     </p>
                 </div>
                 </div>
