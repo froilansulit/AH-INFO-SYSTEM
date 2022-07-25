@@ -28,11 +28,11 @@ include '../head.php'; ?>
                 <div class="align-self-center mt-5">
                     <p class="lead mb-3">
                     <i class="ti-location-pin icon"></i>
-                      <span class="lead">940 M Naval St. San Jose Navotas City</span>
+                    <span class="lead">940 M Naval St. San Jose Navotas City</span>
                     </p>
                     <p class="lead mb-3">
                     <i class="ti-mobile icon"></i>
-                      <span class="lead">282 8940</span>
+                    <span class="lead">282 8940</span>
                     </p>
                     <p class="lead mb-3">
                     <i class="ti-anchor icon"></i>
