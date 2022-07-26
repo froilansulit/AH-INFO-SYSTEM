@@ -1,5 +1,4 @@
 <?php
-
 include '../head.php';
 include '../session.php';
 include '../connect.php';
@@ -24,8 +23,7 @@ while ($row = mysqli_fetch_assoc($this_month_result2)) {
   $out_rec += $row['amount'];
 }
 
-$this_month_total = $inc_rec - $out_rec;
-// last month total 
+$this_month_total = $inc_rec - $out_rec; 
 
 $last_month = date("F", strtotime("last month"));
 $year_now = date('Y');
