@@ -46,8 +46,7 @@ while ($row = mysqli_fetch_assoc($last_month_result2)) {
   $L_out_rec += $row['amount'];
 }
 
-$last_month_total = $L_inc_rec - $L_out_rec;
-// this year total 
+$last_month_total = $L_inc_rec - $L_out_rec; 
 
 $Y_inc_rec = 0;
 $Y_out_rec = 0;
