@@ -80,7 +80,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 </style>
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
     <?php include '../navbar.php'; ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
