@@ -76,9 +76,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
-  .icon {
-    font-size: 1.7rem;
-  }
+  .icon { font-size: 1.7rem; }
 </style>
 <body>
   <div class="container-scroller">
