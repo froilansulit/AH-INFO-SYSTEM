@@ -139,9 +139,8 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Transactions for the last month & this month</h5>
-                    
                     <p class="card-text">The graph below is the tally of financial transactions for the last month and this month.</p>
-                          <div>
+                    <div>
                     <canvas id="myChart2"></canvas>
                   </div>
                 </div>
