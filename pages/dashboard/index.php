@@ -161,7 +161,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
           </div>
         </div>
         <?php include '../modals.php'; ?>
-        <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <?php include '../footer.php'; ?>
         <!-- partial -->
