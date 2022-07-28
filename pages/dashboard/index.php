@@ -213,7 +213,7 @@ const data2 = {
   ],
   datasets: [{
     label: 'My First Dataset',
-    data: [<?= $last_month_total; ?>, <?php echo $this_month_total; ?>],
+    data: [<?= $last_month_total; ?>, <?= $this_month_total; ?>],
     backgroundColor: [
       'rgb(54, 162, 235)',
       'rgb(255, 205, 86)'
