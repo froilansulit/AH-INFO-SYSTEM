@@ -176,8 +176,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     label: 'My First Dataset',
     data: [<?php echo $out_rec; ?>, <?php echo $inc_rec; ?>],
     backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
+      'rgb(255, 99, 132)', 'rgb(54, 162, 235)',
     ],
     hoverOffset: 4
   }]
