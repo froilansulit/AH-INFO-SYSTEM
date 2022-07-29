@@ -168,11 +168,9 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
   <?php include '../scripts.php'; ?>
 
   <script>
-
   const data = {
   labels: [
-    'Outgoing',
-    'Incoming'
+    'Outgoing', 'Incoming'
   ],
   datasets: [{
     label: 'My First Dataset',
