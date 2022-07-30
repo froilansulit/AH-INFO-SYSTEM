@@ -235,7 +235,6 @@ const data2 = {
 };
 
 </script>
-
 <script>
   const myChart = new Chart(
     document.getElementById('myChart'),
@@ -246,7 +245,6 @@ const data2 = {
     config2
   );
 </script>
-
 </body>
 
 </html>
