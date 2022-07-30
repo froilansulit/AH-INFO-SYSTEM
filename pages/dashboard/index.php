@@ -227,8 +227,8 @@ const data2 = {
         position: 'top',
       },
       title: {
-        display: true,
-        text: 'Chart.js Pie Chart'
+        display: true, text: 'Chart.js Pie Chart'
+        
       }
     }
   },
