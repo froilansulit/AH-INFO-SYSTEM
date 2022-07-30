@@ -228,7 +228,6 @@ const data2 = {
       },
       title: {
         display: true, text: 'Chart.js Pie Chart'
-        
       }
     }
   },
