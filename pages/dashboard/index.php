@@ -211,7 +211,6 @@ const data2 = {
     data: [<?= $last_month_total; ?>, <?= $this_month_total; ?>],
     backgroundColor: [
       'rgb(54, 162, 235)', 'rgb(255, 205, 86)'
-      
     ],
     hoverOffset: 4
   }]
@@ -236,7 +235,7 @@ const data2 = {
 </script>
 <script>
   const myChart = new Chart(
-    document.getElementById('myChart'),
+    document.getElementById('myChart'), 
     config
   );
   const myChart2 = new Chart(
