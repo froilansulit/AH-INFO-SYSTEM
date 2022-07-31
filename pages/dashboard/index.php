@@ -235,8 +235,7 @@ const data2 = {
 </script>
 <script>
   const myChart = new Chart(
-    document.getElementById('myChart'), 
-    config
+    document.getElementById('myChart'), config
   );
   const myChart2 = new Chart(
     document.getElementById('myChart2'),
