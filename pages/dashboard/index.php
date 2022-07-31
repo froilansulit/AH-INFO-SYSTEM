@@ -222,8 +222,7 @@ const data2 = {
   options: {
     responsive: true,
     plugins: {
-      legend: {
-        position: 'top',
+      legend: { position: 'top',
       },
       title: {
         display: true, text: 'Chart.js Pie Chart'
