@@ -204,7 +204,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 const data2 = {
   labels: [
     'Last Month', 'This Month'
-    
   ],
   datasets: [{
     label: 'My First Dataset',
