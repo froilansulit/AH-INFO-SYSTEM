@@ -238,8 +238,7 @@ const data2 = {
     document.getElementById('myChart'), config
   );
   const myChart2 = new Chart(
-    document.getElementById('myChart2'),
-    config2
+    document.getElementById('myChart2'), config2
   );
 </script>
 </body>
