@@ -82,11 +82,9 @@
             ";
         } 
         else {
-          
           $escape_cname = mysqli_real_escape_string($conn, $company_name);
           $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
           $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
-
           
           $month = date('F');
           $year = date('Y');
