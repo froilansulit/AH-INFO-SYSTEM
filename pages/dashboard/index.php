@@ -75,7 +75,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     font-size: 1.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
-
   .icon { font-size: 1.7rem; }
 </style>
 <body>
@@ -200,7 +199,6 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
 };
 
 // 2
-
 const data2 = {
   labels: [
     'Last Month', 'This Month'
