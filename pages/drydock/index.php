@@ -102,8 +102,6 @@
               }, 3000);
             </script>
             ";
-    
-            
           } else {
             $_SESSION['error'] = "Failed to Insert !";
           echo "
