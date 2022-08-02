@@ -10,11 +10,9 @@ include '../connect.php';
 $Format = 'Y-m-d';
 
 // this for past setting 
-
 $PD = 0;
 $PM = 0;
 $PY = 0;
-
 // this is for future setting
 
 $FD = 0;
