@@ -23,8 +23,6 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['save_drydock'])) {
 
-      
-      
       // $image_id = uniqid();
       $company_name = htmlspecialchars($_POST['company_name']);
       $ship_name = htmlspecialchars($_POST['ship_name']);
