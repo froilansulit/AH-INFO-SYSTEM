@@ -97,11 +97,9 @@
             $_SESSION['status'] = "Successfully Added!";
             echo "
             <script>
-          
               setTimeout (() => {
                 location.href = '../drydock/';
               }, 3000);
-          
             </script>
             ";
     
