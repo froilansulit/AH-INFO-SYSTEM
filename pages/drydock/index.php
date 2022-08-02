@@ -98,9 +98,9 @@
             echo "
             <script>
           
-            setTimeout (() => {
-              location.href = '../drydock/';
-            }, 3000);
+              setTimeout (() => {
+                location.href = '../drydock/';
+              }, 3000);
           
             </script>
             ";
