@@ -128,9 +128,7 @@
       }
   }
 
-
   $sql = "select * from drydock_record"; // select all the data in DB
-
   $result = mysqli_query($conn, $sql); // query to get the data
 
 ?>
