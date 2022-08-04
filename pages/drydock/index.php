@@ -134,8 +134,6 @@
 ?>
 
 <body>
-
-
   <!-- end of view modal  -->
 
   <div class="container-scroller">
