@@ -104,15 +104,15 @@
             ";
           } else {
             $_SESSION['error'] = "Failed to Insert !";
-          echo "
-            <script>
-          
-            setTimeout (() => {
-              window.location.href = '../drydock/';
-            }, 3000);
-          
-            </script>
-            ";
+              echo "
+                <script>
+              
+                setTimeout (() => {
+                  window.location.href = '../drydock/';
+                }, 3000);
+              
+                </script>
+                ";
             die(mysqli_error($conn));
           }
         }
