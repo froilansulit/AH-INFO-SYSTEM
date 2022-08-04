@@ -119,11 +119,9 @@
         $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
           echo "
             <script>
-          
             setTimeout (() => {
               window.location.href = '../drydock/';
             }, 3000);
-          
             </script>
             ";
       }
