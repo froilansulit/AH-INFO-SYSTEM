@@ -179,7 +179,6 @@
                     unset($_SESSION['status']);
                     }
                     ?>
-
                     <?php
                     if (isset($_SESSION['error'])) {
                     ?>
