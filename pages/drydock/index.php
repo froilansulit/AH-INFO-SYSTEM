@@ -183,7 +183,6 @@
                     if (isset($_SESSION['error'])) {
                     ?>
                       <div class="alert alert-danger border border-muted alert-dismissible fade show" role="alert">
-                        <!-- <strong>Holy guacamole!</strong> -->
                         <?php echo $_SESSION['error']; ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
