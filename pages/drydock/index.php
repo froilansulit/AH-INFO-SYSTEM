@@ -203,7 +203,6 @@
                           <th>Expected Departure</th>
                           <th>Image</th>
                           <th>Operation</th>
-
                         </tr>
                       </thead>
                       <tbody class="text-center">
