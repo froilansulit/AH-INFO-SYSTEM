@@ -176,10 +176,8 @@
                         </button>
                       </div>
                     <?php
-                      unset($_SESSION['status']);
+                    unset($_SESSION['status']);
                     }
-
-
                     ?>
 
                     <?php
