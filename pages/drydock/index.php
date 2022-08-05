@@ -153,7 +153,6 @@
                   <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddDryDock">
                     <i class="ti-plus btn-icon-prepend"></i>Add Dry Dock
                   </button>
-                  <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
                 </div>
                 <div>
                 </div>
