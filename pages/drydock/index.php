@@ -260,7 +260,6 @@
         <?php include '../footer.php'; ?>
       </div>
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
 
