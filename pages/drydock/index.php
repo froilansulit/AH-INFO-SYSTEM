@@ -259,7 +259,6 @@
 
         </div>
         <?php include '../footer.php'; ?>
-        <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
 
         <!-- partial -->
