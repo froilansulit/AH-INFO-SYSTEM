@@ -259,8 +259,6 @@
 
         </div>
         <?php include '../footer.php'; ?>
-        <!-- partial:partials/_footer.html -->
-
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
