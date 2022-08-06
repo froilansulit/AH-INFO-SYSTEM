@@ -261,7 +261,6 @@
       </div>
     </div>
   </div>
-  <!-- container-scroller -->
   <?php include '../scripts.php'; ?>
   <?php include '../modals.php'; ?>
   <script src="../app.js"></script>
