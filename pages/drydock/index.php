@@ -256,10 +256,8 @@
               </div>
             </div>
           </div>
-
         </div>
         <?php include '../footer.php'; ?>
-        <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
