@@ -129,7 +129,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
 
 <body>
 <div class="container-scroller">
-  <!-- partial:partials/_navbar.html -->
   <?php include '../navbar.php'; ?>
   <!-- partial -->
   <div class="container-fluid page-body-wrapper">
