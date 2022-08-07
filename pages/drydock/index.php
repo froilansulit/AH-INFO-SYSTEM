@@ -264,7 +264,6 @@
   <?php include '../modals.php'; ?>
   <script src="../app.js"></script>
 
-  
-  
+
 </body>
 </html>
