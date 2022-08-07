@@ -246,8 +246,7 @@
                         </tr>
                       <?php
                             $number++;
-                          }
-                          
+                          }      
                       ?>
                       </tbody>
                     </table>
