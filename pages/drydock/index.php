@@ -261,7 +261,7 @@
     </div>
   </div>
   <?php require '../scripts.php'; ?>
-  <?php include '../modals.php'; ?>
+  <?php require '../modals.php'; ?>
   <script src="../app.js"></script>
 </body>
 </html>
