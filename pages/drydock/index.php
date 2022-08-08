@@ -66,7 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }, 3000);
             </script>
             ";
-      } else if (empty($lot_number)) {
+      } 
+      else if (empty($lot_number)) {
         $_SESSION['error'] = "All fields are required !";
         echo "
             <script>
