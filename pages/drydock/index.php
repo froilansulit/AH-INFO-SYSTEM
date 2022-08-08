@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['error'] = "All fields are required !";
         echo "
             <script>
-          
             setTimeout (() => {
               window.location.href = '../drydock/';
             }, 3000);
