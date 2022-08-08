@@ -98,7 +98,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }, 3000);
             </script>
             ";
-        } else {
+        } 
+        else {
           $_SESSION['error'] = "Failed to Insert !";
           echo "
                 <script>
