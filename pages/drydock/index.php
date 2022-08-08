@@ -57,7 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }, 3000);
             </script>
             ";
-      } else if (empty($ship_name)) {
+      } 
+      else if (empty($ship_name)) {
         $_SESSION['error'] = "All fields are required !";
         echo "
             <script>
