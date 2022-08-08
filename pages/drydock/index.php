@@ -44,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setTimeout (() => {
               window.location.href = '../drydock/';
             }, 3000);
-          
             </script>
             ";
       } 
