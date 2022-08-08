@@ -4,7 +4,6 @@
 include '../head.php';
 include '../session.php';
 include '../connect.php';
-
 // input type date support date format
 $Format = 'Y-m-d';
 // this for past setting 
@@ -76,7 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }, 3000);
             </script>
             ";
-      } else {
+      } 
+      else {
         $escape_cname = mysqli_real_escape_string($conn, $company_name);
         $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
         $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
@@ -109,7 +109,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           die(mysqli_error($conn));
         }
       }
-    } else {
+    } 
+    else {
       $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
       echo "
             <script>
