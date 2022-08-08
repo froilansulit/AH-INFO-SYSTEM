@@ -48,7 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           
             </script>
             ";
-      } else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
+      } 
+      else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
         $_SESSION['error'] = "Image already exist !";
         echo "
             <script>
