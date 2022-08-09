@@ -2,6 +2,7 @@
 include '../head.php';
 include '../session.php';
 include '../connect.php';
+
 $month_now = date('F');
 $year_now = date('Y');
 $inc_rec = 0;
@@ -165,7 +166,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     </div>
   </div>
   <?php include '../scripts.php'; ?>
-  
+
   <script>
   const data = {
   labels: [
