@@ -232,5 +232,4 @@ const data2 = {
   );
 </script>
 </body>
-
 </html>
