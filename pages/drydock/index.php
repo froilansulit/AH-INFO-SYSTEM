@@ -127,11 +127,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $sql = "select * from drydock_record"; // select all the data in DB
 $result = mysqli_query($conn, $sql); // query to get the data
 ?>
-
 <body>
 <div class="container-scroller">
   <?php include '../navbar.php'; ?>
-  <!-- partial -->
   <div class="container-fluid page-body-wrapper">
     <!-- partial:partials/_sidebar.html -->
     <?php include '../sidebar.php'; ?>
