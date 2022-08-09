@@ -165,6 +165,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
     </div>
   </div>
   <?php include '../scripts.php'; ?>
+  
   <script>
   const data = {
   labels: [
