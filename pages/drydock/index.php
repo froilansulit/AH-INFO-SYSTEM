@@ -211,8 +211,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <td><?php echo $row['Exp_Departure']; ?></td>
                           <!-- <td> <?php echo '<img src="upload/' . $row['images'] . '" alt="image"> ' ?></td> -->
                           <td> <button id="view_drydock_image" class="btn btn-sm btn-dark" data-id="<?php echo $id; ?>">View</button></td>
-
-
                           <form action="update.php" method="post">
                             <td>
 
