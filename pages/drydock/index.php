@@ -217,8 +217,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
                                 <input type="hidden" name="update_id" value="<?php echo $id ?>">
                                 <button type="submit" name="data_btn" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                               </a>
-
-
                           </form>
 
 
