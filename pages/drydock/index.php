@@ -213,7 +213,6 @@ $result = mysqli_query($conn, $sql); // query to get the data
                           <td> <button id="view_drydock_image" class="btn btn-sm btn-dark" data-id="<?php echo $id; ?>">View</button></td>
                           <form action="update.php" method="post">
                             <td>
-
                               <a href="#" data-toggle="tooltip" title="Edit">
                                 <input type="hidden" name="update_id" value="<?php echo $id ?>">
                                 <button type="submit" name="data_btn" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
