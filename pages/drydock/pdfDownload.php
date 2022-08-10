@@ -28,7 +28,6 @@ if(mysqli_num_rows($res)>0){
        table tr:nth-child(even){background-color: #f2f2f2;}
       
        table tr:hover {background-color: #ddd;}
-      
        table th {
         padding-top: 12px;
         padding-bottom: 12px;
