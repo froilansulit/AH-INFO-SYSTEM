@@ -39,7 +39,6 @@ if(mysqli_num_rows($res)>0){
     </style><h1>Drydock Records '.date('F').' '.date('Y').'</h1><table class="table">';
 		$html.='<tr><td>ID</td><td>Company Name</td><td>Ship Name</td><td>Lot Number</td><td>Drydock Date</td><td>Expect Departure</td></tr>';
 		while($row=mysqli_fetch_assoc($res)){
-            
 			$html.='<tr><td>'.$number.'</td><td>'.$row['Company_Name'].'</td><td>'.$row['Ship_Name'].'</td><td>'.$row['Lot_Num'].'</td><td>'.$row['Drydock_date'].'</td><td>'.$row['Exp_Departure'].'</td></tr>';
             $number++;
 		}
