@@ -156,9 +156,9 @@ $result = mysqli_query($conn, $sql); // query to get the data
                 <p class="card-title text-md-center text-xl-left">Dry Dock</p>
                 <a href="pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3"><i class="ti-printer btn-icon-prepend"></i>Print</a>
                 <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                  <?php
-                  if (isset($_SESSION['status'])) {
-                  ?>
+<?php
+if (isset($_SESSION['status'])) {
+?>
                     <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                       <?php echo $_SESSION['status']; ?>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
