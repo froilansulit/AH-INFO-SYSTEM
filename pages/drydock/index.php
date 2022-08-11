@@ -132,7 +132,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 <?php include '../navbar.php'; ?>
   <div class="container-fluid page-body-wrapper">
     <!-- partial:partials/_sidebar.html -->
-    <?php include '../sidebar.php'; ?>
+<?php include '../sidebar.php'; ?>
     <!-- partial -->
     <div class="main-panel">
       <div class="content-wrapper" style="background-color:#bddcff;">
