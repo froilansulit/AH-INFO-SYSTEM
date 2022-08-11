@@ -129,7 +129,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
 ?>
 <body>
 <div class="container-scroller">
-  <?php include '../navbar.php'; ?>
+<?php include '../navbar.php'; ?>
   <div class="container-fluid page-body-wrapper">
     <!-- partial:partials/_sidebar.html -->
     <?php include '../sidebar.php'; ?>
