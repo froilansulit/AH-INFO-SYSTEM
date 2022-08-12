@@ -203,7 +203,7 @@ unset($_SESSION['error']);
 ?>
 
                           <th scope="row"><?= $number; ?></th>
-                          <td><?php echo $row['Company_Name']; ?></td>
+                          <td><?=$row['Company_Name']; ?></td>
                           <td><?php echo $row['Ship_Name']; ?></td>
                           <td><?php echo $row['Lot_Num']; ?></td>
                           <td><?php echo $row['Drydock_date']; ?></td>
