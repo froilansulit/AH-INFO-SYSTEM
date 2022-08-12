@@ -170,8 +170,7 @@ unset($_SESSION['status']);
 }
 ?>
 <?php
-if (isset($_SESSION['error'])) {
-?>
+if (isset($_SESSION['error'])) { ?>
                     <div class="alert alert-danger border border-muted alert-dismissible fade show" role="alert">
                       <?php echo $_SESSION['error']; ?>
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
