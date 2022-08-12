@@ -180,7 +180,7 @@ if (isset($_SESSION['error'])) { ?>
 <?php
 unset($_SESSION['error']);
 }
-                  ?>
+?>
                   <table id="example1" class="table table-hover" style="width:100%">
                     <thead style="font-size:10px" class="text-center">
                       <tr>
@@ -196,7 +196,7 @@ unset($_SESSION['error']);
                     </thead>
                     <tbody class="text-center">
                       <tr>
-                        <?php
+<?php
                         $number = 1;
                         while ($row = mysqli_fetch_assoc($result)) {
                           $id = $row['id'];
