@@ -202,7 +202,7 @@ unset($_SESSION['error']);
                           $id = $row['id'];
                         ?>
 
-                          <td><?php echo $number; ?></td>
+                          <td><?= $number; ?></td>
                           <td><?php echo $row['Company_Name']; ?></td>
                           <td><?php echo $row['Ship_Name']; ?></td>
                           <td><?php echo $row['Lot_Num']; ?></td>
