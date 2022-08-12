@@ -205,7 +205,7 @@ unset($_SESSION['error']);
                           <th scope="row"><?= $number; ?></th>
                           <td><?= $row['Company_Name']; ?></td>
                           <td><?= $row['Ship_Name']; ?></td>
-                          <td><?php echo $row['Lot_Num']; ?></td>
+                          <td><?= $row['Lot_Num']; ?></td>
                           <td><?php echo $row['Drydock_date']; ?></td>
                           <td><?php echo $row['Exp_Departure']; ?></td>
                           <!-- <td> <?php echo '<img src="upload/' . $row['images'] . '" alt="image"> ' ?></td> -->
