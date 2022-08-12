@@ -200,7 +200,7 @@ unset($_SESSION['error']);
                         $number = 1;
                         while ($row = mysqli_fetch_assoc($result)) {
                           $id = $row['id'];
-                        ?>
+?>
 
                           <th scope="row"><?= $number; ?></th>
                           <td><?php echo $row['Company_Name']; ?></td>
