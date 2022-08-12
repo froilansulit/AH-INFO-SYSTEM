@@ -206,7 +206,7 @@ unset($_SESSION['error']);
                           <td><?= $row['Company_Name']; ?></td>
                           <td><?= $row['Ship_Name']; ?></td>
                           <td><?= $row['Lot_Num']; ?></td>
-                          <td><?php echo $row['Drydock_date']; ?></td>
+                          <td><?= $row['Drydock_date']; ?></td>
                           <td><?php echo $row['Exp_Departure']; ?></td>
                           <!-- <td> <?php echo '<img src="upload/' . $row['images'] . '" alt="image"> ' ?></td> -->
                           <td> <button id="view_drydock_image" class="btn btn-sm btn-dark" data-id="<?php echo $id; ?>">View</button></td>
