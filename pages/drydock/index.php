@@ -211,7 +211,7 @@ unset($_SESSION['error']);
                           <form action="update.php" method="post">
                             <td>
                               <a href="#" data-toggle="tooltip" title="Edit">
-                                <input type="hidden" name="update_id" value="<?php echo $id ?>">
+                                <input type="hidden" name="update_id" value="<?= $id ?>">
                                 <button type="submit" name="data_btn" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                               </a>
                           </form>
