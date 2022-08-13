@@ -207,7 +207,6 @@ unset($_SESSION['error']);
                           <td><?= $row['Lot_Num']; ?></td>
                           <td><?= $row['Drydock_date']; ?></td>
                           <td><?= $row['Exp_Departure']; ?></td>
-                          <!-- <td> <?php echo '<img src="upload/' . $row['images'] . '" alt="image"> ' ?></td> -->
                           <td> <button id="view_drydock_image" class="btn btn-sm btn-dark" data-id="<?php echo $id; ?>">View</button></td>
                           <form action="update.php" method="post">
                             <td>
