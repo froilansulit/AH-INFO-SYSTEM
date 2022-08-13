@@ -216,10 +216,10 @@ unset($_SESSION['error']);
                               </a>
                           </form>
                           <a href="#" data-toggle="tooltip" title="Remove">
-                            <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteDryDock(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                            <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteDryDock(<?= $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                           </a>
                           <a href="#" data-toggle="tooltip" title="View">
-                            <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewDrydock(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                            <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewDrydock(<?= $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                           </a>
                           </td>
                       </tr>
