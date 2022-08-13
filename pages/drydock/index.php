@@ -201,7 +201,6 @@ unset($_SESSION['error']);
                         while ($row = mysqli_fetch_assoc($result)) {
                           $id = $row['id'];
 ?>
-
                           <th scope="row"><?= $number; ?></th>
                           <td><?= $row['Company_Name']; ?></td>
                           <td><?= $row['Ship_Name']; ?></td>
