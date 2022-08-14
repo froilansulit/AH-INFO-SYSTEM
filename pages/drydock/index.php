@@ -125,9 +125,9 @@
 
 <body>
     <div class="container-scroller">
-        <?php include '../navbar.php'; ?>
+<?php include '../navbar.php'; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php include '../sidebar.php'; ?>
+<?php include '../sidebar.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper" style="background-color:#bddcff;">
                     <div class="row">
@@ -150,9 +150,9 @@
                                     <p class="card-title text-md-center text-xl-left">Dry Dock</p>
                                     <a href="pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3"><i class="ti-printer btn-icon-prepend"></i>Print</a>
                                     <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <?php
-                                        if (isset($_SESSION['status'])) {
-                                        ?>
+<?php
+if (isset($_SESSION['status'])) {
+?>
                                             <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                                                 <?= $_SESSION['status']; ?>
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
