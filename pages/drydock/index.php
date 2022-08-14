@@ -189,10 +189,10 @@ if (isset($_SESSION['error'])) { ?>
                                             </thead>
                                             <tbody class="text-center">
                                                 <tr>
-                                                    <?php
-                                                    $number = 1;
-                                                    while ($row = mysqli_fetch_assoc($result)) {
-                                                        $id = $row['id']; ?>
+<?php
+$number = 1;
+while ($row = mysqli_fetch_assoc($result)) {
+$id = $row['id']; ?>
 
                                                         <th scope="row"><?= $number; ?></th>
                                                         <td><?= $row['Company_Name']; ?></td>
