@@ -88,12 +88,12 @@
                         move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
                         $_SESSION['status'] = "Successfully Added!";
                         echo "
-                <script>
-                setTimeout (() => {
-                    location.href = '../drydock/';
-                }, 3000);
-                </script>
-                ";
+                        <script>
+                        setTimeout (() => {
+                            location.href = '../drydock/';
+                        }, 3000);
+                        </script>
+                        ";
                     } else {
                         $_SESSION['error'] = "Failed to Insert !";
                         echo "
@@ -120,6 +120,7 @@
     }
     $sql = "select * from drydock_record"; // select all the data in DB
     $result = mysqli_query($conn, $sql); // query to get the data
+
 ?>
 
 <body>
