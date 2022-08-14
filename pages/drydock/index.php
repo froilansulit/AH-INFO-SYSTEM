@@ -171,8 +171,7 @@ if (isset($_SESSION['error'])) { ?>
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-<?php
-unset($_SESSION['error']);
+<?php unset($_SESSION['error']);
 }
 ?>
                                         <table id="example1" class="table table-hover" style="width:100%">
