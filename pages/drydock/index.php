@@ -1,125 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include '../head.php';
-include '../session.php';
-include '../connect.php';
-// input type date support date format
-$Format = 'Y-m-d';
-// this for past setting 
-$PD = 0;
-$PM = 0;
-$PY = 0;
-// this is for future setting
-$FD = 0;
-$FM = 0;
-$FY = 1;
+    include '../head.php';
+    include '../session.php';
+    include '../connect.php';
+    // input type date support date format
+    $Format = 'Y-m-d';
+    // this for past setting 
+    $PD = 0;
+    $PM = 0;
+    $PY = 0;
+    // this is for future setting
+    $FD = 0;
+    $FM = 0;
+    $FY = 1;
 
-$PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
-$CDT = date($Format);
-$FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
+    $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
+    $CDT = date($Format);
+    $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['save_drydock'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['save_drydock'])) {
 
-        $company_name = htmlspecialchars($_POST['company_name']);
-        $ship_name = htmlspecialchars($_POST['ship_name']);
-        $lot_number = htmlspecialchars($_POST['lot_number']);
-        $dryDDate = date('Y-m-d', strtotime($_POST['dryDDate']));
-        $Exp_Depar = date('Y-m-d', strtotime($_POST['Exp_Depar']));
-        $image = $_FILES["drydock_image"]['name'];
+            $company_name = htmlspecialchars($_POST['company_name']);
+            $ship_name = htmlspecialchars($_POST['ship_name']);
+            $lot_number = htmlspecialchars($_POST['lot_number']);
+            $dryDDate = date('Y-m-d', strtotime($_POST['dryDDate']));
+            $Exp_Depar = date('Y-m-d', strtotime($_POST['Exp_Depar']));
+            $image = $_FILES["drydock_image"]['name'];
 
-        $validate_img_extension =
-            $_FILES["drydock_image"]['type'] == "image/jpg" ||
-            $_FILES["drydock_image"]['type'] == "image/png" ||
-            $_FILES["drydock_image"]['type'] == "image/jpeg";
+            $validate_img_extension =
+                $_FILES["drydock_image"]['type'] == "image/jpg" ||
+                $_FILES["drydock_image"]['type'] == "image/png" ||
+                $_FILES["drydock_image"]['type'] == "image/jpeg";
 
-        if ($validate_img_extension) {
+            if ($validate_img_extension) {
 
-            if (empty($company_name)) {
+                if (empty($company_name)) {
 
-                $_SESSION['error'] = "All fields are required !";
-                echo "
-            <script>
-            setTimeout (() => {
-              window.location.href = '../drydock/';
-            }, 3000);
-            </script>
-            ";
-            } else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
-                $_SESSION['error'] = "Image already exist !";
-                echo "
-            <script>
-              setTimeout (() => {
-                window.location.href = '../drydock/';
-              }, 3000);
-            </script>
-            ";
-            } else if (empty($ship_name)) {
-                $_SESSION['error'] = "All fields are required !";
-                echo "
-            <script>
-              setTimeout (() => {
-                window.location.href = '../drydock/';
-              }, 3000);
-            </script>
-            ";
-            } else if (empty($lot_number)) {
-                $_SESSION['error'] = "All fields are required !";
-                echo "
-            <script>
-              setTimeout (() => {
-                window.location.href = '../drydock/';
-              }, 3000);
-            </script>
-            ";
-            } else {
-                $escape_cname = mysqli_real_escape_string($conn, $company_name);
-                $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
-                $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
-
-                $month = date('F');
-                $year = date('Y');
-
-                $sql = "insert into drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images,month,year) values ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image','$month','$year')";
-                $result = mysqli_query($conn, $sql);
-
-                if ($result) {
-                    move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
-                    $_SESSION['status'] = "Successfully Added!";
-                    echo "
-            <script>
-              setTimeout (() => {
-                location.href = '../drydock/';
-              }, 3000);
-            </script>
-            ";
-                } else {
-                    $_SESSION['error'] = "Failed to Insert !";
+                    $_SESSION['error'] = "All fields are required !";
                     echo "
                 <script>
                 setTimeout (() => {
-                  window.location.href = '../drydock/';
+                window.location.href = '../drydock/';
                 }, 3000);
                 </script>
                 ";
-                    die(mysqli_error($conn));
+                } else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
+                    $_SESSION['error'] = "Image already exist !";
+                    echo "
+                <script>
+                setTimeout (() => {
+                    window.location.href = '../drydock/';
+                }, 3000);
+                </script>
+                ";
+                } else if (empty($ship_name)) {
+                    $_SESSION['error'] = "All fields are required !";
+                    echo "
+                <script>
+                setTimeout (() => {
+                    window.location.href = '../drydock/';
+                }, 3000);
+                </script>
+                ";
+                } else if (empty($lot_number)) {
+                    $_SESSION['error'] = "All fields are required !";
+                    echo "
+                <script>
+                setTimeout (() => {
+                    window.location.href = '../drydock/';
+                }, 3000);
+                </script>
+                ";
+                } else {
+                    $escape_cname = mysqli_real_escape_string($conn, $company_name);
+                    $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
+                    $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
+
+                    $month = date('F');
+                    $year = date('Y');
+
+                    $sql = "insert into drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images,month,year) values ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image','$month','$year')";
+                    $result = mysqli_query($conn, $sql);
+
+                    if ($result) {
+                        move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
+                        $_SESSION['status'] = "Successfully Added!";
+                        echo "
+                <script>
+                setTimeout (() => {
+                    location.href = '../drydock/';
+                }, 3000);
+                </script>
+                ";
+                    } else {
+                        $_SESSION['error'] = "Failed to Insert !";
+                        echo "
+                    <script>
+                    setTimeout (() => {
+                    window.location.href = '../drydock/';
+                    }, 3000);
+                    </script>
+                    ";
+                        die(mysqli_error($conn));
+                    }
                 }
+            } else {
+                $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
+                echo "
+                <script>
+                setTimeout (() => {
+                window.location.href = '../drydock/';
+                }, 3000);
+                </script>
+                ";
             }
-        } else {
-            $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
-            echo "
-            <script>
-            setTimeout (() => {
-              window.location.href = '../drydock/';
-            }, 3000);
-            </script>
-            ";
         }
     }
-}
-$sql = "select * from drydock_record"; // select all the data in DB
-$result = mysqli_query($conn, $sql); // query to get the data
+    $sql = "select * from drydock_record"; // select all the data in DB
+    $result = mysqli_query($conn, $sql); // query to get the data
 ?>
 
 <body>
