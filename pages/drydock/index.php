@@ -81,7 +81,7 @@
                     $month = date('F');
                     $year = date('Y');
 
-                    $sql = "insert into drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images,month,year) values ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image','$month','$year')";
+                    $sql = "INSERT INTO drydock_record (Company_Name,Ship_Name,Lot_Num,Drydock_date,Exp_Departure,images,month,year) VALUES ('$escape_cname','$escape_shipname','$escape_lotnum','$dryDDate','$Exp_Depar','$image','$month','$year')";
                     $result = mysqli_query($conn, $sql);
 
                     if ($result) {
