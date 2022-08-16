@@ -216,10 +216,9 @@ $id = $row['id']; ?>
                                                         </a>
                                                         </td>
                                                 </tr>
-                                            <?php
-                                                        $number++;
-                                                    }
-                                            ?>
+<?php $number++;
+}
+?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -236,5 +235,4 @@ $id = $row['id']; ?>
     <?php require '../modals.php'; ?>
     <script src="../app.js"></script>
 </body>
-
 </html>
