@@ -231,8 +231,8 @@ $id = $row['id']; ?>
             </div>
         </div>
     </div>
-    <?php require '../scripts.php'; ?>
-    <?php require '../modals.php'; ?>
-    <script src="../app.js"></script>
+<?php require '../scripts.php'; ?>
+<?php require '../modals.php'; ?>
+<script src="../app.js"></script>
 </body>
 </html>
