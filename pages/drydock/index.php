@@ -49,12 +49,12 @@
                 } else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
                     $_SESSION['error'] = "Image already exist !";
                     echo "
-                <script>
-                setTimeout (() => {
-                    window.location.href = '../drydock/';
-                }, 3000);
-                </script>
-                ";
+                    <script>
+                    setTimeout (() => {
+                        window.location.href = '../drydock/';
+                    }, 3000);
+                    </script>
+                    ";
                 } else if (empty($ship_name)) {
                     $_SESSION['error'] = "All fields are required !";
                     echo "
