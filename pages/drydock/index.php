@@ -67,12 +67,12 @@
                 } else if (empty($lot_number)) {
                     $_SESSION['error'] = "All fields are required !";
                     echo "
-                <script>
-                setTimeout (() => {
-                    window.location.href = '../drydock/';
-                }, 3000);
-                </script>
-                ";
+                    <script>
+                    setTimeout (() => {
+                        window.location.href = '../drydock/';
+                    }, 3000);
+                    </script>
+                    ";
                 } else {
                     $escape_cname = mysqli_real_escape_string($conn, $company_name);
                     $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
