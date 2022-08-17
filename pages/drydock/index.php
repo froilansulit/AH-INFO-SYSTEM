@@ -157,8 +157,7 @@ if (isset($_SESSION['status'])) {
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-<?php
-unset($_SESSION['status']);
+<?php unset($_SESSION['status']);
 }
 ?>
 <?php
