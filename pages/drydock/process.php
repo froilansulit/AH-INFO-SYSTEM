@@ -3,6 +3,7 @@ include '../connect.php';
 
 // for deleting
 if (isset($_POST['deleteSend'])) {
+    
     $unique = mysqli_real_escape_string($conn, $_POST['deleteSend']);
     $dry_query = "select * from drydock_record where id='$unique'";
     $dry_query_run = mysqli_query($conn, $dry_query);
@@ -24,8 +25,8 @@ if (isset($_POST['deleteSend'])) {
 
 //   for drydock image preview
 if (isset($_POST['userID'])) {
+
     $id = $_POST['userID'];
-    
     $sql = "select * from drydock_record where id='$id'"; // select all the data in DB
     $result = mysqli_query($conn, $sql); // query to get the data
 
@@ -34,7 +35,6 @@ if (isset($_POST['userID'])) {
       <?php
     }
 }
-
 
 // for drydock viewing details
 
