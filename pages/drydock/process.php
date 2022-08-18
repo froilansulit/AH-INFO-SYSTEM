@@ -55,6 +55,5 @@ else {
     $response['status'] = 200;
     $response['message'] = "Invalid or Data not found";
 }
-
 ?>
 
