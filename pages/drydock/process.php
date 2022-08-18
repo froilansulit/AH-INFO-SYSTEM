@@ -37,7 +37,6 @@ if (isset($_POST['userID'])) {
 }
 
 // for drydock viewing details
-
 if (isset($_POST['viewID'])) {
     $user_id = $_POST['viewID'];
 
@@ -54,4 +53,3 @@ else {
     $response['message'] = "Invalid or Data not found";
 }
 ?>
-
