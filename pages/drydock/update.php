@@ -9,13 +9,11 @@
   $Format = 'Y-m-d';
 
   // this for past setting 
-
   $PD = 28;
   $PM = 0;
   $PY = 0;
 
   // this is for future setting
-
   $FD = 0;
   $FM = 0;
   $FY = 1;
