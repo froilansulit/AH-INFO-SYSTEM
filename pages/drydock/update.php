@@ -25,9 +25,8 @@
   if (isset($_POST['data_btn'])) {
 
     $drydock_ID = $_POST['update_id'];
-
+    
     $sql_update = "select * from drydock_record where id=$drydock_ID"; // select all the data in DB
-
     $update_result = mysqli_query($conn, $sql_update); // query to get the data
     $update_row = mysqli_fetch_assoc($update_result);
 
