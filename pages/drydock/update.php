@@ -70,27 +70,24 @@ $image = $_FILES["drydock_image"]['name'];
     else if (empty($lot_number)) {
         $_SESSION['error'] = "All fields are required !";
     }
-
-
     else {
+        $drydock_query = "select * from drydock_record where id='$id'";
+        $drydock_query_run = mysqli_query($conn, $drydock_query);
 
-    $drydock_query = "select * from drydock_record where id='$id'";
-    $drydock_query_run = mysqli_query($conn, $drydock_query);
-
-    while ($row = mysqli_fetch_assoc($drydock_query_run)) {
+        while ($row = mysqli_fetch_assoc($drydock_query_run)) {
 
 
-    if ($image == NULL) {
-    // update with existing image
-    $image_data = $row['images'];
-    } else {
-    # update with new image and delete the old
-    if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
+        if ($image == NULL) {
+        // update with existing image
+        $image_data = $row['images'];
+        } else {
+        # update with new image and delete the old
+        if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
 
-    $store =  $_FILES["drydock_image"]['name'];
-    $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
-    header('location: ../drydock/');
-    mysqli_close($conn);
+        $store =  $_FILES["drydock_image"]['name'];
+        $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
+        header('location: ../drydock/');
+        mysqli_close($conn);
 
     }
     else{
