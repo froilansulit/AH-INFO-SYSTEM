@@ -81,13 +81,13 @@ $image = $_FILES["drydock_image"]['name'];
             // update with existing image
             $image_data = $row['images'];
         } else {
-        # update with new image and delete the old
+            # update with new image and delete the old
             if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
 
-            $store =  $_FILES["drydock_image"]['name'];
-            $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
-            header('location: ../drydock/');
-            mysqli_close($conn);
+                $store =  $_FILES["drydock_image"]['name'];
+                $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
+                header('location: ../drydock/');
+                mysqli_close($conn);
 
             }
     else{
