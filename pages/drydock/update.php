@@ -6,7 +6,6 @@ include '../session.php';
 include '../connect.php';
 
 // input type date support date format
-
 $Format = 'Y-m-d';
 
 // this for past setting 
