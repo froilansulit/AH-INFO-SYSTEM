@@ -80,7 +80,8 @@ $image = $_FILES["drydock_image"]['name'];
         if ($image == NULL) {
             // update with existing image
             $image_data = $row['images'];
-        } else {
+        } 
+        else {
             # update with new image and delete the old
             if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
 
@@ -90,17 +91,17 @@ $image = $_FILES["drydock_image"]['name'];
                 mysqli_close($conn);
 
             }
-    else{
-    if ($img_path = "upload/" . $row['images']) {
-    unlink($img_path);
+            else{
+                if ($img_path = "upload/" . $row['images']) {
+                unlink($img_path);
 
-    $image_data = $_FILES["drydock_image"]['name'];
+                $image_data = $_FILES["drydock_image"]['name'];
 
-    }
-    }
+                }
+            }
 
-    }
-    }
+            }
+            }
 
     $escape_cname = mysqli_real_escape_string($conn, $company_name);
     $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
