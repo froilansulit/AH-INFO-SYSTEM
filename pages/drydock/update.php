@@ -25,7 +25,7 @@
   if (isset($_POST['data_btn'])) {
 
     $drydock_ID = $_POST['update_id'];
-    
+
     $sql_update = "select * from drydock_record where id=$drydock_ID"; // select all the data in DB
     $update_result = mysqli_query($conn, $sql_update); // query to get the data
     $update_row = mysqli_fetch_assoc($update_result);
@@ -33,14 +33,13 @@
     $Get_Cname = $update_row['Company_Name'];
     $Get_ShipName = $update_row['Ship_Name'];
     $Get_LotNum = $update_row['Lot_Num'];
-
     $Get_DryDate = $update_row['Drydock_date'];
     $Get_ExpDate = $update_row['Exp_Departure'];
     $dry_image = $update_row['images'];
   }
 
   if (empty($drydock_ID)) {
-    header('location: ../drydock/');
+      header('location: ../drydock/');
   }
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
