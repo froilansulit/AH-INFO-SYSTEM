@@ -99,9 +99,8 @@ $image = $_FILES["drydock_image"]['name'];
 
                 }
             }
-
-            }
-            }
+        }
+    }
 
     $escape_cname = mysqli_real_escape_string($conn, $company_name);
     $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
