@@ -43,58 +43,59 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['update_drydock'])) {
 
-    $id = $_POST['update_id'];
+        if (isset($_POST['update_drydock'])) {
 
-    $company_name = htmlspecialchars($_POST['update_company_name']);
-    $ship_name = htmlspecialchars($_POST['update_ship_name']);
-    $lot_number = htmlspecialchars($_POST['update_lot_number']);
-    $dryDDate = date('Y-m-d', strtotime($_POST['update_dryDDate']));
-    $Exp_Depar = date('Y-m-d', strtotime($_POST['update_Exp_Depar']));
-    $image = $_FILES["drydock_image"]['name'];
+        $id = $_POST['update_id'];
 
-
-    if (empty($company_name)) {
-        $_SESSION['error'] = "All fields are required !";
-    } 
-    else if (empty($ship_name)) {
-        $_SESSION['error'] = "All fields are required !";
-    } 
-    else if (empty($lot_number)) {
-        $_SESSION['error'] = "All fields are required !";
-    }
-    else {
-        $drydock_query = "select * from drydock_record where id='$id'";
-        $drydock_query_run = mysqli_query($conn, $drydock_query);
-
-        while ($row = mysqli_fetch_assoc($drydock_query_run)) {
+        $company_name = htmlspecialchars($_POST['update_company_name']);
+        $ship_name = htmlspecialchars($_POST['update_ship_name']);
+        $lot_number = htmlspecialchars($_POST['update_lot_number']);
+        $dryDDate = date('Y-m-d', strtotime($_POST['update_dryDDate']));
+        $Exp_Depar = date('Y-m-d', strtotime($_POST['update_Exp_Depar']));
+        $image = $_FILES["drydock_image"]['name'];
 
 
-        if ($image == NULL) {
-            // update with existing image
-            $image_data = $row['images'];
+        if (empty($company_name)) {
+            $_SESSION['error'] = "All fields are required !";
         } 
+        else if (empty($ship_name)) {
+            $_SESSION['error'] = "All fields are required !";
+        } 
+        else if (empty($lot_number)) {
+            $_SESSION['error'] = "All fields are required !";
+        }
         else {
-            # update with new image and delete the old
-            if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
+            $drydock_query = "select * from drydock_record where id='$id'";
+            $drydock_query_run = mysqli_query($conn, $drydock_query);
 
-                $store =  $_FILES["drydock_image"]['name'];
-                $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
-                header('location: ../drydock/');
-                mysqli_close($conn);
+            while ($row = mysqli_fetch_assoc($drydock_query_run)) {
 
-            }
-            else{
-                if ($img_path = "upload/" . $row['images']) {
-                unlink($img_path);
 
-                $image_data = $_FILES["drydock_image"]['name'];
+            if ($image == NULL) {
+                // update with existing image
+                $image_data = $row['images'];
+            } 
+            else {
+                # update with new image and delete the old
+                if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
 
+                    $store =  $_FILES["drydock_image"]['name'];
+                    $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
+                    header('location: ../drydock/');
+                    mysqli_close($conn);
+
+                }
+                else{
+                    if ($img_path = "upload/" . $row['images']) {
+                    unlink($img_path);
+
+                    $image_data = $_FILES["drydock_image"]['name'];
+
+                    }
                 }
             }
         }
-    }
 
     $escape_cname = mysqli_real_escape_string($conn, $company_name);
     $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
