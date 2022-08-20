@@ -106,22 +106,17 @@
 
         if ($result) {
 
-        if ($image == NULL) {
-        // update with existing image
-
-
-        $_SESSION['status'] = "Updated Successfully with existing image !";
-        } else {
-        # update with new image and delete the old
-
-        move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
-        $_SESSION['status'] = "Updated Successfully !";
-        }
+            if ($image == NULL) {
+            // update with existing image
+            $_SESSION['status'] = "Updated Successfully with existing image !";
+            } 
+            else {
+            # update with new image and delete the old
+            move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
+            $_SESSION['status'] = "Updated Successfully !";
+            }
         }     
         }
-    // } else {
-    //   $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
-    // }
     }
 }
 
