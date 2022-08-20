@@ -47,14 +47,12 @@
         if (isset($_POST['update_drydock'])) {
 
         $id = $_POST['update_id'];
-
         $company_name = htmlspecialchars($_POST['update_company_name']);
         $ship_name = htmlspecialchars($_POST['update_ship_name']);
         $lot_number = htmlspecialchars($_POST['update_lot_number']);
         $dryDDate = date('Y-m-d', strtotime($_POST['update_dryDDate']));
         $Exp_Depar = date('Y-m-d', strtotime($_POST['update_Exp_Depar']));
         $image = $_FILES["drydock_image"]['name'];
-
 
         if (empty($company_name)) {
             $_SESSION['error'] = "All fields are required !";
@@ -70,7 +68,6 @@
             $drydock_query_run = mysqli_query($conn, $drydock_query);
 
             while ($row = mysqli_fetch_assoc($drydock_query_run)) {
-
 
             if ($image == NULL) {
                 // update with existing image
