@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include '../head.php';
-include '../session.php';
-include '../connect.php';
+    include '../head.php';
+    include '../session.php';
+    include '../connect.php';
 
-// input type date support date format
-$Format = 'Y-m-d';
+    // input type date support date format
+    $Format = 'Y-m-d';
 
-// this for past setting 
-$PD = 28;
-$PM = 0;
-$PY = 0;
+    // this for past setting 
+    $PD = 28;
+    $PM = 0;
+    $PY = 0;
 
-// this is for future setting
-$FD = 0;
-$FM = 0;
-$FY = 1;
+    // this is for future setting
+    $FD = 0;
+    $FM = 0;
+    $FY = 1;
 
-$PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
-$CDT = date($Format);
-$FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
+    $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
+    $CDT = date($Format);
+    $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
 if (isset($_POST['data_btn'])) {
 
