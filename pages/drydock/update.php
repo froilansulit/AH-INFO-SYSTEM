@@ -97,28 +97,28 @@
             }
         }
 
-    $escape_cname = mysqli_real_escape_string($conn, $company_name);
-    $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
-    $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
+        $escape_cname = mysqli_real_escape_string($conn, $company_name);
+        $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
+        $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
 
-    $sql = "update drydock_record set Company_Name='$escape_cname', Ship_Name='$escape_shipname', Lot_Num='$escape_lotnum' , Drydock_date='$dryDDate' , Exp_Departure='$Exp_Depar', images='$image_data' where id='$id'";
-    $result = mysqli_query($conn, $sql);
+        $sql = "update drydock_record set Company_Name='$escape_cname', Ship_Name='$escape_shipname', Lot_Num='$escape_lotnum' , Drydock_date='$dryDDate' , Exp_Departure='$Exp_Depar', images='$image_data' where id='$id'";
+        $result = mysqli_query($conn, $sql);
 
-    if ($result) {
+        if ($result) {
 
-    if ($image == NULL) {
-    // update with existing image
+        if ($image == NULL) {
+        // update with existing image
 
 
-    $_SESSION['status'] = "Updated Successfully with existing image !";
-    } else {
-    # update with new image and delete the old
+        $_SESSION['status'] = "Updated Successfully with existing image !";
+        } else {
+        # update with new image and delete the old
 
-    move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
-    $_SESSION['status'] = "Updated Successfully !";
-    }
-    }     
-    }
+        move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
+        $_SESSION['status'] = "Updated Successfully !";
+        }
+        }     
+        }
     // } else {
     //   $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
     // }
