@@ -38,9 +38,9 @@
     $dry_image = $update_row['images'];
     }
 
-if (empty($drydock_ID)) {
-header('location: ../drydock/');
-}
+    if (empty($drydock_ID)) {
+    header('location: ../drydock/');
+    }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (isset($_POST['update_drydock'])) {
