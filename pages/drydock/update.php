@@ -178,8 +178,6 @@
     </div>
     <?php include '../footer.php'; ?>
     <?php include '../modals.php'; ?>
-
-    <!-- partial -->
   </div>
   <!-- main-panel ends -->
   </div>
