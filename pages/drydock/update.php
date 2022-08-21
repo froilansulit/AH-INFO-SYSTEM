@@ -166,11 +166,8 @@
                         <input type="file" name="drydock_image" id="drydock_image" class="form-control" accept="image/png, image/jpg, image/jpeg" value="<?php echo $dry_image; ?>" onchange="validateFileType()">
                       </div>
                     </div>
-
                     <a href="../drydock/" class="btn btn-default btn-rounded float-right">Cancel</a>
-
                     <button type="submit" name="update_drydock" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
-
                 </div>
                 </form>
               </div>
