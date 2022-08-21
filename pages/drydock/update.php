@@ -156,12 +156,10 @@
                         <label for="dob">Drydock Date: </label>
                         <input type="date" name="update_dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $Get_DryDate ?>" required>
                       </div>
-
                       <div class="form-group col-md-6">
                         <label for="dob">Expected Departure: </label>
                         <input type="date" name="update_Exp_Depar" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $Get_ExpDate ?>" required>
                       </div>
-
                       <div class="form-group col-md-6">
                         <label for="name">Upload Image:</label>
                         <label for="name" class="text-muted">(Only JPG, PNG, JPEG allowed)</label>
