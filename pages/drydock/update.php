@@ -132,13 +132,11 @@
               </div>
             </div>
           </div>
-
           <div class="col-md-12 grid-margin stretch-card mx-auto">
             <div class="card">
               <div class="card-body">
                 <p class="card-title text-md-center text-xl-left">Update Dry Dock</p>
                 <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-
                   <form method="post" enctype="multipart/form-data">
                     <div class="row">
                       <input type="hidden" name="update_id" value="<?php echo $drydock_ID; ?>">
@@ -146,17 +144,14 @@
                         <label for="name">Company Name:</label>
                         <input type="text" name="update_company_name" class="form-control" autocomplete="off" value="<?php echo $Get_Cname ?>" required>
                       </div>
-
                       <div class="form-group col-md-6">
                         <label for="name">Ship Name:</label>
                         <input type="text" name="update_ship_name" class="form-control" autocomplete="off" value="<?php echo $Get_ShipName ?>" required>
                       </div>
-
                       <div class="form-group col-md-6">
                         <label for="name">Lot Number:</label>
                         <input type="num" name="update_lot_number" class="form-control" autocomplete="off" value="<?php echo $Get_LotNum ?>" required>
                       </div>
-
                       <div class="form-group col-md-6">
                         <label for="dob">Drydock Date: </label>
                         <input type="date" name="update_dryDDate" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $Get_DryDate ?>" required>
