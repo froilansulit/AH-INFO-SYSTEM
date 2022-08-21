@@ -178,9 +178,6 @@
     </div>
     <?php include '../footer.php'; ?>
     <?php include '../modals.php'; ?>
-    
-    <!-- content-wrapper ends -->
-    <!-- partial:partials/_footer.html -->
 
     <!-- partial -->
   </div>
