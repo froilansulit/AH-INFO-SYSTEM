@@ -181,9 +181,6 @@
   </div>
   </div>
   </div>
-
-
-
   <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
 
