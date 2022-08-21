@@ -179,9 +179,7 @@
     <?php include '../footer.php'; ?>
     <?php include '../modals.php'; ?>
   </div>
-  <!-- main-panel ends -->
   </div>
-  <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
 
