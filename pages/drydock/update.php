@@ -176,12 +176,12 @@
         </div>
       </div>
     </div>
-  <?php include '../footer.php'; ?>
-  <?php include '../modals.php'; ?>
+<?php include '../footer.php'; ?>
+<?php include '../modals.php'; ?>
     </div>
     </div>
     </div>
-  <?php include '../scripts.php'; ?>
+<?php include '../scripts.php'; ?>
     <script src="../app.js"></script>
 </body>
 </html>
