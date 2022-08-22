@@ -4,15 +4,12 @@
     include '../head.php';
     include '../session.php';
     include '../connect.php';
-
     // input type date support date format
     $Format = 'Y-m-d';
-
     // this for past setting 
     $PD = 28;
     $PM = 0;
     $PY = 0;
-
     // this is for future setting
     $FD = 0;
     $FM = 0;
