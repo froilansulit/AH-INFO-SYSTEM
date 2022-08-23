@@ -150,7 +150,7 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                                 </div>
                             </div>
                         </div>
-                        <?php
+<?php
                         $month = date('F');
                         $year = date('Y');
 
@@ -161,14 +161,12 @@ $this_year_total = $Y_inc_rec - $Y_out_rec;
                             $id = $row['id'];
                             $monthSelect[] = $row['month_date'];
                         }
-                        ?>
+?>
                     </div>
                 </div>
-<?php 
- ?>
 <?php
-include '../footer.php';
-include '../modals.php';
+    include '../footer.php';
+    include '../modals.php';
 ?>
             </div>
         </div>
