@@ -178,7 +178,7 @@
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [<?php echo $out_rec; ?>, <?php echo $inc_rec; ?>],
+                data: [<?= $out_rec; ?>, <?= $inc_rec; ?>],
                 backgroundColor: [
                     'rgb(255, 99, 132)', 'rgb(54, 162, 235)',
                 ],
