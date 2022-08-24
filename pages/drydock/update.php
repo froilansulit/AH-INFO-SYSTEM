@@ -60,7 +60,7 @@
             $_SESSION['error'] = "All fields are required !";
         }
         else {
-            $drydock_query = "select * from drydock_record where id='$id'";
+            $drydock_query = "SELECT * FROM drydock_record WHERE id='$id'";
             $drydock_query_run = mysqli_query($conn, $drydock_query);
 
             while ($row = mysqli_fetch_assoc($drydock_query_run)) {
@@ -94,7 +94,7 @@
         $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
         $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
 
-        $sql = "update drydock_record set Company_Name='$escape_cname', Ship_Name='$escape_shipname', Lot_Num='$escape_lotnum' , Drydock_date='$dryDDate' , Exp_Departure='$Exp_Depar', images='$image_data' where id='$id'";
+        $sql = "UPDATE drydock_record SET Company_Name='$escape_cname', Ship_Name='$escape_shipname', Lot_Num='$escape_lotnum' , Drydock_date='$dryDDate' , Exp_Departure='$Exp_Depar', images='$image_data' WHERE id='$id'";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
