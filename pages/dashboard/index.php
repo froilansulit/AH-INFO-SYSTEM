@@ -152,7 +152,7 @@
                         $month = date('F');
                         $year = date('Y');
 
-                        $sql = "select * from financial_record"; // select all the data in DB
+                        $sql = "SELECT * FROM financial_record"; // select all the data in DB
                         $result = mysqli_query($conn, $sql); // query to get the data
 
                         while ($row = mysqli_fetch_assoc($result)) {
