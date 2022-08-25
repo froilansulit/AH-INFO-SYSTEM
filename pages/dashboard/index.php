@@ -8,7 +8,7 @@
     $inc_rec = 0;
     $out_rec = 0;
 
-    $this_month_sql = "select * from financial_record where purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
+    $this_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
 
     $this_month_result = mysqli_query($conn, $this_month_sql); // query to get the data
 
@@ -16,7 +16,7 @@
         $inc_rec += $row['amount'];
     }
 
-    $this_month_sql2 = "select * from financial_record where purpose='Outgoing' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
+    $this_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
 
     $this_month_result2 = mysqli_query($conn, $this_month_sql2); // query to get the data
 
@@ -31,7 +31,7 @@
     $L_inc_rec = 0;
     $L_out_rec = 0;
 
-    $last_month_sql = "select * from financial_record where purpose='Incoming' AND month_date='$last_month' AND year_date='$year_now'"; // select all the data in DB
+    $last_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$last_month' AND year_date='$year_now'"; // select all the data in DB
 
     $last_month_result = mysqli_query($conn, $last_month_sql); // query to get the data
 
