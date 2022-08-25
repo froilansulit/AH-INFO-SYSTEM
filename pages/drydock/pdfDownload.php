@@ -6,7 +6,7 @@ include '../connect.php';
 $month = date('F');
 $year = date('Y');
 
-$res=mysqli_query($conn,"select * from drydock_record where month='$month' AND year='$year'");
+$res=mysqli_query($conn,"SELECT * FROM drydock_record WHERE month='$month' AND year='$year'");
 if(mysqli_num_rows($res)>0){
     $number = 1;
 	$html='<style>
