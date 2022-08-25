@@ -60,7 +60,7 @@
         $Y_inc_rec += $row['amount'];
     }
 
-    $this_year_sql2 = "select * from financial_record where purpose='Outgoing' AND year_date='$year_now'"; // select all the data in DB
+    $this_year_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND year_date='$year_now'"; // select all the data in DB
 
     $this_year_result2 = mysqli_query($conn, $this_year_sql2); // query to get the data
 
