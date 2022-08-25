@@ -27,7 +27,7 @@ if (isset($_POST['deleteSend'])) {
 if (isset($_POST['userID'])) {
 
     $id = $_POST['userID'];
-    $sql = "SELECT * from drydock_record where id='$id'"; // select all the data in DB
+    $sql = "SELECT * FROM drydock_record WHERE id='$id'"; // select all the data in DB
     $result = mysqli_query($conn, $sql); // query to get the data
 
     while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -40,7 +40,7 @@ if (isset($_POST['userID'])) {
 if (isset($_POST['viewID'])) {
     $user_id = $_POST['viewID'];
 
-    $sql = "select * from drydock_record where id=$user_id";
+    $sql = "SELECT * FROM drydock_record WHERE id=$user_id";
     $result = mysqli_query($conn,$sql);
     $response = array();
     while ($row = mysqli_fetch_assoc($result)) {
