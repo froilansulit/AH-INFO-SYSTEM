@@ -66,18 +66,15 @@
             while ($row = mysqli_fetch_assoc($drydock_query_run)) {
 
             if ($image == NULL) {
-                // update with existing image
-                $image_data = $row['images'];
+                $image_data = $row['images']; // update with existing image
             } 
             else {
                 # update with new image and delete the old
                 if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
-
                     $store =  $_FILES["drydock_image"]['name'];
                     $_SESSION['error'] = "Image already exist. <b>$store</b>, Try Another Image ";
                     header('location: ../drydock/');
                     mysqli_close($conn);
-
                 }
                 else{
                     if ($img_path = "upload/" . $row['images']) {
@@ -100,8 +97,7 @@
         if ($result) {
 
             if ($image == NULL) {
-            // update with existing image
-            $_SESSION['status'] = "Updated Successfully with existing image !";
+            $_SESSION['status'] = "Updated Successfully with existing image !"; // update with existing image
             } 
             else {
             # update with new image and delete the old

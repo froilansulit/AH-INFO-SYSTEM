@@ -5,12 +5,12 @@ include '../connect.php';
 if (isset($_POST['deleteSend'])) {
     
     $unique = mysqli_real_escape_string($conn, $_POST['deleteSend']);
-    $dry_query = "select * from drydock_record where id='$unique'";
+    $dry_query = "SELECT * FROM drydock_record WHERE id='$unique'";
     $dry_query_run = mysqli_query($conn, $dry_query);
   
     while ($row = mysqli_fetch_assoc($dry_query_run)) {
         if ($img_path = "upload/" . $row['images']) {
-            $sql = "delete from drydock_record where id=$unique";
+            $sql = "DELETE FROM drydock_record WHERE id=$unique";
             $result = mysqli_query($conn, $sql);
   
             if ($result) {
@@ -27,7 +27,7 @@ if (isset($_POST['deleteSend'])) {
 if (isset($_POST['userID'])) {
 
     $id = $_POST['userID'];
-    $sql = "select * from drydock_record where id='$id'"; // select all the data in DB
+    $sql = "SELECT * from drydock_record where id='$id'"; // select all the data in DB
     $result = mysqli_query($conn, $sql); // query to get the data
 
     while ($row = mysqli_fetch_assoc($result)) { ?>
