@@ -39,7 +39,7 @@
         $L_inc_rec += $row['amount'];
     }
 
-    $last_month_sql2 = "select * from financial_record where purpose='Outgoing' AND month_date='$last_month' AND year_date='$year_now'"; // select all the data in DB
+    $last_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$last_month' AND year_date='$year_now'"; // select all the data in DB
 
     $last_month_result2 = mysqli_query($conn, $last_month_sql2); // query to get the data
 
@@ -52,7 +52,7 @@
     $Y_inc_rec = 0;
     $Y_out_rec = 0;
 
-    $this_year_sql = "select * from financial_record where purpose='Incoming' AND year_date='$year_now'"; // select all the data in DB
+    $this_year_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND year_date='$year_now'"; // select all the data in DB
 
     $this_year_result = mysqli_query($conn, $this_year_sql); // query to get the data
 
