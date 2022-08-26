@@ -46,7 +46,8 @@
                     }, 3000);
                     </script>
                     ";
-                } else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
+                } 
+                else if (file_exists("upload/" . $_FILES["drydock_image"]['name'])) {
                     $_SESSION['error'] = "Image already exist !";
                     echo "
                     <script>
@@ -55,7 +56,8 @@
                     }, 3000);
                     </script>
                     ";
-                } else if (empty($ship_name)) {
+                } 
+                else if (empty($ship_name)) {
                     $_SESSION['error'] = "All fields are required !";
                     echo "
                     <script>
@@ -64,7 +66,8 @@
                     }, 3000);
                     </script>
                     ";
-                } else if (empty($lot_number)) {
+                } 
+                else if (empty($lot_number)) {
                     $_SESSION['error'] = "All fields are required !";
                     echo "
                     <script>
@@ -73,7 +76,8 @@
                     }, 3000);
                     </script>
                     ";
-                } else {
+                } 
+                else {
                     $escape_cname = mysqli_real_escape_string($conn, $company_name);
                     $escape_shipname = mysqli_real_escape_string($conn, $ship_name);
                     $escape_lotnum = mysqli_real_escape_string($conn, $lot_number);
