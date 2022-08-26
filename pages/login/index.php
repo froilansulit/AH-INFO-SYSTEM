@@ -32,7 +32,6 @@
             $_SESSION['username'] = $username;
 
             $sql = "select * from users"; // select all the data in DB
-
             $result = mysqli_query($conn, $sql); // query to get the data
 
             while ($row = mysqli_fetch_assoc($result)) {
@@ -44,12 +43,12 @@
             echo "<script>  
             loadinglgn();
             setTimeout(() => {
-
                 window.location.href = '../dashboard/';
             }, 4000);
             </script>
             ";
-            } else {
+            } 
+            else {
             echo "<script>    
             lgnERROR();
             setTimeout(() => {
@@ -57,11 +56,8 @@
             }, 2000);
             </script>";
             }
+        }
     }
-    }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
