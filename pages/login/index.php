@@ -3,15 +3,14 @@
     include '../head.php';
     include '../connect.php';
     session_start();
+
+    // this is ternany operator
     (isset($_SESSION['username'])) ? header('location: ../dashboard/') : "";
-    // if (isset($_SESSION['username'])) {
-    //     ;
-    // }
 
     // for login function 
     if (isset($_POST["lgnLogin"])) {
-    $username = mysqli_real_escape_string($conn, $_POST["username"]);
-    $password = mysqli_real_escape_string($conn, $_POST["password"]);
+        $username = mysqli_real_escape_string($conn, $_POST["username"]);
+        $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
     if (empty($username)) {
         $username_error = "<b>Username </b> is Required ! <br>";
