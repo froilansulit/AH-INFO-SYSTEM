@@ -37,26 +37,26 @@
 
             while ($row = mysqli_fetch_assoc($result)) {
                 if ($username == $row['username']) {
-                $_SESSION['acc_name'] = $row['name'];
-                $_SESSION['user_type'] = $row['type'];
+                    $_SESSION['acc_name'] = $row['name'];
+                    $_SESSION['user_type'] = $row['type'];
                 } 
-        }
-        echo "<script>  
-        loadinglgn();
-        setTimeout(() => {
+            }
+            echo "<script>  
+            loadinglgn();
+            setTimeout(() => {
 
-            window.location.href = '../dashboard/';
-        }, 4000);
-        </script>
-        ";
-        } else {
-        echo "<script>    
-        lgnERROR();
-        setTimeout(() => {
-            window.location.href = '../login/';
-        }, 2000);
-        </script>";
-        }
+                window.location.href = '../dashboard/';
+            }, 4000);
+            </script>
+            ";
+            } else {
+            echo "<script>    
+            lgnERROR();
+            setTimeout(() => {
+                window.location.href = '../login/';
+            }, 2000);
+            </script>";
+            }
     }
     }
 
