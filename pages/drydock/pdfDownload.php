@@ -35,7 +35,8 @@
             background-color: #04AA6D;
             color: white;
         }
-        </style><h1>Drydock Records '.date('F').' '.date('Y').'</h1><table class="table">';
+        </style>
+        <h1>Drydock Records '.date('F').' '.date('Y').'</h1><table class="table">';
             $html.='<tr><td>ID</td><td>Company Name</td><td>Ship Name</td><td>Lot Number</td><td>Drydock Date</td><td>Expect Departure</td></tr>';
             while($row=mysqli_fetch_assoc($res)){
                 $html.='<tr><td>'.$number.'</td><td>'.$row['Company_Name'].'</td><td>'.$row['Ship_Name'].'</td><td>'.$row['Lot_Num'].'</td><td>'.$row['Drydock_date'].'</td><td>'.$row['Exp_Departure'].'</td></tr>';
@@ -46,6 +47,7 @@
     else{
         $html="Data not found";
     }
+
     $mpdf=new \Mpdf\Mpdf();
     $mpdf->WriteHTML($html);
     $file= 'Drydock_Records_'.date('F').'_'.date('Y').'.pdf';
