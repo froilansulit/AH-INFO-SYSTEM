@@ -7,7 +7,7 @@ $month = date('F');
 $year = date('Y');
 
 $res=mysqli_query($conn,"SELECT * FROM drydock_record WHERE month='$month' AND year='$year'");
-if(mysqli_num_rows($res)>0){
+if(mysqli_num_rows($res)>0) {
     $number = 1;
 	$html='<style>
     h1 {
@@ -42,7 +42,8 @@ if(mysqli_num_rows($res)>0){
             $number++;
 		}
 	$html.='</table>';
-}else{
+}
+else{
 	$html="Data not found";
 }
 $mpdf=new \Mpdf\Mpdf();
