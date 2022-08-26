@@ -98,7 +98,8 @@
                         }, 3000);
                         </script>
                         ";
-                    } else {
+                    } 
+                    else {
                         $_SESSION['error'] = "Failed to Insert !";
                         echo "
                         <script>
@@ -110,7 +111,8 @@
                         die(mysqli_error($conn));
                     }
                 }
-            } else {
+            } 
+            else {
                 $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
                 echo "
                 <script>
@@ -192,7 +194,8 @@ if (isset($_SESSION['error']))
                                                 <tr>
 <?php
 $number = 1;
-while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) 
+{
 $id = $row['id']; ?>
 
                                                         <th scope="row"><?= $number; ?></th>
