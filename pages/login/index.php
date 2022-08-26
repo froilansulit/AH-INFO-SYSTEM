@@ -1,62 +1,64 @@
 <?php
-include '../head.php';
-include '../connect.php';
-session_start();
-if (isset($_SESSION['username'])) {
-  header('location: ../dashboard/');
-}
 
-// for login function 
-if (isset($_POST["lgnLogin"])) {
-  $username = mysqli_real_escape_string($conn, $_POST["username"]);
-  $password = mysqli_real_escape_string($conn, $_POST["password"]);
+    include '../head.php';
+    include '../connect.php';
+    session_start();
+    (isset($_SESSION['username'])) ? header('location: ../dashboard/') : "";
+    // if (isset($_SESSION['username'])) {
+    //     ;
+    // }
 
-  if (empty($username)) {
-    $username_error = "<b>Username </b> is Required ! <br>";
-  }
-  if (empty($password)) {
-    $password_error = "<b>Password</b> is Required ! <br>";
-  } 
-  else if (empty($username)) {
-    $username_error = "<b>Username </b> is Required ! <br>";
-  }
-  else if (empty($password)) {
-    $password_error = "<b>Password</b> is Required ! <br>";
-  } else {
-    $query = "select * from users WHERE username='$username' AND password='$password'";
-    $query_run = mysqli_query($conn, $query);
+    // for login function 
+    if (isset($_POST["lgnLogin"])) {
+    $username = mysqli_real_escape_string($conn, $_POST["username"]);
+    $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
-    if (mysqli_num_rows($query_run) > 0) {
-      $_SESSION['username'] = $username;
-
-      $sql = "select * from users"; // select all the data in DB
-
-      $result = mysqli_query($conn, $sql); // query to get the data
-
-      while ($row = mysqli_fetch_assoc($result)) {
-        if ($username == $row['username']) {
-          $_SESSION['acc_name'] = $row['name'];
-          $_SESSION['user_type'] = $row['type'];
-        } 
-      }
-      echo "<script>  
-      loadinglgn();
-      setTimeout(() => {
-
-        window.location.href = '../dashboard/';
-      }, 4000);
-      </script>
-    ";
-    } else {
-      echo "<script>    
-      lgnERROR();
-      setTimeout(() => {
-        window.location.href = '../login/';
-      }, 2000);
-      </script>";
+    if (empty($username)) {
+        $username_error = "<b>Username </b> is Required ! <br>";
     }
-  }
-}
+    if (empty($password)) {
+        $password_error = "<b>Password</b> is Required ! <br>";
+    } 
+    else if (empty($username)) {
+        $username_error = "<b>Username </b> is Required ! <br>";
+    }
+    else if (empty($password)) {
+        $password_error = "<b>Password</b> is Required ! <br>";
+    } else {
+        $query = "select * from users WHERE username='$username' AND password='$password'";
+        $query_run = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($query_run) > 0) {
+        $_SESSION['username'] = $username;
+
+        $sql = "select * from users"; // select all the data in DB
+
+        $result = mysqli_query($conn, $sql); // query to get the data
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            if ($username == $row['username']) {
+            $_SESSION['acc_name'] = $row['name'];
+            $_SESSION['user_type'] = $row['type'];
+            } 
+        }
+        echo "<script>  
+        loadinglgn();
+        setTimeout(() => {
+
+            window.location.href = '../dashboard/';
+        }, 4000);
+        </script>
+        ";
+        } else {
+        echo "<script>    
+        lgnERROR();
+        setTimeout(() => {
+            window.location.href = '../login/';
+        }, 2000);
+        </script>";
+        }
+    }
+    }
 
 
 
