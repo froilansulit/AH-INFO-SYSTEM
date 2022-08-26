@@ -79,7 +79,6 @@
 
     .icon { font-size: 1.7rem; }
 </style>
-
 <body>
     <div class="container-scroller">
 <?php include '../navbar.php'; ?>
@@ -170,7 +169,6 @@
         </div>
     </div>
 <?php include '../scripts.php'; ?>
-
     <script>
         const data = {
             labels: [

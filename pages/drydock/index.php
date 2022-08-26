@@ -159,7 +159,8 @@ if (isset($_SESSION['status']))
                                             </div>
 <?php unset($_SESSION['status']);
 }
-if (isset($_SESSION['error'])) {
+if (isset($_SESSION['error'])) 
+{
 ?>
                                             <div class="alert alert-danger border border-muted alert-dismissible fade show" role="alert">
                                                 <?= $_SESSION['error']; ?>
