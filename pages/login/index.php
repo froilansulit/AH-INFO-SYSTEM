@@ -106,7 +106,7 @@
     }
   }
 </style>
-
+🧹 Refracturing Code 👨🏽‍💻
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -117,9 +117,12 @@
               <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                 <h3 class="text-center mb-3">Financial Transaction</h3>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-<?php if (isset($username_error) && !empty($username_error)) {
-                  echo "<p class='alert alert-danger slide_in text-center mt-4'>" . $username_error . "</p>";
-                } ?>
+<?php if (isset($username_error) && !empty($username_error)) 
+{
+?> 
+                <p class='alert alert-danger slide_in text-center mt-4'> <?= $username_error; ?> </p>;
+<?php
+} ?>
                 <?php if (isset($password_error) && !empty($password_error)) {
                   echo "<p class='alert alert-danger slide_in text-center mt-4'>" . $password_error . "</p>";
                 } ?>
