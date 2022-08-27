@@ -133,8 +133,6 @@
                 <form class="pt-3">
                   <div class="form-group">
                     <input type="text" class="form-control form-control-lg" name="username" id="username" placeholder="Username" autofocus value="<?= (isset($_POST['username'])) ? $_POST['username'] : ""; ?>">
-
-
                   </div>
                   <div class="form-group">
                     <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password" value="<?= (isset($_POST['password'])) ? $_POST['password'] : ""; ?>">
@@ -156,9 +154,7 @@
       </div>
     </div>
   </div>
-  <?php
-  include '../scripts.php';
-  ?>
+<?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
   <?php
 // for login function 
@@ -206,13 +202,6 @@ if (isset($_POST["lgnLogin"])) {
       
       </script>
     ";
-      
-      // header('location: ../dashboard/');
-
-      //header('location: ../financial_record/');
-
-      // echo "<script>alert('Welcome to my gg');</script>";
-
     } else {
       // invalid
       echo "<script>    
