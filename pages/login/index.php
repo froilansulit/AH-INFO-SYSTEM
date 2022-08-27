@@ -4,7 +4,7 @@
     include '../connect.php';
     session_start();
 
-    // this is ternany operator
+    // this is ternary operator
     (isset($_SESSION['username'])) ? header('location: ../dashboard/') : "";
 
     // for login function 
@@ -117,7 +117,7 @@
               <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                 <h3 class="text-center mb-3">Financial Transaction</h3>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
-                <?php if (isset($username_error) && !empty($username_error)) {
+<?php if (isset($username_error) && !empty($username_error)) {
                   echo "<p class='alert alert-danger slide_in text-center mt-4'>" . $username_error . "</p>";
                 } ?>
                 <?php if (isset($password_error) && !empty($password_error)) {
