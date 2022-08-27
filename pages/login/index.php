@@ -192,16 +192,16 @@ if (isset($_POST["lgnLogin"])) {
         } 
       }
       echo "<script>  
-      loadinglgn();
-       $('#lgnLogin').prop('disabled', true);
+        loadinglgn();
+        $('#lgnLogin').prop('disabled', true);
 
-      setTimeout(() => {
+        setTimeout(() => {
 
-        window.location.href = '../dashboard/';
-      }, 4000);
-      
+          window.location.href = '../dashboard/';
+        }, 4000);
+        
       </script>
-    ";
+      ";
     } 
     else {
       // invalid
