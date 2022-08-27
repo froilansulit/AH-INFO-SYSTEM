@@ -155,9 +155,7 @@
         </div>
       </div>
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- this is for the js plugin and scripts -->
   <?php
   include '../scripts.php';
   ?>
