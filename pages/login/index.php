@@ -128,7 +128,6 @@
                 <p class='alert alert-danger slide_in text-center mt-4'><?= $password_error; ?></p>
 <?php
 } 
-(isset($_POST['username'])) ? $_POST['username'] : "";
 ?>
                 <br>
                 <form class="pt-3">
@@ -148,13 +147,8 @@
                   </div>
                   <div class="mt-5">
                     <button class="btn btn-block btn-primary rounded-pill btn-lg font-weight-medium auth-form-btn" id="lgnLogin" name="lgnLogin" type="submit">SIGN IN</button>
-                    <?php if (isset($_SESSION['type'])) {
-                      echo $_SESSION['type'];
-                    }  ?>
                     <br>
-                    <!-- <p>Note: <span style="color: red;font-weight: bold;">Please check your credentials carefully !</span></p> -->
                   </div>
-
                 </form>
               </div>
           </div>
