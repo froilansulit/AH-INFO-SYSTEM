@@ -202,7 +202,8 @@ if (isset($_POST["lgnLogin"])) {
       
       </script>
     ";
-    } else {
+    } 
+    else {
       // invalid
       echo "<script>    
       lgnERROR();
@@ -213,7 +214,6 @@ if (isset($_POST["lgnLogin"])) {
     }
   }
 }
-  ?>
+?>
 </body>
-
 </html>
