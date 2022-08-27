@@ -106,7 +106,6 @@
     }
   }
 </style>
-🧹 Refracturing Code 👨🏽‍💻
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -120,30 +119,26 @@
 <?php if (isset($username_error) && !empty($username_error)) 
 {
 ?> 
-                <p class='alert alert-danger slide_in text-center mt-4'><?= $username_error; ?></p>;
+                <p class='alert alert-danger slide_in text-center mt-4'><?= $username_error; ?></p>
 <?php
 } ?>
 <?php if (isset($password_error) && !empty($password_error)) 
 {
 ?>
-                <p class='alert alert-danger slide_in text-center mt-4'><?= $password_error; ?></p>";
+                <p class='alert alert-danger slide_in text-center mt-4'><?= $password_error; ?></p>
 <?php
 } 
+(isset($_POST['username'])) ? $_POST['username'] : "";
 ?>
                 <br>
                 <form class="pt-3">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" name="username" id="username" placeholder="Username" autofocus value="<?php if (isset($_POST['username'])) {
-                                                                                                                                                    echo $_POST['username'];
-                                                                                                                                                  } ?>">
+                    <input type="text" class="form-control form-control-lg" name="username" id="username" placeholder="Username" autofocus value="<?= (isset($_POST['username'])) ? $_POST['username'] : ""; ?>">
 
 
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password" value="<?php if (isset($_POST['password'])) {
-                                                                                                                                              echo $_POST['password'];
-                                                                                                                                            } ?>">
-
+                    <input type="password" class="form-control form-control-lg" name="password" id="password" placeholder="Password" value="<?= (isset($_POST['password'])) ? $_POST['password'] : ""; ?>">
                   </div>
                   <div class="form-check">
                     <label class="form-check-label">
