@@ -120,12 +120,16 @@
 <?php if (isset($username_error) && !empty($username_error)) 
 {
 ?> 
-                <p class='alert alert-danger slide_in text-center mt-4'> <?= $username_error; ?> </p>;
+                <p class='alert alert-danger slide_in text-center mt-4'><?= $username_error; ?></p>;
 <?php
 } ?>
-                <?php if (isset($password_error) && !empty($password_error)) {
-                  echo "<p class='alert alert-danger slide_in text-center mt-4'>" . $password_error . "</p>";
-                } ?>
+<?php if (isset($password_error) && !empty($password_error)) 
+{
+?>
+                <p class='alert alert-danger slide_in text-center mt-4'><?= $password_error; ?></p>";
+<?php
+} 
+?>
                 <br>
                 <form class="pt-3">
                   <div class="form-group">
