@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-include '../head.php';
-include '../session.php';
-include '../connect.php';
 
-$month_now = date('F');
-$year_now = date('Y');
-$inc_rec = 0;
-$out_rec = 0;
+    include '../head.php';
+    include '../session.php';
+    include '../connect.php';
 
-
-$sql = "select * from financial_record where purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
-
-$result = mysqli_query($conn, $sql); // query to get the data
-
-while ($row = mysqli_fetch_assoc($result)) {
-  $inc_rec += $row['amount'];
-}
-
-$sql = "select * from financial_record where purpose='Outgoing' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
-
-$result = mysqli_query($conn, $sql); // query to get the data
-
-while ($row = mysqli_fetch_assoc($result)) {
-  $out_rec += $row['amount'];
-}
-
-$total = $inc_rec - $out_rec;
+    $month_now = date('F');
+    $year_now = date('Y');
+    $inc_rec = 0;
+    $out_rec = 0;
 
 
-$sql = "select * from financial_record where month_date='$month_now'AND year_date='$year_now'"; // select all the data in DB
+    $sql = "select * from financial_record where purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
 
-$result = mysqli_query($conn, $sql); // query to get the data
+    $result = mysqli_query($conn, $sql); // query to get the data
+
+    while ($row = mysqli_fetch_assoc($result)) {
+    $inc_rec += $row['amount'];
+    }
+
+    $sql = "select * from financial_record where purpose='Outgoing' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
+
+    $result = mysqli_query($conn, $sql); // query to get the data
+
+    while ($row = mysqli_fetch_assoc($result)) {
+    $out_rec += $row['amount'];
+    }
+
+    $total = $inc_rec - $out_rec;
+
+
+    $sql = "select * from financial_record where month_date='$month_now'AND year_date='$year_now'"; // select all the data in DB
+
+    $result = mysqli_query($conn, $sql); // query to get the data
 
 ?>
 
