@@ -76,7 +76,7 @@
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Total of Outgoing</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($out_rec); ?></h3>
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($out_rec); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>  
                   <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
@@ -88,7 +88,7 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left font-weight-bold" style="">Monthly Tally <span class="text-danger ">(Month of <?php echo date('F'); ?>)</span></p>
+                  <p class="card-title text-md-center text-xl-left font-weight-bold" style="">Monthly Tally <span class="text-danger ">(Month of <?= date('F'); ?>)</span></p>
                   <a href="../financial_record/pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print</a>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <table id="example1" class="table table-hover" style="width:100%">
