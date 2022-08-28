@@ -156,7 +156,7 @@
   </div>
 <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
-  <?php
+<?php
 // for login function 
 if (isset($_POST["lgnLogin"])) {
   $username = mysqli_real_escape_string($conn, $_POST["username"]);
