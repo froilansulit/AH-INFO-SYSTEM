@@ -30,7 +30,7 @@
 
     $total = $inc_rec - $out_rec;
 
-    $sql = "select * from financial_record where month_date='$month_now'AND year_date='$year_now'"; // select all the data in DB
+    $sql = "SELECT * FROM financial_record WHERE month_date='$month_now'AND year_date='$year_now'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
 
