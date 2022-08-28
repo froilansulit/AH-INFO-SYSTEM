@@ -12,12 +12,12 @@
     $out_rec = 0;
 
 
-    $sql = "select * from financial_record where purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
+    $sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
 
     while ($row = mysqli_fetch_assoc($result)) {
-    $inc_rec += $row['amount'];
+        $inc_rec += $row['amount'];
     }
 
     $sql = "select * from financial_record where purpose='Outgoing' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
