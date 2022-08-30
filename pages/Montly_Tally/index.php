@@ -100,8 +100,7 @@
                           <th>Purpose</th>
                           <th>OR Number</th>
                           <th>Amount</th>
-                          <th>Encoded by</th>
-                          
+                          <th>Encoded by</th>                        
                         </tr>
                       </thead>
                       <tbody class="text-center">
