@@ -112,9 +112,9 @@
                             $id = $row['id'];
 ?>
 
-                            <td><b><?php echo $number; ?></b></td>
-                            <td><?php echo $row['cname']; ?></td>
-                            <td><?php echo $row['date_set']; ?></td>
+                            <td><b><?= $number; ?></b></td>
+                            <td><?= $row['cname']; ?></td>
+                            <td><?= $row['date_set']; ?></td>
 
                             <td><span class=" <?php if ($row['purpose'] == "Outgoing") {
                                                 echo 'badge badge-pill badge-danger';
