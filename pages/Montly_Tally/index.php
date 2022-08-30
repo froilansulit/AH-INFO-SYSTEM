@@ -105,12 +105,12 @@
                       </thead>
                       <tbody class="text-center">
                         <tr>
-                          <?php
+<?php
                           $number = 1;
                           while ($row = mysqli_fetch_assoc($result)) {
 
                             $id = $row['id'];
-                          ?>
+?>
 
                             <td><b><?php echo $number; ?></b></td>
                             <td><?php echo $row['cname']; ?></td>
