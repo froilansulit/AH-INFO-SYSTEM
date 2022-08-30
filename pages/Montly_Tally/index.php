@@ -122,7 +122,11 @@
                             } 
                             else {
                               echo 'badge badge-pill badge-primary';
-                                              } ?>"><?php echo $row['purpose']; ?></span></td>
+                            }
+?>
+                            ">
+                            <?php echo $row['purpose']; ?>
+                            </span></td>
                             <td><?php echo $row['or_number']; ?></td>
                             <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
                             <!-- <td><p ></p></td> -->
