@@ -116,10 +116,12 @@
                             <td><?= $row['cname']; ?></td>
                             <td><?= $row['date_set']; ?></td>
 
-                            <td><span class=" <?php if ($row['purpose'] == "Outgoing") {
-                                                echo 'badge badge-pill badge-danger';
-                                              } else {
-                                                echo 'badge badge-pill badge-primary';
+                            <td><span class=" 
+<?php                       if ($row['purpose'] == "Outgoing") {
+                              echo 'badge badge-pill badge-danger';
+                            } 
+                            else {
+                              echo 'badge badge-pill badge-primary';
                                               } ?>"><?php echo $row['purpose']; ?></span></td>
                             <td><?php echo $row['or_number']; ?></td>
                             <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
