@@ -130,7 +130,7 @@
                             <td><?= $row['or_number']; ?></td>
                             <td><?= '₱ ' . number_format($row['amount']); ?></td>
                             <!-- <td><p ></p></td> -->
-                            <td><?php echo $row['encoded_by']; ?></td>
+                            <td><?= $row['encoded_by']; ?></td>
 
                             
                         </tr>
