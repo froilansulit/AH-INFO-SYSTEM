@@ -125,7 +125,7 @@
                             }
 ?>
                             ">
-                            <?php echo $row['purpose']; ?>
+                            <?= $row['purpose']; ?>
                             </span></td>
                             <td><?php echo $row['or_number']; ?></td>
                             <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
