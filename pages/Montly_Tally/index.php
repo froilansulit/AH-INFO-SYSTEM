@@ -127,7 +127,7 @@
                             ">
                             <?= $row['purpose']; ?>
                             </span></td>
-                            <td><?php echo $row['or_number']; ?></td>
+                            <td><?= $row['or_number']; ?></td>
                             <td><?php echo '₱ ' . number_format($row['amount']); ?></td>
                             <!-- <td><p ></p></td> -->
                             <td><?php echo $row['encoded_by']; ?></td>
