@@ -148,9 +148,7 @@
         <?php include '../modals.php'; ?>
       </div>
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
   <?php include '../scripts.php'; ?>
 
   
