@@ -149,9 +149,6 @@
       </div>
     </div>
   </div>
-  <?php include '../scripts.php'; ?>
-
-  
+  <?php include '../scripts.php'; ?> 
 </body>
-
 </html>
