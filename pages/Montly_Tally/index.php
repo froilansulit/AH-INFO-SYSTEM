@@ -132,11 +132,11 @@
                             <td><?= $row['encoded_by']; ?></td>
                         </tr>
 
-                      <?php
+<?php
                             $number++;
-                          }
+}
 
-                      ?>
+?>
                       </tbody>
                     </table>
                   </div>
