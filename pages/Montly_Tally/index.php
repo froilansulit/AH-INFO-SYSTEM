@@ -148,10 +148,9 @@
 include '../footer.php';
 include '../modals.php';
 ?>
-        <?php  ?>
       </div>
     </div>
   </div>
-  <?php include '../scripts.php'; ?> 
+<?php include '../scripts.php'; ?> 
 </body>
 </html>
