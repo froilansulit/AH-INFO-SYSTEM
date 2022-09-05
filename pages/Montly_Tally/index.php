@@ -144,8 +144,11 @@
             </div>
           </div>
         </div>
-        <?php include '../footer.php'; ?>
-        <?php include '../modals.php'; ?>
+<?php 
+include '../footer.php';
+include '../modals.php';
+?>
+        <?php  ?>
       </div>
     </div>
   </div>
