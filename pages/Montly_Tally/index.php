@@ -41,9 +41,7 @@
 <?php include '../navbar.php'; ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
 <?php include '../sidebar.php'; ?>
-      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
           <div class="row">
