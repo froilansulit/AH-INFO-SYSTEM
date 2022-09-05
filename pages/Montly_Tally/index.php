@@ -37,9 +37,7 @@
 ?>
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
 <?php include '../navbar.php'; ?>
-    <!-- partial -->
     <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
       <div class="main-panel">
