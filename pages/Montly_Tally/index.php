@@ -133,7 +133,7 @@
                         </tr>
 
 <?php
-                            $number++;
+                        $number++;
 }
 ?>
                       </tbody>
