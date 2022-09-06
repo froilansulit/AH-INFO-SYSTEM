@@ -11,7 +11,6 @@
     $inc_rec = 0;
     $out_rec = 0;
 
-
     $sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
@@ -33,7 +32,6 @@
     $sql = "SELECT * FROM financial_record WHERE month_date='$month_now'AND year_date='$year_now'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
-
 ?>
 <body>
   <div class="container-scroller">
@@ -105,7 +103,7 @@
                           $number = 1;
                           while ($row = mysqli_fetch_assoc($result)) {
 
-                            $id = $row['id'];
+                          $id = $row['id'];
 ?>
 
                             <td><b><?= $number; ?></b></td>
