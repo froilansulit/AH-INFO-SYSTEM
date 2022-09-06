@@ -1,7 +1,7 @@
 <?php 
     include '../connect.php';
 
-    // for deleting
+    // for deleting specific drydock data
     if (isset($_POST['deleteSend'])) {
         
         $unique = mysqli_real_escape_string($conn, $_POST['deleteSend']);
@@ -15,7 +15,7 @@
     
                 if ($result) {
                     unlink($img_path);
-                    # keep it blank ajax will do the success message
+                    // * keep it blank ajax will do the success message
                 } else {
                     die(mysqli_error($conn));
                 }
@@ -31,7 +31,7 @@
         $result = mysqli_query($conn, $sql); // query to get the data
 
         while ($row = mysqli_fetch_assoc($result)) { ?>
-        <img src="upload/<?php echo $row['images']; ?>" class="img-fluid" alt="">
+        <img src="upload/<?= $row['images']; ?>" class="img-fluid" alt="">
         <?php
         }
     }
