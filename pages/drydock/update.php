@@ -81,7 +81,6 @@
                         unlink($img_path);
 
                         $image_data = $_FILES["drydock_image"]['name'];
-
                         }
                     }
                 }
@@ -100,12 +99,12 @@
                 $_SESSION['status'] = "Updated Successfully with existing image !"; // update with existing image
                 } 
                 else {
-                # update with new image and delete the old
-                move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
-                $_SESSION['status'] = "Updated Successfully !";
+                    // update with new image and delete the old
+                    move_uploaded_file($_FILES["drydock_image"]['tmp_name'], "upload/" . $_FILES["drydock_image"]['name']);
+                    $_SESSION['status'] = "Updated Successfully !";
                 }
             }     
-            }
+        }
     }
 }
 ?>
@@ -168,8 +167,10 @@
         </div>
       </div>
     </div>
-<?php include '../footer.php'; ?>
-<?php include '../modals.php'; ?>
+<?php 
+include '../footer.php';
+include '../modals.php';
+?>
     </div>
     </div>
     </div>
