@@ -1,91 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
-include '../head.php';
-include '../session.php';
-include '../connect.php';
+    include '../head.php';
+    include '../session.php';
+    include '../connect.php';
 
 
-// input type date support date format
+    // input type date support date format
 
-$Format = 'Y-m-d';
+    $Format = 'Y-m-d';
 
-// this for past setting 
+    // this for past setting 
 
-$PD = 0;
-$PM = 0;
-$PY = 0;
+    $PD = 0;
+    $PM = 0;
+    $PY = 0;
 
-// this is for future setting
+    // this is for future setting
 
-$FD = 0;
-$FM = 0;
-$FY = 1;
-
-
-$PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
-$CDT = date($Format);
-$FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
+    $FD = 0;
+    $FM = 0;
+    $FY = 1;
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST['save_date'])) {
+    $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
+    $CDT = date($Format);
+    $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
-    $name = htmlspecialchars($_POST['name']);
-    //
-    $dateofRent = date('Y-m-d', strtotime($_POST['dateofRent']));
-    $dateofReturn = date('Y-m-d', strtotime($_POST['dateofReturn']));
 
-    if (empty($name)) {
-      echo "<script>    
-      alert('Name is required !');
-      window.location.href = '../tugboat_renting/';
-      </script>";
-    } 
-    
-    else {
-      
-      $escape_name = mysqli_real_escape_string($conn, $name);
-      $month = date('F');
-      $year = date('Y');
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['save_date'])) {
 
-      $sql = "insert into tugboat_record (name,dateofRent,dateofReturn,month,year) values ('$escape_name','$dateofRent','$dateofReturn','$month','$year')";
-      $result = mysqli_query($conn, $sql);
+        $name = htmlspecialchars($_POST['name']);
+        //
+        $dateofRent = date('Y-m-d', strtotime($_POST['dateofRent']));
+        $dateofReturn = date('Y-m-d', strtotime($_POST['dateofReturn']));
 
-      if ($result) {
+        if (empty($name)) {
+        echo "<script>    
+        alert('Name is required !');
+        window.location.href = '../tugboat_renting/';
+        </script>";
+        } 
+        
+        else {
+        
+        $escape_name = mysqli_real_escape_string($conn, $name);
+        $month = date('F');
+        $year = date('Y');
 
-        $_SESSION['status'] = "Successfully Added!";
-        echo "
-        <script>
-       
-        setTimeout (() => {
-          location.href = '../tugboat_renting/';
-        }, 3000);
-       
-        </script>
-        ";
-        // setTimeout ( () => {
-        //   location.href = '../tugboat_renting/';
-        // }, 3000);
+        $sql = "insert into tugboat_record (name,dateofRent,dateofReturn,month,year) values ('$escape_name','$dateofRent','$dateofReturn','$month','$year')";
+        $result = mysqli_query($conn, $sql);
 
-        // echo "
-        // <script>
-        // alert('Successfully Added!');
-        // location.href = '../tugboat_renting/';
-        // </script>
-        // ";
-      } else {
-        die(mysqli_error($conn));
-      }
+        if ($result) {
+
+            $_SESSION['status'] = "Successfully Added!";
+            echo "
+            <script>
+        
+            setTimeout (() => {
+            location.href = '../tugboat_renting/';
+            }, 3000);
+        
+            </script>
+            ";
+            // setTimeout ( () => {
+            //   location.href = '../tugboat_renting/';
+            // }, 3000);
+
+            // echo "
+            // <script>
+            // alert('Successfully Added!');
+            // location.href = '../tugboat_renting/';
+            // </script>
+            // ";
+        } else {
+            die(mysqli_error($conn));
+        }
+        }
     }
-  }
-}
+    }
 
 
-$sql = "select * from tugboat_record"; // select all the data in DB
+    $sql = "select * from tugboat_record"; // select all the data in DB
 
-$result = mysqli_query($conn, $sql); // query to get the data
+    $result = mysqli_query($conn, $sql); // query to get the data
 
 ?>
 
