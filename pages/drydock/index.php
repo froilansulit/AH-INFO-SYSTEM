@@ -93,9 +93,9 @@
                         $_SESSION['status'] = "Successfully Added!";
                         echo "
                         <script>
-                        setTimeout (() => {
-                            location.href = '../drydock/';
-                        }, 3000);
+                            setTimeout (() => {
+                                location.href = '../drydock/';
+                            }, 3000);
                         </script>
                         ";
                     } 
@@ -103,9 +103,9 @@
                         $_SESSION['error'] = "Failed to Insert !";
                         echo "
                         <script>
-                        setTimeout (() => {
-                        window.location.href = '../drydock/';
-                        }, 3000);
+                            setTimeout (() => {
+                            window.location.href = '../drydock/';
+                            }, 3000);
                         </script>
                         ";
                         die(mysqli_error($conn));
@@ -116,9 +116,9 @@
                 $_SESSION['error'] = "Only PNG, JPG and JPEG Images are allowed !";
                 echo "
                 <script>
-                setTimeout (() => {
-                window.location.href = '../drydock/';
-                }, 3000);
+                    setTimeout (() => {
+                    window.location.href = '../drydock/';
+                    }, 3000);
                 </script>
                 ";
             }
@@ -156,7 +156,8 @@
                                     <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
 <?php
 if (isset($_SESSION['status'])) 
-{ ?>
+{ 
+?>
                                             <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                                                 <?= $_SESSION['status']; ?>
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -196,7 +197,8 @@ if (isset($_SESSION['error']))
 $number = 1;
 while ($row = mysqli_fetch_assoc($result)) 
 {
-$id = $row['id']; ?>
+$id = $row['id']; 
+?>
 
                                                         <th scope="row"><?= $number; ?></th>
                                                         <td><?= $row['Company_Name']; ?></td>
