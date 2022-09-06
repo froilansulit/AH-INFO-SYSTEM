@@ -41,9 +41,9 @@
                     $_SESSION['error'] = "All fields are required !";
                     echo "
                     <script>
-                    setTimeout (() => {
-                    window.location.href = '../drydock/';
-                    }, 3000);
+                        setTimeout (() => {
+                        window.location.href = '../drydock/';
+                        }, 3000);
                     </script>
                     ";
                 } 
@@ -51,9 +51,9 @@
                     $_SESSION['error'] = "Image already exist !";
                     echo "
                     <script>
-                    setTimeout (() => {
-                        window.location.href = '../drydock/';
-                    }, 3000);
+                        setTimeout (() => {
+                            window.location.href = '../drydock/';
+                        }, 3000);
                     </script>
                     ";
                 } 
@@ -61,9 +61,9 @@
                     $_SESSION['error'] = "All fields are required !";
                     echo "
                     <script>
-                    setTimeout (() => {
-                        window.location.href = '../drydock/';
-                    }, 3000);
+                        setTimeout (() => {
+                            window.location.href = '../drydock/';
+                        }, 3000);
                     </script>
                     ";
                 } 
@@ -71,9 +71,9 @@
                     $_SESSION['error'] = "All fields are required !";
                     echo "
                     <script>
-                    setTimeout (() => {
-                        window.location.href = '../drydock/';
-                    }, 3000);
+                        setTimeout (() => {
+                            window.location.href = '../drydock/';
+                        }, 3000);
                     </script>
                     ";
                 } 

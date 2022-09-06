@@ -6,13 +6,14 @@
 </style>
 <?php 
 include '../session.php';
-include '../head.php'; ?>
+include '../head.php'; 
+?>
 <body>
   <div class="container-scroller">
 <?php include '../navbar.php'; ?>
     <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
-      <div class="main-panel" >
+      <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
@@ -49,7 +50,7 @@ include '../head.php'; ?>
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Map</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                      <img src="../../images/AH_Map.jpg" class="img-fluid" alt="" srcset="">
+                      <img src="../../images/AH_Map.jpg" class="img-fluid">
                   </div>  
                 </div>
               </div>
