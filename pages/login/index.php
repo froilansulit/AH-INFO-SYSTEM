@@ -4,7 +4,7 @@
     include '../connect.php';
     session_start();
 
-    // this is ternary operator
+    // this is ternary operator for url validation
     (isset($_SESSION['username'])) ? header('location: ../dashboard/') : "";
 
     // for login function 
@@ -41,19 +41,19 @@
                 } 
             }
             echo "<script>  
-            loadinglgn();
-            setTimeout(() => {
-                window.location.href = '../dashboard/';
-            }, 4000);
+                loadinglgn();
+                setTimeout(() => {
+                    window.location.href = '../dashboard/';
+                }, 4000);
             </script>
             ";
             } 
             else {
             echo "<script>    
-            lgnERROR();
-            setTimeout(() => {
-                window.location.href = '../login/';
-            }, 2000);
+                lgnERROR();
+                setTimeout(() => {
+                    window.location.href = '../login/';
+                }, 2000);
             </script>";
             }
         }

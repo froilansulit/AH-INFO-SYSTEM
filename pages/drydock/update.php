@@ -168,8 +168,8 @@
       </div>
     </div>
 <?php 
-include '../footer.php';
-include '../modals.php';
+    include '../footer.php';
+    include '../modals.php';
 ?>
     </div>
     </div>
