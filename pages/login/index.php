@@ -120,9 +120,9 @@
 {
 ?> 
                 <p class='alert alert-danger slide_in text-center mt-4'><?= $username_error; ?></p>
-<?php
-} ?>
-<?php if (isset($password_error) && !empty($password_error)) 
+<?php 
+}
+if (isset($password_error) && !empty($password_error)) 
 {
 ?>
                 <p class='alert alert-danger slide_in text-center mt-4'><?= $password_error; ?></p>
@@ -139,7 +139,7 @@
                   </div>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" name="showPasslgn" id="showPasslgn" value="">
+                      <input type="checkbox" class="form-check-input" name="showPasslgn" id="showPasslgn">
                       Show Password
                     </label>
                   </div>
@@ -194,9 +194,7 @@ if (isset($_POST["lgnLogin"])) {
       echo "<script>  
         loadinglgn();
         $('#lgnLogin').prop('disabled', true);
-
         setTimeout(() => {
-
           window.location.href = '../dashboard/';
         }, 4000);
         
@@ -206,10 +204,10 @@ if (isset($_POST["lgnLogin"])) {
     else {
       // invalid
       echo "<script>    
-      lgnERROR();
-      setTimeout(() => {
-        window.location.href = '../login/';
-      }, 2000);
+        lgnERROR();
+        setTimeout(() => {
+            window.location.href = '../login/';
+        }, 2000);
       </script>";
     }
   }
