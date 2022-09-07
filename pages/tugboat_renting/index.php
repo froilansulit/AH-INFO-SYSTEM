@@ -5,19 +5,15 @@
     include '../session.php';
     include '../connect.php';
 
-
     // input type date support date format
-
     $Format = 'Y-m-d';
 
     // this for past setting 
-
     $PD = 0;
     $PM = 0;
     $PY = 0;
 
     // this is for future setting
-
     $FD = 0;
     $FM = 0;
     $FY = 1;
@@ -26,7 +22,6 @@
     $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
     $CDT = date($Format);
     $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
-
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['save_date'])) {
