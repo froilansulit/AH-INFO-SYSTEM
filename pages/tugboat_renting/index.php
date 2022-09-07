@@ -27,51 +27,50 @@
     if (isset($_POST['save_date'])) {
 
         $name = htmlspecialchars($_POST['name']);
-        //
         $dateofRent = date('Y-m-d', strtotime($_POST['dateofRent']));
         $dateofReturn = date('Y-m-d', strtotime($_POST['dateofReturn']));
 
         if (empty($name)) {
         echo "<script>    
-        alert('Name is required !');
-        window.location.href = '../tugboat_renting/';
+            alert('Name is required !');
+            window.location.href = '../tugboat_renting/';
         </script>";
         } 
         
         else {
         
-        $escape_name = mysqli_real_escape_string($conn, $name);
-        $month = date('F');
-        $year = date('Y');
+            $escape_name = mysqli_real_escape_string($conn, $name);
+            $month = date('F');
+            $year = date('Y');
 
-        $sql = "insert into tugboat_record (name,dateofRent,dateofReturn,month,year) values ('$escape_name','$dateofRent','$dateofReturn','$month','$year')";
-        $result = mysqli_query($conn, $sql);
+            $sql = "insert into tugboat_record (name,dateofRent,dateofReturn,month,year) values ('$escape_name','$dateofRent','$dateofReturn','$month','$year')";
+            $result = mysqli_query($conn, $sql);
 
-        if ($result) {
+            if ($result) {
 
-            $_SESSION['status'] = "Successfully Added!";
-            echo "
-            <script>
-        
-            setTimeout (() => {
-            location.href = '../tugboat_renting/';
-            }, 3000);
-        
-            </script>
-            ";
-            // setTimeout ( () => {
-            //   location.href = '../tugboat_renting/';
-            // }, 3000);
+                $_SESSION['status'] = "Successfully Added!";
+                echo "
+                <script>
+            
+                setTimeout (() => {
+                location.href = '../tugboat_renting/';
+                }, 3000);
+            
+                </script>
+                ";
+                // setTimeout ( () => {
+                //   location.href = '../tugboat_renting/';
+                // }, 3000);
 
-            // echo "
-            // <script>
-            // alert('Successfully Added!');
-            // location.href = '../tugboat_renting/';
-            // </script>
-            // ";
-        } else {
-            die(mysqli_error($conn));
-        }
+                // echo "
+                // <script>
+                // alert('Successfully Added!');
+                // location.href = '../tugboat_renting/';
+                // </script>
+                // ";
+            } else {
+                die(mysqli_error($conn));
+            }
         }
     }
     }
