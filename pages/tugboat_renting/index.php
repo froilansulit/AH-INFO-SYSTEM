@@ -51,11 +51,9 @@
                 $_SESSION['status'] = "Successfully Added!";
                 echo "
                 <script>
-            
-                setTimeout (() => {
-                location.href = '../tugboat_renting/';
-                }, 3000);
-            
+                    setTimeout (() => {
+                    location.href = '../tugboat_renting/';
+                    }, 3000);
                 </script>
                 ";
                 // setTimeout ( () => {
@@ -72,7 +70,7 @@
                 die(mysqli_error($conn));
             }
         }
-    }
+        }
     }
 
 
