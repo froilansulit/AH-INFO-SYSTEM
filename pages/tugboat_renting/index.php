@@ -70,18 +70,11 @@
                 die(mysqli_error($conn));
             }
         }
-        }
     }
-
-
+    }
     $sql = "select * from tugboat_record"; // select all the data in DB
-
     $result = mysqli_query($conn, $sql); // query to get the data
-
 ?>
-
-
-
 <body>
 
   <!-- start of add rent modal -->
