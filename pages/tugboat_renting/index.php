@@ -93,14 +93,8 @@
                   <label for="dob">Date of Return</label>
                   <input type="date" name="dateofReturn" min="<?= $PDT; ?>" max="<?= $FDT; ?>" class="form-control" required>
                 </div>
-
-
               </div>
-
-
-
               <button type="submit" name="save_date" class="btn btn-primary btn-rounded">Save</button>
-
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
             </div>
             <!-- /.card-body -->
