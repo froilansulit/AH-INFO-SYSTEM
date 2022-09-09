@@ -56,17 +56,8 @@
                     }, 3000);
                 </script>
                 ";
-                // setTimeout ( () => {
-                //   location.href = '../tugboat_renting/';
-                // }, 3000);
-
-                // echo "
-                // <script>
-                // alert('Successfully Added!');
-                // location.href = '../tugboat_renting/';
-                // </script>
-                // ";
-            } else {
+            } 
+            else {
                 die(mysqli_error($conn));
             }
         }
@@ -243,7 +234,6 @@
                           <th>Date of Rent</th>
                           <th>Date of Return</th>
                           <th>Operation</th>
-
                         </tr>
                       </thead>
                       <tbody class="text-center">
