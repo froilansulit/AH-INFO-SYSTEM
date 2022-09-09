@@ -78,16 +78,12 @@
           </button>
         </div>
         <div class="modal-body">
-          <!-- <form method="post"> -->
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
             <div class="card-body">
               <div class="row">
-
                 <div class="form-group col-md-12">
                   <label for="name">Name:</label>
                   <input type="text" name="name" class="form-control" autocomplete="off" required>
-
                 </div>
                 <div class="form-group col-md-6">
                   <label for="dob">Date of Rent</label>
