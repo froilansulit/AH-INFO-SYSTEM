@@ -97,12 +97,9 @@
               <button type="submit" name="save_date" class="btn btn-primary btn-rounded">Save</button>
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
             </div>
-            <!-- /.card-body -->
           </form>
-          <!-- </form> -->
         </div>
       </div>
-      <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
   </div>
