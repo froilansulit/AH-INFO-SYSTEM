@@ -101,15 +101,11 @@
         </div>
       </div>
     </div>
-    <!-- /.modal-dialog -->
   </div>
-
   <!-- end of rent modal  -->
 
   <!-- start of view modal  -->
-
   <div class="modal fade" id="ViewRent">
-
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
