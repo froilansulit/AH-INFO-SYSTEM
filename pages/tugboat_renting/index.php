@@ -91,7 +91,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="dob">Date of Return</label>
-                  <input type="date" name="dateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="" required>
+                  <input type="date" name="dateofReturn" min="<?= $PDT; ?>" max="<?= $FDT; ?>" class="form-control" required>
                 </div>
 
 
