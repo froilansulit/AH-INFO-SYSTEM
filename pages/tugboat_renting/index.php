@@ -67,12 +67,8 @@
     $result = mysqli_query($conn, $sql); // query to get the data
 ?>
 <body>
-
   <!-- start of add rent modal -->
-
-
   <div class="modal fade" id="AddRentBoat">
-    <!-- <div class="modal-dialog modal-lg"> -->
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
