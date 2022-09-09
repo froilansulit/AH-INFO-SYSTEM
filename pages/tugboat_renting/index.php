@@ -78,7 +78,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+          <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="card-body">
               <div class="row">
                 <div class="form-group col-md-12">
@@ -87,7 +87,7 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="dob">Date of Rent</label>
-                  <input type="date" name="dateofRent" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $CDT ?>" required>
+                  <input type="date" name="dateofRent" min="<?= $PDT; ?>" max="<?= $FDT; ?>" class="form-control" value="<?= $CDT ?>" required>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="dob">Date of Return</label>
