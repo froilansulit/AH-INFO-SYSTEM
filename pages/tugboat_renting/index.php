@@ -143,11 +143,8 @@
   <!-- end of view modal  -->
 
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
     <?php include '../navbar.php'; ?>
-    <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
       <?php include '../sidebar.php'; ?>
       <!-- partial -->
       <div class="main-panel">
