@@ -155,7 +155,6 @@
                   <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddRentBoat">
                     <i class="ti-plus btn-icon-prepend"></i>Rent Boat
                   </button>
-                  <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
                 </div>
                 <div>
                 </div>
@@ -170,7 +169,8 @@
                   <a href="pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print</a>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <?php
-                    if (isset($_SESSION['status'])) {
+                    if (isset($_SESSION['status'])) 
+                    {
                     ?>
                       <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                         <!-- <strong>Holy guacamole!</strong> -->
