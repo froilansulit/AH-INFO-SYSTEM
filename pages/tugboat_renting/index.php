@@ -135,9 +135,6 @@
               <input type="hidden" id="hiddenViewData">
             </div>
           </div>
-          <!-- /.card-body -->
-
-          <!-- </form> -->
         </div>
       </div>
       <!-- /.modal-content -->
