@@ -202,7 +202,6 @@ unset($_SESSION['status']);
                           while ($row = mysqli_fetch_assoc($result)) {
                             $id = $row['id'];
 ?>
-
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['name']; ?></td>
                             <td><?= $row['dateofRent']; ?></td>
