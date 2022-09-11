@@ -208,7 +208,7 @@ unset($_SESSION['status']);
                             <td><?= $row['dateofRent']; ?></td>
                             <td><?= $row['dateofReturn']; ?></td>
 
-                            <form action="update.php?unixcode=<?php echo $id; ?>" method="post">
+                            <form action="update.php?unixcode=<?= $id; ?>" method="post">
                             <td>
                               <a href="#" data-toggle="tooltip" title="Edit">
                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
