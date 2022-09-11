@@ -203,8 +203,8 @@ unset($_SESSION['status']);
                             $id = $row['id'];
 ?>
 
-                            <td><b><?php echo $number; ?></b></td>
-                            <td><?php echo $row['name']; ?></td>
+                            <td><b><?= $number; ?></b></td>
+                            <td><?= $row['name']; ?></td>
                             <td><?php echo $row['dateofRent']; ?></td>
                             <td><?php echo $row['dateofReturn']; ?></td>
 
