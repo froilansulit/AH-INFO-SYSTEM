@@ -169,8 +169,8 @@
                   <a href="pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print</a>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
 <?php
-                    if (isset($_SESSION['status'])) 
-                    {
+if (isset($_SESSION['status'])) 
+{
 ?>
                       <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                         <!-- <strong>Holy guacamole!</strong> -->
@@ -180,10 +180,10 @@
                         </button>
                       </div>
 
-                    <?php
-                      unset($_SESSION['status']);
-                    }
-                    ?>
+<?php
+unset($_SESSION['status']);
+}
+?>
 
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
