@@ -205,8 +205,8 @@ unset($_SESSION['status']);
 
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['name']; ?></td>
-                            <td><?php echo $row['dateofRent']; ?></td>
-                            <td><?php echo $row['dateofReturn']; ?></td>
+                            <td><?= $row['dateofRent']; ?></td>
+                            <td><?= $row['dateofReturn']; ?></td>
 
                             <form action="update.php?unixcode=<?php echo $id; ?>" method="post">
                             <td>
