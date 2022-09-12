@@ -198,9 +198,10 @@ unset($_SESSION['status']);
                       <tbody class="text-center">
                         <tr>
 <?php
-                          $number = 1;
-                          while ($row = mysqli_fetch_assoc($result)) {
-                            $id = $row['id'];
+$number = 1;
+while ($row = mysqli_fetch_assoc($result)) 
+{
+$id = $row['id'];
 ?>
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['name']; ?></td>
@@ -222,12 +223,11 @@ unset($_SESSION['status']);
                                 <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewRent(<?= $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                               </a>
                             </td>
-
                         </tr>
-                      <?php
-                            $number++;
-                          }
-                      ?>
+<?php
+$number++;
+}
+?>
                       </tbody>
                     </table>
                   </div>
