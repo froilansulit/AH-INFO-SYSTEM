@@ -212,14 +212,14 @@ unset($_SESSION['status']);
                               <a href="#" data-toggle="tooltip" title="Edit">
                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                                 </a>
-                              <input type="hidden" name="rentID" value="<?php echo $id; ?>">
+                              <input type="hidden" name="rentID" value="<?= $id; ?>">
                               </form>
                               </a>
                               <a href="#" data-toggle="tooltip" title="Remove">
-                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRent(<?php echo $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
+                                <button type="button" class="btn btn-outline-danger btn-sm btn-rounded" onclick="DeleteRent(<?= $id; ?>)"><i class="ti-trash btn-icon-prepend"></i></button>
                               </a>
                               <a href="#" data-toggle="tooltip" title="View">
-                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewRent(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
+                                <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" onclick="ViewRent(<?= $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                               </a>
                             </td>
 
