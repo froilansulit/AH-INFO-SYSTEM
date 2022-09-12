@@ -235,14 +235,8 @@ $number++;
               </div>
             </div>
           </div>
-
         </div>
         <?php include '../footer.php'; ?>
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-
-        <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
