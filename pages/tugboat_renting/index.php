@@ -212,9 +212,6 @@ unset($_SESSION['status']);
                               <a href="#" data-toggle="tooltip" title="Edit">
                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
                                 </a>
-                              <!-- <a href="#" data-toggle="tooltip" title="Edit">
-                                <button onclick="Getdata(<?php echo $id; ?>)" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
-                              </a> -->
                               <input type="hidden" name="rentID" value="<?php echo $id; ?>">
                               </form>
                               </a>
