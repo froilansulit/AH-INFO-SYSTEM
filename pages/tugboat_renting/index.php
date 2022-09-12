@@ -244,8 +244,8 @@ $number++;
 
 
 
-  <?php include '../scripts.php'; ?>
-  <?php include '../modals.php'; ?>
-  <script src="../app.js"></script>
+<?php include '../scripts.php'; ?>
+<?php include '../modals.php'; ?>
+<script src="../app.js"></script>
 </body>
 </html>
