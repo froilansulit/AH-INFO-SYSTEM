@@ -184,7 +184,6 @@ if (isset($_SESSION['status']))
 unset($_SESSION['status']);
 }
 ?>
-
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
                         <tr>
