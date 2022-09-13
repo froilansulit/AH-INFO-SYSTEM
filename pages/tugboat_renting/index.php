@@ -34,7 +34,7 @@
         echo "<script>    
             alert('Name is required !');
             window.location.href = '../tugboat_renting/';
-        </script>";
+            </script>";
         } 
         
         else {
@@ -174,7 +174,7 @@ if (isset($_SESSION['status']))
 ?>
                       <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                         <!-- <strong>Holy guacamole!</strong> -->
-                        <?php echo $_SESSION['status']; ?>
+                        <?= $_SESSION['status']; ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
