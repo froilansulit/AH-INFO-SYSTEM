@@ -236,7 +236,7 @@ $number++;
             </div>
           </div>
         </div>
-        <?php include '../footer.php'; ?>
+<?php include '../footer.php'; ?>
       </div>
     </div>
   </div>
@@ -244,7 +244,6 @@ $number++;
     include '../scripts.php'; 
     include '../modals.php';
 ?>
-
 <script src="../app.js"></script>
 </body>
 </html>
