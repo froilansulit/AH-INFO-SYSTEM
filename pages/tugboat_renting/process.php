@@ -2,7 +2,6 @@
 include '../connect.php';
 
 // for deleting
-
 if(isset($_POST['deleteSend'])) {
     $unique = mysqli_real_escape_string($conn, $_POST['deleteSend']);
 

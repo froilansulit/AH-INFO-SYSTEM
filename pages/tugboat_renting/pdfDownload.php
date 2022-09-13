@@ -9,7 +9,7 @@ $year = date('Y');
 $res=mysqli_query($conn,"select * from tugboat_record where month='$month' AND year='$year'");
 if(mysqli_num_rows($res)>0){
     $number = 1;
-	$html='<style>
+    $html='<style>
     h1 {
         text-align: center;
     }
@@ -55,7 +55,5 @@ $mpdf->output($file,'D');
 //I
 //F
 //S
-
 header('location: ../tugboat_renting/');
-
 ?>
