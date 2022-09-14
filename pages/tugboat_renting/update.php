@@ -52,7 +52,7 @@
 
             $escape_Uname = mysqli_real_escape_string($conn, $Uname);
 
-            $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
+            $sql = "UPDATE tugboat_record SET name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' WHERE id='$UpdateID'";
             $result = mysqli_query($conn, $sql);
 
             if ($result) {
@@ -65,7 +65,6 @@
     }
 }
 ?>
-
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
