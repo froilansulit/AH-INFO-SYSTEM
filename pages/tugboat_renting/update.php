@@ -67,13 +67,9 @@
 ?>
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <?php include '../navbar.php'; ?>
-    <!-- partial -->
+<?php include '../navbar.php'; ?>
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
-      <?php include '../sidebar.php'; ?>
-      <!-- partial -->
+<?php include '../sidebar.php'; ?>
       <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
           <div class="row">
