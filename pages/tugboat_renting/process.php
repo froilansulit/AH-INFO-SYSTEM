@@ -14,7 +14,6 @@ if(isset($_POST['deleteSend'])) {
     else {
         die(mysqli_error($conn));
     }
-
 }
 
 // for data viewing 
