@@ -29,7 +29,7 @@
     if (empty($rentID)) {
         header('location: ../tugboat_renting/');
     }
-    $sql_update = "select * from tugboat_record where id=$UpdateID"; // select all the data in DB
+    $sql_update = "SELECT * FROM tugboat_record WHERE id=$UpdateID"; // select all the data in DB
 
     $update_result = mysqli_query($conn, $sql_update); // query to get the data
     $update_row = mysqli_fetch_assoc($update_result);
