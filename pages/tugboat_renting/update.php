@@ -2,67 +2,66 @@
 <html lang="en">
 
 <?php
-include '../head.php';
-include '../session.php';
-include '../connect.php';
+    include '../head.php';
+    include '../session.php';
+    include '../connect.php';
 
-// input type date support date format
-$Format = 'Y-m-d';
+    // input type date support date format
+    $Format = 'Y-m-d';
 
-// this for past setting 
-$PD = 28;
-$PM = 0;
-$PY = 0;
+    // this for past setting 
+    $PD = 28;
+    $PM = 0;
+    $PY = 0;
 
-// this is for future setting
+    // this is for future setting
+    $FD = 0;
+    $FM = 0;
+    $FY = 1;
 
-$FD = 0;
-$FM = 0;
-$FY = 1;
+    $PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
+    $CDT = date($Format);
+    $FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
 
-$PDT = date($Format, strtotime("-$PD days -$PM months -$PY years"));
-$CDT = date($Format);
-$FDT = date($Format, strtotime("+$FD days +$FM months +$FY years"));
+    $UpdateID = $_GET['unixcode'];  // for security of the link
+    $rentID = $_POST['rentID']; // for security of the link
 
-$UpdateID = $_GET['unixcode'];  // for security of the link
-$rentID = $_POST['rentID']; // for security of the link
-
-if (empty($rentID)) {
-  header('location: ../tugboat_renting/');
-}
-$sql_update = "select * from tugboat_record where id=$UpdateID"; // select all the data in DB
-
-$update_result = mysqli_query($conn, $sql_update); // query to get the data
-$update_row = mysqli_fetch_assoc($update_result);
-$name_row = $update_row['name'];
-$DOR1_row = $update_row['dateofRent'];
-$DOR2_row = $update_row['dateofReturn'];
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST['update_rent'])) {
-
-    $Uname = htmlspecialchars($_POST['Uname']);
-    $UdateofRent = date('Y-m-d', strtotime($_POST['UdateofRent']));
-    $UdateofReturn = date('Y-m-d', strtotime($_POST['UdateofReturn']));
-
-    if (empty($Uname)) {
-      $name_error = "Name is Required ! <br>";
-    } else {
-
-      $escape_Uname = mysqli_real_escape_string($conn, $Uname);
-
-      $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
-      $result = mysqli_query($conn, $sql);
-
-      if ($result) {
-        $_SESSION['status'] = "Updated Successfully!";
-        
-      } else {
-        die(mysqli_error($conn));
-      }
+    if (empty($rentID)) {
+    header('location: ../tugboat_renting/');
     }
-  }
-}
+    $sql_update = "select * from tugboat_record where id=$UpdateID"; // select all the data in DB
+
+    $update_result = mysqli_query($conn, $sql_update); // query to get the data
+    $update_row = mysqli_fetch_assoc($update_result);
+    $name_row = $update_row['name'];
+    $DOR1_row = $update_row['dateofRent'];
+    $DOR2_row = $update_row['dateofReturn'];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['update_rent'])) {
+
+        $Uname = htmlspecialchars($_POST['Uname']);
+        $UdateofRent = date('Y-m-d', strtotime($_POST['UdateofRent']));
+        $UdateofReturn = date('Y-m-d', strtotime($_POST['UdateofReturn']));
+
+        if (empty($Uname)) {
+        $name_error = "Name is Required ! <br>";
+        } else {
+
+        $escape_Uname = mysqli_real_escape_string($conn, $Uname);
+
+        $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $_SESSION['status'] = "Updated Successfully!";
+            
+        } else {
+            die(mysqli_error($conn));
+        }
+        }
+    }
+    }
 
 ?>
 
