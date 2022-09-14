@@ -49,18 +49,18 @@
         } 
         else {
 
-        $escape_Uname = mysqli_real_escape_string($conn, $Uname);
+            $escape_Uname = mysqli_real_escape_string($conn, $Uname);
 
-        $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
-        $result = mysqli_query($conn, $sql);
+            $sql = "update tugboat_record set name='$escape_Uname',dateofRent='$UdateofRent', dateofReturn='$UdateofReturn' where id='$UpdateID'";
+            $result = mysqli_query($conn, $sql);
 
-        if ($result) {
-            $_SESSION['status'] = "Updated Successfully!";
-            
-        } 
-        else {
-            die(mysqli_error($conn));
-        }
+            if ($result) {
+                $_SESSION['status'] = "Updated Successfully!";
+                
+            } 
+            else {
+                die(mysqli_error($conn));
+            }
         }
     }
 }
