@@ -27,7 +27,7 @@
     $rentID = $_POST['rentID']; // for security of the link
 
     if (empty($rentID)) {
-    header('location: ../tugboat_renting/');
+        header('location: ../tugboat_renting/');
     }
     $sql_update = "select * from tugboat_record where id=$UpdateID"; // select all the data in DB
 
@@ -38,6 +38,7 @@
     $DOR2_row = $update_row['dateofReturn'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
         if (isset($_POST['update_rent'])) {
 
         $Uname = htmlspecialchars($_POST['Uname']);
@@ -56,7 +57,6 @@
 
             if ($result) {
                 $_SESSION['status'] = "Updated Successfully!";
-                
             } 
             else {
                 die(mysqli_error($conn));
@@ -64,7 +64,6 @@
         }
     }
 }
-
 ?>
 
 <body>
