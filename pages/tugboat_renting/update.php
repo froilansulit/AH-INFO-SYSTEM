@@ -38,15 +38,16 @@
     $DOR2_row = $update_row['dateofReturn'];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['update_rent'])) {
+        if (isset($_POST['update_rent'])) {
 
         $Uname = htmlspecialchars($_POST['Uname']);
         $UdateofRent = date('Y-m-d', strtotime($_POST['UdateofRent']));
         $UdateofReturn = date('Y-m-d', strtotime($_POST['UdateofReturn']));
 
         if (empty($Uname)) {
-        $name_error = "Name is Required ! <br>";
-        } else {
+            $name_error = "Name is Required ! <br>";
+        } 
+        else {
 
         $escape_Uname = mysqli_real_escape_string($conn, $Uname);
 
@@ -56,12 +57,13 @@
         if ($result) {
             $_SESSION['status'] = "Updated Successfully!";
             
-        } else {
+        } 
+        else {
             die(mysqli_error($conn));
         }
         }
     }
-    }
+}
 
 ?>
 
