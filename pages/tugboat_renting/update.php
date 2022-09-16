@@ -102,7 +102,7 @@
                       </div>
                       <div class="form-group mb-3">
                         <label for="dob">Date of Return</label>
-                        <input type="date" name="UdateofReturn" min="<?php echo $PDT; ?>" max="<?php echo $FDT; ?>" class="form-control" value="<?php echo $DOR2_row ?>" required>
+                        <input type="date" name="UdateofReturn" min="<?= $PDT; ?>" max="<?= $FDT; ?>" class="form-control" value="<?= $DOR2_row ?>" required>
                       </div>
                       <div class="form-group mb-3 float-right">
                         <button type="submit" name="update_rent" class="btn btn-primary">Save Data</button>
