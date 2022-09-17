@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
     include '../head.php';
     include '../session.php';
@@ -65,12 +64,11 @@
     }
 }
 ?>
-
 <body>
     <div class="container-scroller">
-        <?php include '../navbar.php'; ?>
+<?php include '../navbar.php'; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php include '../sidebar.php'; ?>
+<?php include '../sidebar.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper" style="background-color:#bddcff;">
                     <div class="row">
