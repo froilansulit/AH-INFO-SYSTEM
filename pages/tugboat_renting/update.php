@@ -115,10 +115,10 @@
             </div>
           </div>
         </div>
-        <?php 
-        include '../footer.php';
-        include '../modals.php';
-         ?>
+<?php 
+  include '../footer.php';
+  include '../modals.php';
+?>
       </div>
     </div>
   </div>
