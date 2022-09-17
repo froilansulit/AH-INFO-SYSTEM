@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
     include '../head.php';
     include '../session.php';
@@ -65,12 +64,11 @@
     }
 }
 ?>
-
 <body>
     <div class="container-scroller">
-        <?php include '../navbar.php'; ?>
+<?php include '../navbar.php'; ?>
         <div class="container-fluid page-body-wrapper">
-            <?php include '../sidebar.php'; ?>
+<?php include '../sidebar.php'; ?>
             <div class="main-panel">
                 <div class="content-wrapper" style="background-color:#bddcff;">
                     <div class="row">
@@ -84,34 +82,26 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Update Data</p>
-                                    <div
-                                        class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
+                                    <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                                         <form method="post">
                                             <div class="form-group mb-3">
                                                 <label for="name">Name:</label>
-                                                <input type="text" name="Uname" class="form-control" autocomplete="off"
-                                                    value="<?= $name_row; ?>" required>
-                                                <?php if (isset($name_error) && !empty($name_error)) {
-                          echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
-                        } ?>
+                                                <input type="text" name="Uname" class="form-control" autocomplete="off" value="<?= $name_row; ?>" required>
+<?php if (isset($name_error) && !empty($name_error)) {
+                                                echo "<p class='alert alert-danger text-center font-weight-bold'>" . $name_error . "</p>";
+} ?>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="dob">Date of Rent</label>
-                                                <input type="date" name="UdateofRent" min="<?= $PDT; ?>"
-                                                    max="<?= $FDT; ?>" class="form-control" value="<?= $DOR1_row ?>"
-                                                    required>
+                                                <input type="date" name="UdateofRent" min="<?= $PDT; ?>" max="<?= $FDT; ?>" class="form-control" value="<?= $DOR1_row ?>" required>
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="dob">Date of Return</label>
-                                                <input type="date" name="UdateofReturn" min="<?= $PDT; ?>"
-                                                    max="<?= $FDT; ?>" class="form-control" value="<?= $DOR2_row ?>"
-                                                    required>
+                                                <input type="date" name="UdateofReturn" min="<?= $PDT; ?>" max="<?= $FDT; ?>" class="form-control" value="<?= $DOR2_row ?>" required>
                                             </div>
                                             <div class="form-group mb-3 float-right">
-                                                <button type="submit" name="update_rent" class="btn btn-primary">Save
-                                                    Data</button>
-                                                <a href="../tugboat_renting/"
-                                                    class="btn btn-danger btn-icon-text  btn-md">Cancel</a>
+                                                <button type="submit" name="update_rent" class="btn btn-primary">Save Data</button>
+                                                <a href="../tugboat_renting/" class="btn btn-danger btn-icon-text  btn-md">Cancel</a>
                                             </div>
                                         </form>
                                     </div>
@@ -120,14 +110,13 @@
                         </div>
                     </div>
                 </div>
-                <?php 
+<?php 
     include '../footer.php';
     include '../modals.php';
 ?>
             </div>
         </div>
     </div>
-    <?php include '../scripts.php'; ?>
+<?php include '../scripts.php'; ?>
 </body>
-
 </html>
