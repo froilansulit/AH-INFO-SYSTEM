@@ -1,5 +1,4 @@
 <?php
-
     include '../head.php';
     include '../connect.php';
     session_start();
@@ -88,7 +87,6 @@
     100% {
       transform: rotate(360deg);
     }
-
   }
 
   .slide_in {

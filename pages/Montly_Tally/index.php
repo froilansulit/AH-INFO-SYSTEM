@@ -125,7 +125,6 @@
                             <td><?= '₱ ' . number_format($row['amount']); ?></td>
                             <td><?= $row['encoded_by']; ?></td>
                         </tr>
-
 <?php
                         $number++;
 }
@@ -139,8 +138,8 @@
           </div>
         </div>
 <?php 
-include '../footer.php';
-include '../modals.php';
+    include '../footer.php';
+    include '../modals.php';
 ?>
       </div>
     </div>
