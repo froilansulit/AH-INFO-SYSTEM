@@ -73,8 +73,7 @@
                 <div class="content-wrapper" style="background-color:#bddcff;">
                     <div class="row">
                         <div class="col-md-12 grid-margin">
-                            <div class="d-flex justify-content-between align-items-center">
-                            </div>
+                            <div class="d-flex justify-content-between align-items-center"></div>
                         </div>
                     </div>
                     <div class="row">
