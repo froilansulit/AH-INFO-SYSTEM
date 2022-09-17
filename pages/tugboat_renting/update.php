@@ -119,7 +119,6 @@
         include '../footer.php';
         include '../modals.php';
          ?>
-        <?php  ?>
       </div>
     </div>
   </div>
