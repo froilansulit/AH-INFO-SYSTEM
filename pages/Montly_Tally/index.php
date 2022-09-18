@@ -102,21 +102,17 @@
 <?php
                           $number = 1;
                           while ($row = mysqli_fetch_assoc($result)) {
-
                           $id = $row['id'];
 ?>
 
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['cname']; ?></td>
                             <td><?= $row['date_set']; ?></td>
-
                             <td><span class=" 
 <?php                       if ($row['purpose'] == "Outgoing") {
                               echo 'badge badge-pill badge-danger';
                             } 
-                            else {
-                              echo 'badge badge-pill badge-primary';
-                            }
+                            else { echo 'badge badge-pill badge-primary'; }
 ?>
                             ">
                             <?= $row['purpose']; ?>
