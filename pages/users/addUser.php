@@ -12,7 +12,6 @@
         $ES_Upass = mysqli_real_escape_string($conn, $Upass);
 
         $sql = "INSERT INTO users (name	,username,password, type) VALUES ('$ES_A_name', '$ES_Uname', '$ES_Upass', 'user')";
-
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
