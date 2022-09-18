@@ -11,7 +11,7 @@ if (isset($A_name) && isset($Uname) && isset($Upass)) {
     $ES_Uname = mysqli_real_escape_string($conn, $Uname);
     $ES_Upass = mysqli_real_escape_string($conn, $Upass);
 
-    $sql = "INSERT into users (name	,username,password, type) values ('$ES_A_name', '$ES_Uname', '$ES_Upass', 'user')";
+    $sql = "INSERT INTO users (name	,username,password, type) VALUES ('$ES_A_name', '$ES_Uname', '$ES_Upass', 'user')";
 
     $result = mysqli_query($conn, $sql);
 
