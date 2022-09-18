@@ -17,10 +17,10 @@ if (isset($A_name) && isset($Uname) && isset($Upass)) {
 
     if ($result) {
         # keep it blank ajax will do the success message
-    } else {
+    } 
+    else {
         die(mysqli_error($conn));
     }
-  
 
 }
 
