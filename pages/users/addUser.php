@@ -14,11 +14,8 @@
         $sql = "INSERT INTO users (name	,username,password, type) VALUES ('$ES_A_name', '$ES_Uname', '$ES_Upass', 'user')";
         $result = mysqli_query($conn, $sql);
 
-        if ($result) {
-            # keep it blank ajax will do the success message
-        } 
-        else {
-            die(mysqli_error($conn));
-        }
+    if ($result) { /* keep it blank ajax will do the success message */ }
+    else { die(mysqli_error($conn)); }
+    
     }
 ?>
