@@ -20,12 +20,8 @@
 	$result = mysqli_query($conn, $sql); // query to get the data
 ?>
 <body>
-
   <!-- start of add rent modal -->
-
-
   <div class="modal fade " id="AddUserDetails">
-    <!-- <div class="modal-dialog modal-lg"> -->
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -35,7 +31,6 @@
           </button>
         </div>
         <div class="modal-body ">
-          <!-- <form id="addUserForm"> -->
           <div class="card-body">
             <div class="row">
               <div class="form-group col-md-6">
@@ -46,18 +41,13 @@
                 <label for="dob">Username:</label> <label for="" id="lblUsername" class="text-danger"></label>
                 <span id="check-username"></span>
                 <input type="text" style="text-transform: lowercase;" name="username" onInput="checkValidationUsers()" id="Uname" class="form-control" autocomplete="off">
-
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Password:</label>
                 <label for="" id="lblpwd" class="text-danger"></label>
-
                 <input type="password" name="pwd" id="Upass" onInput="checkValidationUsers()" class="form-control">
-
                 <label for="" id="lblpassnote" class="text-muted mt-2"></label>
               </div>
-              
-
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" onInput="checkValidationUsers()" class="form-control">
