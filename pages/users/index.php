@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  /* Change dissabled Button color  */
+  /* Change disabled Button color  */
   #addUser:disabled {
     background-color: black;
     opacity: 0.2;
@@ -13,14 +13,12 @@
 	include '../connect.php';
 
 	if ($user_type == "user") {
-	header('location: ../dashboard/');
+		header('location: ../dashboard/');
 	}
 
-	$sql = "select * from users where type='user'"; // select all the data in DB
-
+	$sql = "SELECT * FROM users WHERE type='user'"; // select all the data in DB
 	$result = mysqli_query($conn, $sql); // query to get the data
 ?>
-
 <body>
 
   <!-- start of add rent modal -->
