@@ -8,18 +8,17 @@
   }
 </style>
 <?php
-include '../head.php';
-include '../session.php';
-include '../connect.php';
+	include '../head.php';
+	include '../session.php';
+	include '../connect.php';
 
-if ($user_type == "user") {
-  header('location: ../dashboard/');
-}
+	if ($user_type == "user") {
+	header('location: ../dashboard/');
+	}
 
-$sql = "select * from users where type='user'"; // select all the data in DB
+	$sql = "select * from users where type='user'"; // select all the data in DB
 
-$result = mysqli_query($conn, $sql); // query to get the data
-
+	$result = mysqli_query($conn, $sql); // query to get the data
 ?>
 
 <body>
