@@ -12,8 +12,6 @@ include '../head.php';
 include '../session.php';
 include '../connect.php';
 
-
-
 if ($user_type == "user") {
   header('location: ../dashboard/');
 }
