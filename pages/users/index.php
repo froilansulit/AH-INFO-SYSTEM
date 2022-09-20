@@ -52,7 +52,6 @@
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="Upass2" onInput="checkValidationUsers()" class="form-control">
                 <label for="" id="lblpassnote2" class="text-muted mt-2"></label>
-
               </div>
 
 <!-- 
