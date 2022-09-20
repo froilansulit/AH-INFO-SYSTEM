@@ -53,15 +53,6 @@
                 <input type="password" name="pwd2" id="Upass2" onInput="checkValidationUsers()" class="form-control">
                 <label for="" id="lblpassnote2" class="text-muted mt-2"></label>
               </div>
-
-<!-- 
-              <div class="form-check ml-3 mb-4">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="showPassUser" id="showPassUser">
-                  Show Password
-                </label>
-              </div> -->
-
               <div class="form-group mb-3 col-md-6">
                 <div class="form-group-prepend">
                   <div class="form-group-text">
@@ -69,12 +60,8 @@
                     <span class="text-dark ml-3">Show Password</span>
                   </div>
                 </div>
-                
               </div>
             </div>
-
-
-            <!-- <button type="submit" name="addUser" id="AddVal" class="btn btn-primary btn-rounded">Save</button> -->
             <div class="modal-footer">
 
 
