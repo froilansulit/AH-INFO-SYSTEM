@@ -63,10 +63,6 @@
               </div>
             </div>
             <div class="modal-footer">
-
-
-
-
               <button type="submit" id="addUser" class="btn btn-primary btn-rounded" disabled>Save</button>
 
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
