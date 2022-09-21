@@ -81,20 +81,16 @@
           </button>
         </div>
         <div class="modal-body">
-
           <div class="card-body">
             <div class="row">
-
               <div class="form-group col-md-12">
                 <label for="U_name">Name:</label>
                 <h4 class="font-weight-bold" id="view_Name"></h4>
               </div>
-
               <div class="form-group col-md-12">
                 <label for="U_OR">Username:</label>
                 <h4 class="font-weight-bold" id="view_uname"></h4>
               </div>
-
               <div class="form-group col-md-12">
                 <label for="U_OR">Password:</label>
                 <h4 class="font-weight-bold" id="view_pass"></h4>
@@ -102,9 +98,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
-
               <input type="hidden" id="hiddenUserData">
-
             </div>
             <!-- <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button> -->
 
