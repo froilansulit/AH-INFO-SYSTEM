@@ -138,15 +138,7 @@
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblUpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="UPass2" class="form-control">
-
               </div>
-
-              <!-- <div class="form-check ml-3 mb-4">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" name="UPshowPassUser" id="UPshowPassUser" value="">
-                  Show Password
-                </label>
-              </div> -->
 
               <div class="form-group mb-3 col-md-6">
                 <div class="form-group-prepend">
