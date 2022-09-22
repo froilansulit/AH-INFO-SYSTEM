@@ -139,7 +139,6 @@
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblUpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="UPass2" class="form-control">
               </div>
-
               <div class="form-group mb-3 col-md-6">
                 <div class="form-group-prepend">
                   <div class="form-group-text">
@@ -147,9 +146,7 @@
                     <span class="text-dark ml-3">Show Password</span>
                   </div>
                 </div>
-                
               </div>
-
             </div>
             <div class="modal-footer">
 
