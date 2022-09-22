@@ -101,9 +101,6 @@
               <input type="hidden" id="hiddenUserData">
             </div>
           </div>
-          <!-- /.card-body -->
-
-          <!-- </form> -->
         </div>
       </div>
       <!-- /.modal-content -->
