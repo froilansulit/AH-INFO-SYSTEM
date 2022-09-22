@@ -149,13 +149,9 @@
               </div>
             </div>
             <div class="modal-footer">
-
               <button type="button" class="btn btn-primary btn-rounded" id="UpdateUserData">Update</button>
-
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
-
               <input type="hidden" id="hiddenUserData">
-
             </div>
             <!-- <button type="button" class="btn btn-primary btn-rounded" id="Up_Financial">Update</button> -->
 
