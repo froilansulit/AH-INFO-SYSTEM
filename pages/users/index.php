@@ -119,15 +119,11 @@
           </button>
         </div>
         <div class="modal-body">
-
           <div class="card-body">
             <div class="row">
-
               <div class="form-group col-md-6">
                 <label for="name">Name:</label> <label for="" id="lblUpdateName" class="text-danger"></label>
                 <input type="text" name="name" id="UpName" class="form-control" autocomplete="off">
-
-
               </div>
               <div class="form-group col-md-6">
                 <label for="dob">Username:</label> <label for="" id="lblxUser" class="text-danger"></label>
@@ -136,7 +132,6 @@
               <div class="form-group col-md-6">
                 <label for="dob">Password:</label>
                 <label for="" id="lblUpwd" class="text-danger"></label>
-
                 <input type="password" name="pwd" id="UPass1" class="form-control">
               </div>
 
