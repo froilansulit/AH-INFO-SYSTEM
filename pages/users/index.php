@@ -172,7 +172,6 @@
                   <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddUserDetails">
                     <i class="ti-plus btn-icon-prepend"></i>Add New User
                   </button>
-                  <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
                 </div>
                 <div>
                 </div>
