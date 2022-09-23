@@ -156,23 +156,31 @@
           </div>
         </div>
       </div>
+
     </div>
+
   </div>
 
+
   <div class="container-scroller">
-<?php include '../navbar.php'; ?>
+    <!-- partial:partials/_navbar.html -->
+    <?php include '../navbar.php'; ?>
+    <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-<?php include '../sidebar.php'; ?>
+      <!-- partial:partials/_sidebar.html -->
+      <?php include '../sidebar.php'; ?>
+      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
-                <div>
+                
                   <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddUserDetails">
                     <i class="ti-plus btn-icon-prepend"></i>Add New User
                   </button>
-                </div>
+                  <!-- <a href="../tugboat_renting/rent_boat.php" class="btn btn-primary btn-icon-text btn-rounded btn-md"><i class="ti-plus btn-icon-prepend"></i>Rent Boat</a> -->
+                
                 <div>
                 </div>
               </div>
@@ -183,22 +191,23 @@
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">List of Users</p>
+
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-<?php
-  if (isset($_SESSION['status'])) 
-  {
-?>
+                    <?php
+                    if (isset($_SESSION['status'])) {
+                    ?>
                       <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
-                        <?= $_SESSION['status']; ?>
+                        <!-- <strong>Holy guacamole!</strong> -->
+                        <?php echo $_SESSION['status']; ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
 
-<?php
-  unset($_SESSION['status']);
-  }
-?>
+                    <?php
+                      unset($_SESSION['status']);
+                    }
+                    ?>
 
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
@@ -212,16 +221,16 @@
                       </thead>
                       <tbody class="text-center">
                         <tr>
-<?php
+                          <?php
                           $number = 1;
                           while ($row = mysqli_fetch_assoc($result)) {
-                          $id = $row['id'];
-?>
+                            $id = $row['id'];
+                          ?>
 
                             <td><b><?php echo $number; ?></b></td>
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo '********'; ?></td>
-                            <?php echo $row['username']; ?></td>
+                            <!-- <td><?php echo $row['username']; ?></td> -->
                             <td><?php echo '********'; ?></td>
                             <!-- <td><?php echo $row['password']; ?></td> -->
 
