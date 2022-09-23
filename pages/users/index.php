@@ -156,9 +156,7 @@
           </div>
         </div>
       </div>
-      <!-- /.modal-content -->
     </div>
-
   </div>
 
 
