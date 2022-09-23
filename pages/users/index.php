@@ -153,8 +153,6 @@
               <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
               <input type="hidden" id="hiddenUserData">
             </div>
-
-            <!-- <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button> -->
           </div>
           <!-- /.card-body -->
 
