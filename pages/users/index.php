@@ -225,9 +225,9 @@
                             <td><b><?php echo $number; ?></b></td>
                             <td><?php echo htmlspecialchars($row['name']); ?></td>
                             <td><?php echo '********'; ?></td>
-                            <!-- <td><?php echo $row['username']; ?></td> -->
+                            <?php echo $row['username']; ?></td>
                             <td><?php echo '********'; ?></td>
-                            <!-- <td><?php echo $row['password']; ?></td> -->
+                            <?php echo $row['password']; ?></td>
 
 
                             <td>
