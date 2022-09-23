@@ -175,7 +175,6 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
-                
                   <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md" data-toggle="modal" data-target="#AddUserDetails">
                     <i class="ti-plus btn-icon-prepend"></i>Add New User
                   </button>
@@ -189,11 +188,11 @@
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">List of Users</p>
-
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <?php
-                    if (isset($_SESSION['status'])) {
-                    ?>
+<?php
+  if (isset($_SESSION['status'])) 
+  {
+?>
                       <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
                         <!-- <strong>Holy guacamole!</strong> -->
                         <?php echo $_SESSION['status']; ?>
