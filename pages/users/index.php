@@ -189,16 +189,16 @@
   {
 ?>
                       <div class="alert alert-success border border-muted alert-dismissible fade show" role="alert">
-                        <?php echo $_SESSION['status']; ?>
+                        <?= $_SESSION['status']; ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
 
-                    <?php
-                      unset($_SESSION['status']);
-                    }
-                    ?>
+<?php
+  unset($_SESSION['status']);
+  }
+?>
 
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
@@ -212,7 +212,7 @@
                       </thead>
                       <tbody class="text-center">
                         <tr>
-                          <?php
+<?php
                           $number = 1;
                           while ($row = mysqli_fetch_assoc($result)) {
                             $id = $row['id'];
