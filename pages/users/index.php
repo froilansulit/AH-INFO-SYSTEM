@@ -107,9 +107,7 @@
   </div>
 
   <!-- end of view modal  -->
-
   <div class="modal fade" id="UpdateUsers">
-
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -134,7 +132,6 @@
                 <label for="" id="lblUpwd" class="text-danger"></label>
                 <input type="password" name="pwd" id="UPass1" class="form-control">
               </div>
-
               <div class="form-group col-md-6">
                 <label for="dob">Repeat-Password:</label> <label for="" id="lblUpwd2" class="text-danger"></label>
                 <input type="password" name="pwd2" id="UPass2" class="form-control">
@@ -159,10 +156,9 @@
     </div>
   </div>
 
-
-  <div class="container-scroller">
+<div class="container-scroller">
 <?php include '../navbar.php'; ?>
-    <div class="container-fluid page-body-wrapper">
+<div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
       <div class="main-panel">
         <div class="content-wrapper" style="background-color:#bddcff;">
@@ -197,7 +193,6 @@
 	unset($_SESSION['status']);
 	}
 ?>
-
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
                         <tr>
