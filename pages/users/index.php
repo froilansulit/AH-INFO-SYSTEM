@@ -231,10 +231,10 @@
                               </a>
                             </td>
                         </tr>
-                      <?php
-                            $number++;
-                          }
-                      ?>
+<?php
+	$number++;
+	}
+?>
                       </tbody>
                     </table>
                   </div>
@@ -243,12 +243,7 @@
             </div>
           </div>
         </div>
-        <?php include '../footer.php'; ?>
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-
-        <!-- partial -->
+<?php include '../footer.php'; ?>
       </div>
       <!-- main-panel ends -->
     </div>
