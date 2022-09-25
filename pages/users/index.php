@@ -217,8 +217,8 @@
 ?>
                             <td><b><?= $number; ?></b></td>
                             <td><?= htmlspecialchars($row['name']); ?></td>
-                            <td><?php echo '********'; ?></td>
-                            <td><?php echo '********'; ?></td>
+                            <td><?= '********'; ?></td>
+                            <td><?= '********'; ?></td>
                             <td>
                               <a href="#" data-toggle="tooltip" title="Edit">
                                 <button class="btn btn-outline-primary btn-sm btn-rounded" data-toggle="modal" data-target="#UpdateUsers" onclick="GetUser(<?php echo $id; ?>)"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
