@@ -215,8 +215,8 @@
 	while ($row = mysqli_fetch_assoc($result)) {
 	$id = $row['id'];
 ?>
-                            <td><b><?php echo $number; ?></b></td>
-                            <td><?php echo htmlspecialchars($row['name']); ?></td>
+                            <td><b><?= $number; ?></b></td>
+                            <td><?= htmlspecialchars($row['name']); ?></td>
                             <td><?php echo '********'; ?></td>
                             <td><?php echo '********'; ?></td>
                             <td>
