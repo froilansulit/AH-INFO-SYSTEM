@@ -236,7 +236,6 @@
                                 <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#VViewUser" onclick="ViewUser(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                               </a>
                             </td>
-
                         </tr>
                       <?php
                             $number++;
