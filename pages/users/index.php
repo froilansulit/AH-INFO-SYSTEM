@@ -21,7 +21,7 @@
 ?>
 <body>
   <!-- start of add rent modal -->
-  <div class="modal fade " id="AddUserDetails">
+  <div class="modal fade" id="AddUserDetails">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -34,7 +34,7 @@
           <div class="card-body">
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="name">Name:</label> <label for="" id="lblA_name" class="text-danger"></label>
+                <label for="name">Name:</label> <label id="lblA_name" class="text-danger"></label>
                 <input type="text" name="name" id="A_name" onInput="checkValidationUsers()" class="form-control" autocomplete="off">
               </div>
               <div class="form-group col-md-6">
@@ -120,11 +120,11 @@
           <div class="card-body">
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="name">Name:</label> <label for="" id="lblUpdateName" class="text-danger"></label>
+                <label for="name">Name:</label> <label id="lblUpdateName" class="text-danger"></label>
                 <input type="text" name="name" id="UpName" class="form-control" autocomplete="off">
               </div>
               <div class="form-group col-md-6">
-                <label for="dob">Username:</label> <label for="" id="lblxUser" class="text-danger"></label>
+                <label for="dob">Username:</label> <label id="lblxUser" class="text-danger"></label>
                 <input type="text" style="text-transform: lowercase;" name="username" id="UpUser" class="form-control" autocomplete="off">
               </div>
               <div class="form-group col-md-6">
