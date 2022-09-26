@@ -11,6 +11,8 @@
         if ($result) {
             # keep it blank ajax will do the success message
         }
-        else { die(mysqli_error($conn)); }
+        else { 
+            die(mysqli_error($conn)); 
+        }
     }
 ?>
