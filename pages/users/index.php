@@ -242,8 +242,10 @@
       </div>
     </div>
   </div>
-<?php include '../scripts.php'; ?>
-<?php include '../modals.php'; ?>
+<?php 
+	include '../scripts.php'; 
+	include '../modals.php';
+?>
 <script src="../app.js"></script>
 </body>
 </html>
