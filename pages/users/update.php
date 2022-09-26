@@ -16,7 +16,6 @@
             $U_Pwd = mysqli_real_escape_string($conn, $ES_UPass);
         
             $sql = "UPDATE users SET name='$U_name',username='$U_USer', password='$U_Pwd', type='user' WHERE id='$unique_ID'";
-
             $result = mysqli_query($conn, $sql);
 
             if ($result) {
@@ -27,5 +26,4 @@
             }
         }
     }
-
 ?>
