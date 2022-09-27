@@ -247,6 +247,6 @@
 	include '../scripts.php'; 
 	include '../modals.php';
 ?>
-<script src="../app.js"></script>
+<script type="text/javascript" src="../app.js"></script>
 </body>
 </html>
