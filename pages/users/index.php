@@ -20,6 +20,7 @@
 	$result = mysqli_query($conn, $sql); // query to get the data
 ?>
 <body>
+	
   <!-- start of add rent modal -->
   <div class="modal fade" id="AddUserDetails">
     <div class="modal-dialog modal-lg">

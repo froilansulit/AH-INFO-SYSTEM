@@ -8,6 +8,7 @@
         $sql = "select * from users where id=$user_id";
         $result = mysqli_query($conn,$sql);
         $response = array();
+        
         while ($row = mysqli_fetch_assoc($result)) {
             $response = $row;
         }
