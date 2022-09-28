@@ -13,7 +13,6 @@
 		} 
 		else {
 			echo "<span style='color:green'> username is available.</span>";
-			// echo "<script>$('#addUser').prop('disabled',false);</script>";
 		}
 	}
 ?>
