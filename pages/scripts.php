@@ -21,14 +21,9 @@
   <!-- <script src="../../js/jquery.min.ajx.js"></script> -->
   <script src="../../js/sweetalert2.all.min.js"></script>
   
-
- 
-
   <!-- DataTables -->
   <script src="../../plugins/datatables/jquery.dataTables.js"></script>
   <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
-
-
   <script>
     $(function() {
       $("#example1").DataTable({
