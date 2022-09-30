@@ -15,7 +15,6 @@
               <li class="nav-item">
                   <a class="nav-link" href="../Montly_Tally/">
                       <i class="ti-bar-chart menu-icon"></i>
-
                       <span class="menu-title">Monthly Tally</span>
                   </a>
               </li>
