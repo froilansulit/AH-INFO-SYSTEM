@@ -30,15 +30,14 @@
                       <span class="menu-title">Dry Dock</span>
                   </a>
               </li>
-              <?php if ($user_type == "admin") { ?>
+<?php if ($user_type == "admin") { ?>
                 <?= '<li class="nav-item">
                   <a class="nav-link" href="../users/">
                       <i class="ti-user menu-icon"></i>
                       <span class="menu-title">Users</span>
                   </a>
               </li>' ?>
-                <?php   
-                } ?>
+<?php } ?>
               <li class="nav-item">
                   <a class="nav-link" href="../about/">
                       <i class="ti-info menu-icon"></i>
