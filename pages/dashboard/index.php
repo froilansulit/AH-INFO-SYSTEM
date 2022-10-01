@@ -232,9 +232,7 @@
         };
     </script>
     <script>
-        const myChart = new Chart(
-            document.getElementById('myChart'), config
-        );
+        const myChart = new Chart( document.getElementById('myChart'), config );
         const myChart2 = new Chart(
             document.getElementById('myChart2'), config2
         );
