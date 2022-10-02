@@ -171,23 +171,24 @@ if (isset($_POST["lgnLogin"])) {
   }
   else if (empty($password)) {
     $password_error = "<b>Password</b> is Required ! <br>";
-  } else {
-    $query = "select * from users WHERE username='$username' AND password='$password'";
+  }
+  else {
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $query_run = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($query_run) > 0) {
       // valid
       $_SESSION['username'] = $username;
 
-      $sql = "select * from users"; // select all the data in DB
+      $sql = "SELECT * FROM users"; // select all the data in DB
 
       $result = mysqli_query($conn, $sql); // query to get the data
 
       while ($row = mysqli_fetch_assoc($result)) {
-        if ($username == $row['username']) {
-          $_SESSION['acc_name'] = $row['name'];
-          $_SESSION['user_type'] = $row['type'];
-        } 
+		if ($username == $row['username']) {
+			$_SESSION['acc_name'] = $row['name'];
+			$_SESSION['user_type'] = $row['type'];
+		} 
       }
       echo "<script>  
         loadinglgn();
