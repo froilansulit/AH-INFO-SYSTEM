@@ -30,7 +30,7 @@
         if (mysqli_num_rows($query_run) > 0) {
             $_SESSION['username'] = $username;
 
-            $sql = "select * from users"; // select all the data in DB
+            $sql = "SELECT * FROM users"; // select all the data in DB
             $result = mysqli_query($conn, $sql); // query to get the data
 
             while ($row = mysqli_fetch_assoc($result)) {
