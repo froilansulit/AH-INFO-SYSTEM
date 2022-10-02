@@ -155,62 +155,62 @@ if (isset($password_error) && !empty($password_error))
 <?php include '../scripts.php'; ?>
   <script src="../app.js"></script>
 <?php
-// for login function 
-if (isset($_POST["lgnLogin"])) {
-  $username = mysqli_real_escape_string($conn, $_POST["username"]);
-  $password = mysqli_real_escape_string($conn, $_POST["password"]);
+	// for login function 
+	if (isset($_POST["lgnLogin"])) {
+	$username = mysqli_real_escape_string($conn, $_POST["username"]);
+	$password = mysqli_real_escape_string($conn, $_POST["password"]);
 
-  if (empty($username)) {
-    $username_error = "<b>Username </b> is Required ! <br>";
-  }
-  if (empty($password)) {
-    $password_error = "<b>Password</b> is Required ! <br>";
-  } 
-  else if (empty($username)) {
-    $username_error = "<b>Username </b> is Required ! <br>";
-  }
-  else if (empty($password)) {
-    $password_error = "<b>Password</b> is Required ! <br>";
-  }
-  else {
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $query_run = mysqli_query($conn, $query);
+	if (empty($username)) {
+		$username_error = "<b>Username </b> is Required ! <br>";
+	}
+	if (empty($password)) {
+		$password_error = "<b>Password</b> is Required ! <br>";
+	} 
+	else if (empty($username)) {
+		$username_error = "<b>Username </b> is Required ! <br>";
+	}
+	else if (empty($password)) {
+		$password_error = "<b>Password</b> is Required ! <br>";
+	}
+	else {
+		$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+		$query_run = mysqli_query($conn, $query);
 
-    if (mysqli_num_rows($query_run) > 0) {
-      // valid
-      $_SESSION['username'] = $username;
+		if (mysqli_num_rows($query_run) > 0) {
+		// valid
+		$_SESSION['username'] = $username;
 
-      $sql = "SELECT * FROM users"; // select all the data in DB
+		$sql = "SELECT * FROM users"; // select all the data in DB
 
-      $result = mysqli_query($conn, $sql); // query to get the data
+		$result = mysqli_query($conn, $sql); // query to get the data
 
-      while ($row = mysqli_fetch_assoc($result)) {
-		if ($username == $row['username']) {
-			$_SESSION['acc_name'] = $row['name'];
-			$_SESSION['user_type'] = $row['type'];
+		while ($row = mysqli_fetch_assoc($result)) {
+			if ($username == $row['username']) {
+				$_SESSION['acc_name'] = $row['name'];
+				$_SESSION['user_type'] = $row['type'];
+			} 
+		}
+		echo "<script>  
+			loadinglgn();
+			$('#lgnLogin').prop('disabled', true);
+			setTimeout(() => {
+			window.location.href = '../dashboard/';
+			}, 4000);
+			
+		</script>
+		";
 		} 
-      }
-      echo "<script>  
-        loadinglgn();
-        $('#lgnLogin').prop('disabled', true);
-        setTimeout(() => {
-          window.location.href = '../dashboard/';
-        }, 4000);
-        
-      </script>
-      ";
-    } 
-    else {
-      // invalid
-      echo "<script>    
-        lgnERROR();
-        setTimeout(() => {
-            window.location.href = '../login/';
-        }, 2000);
-      </script>";
-    }
-  }
-}
+		else {
+		// invalid
+		echo "<script>    
+			lgnERROR();
+			setTimeout(() => {
+				window.location.href = '../login/';
+			}, 2000);
+		</script>";
+		}
+	}
+	}
 ?>
 </body>
 </html>
