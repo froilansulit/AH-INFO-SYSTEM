@@ -188,7 +188,6 @@ if (isset($password_error) && !empty($password_error))
 		$_SESSION['username'] = $username;
 
 		$sql = "SELECT * FROM users"; // select all the data in DB
-
 		$result = mysqli_query($conn, $sql); // query to get the data
 
 		while ($row = mysqli_fetch_assoc($result)) {
@@ -208,13 +207,13 @@ if (isset($password_error) && !empty($password_error))
 		";
 		} 
 		else {
-		// invalid
-		echo "<script>    
-			lgnERROR();
-			setTimeout(() => {
-				window.location.href = '../login/';
-			}, 2000);
-		</script>";
+			// invalid
+			echo "<script>    
+				lgnERROR();
+				setTimeout(() => {
+					window.location.href = '../login/';
+				}, 2000);
+			</script>";
 		}
 	}
 	}
