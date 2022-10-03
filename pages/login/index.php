@@ -26,7 +26,7 @@
     else if (empty($password)) {
         $password_error = "<b>Password</b> is Required ! <br>";
     } 
-    
+
     else {
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $query_run = mysqli_query($conn, $query);
@@ -167,21 +167,24 @@ if (isset($password_error) && !empty($password_error))
 	if (empty($username)) {
 		$username_error = "<b>Username </b> is Required ! <br>";
 	}
+
 	if (empty($password)) {
 		$password_error = "<b>Password</b> is Required ! <br>";
 	} 
+
 	else if (empty($username)) {
 		$username_error = "<b>Username </b> is Required ! <br>";
 	}
+
 	else if (empty($password)) {
 		$password_error = "<b>Password</b> is Required ! <br>";
 	}
+
 	else {
 		$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 		$query_run = mysqli_query($conn, $query);
 
 		if (mysqli_num_rows($query_run) > 0) {
-		// valid
 		$_SESSION['username'] = $username;
 
 		$sql = "SELECT * FROM users"; // select all the data in DB
