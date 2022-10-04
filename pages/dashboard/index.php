@@ -24,7 +24,7 @@
         $thisMonthOutgoing += $row['amount'];
     }
 
-    $this_month_total = $thisMonthIncoming - $thisMonthOutgoing;
+    $thisMonthTotal = $thisMonthIncoming - $thisMonthOutgoing;
 
     $last_month = date("F", strtotime("last month"));
     $currentYear = date('Y');
@@ -96,7 +96,7 @@
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Financial This Month</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($this_month_total) ?></h3>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($thisMonthTotal) ?></h3>
                                         <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
                                     <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>This Month</small></span></p>
@@ -208,7 +208,7 @@
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [<?= $last_month_total; ?>, <?= $this_month_total; ?>],
+                data: [<?= $last_month_total; ?>, <?= $thisMonthTotal; ?>],
                 backgroundColor: ['rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
                 hoverOffset: 4
             }]
