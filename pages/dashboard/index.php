@@ -8,9 +8,9 @@
     $thisMonthIncoming = 0;
     $thisMonthOutgoing = 0;
 
-    $thisMonthIncomingQuery = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$currentYear'"; // select all the data in DB
+    $thisMonthIncomingQuery = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$currentYear'"; 
 
-    $thisMonthIncomingResult = mysqli_query($conn, $thisMonthIncomingQuery); // query to get the data
+    $thisMonthIncomingResult = mysqli_query($conn, $thisMonthIncomingQuery);
 
     while ($row = mysqli_fetch_assoc($thisMonthIncomingResult)) {
         $thisMonthIncoming += $row['amount'];
