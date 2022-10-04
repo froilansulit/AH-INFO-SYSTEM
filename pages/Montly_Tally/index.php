@@ -7,11 +7,11 @@
     include '../connect.php';
 
     $currentMonth = date('F');
-    $year_now = date('Y');
+    $currentYear = date('Y');
     $inc_rec = 0;
     $out_rec = 0;
 
-    $sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$year_now'"; // select all the data in DB
+    $sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$currentYear'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
 
@@ -19,7 +19,7 @@
         $inc_rec += $row['amount'];
     }
 
-    $sql = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$currentMonth' AND year_date='$year_now'"; // select all the data in DB
+    $sql = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$currentMonth' AND year_date='$currentYear'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
 
@@ -29,7 +29,7 @@
 
     $total = $inc_rec - $out_rec;
 
-    $sql = "SELECT * FROM financial_record WHERE month_date='$currentMonth'AND year_date='$year_now'"; // select all the data in DB
+    $sql = "SELECT * FROM financial_record WHERE month_date='$currentMonth'AND year_date='$currentYear'"; // select all the data in DB
 
     $result = mysqli_query($conn, $sql); // query to get the data
 ?>

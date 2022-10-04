@@ -117,7 +117,7 @@ if (isset($_POST['year_submit'])) {
 
   $result = mysqli_query($conn, $sql); // query to get the data
 
-  // $year_now = date('Y');
+  // $currentYear = date('Y');
     $inc_rec = 0;
     $out_rec = 0;
 

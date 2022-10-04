@@ -106,12 +106,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // $currentMonth = date('F');
-$year_now = date('Y');
+$currentYear = date('Y');
 $inc_rec = 0;
 $out_rec = 0;
 
 
-$sql = "select * from financial_record where purpose='Incoming' AND year_date='$year_now'"; // select all the data in DB
+$sql = "select * from financial_record where purpose='Incoming' AND year_date='$currentYear'"; // select all the data in DB
 
 $result = mysqli_query($conn, $sql); // query to get the data
 
@@ -119,7 +119,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   $inc_rec += $row['amount'];
 }
 
-$sql = "select * from financial_record where purpose='Outgoing' AND year_date='$year_now'"; // select all the data in DB
+$sql = "select * from financial_record where purpose='Outgoing' AND year_date='$currentYear'"; // select all the data in DB
 
 $result = mysqli_query($conn, $sql); // query to get the data
 
