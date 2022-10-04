@@ -18,9 +18,9 @@
 
     $thisMonthOutgoingQuery = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$currentMonth' AND year_date='$currentYear'"; // select all the data in DB
 
-    $this_month_result2 = mysqli_query($conn, $thisMonthOutgoingQuery); // query to get the data
+    $thisMonthOutgoingResult = mysqli_query($conn, $thisMonthOutgoingQuery); // query to get the data
 
-    while ($row = mysqli_fetch_assoc($this_month_result2)) {
+    while ($row = mysqli_fetch_assoc($thisMonthOutgoingResult)) {
         $thisMonthOutgoing += $row['amount'];
     }
 
