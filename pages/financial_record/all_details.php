@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $currentMonth = date('F');
 $currentYear = date('Y');
-$inc_rec = 0;
+$thisMonthIncoming = 0;
 $out_rec = 0;
 
 
@@ -116,7 +116,7 @@ $sql = "select * from financial_record where purpose='Incoming'"; // select all 
 $result = mysqli_query($conn, $sql); // query to get the data
 
 while ($row = mysqli_fetch_assoc($result)) {
-  $inc_rec += $row['amount'];
+  $thisMonthIncoming += $row['amount'];
 }
 
 $sql = "select * from financial_record where purpose='Outgoing'"; // select all the data in DB
@@ -127,7 +127,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   $out_rec += $row['amount'];
 }
 
-$total = $inc_rec - $out_rec;
+$total = $thisMonthIncoming - $out_rec;
 
 
 $sql = "select * from financial_record"; // select all the data in DB
@@ -182,7 +182,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left">Total of Incoming</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($inc_rec); ?></h3>
+                    <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?php echo '₱ ' . number_format($thisMonthIncoming); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                   </div>  
                   <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"></span></p>
