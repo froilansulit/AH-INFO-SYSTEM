@@ -3,12 +3,12 @@
     include '../session.php';
     include '../connect.php';
 
-    $month_now = date('F');
+    $currentMonth = date('F');
     $year_now = date('Y');
     $inc_rec = 0;
     $out_rec = 0;
 
-    $this_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
+    $this_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$year_now'"; // select all the data in DB
 
     $this_month_result = mysqli_query($conn, $this_month_sql); // query to get the data
 
@@ -16,7 +16,7 @@
         $inc_rec += $row['amount'];
     }
 
-    $this_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$month_now' AND year_date='$year_now'"; // select all the data in DB
+    $this_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$currentMonth' AND year_date='$year_now'"; // select all the data in DB
 
     $this_month_result2 = mysqli_query($conn, $this_month_sql2); // query to get the data
 

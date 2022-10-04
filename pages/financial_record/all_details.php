@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-$month_now = date('F');
+$currentMonth = date('F');
 $year_now = date('Y');
 $inc_rec = 0;
 $out_rec = 0;

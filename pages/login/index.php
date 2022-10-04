@@ -161,6 +161,7 @@ if (isset($password_error) && !empty($password_error))
 <?php
 	// for login function 
 	if (isset($_POST["lgnLogin"])) {
+		
 	$username = mysqli_real_escape_string($conn, $_POST["username"]);
 	$password = mysqli_real_escape_string($conn, $_POST["password"]);
 
