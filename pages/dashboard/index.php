@@ -6,7 +6,7 @@
     $currentMonth = date('F');
     $currentYear = date('Y');
     $thisMonthIncoming = 0;
-    $out_rec = 0;
+    $thisMonthOutgoing = 0;
 
     $this_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$currentYear'"; // select all the data in DB
 
@@ -21,10 +21,10 @@
     $this_month_result2 = mysqli_query($conn, $this_month_sql2); // query to get the data
 
     while ($row = mysqli_fetch_assoc($this_month_result2)) {
-        $out_rec += $row['amount'];
+        $thisMonthOutgoing += $row['amount'];
     }
 
-    $this_month_total = $thisMonthIncoming - $out_rec;
+    $this_month_total = $thisMonthIncoming - $thisMonthOutgoing;
 
     $last_month = date("F", strtotime("last month"));
     $currentYear = date('Y');
@@ -176,7 +176,7 @@
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [<?= $out_rec; ?>, <?= $thisMonthIncoming; ?>],
+                data: [<?= $thisMonthOutgoing; ?>, <?= $thisMonthIncoming; ?>],
                 backgroundColor: [
                     'rgb(255, 99, 132)', 'rgb(54, 162, 235)',
                 ],
