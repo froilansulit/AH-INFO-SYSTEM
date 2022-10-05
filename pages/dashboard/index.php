@@ -31,22 +31,20 @@
     $lastMonthOutgoing = 0; 
 
     $lastMonthIncomingQuery = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$lastMonth' AND year_date='$currentYear'"; 
-    
     $lastMonthIncomingResult = mysqli_query($conn, $lastMonthIncomingQuery); 
 
     while ($row = mysqli_fetch_assoc($lastMonthIncomingResult)) {
         $lastMonthIncoming += $row['amount'];
     }
-    //
-    $lastMonthOutgoingQuery = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$lastMonth' AND year_date='$currentYear'"; 
 
+    $lastMonthOutgoingQuery = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$lastMonth' AND year_date='$currentYear'"; 
     $lastMonthOutgoingResult = mysqli_query($conn, $lastMonthOutgoingQuery); 
 
     while ($row = mysqli_fetch_assoc($lastMonthOutgoingResult)) {
         $lastMonthOutgoing += $row['amount'];
     }
-
-    $last_month_total = $lastMonthIncoming - $lastMonthOutgoing;
+    // 
+    $lastMonthTotal = $lastMonthIncoming - $lastMonthOutgoing;
 
     $Y_inc_rec = 0;
     $Y_out_rec = 0;
@@ -107,7 +105,7 @@
                                 <div class="card-body">
                                     <p class="card-title text-md-center text-xl-left">Financial Last Month</p>
                                     <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($last_month_total); ?></h3>
+                                        <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($lastMonthTotal); ?></h3>
                                         <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
                                     </div>
                                     <p class="mb-0 mt-2 text-danger"><span class="text-black ml-1"><small>Last Month</small></span></p>
@@ -207,7 +205,7 @@
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [<?= $last_month_total; ?>, <?= $thisMonthTotal; ?>],
+                data: [<?= $lastMonthTotal; ?>, <?= $thisMonthTotal; ?>],
                 backgroundColor: ['rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
                 hoverOffset: 4
             }]
