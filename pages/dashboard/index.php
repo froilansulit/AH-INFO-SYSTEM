@@ -37,10 +37,10 @@
     while ($row = mysqli_fetch_assoc($lastMonthIncomingResult)) {
         $lastMonthIncoming += $row['amount'];
     }
-    // thisMonthOutgoingQuery
-    $last_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$lastMonth' AND year_date='$currentYear'"; 
+    //
+    $lastMonthOutgoingQuery = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$lastMonth' AND year_date='$currentYear'"; 
 
-    $lastMonthOutgoingResult = mysqli_query($conn, $last_month_sql2); 
+    $lastMonthOutgoingResult = mysqli_query($conn, $lastMonthOutgoingQuery); 
 
     while ($row = mysqli_fetch_assoc($lastMonthOutgoingResult)) {
         $lastMonthOutgoing += $row['amount'];
