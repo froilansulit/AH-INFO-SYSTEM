@@ -26,12 +26,12 @@
 
     $thisMonthTotal = $thisMonthIncoming - $thisMonthOutgoing;
 
-    $last_month = date("F", strtotime("last month"));
+    $lastMonth = date("F", strtotime("last month"));
     $currentYear = date('Y');
     $L_inc_rec = 0;
     $L_out_rec = 0;
 
-    $last_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$last_month' AND year_date='$currentYear'"; // select all the data in DB
+    $last_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$lastMonth' AND year_date='$currentYear'"; // select all the data in DB
 
     $last_month_result = mysqli_query($conn, $last_month_sql); // query to get the data
 
