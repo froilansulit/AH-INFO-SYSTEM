@@ -27,7 +27,7 @@
     $thisMonthTotal = $thisMonthIncoming - $thisMonthOutgoing;
 
     $lastMonth = date("F", strtotime("last month"));
-    $L_inc_rec = 0;
+    $lastMonthIncoming = 0; 
     $L_out_rec = 0;
 
     $last_month_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$lastMonth' AND year_date='$currentYear'"; // select all the data in DB
@@ -35,7 +35,7 @@
     $last_month_result = mysqli_query($conn, $last_month_sql); // query to get the data
 
     while ($row = mysqli_fetch_assoc($last_month_result)) {
-        $L_inc_rec += $row['amount'];
+        $lastMonthIncoming += $row['amount'];
     }
 
     $last_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$lastMonth' AND year_date='$currentYear'"; // select all the data in DB
@@ -46,7 +46,7 @@
         $L_out_rec += $row['amount'];
     }
 
-    $last_month_total = $L_inc_rec - $L_out_rec;
+    $last_month_total = $lastMonthIncoming - $L_out_rec;
 
     $Y_inc_rec = 0;
     $Y_out_rec = 0;
