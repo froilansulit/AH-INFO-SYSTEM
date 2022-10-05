@@ -27,7 +27,6 @@
     $thisMonthTotal = $thisMonthIncoming - $thisMonthOutgoing;
 
     $lastMonth = date("F", strtotime("last month"));
-    $currentYear = date('Y');
     $L_inc_rec = 0;
     $L_out_rec = 0;
 
