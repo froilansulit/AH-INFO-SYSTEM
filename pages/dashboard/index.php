@@ -38,7 +38,7 @@
         $L_inc_rec += $row['amount'];
     }
 
-    $last_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$last_month' AND year_date='$currentYear'"; // select all the data in DB
+    $last_month_sql2 = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$lastMonth' AND year_date='$currentYear'"; // select all the data in DB
 
     $last_month_result2 = mysqli_query($conn, $last_month_sql2); // query to get the data
 
