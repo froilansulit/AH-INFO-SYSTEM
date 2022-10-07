@@ -45,7 +45,7 @@
     $lastMonthTotal = $lastMonthIncoming - $lastMonthOutgoing;
 
     $thisYearIncoming = 0;
-    $Y_out_rec = 0;
+    $thisYearOutgoing = 0;
 
     // $lastMonthIncoming = 0; 
     // $lastMonthOutgoing = 0; 
@@ -63,9 +63,9 @@
     $this_year_result2 = mysqli_query($conn, $this_year_sql2); // query to get the data
 
     while ($row = mysqli_fetch_assoc($this_year_result2)) {
-        $Y_out_rec += $row['amount'];
+        $thisYearOutgoing += $row['amount'];
     }
-    $this_year_total = $thisYearIncoming - $Y_out_rec;
+    $this_year_total = $thisYearIncoming - $thisYearOutgoing;
 ?>
 <!DOCTYPE html>
 <html lang="en">
