@@ -47,9 +47,6 @@
     $thisYearIncoming = 0;
     $thisYearOutgoing = 0;
 
-    // $lastMonthIncoming = 0; 
-    // $lastMonthOutgoing = 0; 
-
     $this_year_sql = "SELECT * FROM financial_record WHERE purpose='Incoming' AND year_date='$currentYear'"; // select all the data in DB
 
     $this_year_result = mysqli_query($conn, $this_year_sql); // query to get the data
