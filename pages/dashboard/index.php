@@ -9,16 +9,14 @@
     $thisMonthOutgoing = 0;
 
     $thisMonthIncomingQuery = "SELECT * FROM financial_record WHERE purpose='Incoming' AND month_date='$currentMonth' AND year_date='$currentYear'"; 
-
     $thisMonthIncomingResult = mysqli_query($conn, $thisMonthIncomingQuery);
 
     while ($row = mysqli_fetch_assoc($thisMonthIncomingResult)) {
         $thisMonthIncoming += $row['amount'];
     }
 
-    $thisMonthOutgoingQuery = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$currentMonth' AND year_date='$currentYear'"; // select all the data in DB
-
-    $thisMonthOutgoingResult = mysqli_query($conn, $thisMonthOutgoingQuery); // query to get the data
+    $thisMonthOutgoingQuery = "SELECT * FROM financial_record WHERE purpose='Outgoing' AND month_date='$currentMonth' AND year_date='$currentYear'"; 
+    $thisMonthOutgoingResult = mysqli_query($conn, $thisMonthOutgoingQuery); 
 
     while ($row = mysqli_fetch_assoc($thisMonthOutgoingResult)) {
         $thisMonthOutgoing += $row['amount'];
@@ -43,7 +41,7 @@
     while ($row = mysqli_fetch_assoc($lastMonthOutgoingResult)) {
         $lastMonthOutgoing += $row['amount'];
     }
-    // 
+    
     $lastMonthTotal = $lastMonthIncoming - $lastMonthOutgoing;
 
     $Y_inc_rec = 0;
