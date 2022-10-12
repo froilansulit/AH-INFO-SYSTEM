@@ -49,9 +49,9 @@
     
     $thisYearIncomingQuery = "SELECT * FROM financial_record WHERE purpose='Incoming' AND year_date='$currentYear'"; // select all the data in DB
     
-    $this_year_result = mysqli_query($conn, $thisYearIncomingQuery); // query to get the data
+    $thisYearIncomingResult = mysqli_query($conn, $thisYearIncomingQuery); // query to get the data
 
-    while ($row = mysqli_fetch_assoc($this_year_result)) {
+    while ($row = mysqli_fetch_assoc($thisYearIncomingResult)) {
         $thisYearIncoming += $row['amount'];
     }
 
