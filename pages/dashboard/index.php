@@ -62,7 +62,7 @@
     while ($row = mysqli_fetch_assoc($thisYearOutgoingResult)) {
         $thisYearOutgoing += $row['amount'];
     }
-    $this_year_total = $thisYearIncoming - $thisYearOutgoing;
+    $thisYearTotal = $thisYearIncoming - $thisYearOutgoing;
 ?>
 <!DOCTYPE html>
 <html lang="en">
