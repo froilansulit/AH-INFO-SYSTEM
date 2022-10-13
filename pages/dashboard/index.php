@@ -68,7 +68,6 @@
 <html lang="en">
 <style>
     .company_name { font-size: 1.5rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
-
     .icon { font-size: 1.7rem; }
 </style>
 <body>
