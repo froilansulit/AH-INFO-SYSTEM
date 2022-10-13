@@ -64,7 +64,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <style>
   .icon {
     margin-right: 5px;
