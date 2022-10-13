@@ -70,19 +70,16 @@
     margin-right: 5px;
     display: none;
   }
-
   .loading {
     background: #014B94;
     color: #eee;
   }
-
   .loading .icon {
     display: inline-block;
     color: #eee;
     font-size: 1.5em;
     animation: spin 2s linear infinite;
   }
-
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -92,7 +89,6 @@
       transform: rotate(360deg);
     }
   }
-
   .slide_in {
     animation: slideMe .5s ease-in;
   }
