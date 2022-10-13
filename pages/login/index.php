@@ -182,26 +182,26 @@ if (isset($password_error) && !empty($password_error))
 		$query_run = mysqli_query($conn, $query);
 
 		if (mysqli_num_rows($query_run) > 0) {
-		$_SESSION['username'] = $username;
+			$_SESSION['username'] = $username;
 
-		$sql = "SELECT * FROM users"; // select all the data in DB
-		$result = mysqli_query($conn, $sql); // query to get the data
+			$sql = "SELECT * FROM users"; // select all the data in DB
+			$result = mysqli_query($conn, $sql); // query to get the data
 
-		while ($row = mysqli_fetch_assoc($result)) {
-			if ($username == $row['username']) {
-				$_SESSION['acc_name'] = $row['name'];
-				$_SESSION['user_type'] = $row['type'];
-			} 
-		}
-		echo "<script>  
-			loadinglgn();
-			$('#lgnLogin').prop('disabled', true);
-			setTimeout(() => {
-			window.location.href = '../dashboard/';
-			}, 4000);
-			
-		</script>
-		";
+			while ($row = mysqli_fetch_assoc($result)) {
+				if ($username == $row['username']) {
+					$_SESSION['acc_name'] = $row['name'];
+					$_SESSION['user_type'] = $row['type'];
+				} 
+			}
+			echo "<script>  
+				loadinglgn();
+				$('#lgnLogin').prop('disabled', true);
+				setTimeout(() => {
+				window.location.href = '../dashboard/';
+				}, 4000);
+				
+			</script>
+			";
 		} 
 		else {
 			// invalid
