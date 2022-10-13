@@ -153,7 +153,7 @@ if (isset($password_error) && !empty($password_error))
     </div>
   </div>
 <?php include '../scripts.php'; ?>
-  <script src="../app.js"></script>
+	<script src="../app.js"></script>
 <?php
 	// for login function 
 	if (isset($_POST["lgnLogin"])) {
