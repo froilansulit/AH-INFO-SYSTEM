@@ -48,8 +48,8 @@
                 setTimeout(() => {
                     window.location.href = '../dashboard/';
                 }, 4000);
-            </script>
-            ";
+				</script>
+				";
             } 
             else {
             echo "<script>    
@@ -57,7 +57,7 @@
                 setTimeout(() => {
                     window.location.href = '../login/';
                 }, 2000);
-            </script>";
+            	</script>";
             }
         }
     }
