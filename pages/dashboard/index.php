@@ -78,8 +78,7 @@
             <div class="main-panel">
                 <div class="content-wrapper" style="background-color:#bddcff;">
                     <div class="row">
-                        <div class="col-md-12 grid-margin">
-                        </div>
+                        <div class="col-md-12 grid-margin"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 grid-margin stretch-card">
