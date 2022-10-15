@@ -82,7 +82,6 @@
     0% {
       transform: rotate(0deg);
     }
-
     100% {
       transform: rotate(360deg);
     }
@@ -90,13 +89,11 @@
   .slide_in {
     animation: slideMe .5s ease-in;
   }
-
   @keyframes slideMe {
     0% {
       transform: skewX(53deg) translateX(-500px);
       opacity: 0.1;
     }
-
     100% {
       transform: skew(0deg);
     }
