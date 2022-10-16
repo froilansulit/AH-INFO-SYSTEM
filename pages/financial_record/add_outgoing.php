@@ -36,7 +36,5 @@ if (isset($FRO_nameSend) && isset($FRO_dateSend) && isset($FRO_purposeSend) && i
     else {
         die(mysqli_error($conn));
     }
-
 }
-
 ?>
