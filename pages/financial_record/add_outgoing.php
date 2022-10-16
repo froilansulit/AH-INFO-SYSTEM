@@ -28,10 +28,10 @@
         $result1 = mysqli_query($conn, $sql1);
 
         if ($result) {
-        # keep it blank ajax will do the success message
+            # keep it blank ajax will do the success message
         }
         else {
-        die(mysqli_error($conn));
+            die(mysqli_error($conn));
         }
     }
 ?>
