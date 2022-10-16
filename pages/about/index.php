@@ -9,7 +9,7 @@
 	include '../head.php'; 
 ?>
 <body>
-  <div class="container-scroller">
+  <!-- <div class="container-scroller">
 <?php include '../navbar.php'; ?>
     <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
@@ -60,6 +60,6 @@
 <?php include '../footer.php'; ?>
       </div>
     </div>
-  </div>
+  </div> -->
 </body>
 </html>
