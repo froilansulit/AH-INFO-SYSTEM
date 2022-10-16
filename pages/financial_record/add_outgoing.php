@@ -1,9 +1,7 @@
 <?php 
-
 include '../connect.php';
 
 extract($_POST);
-
 // for outgoing variables
 $FRO_nameSend = htmlspecialchars($_POST['FRO_nameSend']);
 $FRO_dateSend = htmlspecialchars($_POST['FRO_dateSend']);
