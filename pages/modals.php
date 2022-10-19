@@ -42,10 +42,6 @@
                             </div>
                         
                             <div class="form-group col-md-4">
-                                <label for="Reorder Level">Reorder Level</label>
-                                <input type="text" class="form-control" id="Reorder Level" placeholder="Reorder Level">
-                            </div>
-                            <div class="form-group col-md-4">
                                 <label for="Stock Quantity">Stock Quantity</label>
                                 <input type="text" class="form-control" id="Stock Quantity" placeholder="Stock Quantity">
                             </div>
