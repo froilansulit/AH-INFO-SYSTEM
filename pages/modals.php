@@ -28,9 +28,6 @@
                             <label for="" id="lblFRI_name" class="text-danger"></label>
                             <input type="text" class="form-control" id="FRI_name" placeholder="Remarks" autocomplete="off" onInput="checkValidationFinancial()">
                         </div>
-
-                        
-                        
                         <div class="form-group col-md-4">
                             <!-- <label for="FRI_encoded">Encoded by:</label> -->
                             <input type="hidden" class="form-control" id="FRI_date" value="<?php echo date('F d, Y') ?>" disabled hidden>
