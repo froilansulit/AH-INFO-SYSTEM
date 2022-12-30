@@ -1134,7 +1134,6 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-    <!-- /.modal edit-ProductSet -->
     <div class="modal fade" id="add-CompanySetup">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1168,13 +1167,10 @@
                             <button type="submit" class="btn btn-primary btn-rounded">Save</button>
                             <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
                         </div>
-                        <!-- /.card-body -->
                     </form>
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
     </div>
     <!-- <div class="modal fade" id="edit-CompanySetup">
         <div class="modal-dialog">
