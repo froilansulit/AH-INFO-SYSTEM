@@ -1219,7 +1219,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal edit-CompanySetup -->
-    <div class="modal fade" id="set-days">
+    <!-- <div class="modal fade" id="set-days">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1240,12 +1240,8 @@
                             <button type="submit" class="btn btn-primary btn-rounded">Save</button>
                             <button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
                         </div>
-                        <!-- /.card-body -->
                     </form>
                 </div>
             </div>
-            <!-- /.modal-content -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal set-days -->
+    </div> -->
