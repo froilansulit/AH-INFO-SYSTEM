@@ -1135,7 +1135,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal edit-ProductSet -->
-    <!-- <div class="modal fade" id="add-CompanySetup">
+    <div class="modal fade" id="add-CompanySetup">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1172,8 +1172,8 @@
                 </div>
             </div>
         </div>
-    </div> -->
-    <!-- <div class="modal fade" id="edit-CompanySetup"></div>
+    </div>
+    <div class="modal fade" id="edit-CompanySetup"></div>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1210,7 +1210,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- <div class="modal fade" id="set-days">
         <div class="modal-dialog">
             <div class="modal-content">
