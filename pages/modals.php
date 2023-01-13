@@ -486,10 +486,8 @@
                 </div>
 
               </div>
-
               <button type="button" class="btn btn-default btn-rounded float-right" data-dismiss="modal">Cancel</button>
               <button type="submit" name="Add_OR_image" id="Add_OR_image" class="btn btn-primary btn-rounded float-right mb-3">Save</button>
-
             </div>
             <!-- /.card-body -->
           </form>
@@ -500,8 +498,6 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
-
-
   <div class="modal fade" id="OR_image_modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
