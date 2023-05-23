@@ -391,9 +391,7 @@
 <!-- drydock image preview modal end here  -->
 
 <!--  -->
-
 <div class="modal fade" id="ViewDryDockDetails">
-
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -403,10 +401,8 @@
                 </button>
             </div>
             <div class="modal-body">
-
                 <div class="card-body">
                     <div class="row">
-
                         <div class="form-group col-md-12">
                             <label for="U_name">Company Name:</label>
                             <h4 class="font-weight-bold" id="view_CompanyName"></h4>
