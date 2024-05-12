@@ -32,7 +32,7 @@
           </button>
         </div>
         <div class="modal-body ">
-          <div class="card-body">
+          <div class="card-body"></div>
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="name">Name:</label> <label id="lblA_name" class="text-danger"></label>
@@ -162,7 +162,8 @@
 <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
       <div class="main-panel">
-        <div class="content-wrapper" style="background-color:#bddcff;">
+        <div class="content-wrapper" style="background: rgb(44,74,87);
+background: linear-gradient(90deg, rgba(44,74,87,1) 13%, rgba(164,185,194,1) 100%);">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">

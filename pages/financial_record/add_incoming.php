@@ -19,10 +19,12 @@ $FRI_yearSend = htmlspecialchars($_POST['FRI_yearSend']);
 
 if (isset($FRI_nameSend) && isset($FRI_dateSend) && isset($FRI_purposeSend) && isset($FRI_ORSend) && isset($FRI_amountSend) && isset($FRI_monthSend) && isset($FRI_encodedSend) ) {
 
+    $orNumber = substr(str_shuffle("0123456789"), 0, 10);
+
     $ES_FRI_nameSend = mysqli_real_escape_string($conn, $FRI_nameSend);
     $ES_FRI_dateSend = mysqli_real_escape_string($conn, $FRI_dateSend);
     $ES_FRI_purposeSend = mysqli_real_escape_string($conn, $FRI_purposeSend);
-    $ES_FRI_ORSend = mysqli_real_escape_string($conn, $FRI_ORSend);
+    $ES_FRI_ORSend = mysqli_real_escape_string($conn, $orNumber);
 
     $ES_FRI_amountSend = mysqli_real_escape_string($conn, $FRI_amountSend);
     $ES_FRI_monthSend = mysqli_real_escape_string($conn, $FRI_monthSend);
