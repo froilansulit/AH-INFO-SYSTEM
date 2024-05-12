@@ -137,7 +137,8 @@ $result = mysqli_query($conn, $sql); // query to get the data
       <?php include '../sidebar.php'; ?>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper" style="background-color:#bddcff;">
+        <div class="content-wrapper" style="background: rgb(9,41,66);
+background: linear-gradient(61deg, rgba(9,41,66,1) 23%, rgba(118,168,208,1) 92%);">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between align-items-center">
@@ -146,7 +147,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                     <i class="ti-plus btn-icon-prepend"></i>Add Revenue
                   </button>
                   <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Outgoing">
-                    <i class="ti-plus btn-icon-prepend"></i>Add Reimbursement
+                    <i class="ti-plus btn-icon-prepend"></i>Add Disbursement
                   </button>
 
                   <button type="button" class="btn btn-dark btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#Add_OR_Image">
@@ -270,7 +271,7 @@ $result = mysqli_query($conn, $sql); // query to get the data
                                               } ?>">
                                               <?php
                                               if ($row['purpose'] == "Outgoing") {
-                                                echo 'Reimbursement';
+                                                echo 'Disbursement';
                                                 
                                               } else {
                                                 echo 'Revenue';
@@ -318,11 +319,9 @@ $result = mysqli_query($conn, $sql); // query to get the data
                               <a href="#" data-toggle="tooltip" title="View">
                                 <button type="button" class="btn btn-outline-dark btn-sm btn-rounded" data-toggle="modal" data-target="#ViewFinancial" onclick="ViewData(<?php echo $id; ?>)"><i class="ti-info btn-icon-prepend"></i></button>
                               </a>
+                              <a href="printOneFinancial.php?print=<?= $id; ?>" class="btn btn-dark btn-rounded btn-sm" ><i class="ti-printer btn-icon-prepend"></i></a>
                             </td>
-
-
                         </tr>
-
                       <?php
                             $number++;
                           }

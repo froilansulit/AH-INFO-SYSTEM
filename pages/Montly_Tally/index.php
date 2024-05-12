@@ -39,7 +39,8 @@
     <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
       <div class="main-panel">
-        <div class="content-wrapper" style="background-color:#bddcff;">
+        <div class="content-wrapper" style="background: rgb(9,41,66);
+background: linear-gradient(61deg, rgba(9,41,66,1) 23%, rgba(118,168,208,1) 92%);">
           <div class="row">
           <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
@@ -68,7 +69,7 @@
               <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Total Reimbursement</p>
+                  <p class="card-title text-md-center text-xl-left">Total Disbursement</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($out_rec); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
@@ -83,7 +84,8 @@
               <div class="card">
                 <div class="card-body">
                   <p class="card-title text-md-center text-xl-left font-weight-bold" style="">Monthly Tally <span class="text-danger ">(Month of <?= date('F'); ?>)</span></p>
-                  <a href="../financial_record/pdfDownload.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print</a>
+                  <a href="printIncoming.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print Revenue</a>
+                  <a href="printOutgoing.php" class="btn btn-dark btn-sm float-right btn-icon-text ml-3" ><i class="ti-printer btn-icon-prepend"></i>Print Disbursement</a>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <table id="example1" class="table table-hover" style="width:100%">
                       <thead style="font-size:10px" class="text-center">
@@ -108,8 +110,6 @@
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['cname']; ?></td>
                             <td><?= $row['date_set']; ?></td>
-                            
-
                             <td><span class=" <?php if ($row['purpose'] == "Outgoing") {
                                                 echo 'badge badge-pill badge-danger';
                                               } else {
@@ -117,13 +117,12 @@
                                               } ?>">
                                               <?php
                                               if ($row['purpose'] == "Outgoing") {
-                                                echo 'Reimbursement';
+                                                echo 'Disbursement';
                                                 
                                               } else {
                                                 echo 'Revenue';
                                               }
-                                              ?>  
-                                              
+                                              ?>
                                             </span></td>
                             <td><?= $row['or_number']; ?></td>
                             <td><?= '₱ ' . number_format($row['amount']); ?></td>

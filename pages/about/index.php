@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 	<style>
-	.company_name{ font-size: 1.5rem; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
-	.icon { font-size: 1.7rem; }
+		.company_name{ 
+			font-size: 1.5rem; 
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+		.icon { font-size: 1.7rem; }
+		.mapouter{position:relative;
+			text-align:right;
+			height:500px;
+			width:600px;
+		}
+		.gmap_canvas {
+			overflow:hidden;
+			background:none!important;
+			height:500px;
+			width:600px;
+		}
 	</style>
 <?php 
 	include '../session.php';
 	include '../head.php'; 
 ?>
 <body>
-  <!-- <div class="container-scroller">
+
+   <div class="container-scroller">
 <?php include '../navbar.php'; ?>
     <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
       <div class="main-panel">
-        <div class="content-wrapper" style="background-color:#bddcff;">
+        <div class="content-wrapper" style="background: rgb(9,41,66);
+background: linear-gradient(61deg, rgba(9,41,66,1) 23%, rgba(118,168,208,1) 92%);">
           <div class="row">
-            <div class="col-md-6 grid-margin stretch-card">
+            <!-- <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body text-center">
                   <p class="card-title text-md-center text-xl-left">About</p>
                   <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                    <div class="text-center my-5">
@@ -44,13 +60,13 @@
                   </div>  
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 grid-margin stretch-card">
+            </div> -->
+            <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Map</p>
-                  <div class=" flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
-                      <img src="../../images/AH_Map.jpg" class="img-fluid">
+                  <p class="card-title text-md-center text-xl-left">Map of AH Araullo Shipment</p>
+                  <div class="text-center">
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=A.H%20Araullo%20&%20Sons%20Rizal%20Slipways%20Inc&t=k&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2piratebay.org"></a><br><a href="https://www.embedgooglemap.net"></a></div></div>
                   </div>  
                 </div>
               </div>
@@ -60,6 +76,6 @@
 <?php include '../footer.php'; ?>
       </div>
     </div>
-  </div> -->
+  </div>
 </body>
 </html>

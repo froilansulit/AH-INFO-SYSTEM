@@ -16,7 +16,8 @@
     $(function() {
       $("#example1").DataTable({
         "scrollX": true,
-        "order": [[ 0, "desc" ]]
+        "order": [[ 0, "desc" ]],"responsive": true, "lengthChange": false, "autoWidth": false,
+			"buttons": [""],
       });
       $("#AllFinancialDetails").DataTable({
         "scrollX": true,
@@ -34,11 +35,11 @@
         "info": true,
         "autoWidth": false,
       });
-      $('#example').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-          'print'
-        ]
-      });
+      // $('#example').DataTable({
+      //   dom: 'Bfrtip',
+      //   buttons: [
+      //     'print'
+      //   ]
+      // });
     });
   </script>

@@ -76,7 +76,8 @@
         <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
             <div class="main-panel">
-                <div class="content-wrapper" style="background-color:#bddcff;">
+                <div class="content-wrapper" style="background: rgb(9,41,66);
+background: linear-gradient(61deg, rgba(9,41,66,1) 23%, rgba(118,168,208,1) 92%);background-position: center;background-size: cover; background-attachment: fixed;">
                     <div class="row">
                         <div class="col-md-12 grid-margin"></div>
                     </div>
@@ -124,7 +125,7 @@
                                     <p class="card-text">The graph below is the tally of Reimbursement and Revenue financial transactions for this month. </p>
                                     <div><canvas id="myChart"></canvas></div>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">

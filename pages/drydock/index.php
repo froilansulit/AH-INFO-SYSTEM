@@ -133,7 +133,8 @@
         <div class="container-fluid page-body-wrapper">
 <?php include '../sidebar.php'; ?>
             <div class="main-panel">
-                <div class="content-wrapper" style="background-color:#bddcff;">
+                <div class="content-wrapper" style="background: rgb(9,41,66);
+background: linear-gradient(61deg, rgba(9,41,66,1) 23%, rgba(118,168,208,1) 92%);">
                     <div class="row">
                         <div class="col-md-12 grid-margin">
                             <div class="d-flex justify-content-between align-items-center">
