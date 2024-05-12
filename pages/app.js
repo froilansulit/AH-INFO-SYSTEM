@@ -851,9 +851,16 @@ function ViewData(viewID) {
       // var vamount = $("#viewfr_Amount");
       var currency = parseFloat(userID.amount);
 
+      if(userID.purpose === "Outgoing"){
+        $("#viewfr_purpose").html("Reimbursement");
+      }
+      else {
+        $("#viewfr_purpose").html("Revenue");
+      }
+
       $("#viewfr_Name").html(userID.cname);
       $("#viewfr_date").html(userID.date_set);
-      $("#viewfr_purpose").html(userID.purpose);
+      // $("#viewfr_purpose").html(userID.purpose);
       $("#viewfr_OR").html(userID.or_number);
       $("#viewfr_Amount").html("P " + currency.toLocaleString());
       // $('#U_month').val(userID.month_date);

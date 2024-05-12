@@ -121,10 +121,10 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Transactions this Month</h5>
-                                    <p class="card-text">The graph below is the tally of incoming and outgoing financial transactions for this month. </p>
+                                    <p class="card-text">The graph below is the tally of Reimbursement and Revenue financial transactions for this month. </p>
                                     <div><canvas id="myChart"></canvas></div>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                         <div class="col-md-6 grid-margin stretch-card">
                             <div class="card">
@@ -162,7 +162,7 @@
     <script>
         const data = {
             labels: [
-                'Outgoing', 'Incoming'
+                'Reimbursement', 'Revenue'
             ],
             datasets: [{
                 label: 'My First Dataset',
