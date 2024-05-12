@@ -1,6 +1,7 @@
 <?php
 
-$conn = new mysqli('localhost','root',"","ah_info_system") or die(mysqli_error($conn));
+include '../connect.php';
+// $conn = new mysqli('localhost:','root',"","ah_info_system") or die(mysqli_error($conn));
 
 $update=false;
 $id=0;
@@ -31,14 +32,12 @@ $file='';
 
 	
     $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"])); 
-	 
-
 
 	 $conn->query ("INSERT INTO employee_profile (name,title,department,hire_date, daily_rate, schedule,image)
 	 VALUES('$name','$title','$department','$hire_date','$daily_rate','$schedule','$file')") or 
 	 die($conn-> error);	
 	 
-	 header("Location: view_data.php");
+	 header("Location: index.php");
 	die;
 	 	
  }
@@ -85,7 +84,5 @@ $file='';
 	 
 	 header('location: index.php');
 	die;
-	 	
  }
-
 ?> 
