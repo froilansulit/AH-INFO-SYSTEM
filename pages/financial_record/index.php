@@ -143,10 +143,10 @@ $result = mysqli_query($conn, $sql); // query to get the data
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <button type="button" class="btn btn-primary btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Incoming">
-                    <i class="ti-plus btn-icon-prepend"></i>Add Incoming
+                    <i class="ti-plus btn-icon-prepend"></i>Add Revenue
                   </button>
                   <button type="button" class="btn btn-danger btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#add-Outgoing">
-                    <i class="ti-plus btn-icon-prepend"></i>Add Outgoing
+                    <i class="ti-plus btn-icon-prepend"></i>Add Reimbursement
                   </button>
 
                   <button type="button" class="btn btn-dark btn-icon-text btn-rounded btn-md mr-3" data-toggle="modal" data-target="#Add_OR_Image">
@@ -267,7 +267,17 @@ $result = mysqli_query($conn, $sql); // query to get the data
                                                 echo 'badge badge-pill badge-danger';
                                               } else {
                                                 echo 'badge badge-pill badge-primary';
-                                              } ?>"><?php echo $row['purpose']; ?></span></td>
+                                              } ?>">
+                                              <?php
+                                              if ($row['purpose'] == "Outgoing") {
+                                                echo 'Reimbursement';
+                                                
+                                              } else {
+                                                echo 'Revenue';
+                                              }
+                                              ?>  
+                                              
+                                            </span></td>
                             <td><?php echo $row['or_number']; ?></td>
                            
                             <td>

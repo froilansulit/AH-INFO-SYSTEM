@@ -56,7 +56,7 @@
               <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Total of Incoming</p>
+                  <p class="card-title text-md-center text-xl-left">Total Revenue</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($inc_rec); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
@@ -68,7 +68,7 @@
               <div class="col-md-4 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title text-md-center text-xl-left">Total of Outgoing</p>
+                  <p class="card-title text-md-center text-xl-left">Total Reimbursement</p>
                   <div class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0"><?= '₱ ' . number_format($out_rec); ?></h3>
                     <i class="ti-calendar icon-md text-muted mb-0 mb-md-3 mb-xl-0"></i>
@@ -108,15 +108,23 @@
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['cname']; ?></td>
                             <td><?= $row['date_set']; ?></td>
-                            <td><span class=" 
-<?php                       if ($row['purpose'] == "Outgoing") {
-                              echo 'badge badge-pill badge-danger';
-                            } 
-                            else { echo 'badge badge-pill badge-primary'; }
-?>
-                            ">
-                            <?= $row['purpose']; ?>
-                            </span></td>
+                            
+
+                            <td><span class=" <?php if ($row['purpose'] == "Outgoing") {
+                                                echo 'badge badge-pill badge-danger';
+                                              } else {
+                                                echo 'badge badge-pill badge-primary';
+                                              } ?>">
+                                              <?php
+                                              if ($row['purpose'] == "Outgoing") {
+                                                echo 'Reimbursement';
+                                                
+                                              } else {
+                                                echo 'Revenue';
+                                              }
+                                              ?>  
+                                              
+                                            </span></td>
                             <td><?= $row['or_number']; ?></td>
                             <td><?= '₱ ' . number_format($row['amount']); ?></td>
                             <td><?= $row['encoded_by']; ?></td>
