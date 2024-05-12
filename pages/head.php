@@ -20,7 +20,7 @@
     @media print {
 
         #my-section, #my-section *, .hide_me {
-        display: none;
+			display: none;
         }
     }
   </style>
