@@ -24,12 +24,12 @@
                       <span class="menu-title">Tugboat Renting</span>
                   </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                   <a class="nav-link" href="../employee_profile/">
                       <i class="ti-flag-alt-2 menu-icon"></i>
                       <span class="menu-title">Employee Profile</span>
                   </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                   <a class="nav-link" href="../drydock">
                       <i class="ti-bookmark-alt menu-icon"></i>
