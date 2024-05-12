@@ -141,6 +141,9 @@ if (isset($password_error) && !empty($password_error))
                     <br>
                   </div>
                 </form>
+                <div style="padding-top: 30px;">
+                	<p class="text-center text-muted">Copyright © Froilan Sulit. 2022. All rights Reserved.</p>
+                </div>
               </div>
           </div>
         </div>
