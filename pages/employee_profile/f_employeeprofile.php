@@ -31,9 +31,7 @@ $file='';
 
 	
     $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"])); 
-	 
-
-
+	
 	 $conn->query ("INSERT INTO employee_profile (name,title,department,hire_date, daily_rate, schedule,image)
 	 VALUES('$name','$title','$department','$hire_date','$daily_rate','$schedule','$file')") or 
 	 die($conn-> error);	
