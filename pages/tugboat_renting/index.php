@@ -195,19 +195,20 @@ unset($_SESSION['status']);
                         </tr>
                       </thead>
                       <tbody class="text-center">
-                        <tr>
+                        
 <?php
 $number = 1;
 while ($row = mysqli_fetch_assoc($result)) 
 {
 $id = $row['id'];
 ?>
+                            <tr data-id="<?= $row['id']; ?>">
                             <td><b><?= $number; ?></b></td>
                             <td><?= $row['name']; ?></td>
                             <td><?= $row['dateofRent']; ?></td>
                             <td><?= $row['dateofReturn']; ?></td>
 
-                            <form action="update.php?unixcode=<?= $id; ?>" method="post">
+                            <form action="update.php?unixcode=<?= $id; ?>" method="post" id="editForm">
                             <td>
                               <a href="#" data-toggle="tooltip" title="Edit">
                                   <button type="submit" class="btn btn-outline-primary btn-sm btn-rounded"><i class="ti-pencil-alt btn-icon-prepend"></i></button>
@@ -244,5 +245,38 @@ $number++;
     include '../modals.php';
 ?>
 <script src="../app.js"></script>
+<script>
+
+  // OLD CODES
+  // const tableRows = document.querySelectorAll('tbody tr'); // Select all table rows
+
+	// tableRows.forEach(row => {
+	// 	row.addEventListener('click', (event) => {
+
+	// 	const id = row.dataset.id; // Get the ID from the data-id attribute
+	// 	//   alert(id)
+	// 	// window.location.href = "http://localhost/AH-INFO-SYSTEM/pages/tugboat_renting/update.php?unixcode=12"; // Redirect to edit.php with ID
+
+	// 	const editForm = document.getElementById('editForm');
+	// 	editForm.submit();
+  //   });
+  // });
+
+
+  $(document).ready(function() {
+    $('tbody tr').on('click', function(event) {
+    //   const id = $(this).data('id');
+
+      // Redirect to edit page with ID (assuming you still want this behavior)
+    //   window.location.href = "http://localhost/AH-INFO-SYSTEM/pages/tugboat_renting/update.php?unixcode=" + id;
+
+      // Alternatively, if you want to submit a form using jQuery:
+      // (Uncomment the following lines if needed)
+      const editForm = $('#editForm');
+      editForm.submit();
+    });
+  });
+
+</script>
 </body>
 </html>
