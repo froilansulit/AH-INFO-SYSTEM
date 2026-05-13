@@ -16,12 +16,12 @@ function send_mail($recipient,$subject,$message)
   $mail->SMTPSecure = "tls";
   $mail->Port       = 587;
   $mail->Host       = "smtp.gmail.com";
-  $mail->Username   = "robime04@gmail.com";
+  $mail->Username   = "youremail.com";
   $mail->Password   = "muldmflncbiimnap";
 
   $mail->IsHTML(true);
   $mail->AddAddress($recipient, "esteemed customer");
-  $mail->SetFrom("robime04@gmail.com", "OTP VERIFICATION");
+  $mail->SetFrom("youremail.com", "OTP VERIFICATION");
   //$mail->AddReplyTo("reply-to-email", "reply-to-name");
   //$mail->AddCC("cc-recipient-email", "cc-recipient-name");
   $mail->Subject = $subject;
